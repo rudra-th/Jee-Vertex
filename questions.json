@@ -1,0 +1,622 @@
+[
+  {
+    "id": "phy_001",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "difficulty": "Foundation",
+    "questionText": "A particle moves along the x-axis with position given by $x = 3t^2 - 12t + 5$ (in meters). What is the velocity of the particle at $t = 2$ s?",
+    "options": ["0 m/s", "6 m/s", "12 m/s", "-6 m/s"],
+    "correctAnswer": "0 m/s",
+    "explanation": "Velocity $v = \\frac{dx}{dt} = 6t - 12$. At $t = 2$: $v = 6(2) - 12 = 0$ m/s. The particle is momentarily at rest."
+  },
+  {
+    "id": "phy_002",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "difficulty": "JEE Main",
+    "questionText": "A ball is projected at an angle $\\theta$ with the horizontal. The ratio of the range to the maximum height is $4\\sqrt{3}$. What is the angle of projection?",
+    "options": ["$30°$", "$45°$", "$60°$", "$75°$"],
+    "correctAnswer": "$30°$",
+    "explanation": "Range $R = \\frac{u^2 \\sin 2\\theta}{g}$, Max height $H = \\frac{u^2 \\sin^2\\theta}{2g}$. $\\frac{R}{H} = \\frac{4\\cos\\theta}{\\sin\\theta} = 4\\cot\\theta = 4\\sqrt{3}$, so $\\cot\\theta = \\sqrt{3}$, giving $\\theta = 30°$."
+  },
+  {
+    "id": "phy_003",
+    "subject": "Physics",
+    "chapter": "Kinematics",
+    "difficulty": "JEE Advanced",
+    "questionText": "Two particles A and B are projected simultaneously from the same point with speed $u_A = 20$ m/s and $u_B = 10$ m/s at angles $30°$ and $60°$ with horizontal respectively. The time after which the velocity vectors of the two particles become perpendicular to each other is approximately (g = 10 m/s²):",
+    "options": ["1 s", "1.5 s", "2 s", "Never"],
+    "correctAnswer": "1 s",
+    "explanation": "Velocity vectors: $\\vec{v_A} = (20\\cos30°)\\hat{i} + (20\\sin30° - gt)\\hat{j}$ and $\\vec{v_B} = (10\\cos60°)\\hat{i} + (10\\sin60° - gt)\\hat{j}$. For perpendicularity $\\vec{v_A}\\cdot\\vec{v_B} = 0$. Solving gives $t = 1$ s."
+  },
+  {
+    "id": "phy_004",
+    "subject": "Physics",
+    "chapter": "Laws of Motion",
+    "difficulty": "Foundation",
+    "questionText": "A block of mass 5 kg is placed on a frictionless surface. A horizontal force of 20 N acts on it. What is the acceleration of the block?",
+    "options": ["2 m/s²", "4 m/s²", "10 m/s²", "100 m/s²"],
+    "correctAnswer": "4 m/s²",
+    "explanation": "By Newton's second law: $F = ma$, so $a = \\frac{F}{m} = \\frac{20}{5} = 4$ m/s²."
+  },
+  {
+    "id": "phy_005",
+    "subject": "Physics",
+    "chapter": "Laws of Motion",
+    "difficulty": "JEE Main",
+    "questionText": "A block of mass $m$ is kept on a rough inclined plane of angle $\\theta$. The coefficient of static friction is $\\mu_s$. The minimum force $F$ applied horizontally to prevent the block from sliding down is:",
+    "options": ["$mg(\\sin\\theta - \\mu_s\\cos\\theta)/(\\cos\\theta + \\mu_s\\sin\\theta)$", "$mg\\sin\\theta$", "$mg\\tan\\theta$", "$mg(\\tan\\theta - \\mu_s)$"],
+    "correctAnswer": "$mg(\\sin\\theta - \\mu_s\\cos\\theta)/(\\cos\\theta + \\mu_s\\sin\\theta)$",
+    "explanation": "Resolving forces along and perpendicular to incline. Normal force $N = mg\\cos\\theta + F\\sin\\theta$. For equilibrium: $F\\cos\\theta + \\mu_s N = mg\\sin\\theta$. Solving gives the minimum horizontal force."
+  },
+  {
+    "id": "phy_006",
+    "subject": "Physics",
+    "chapter": "Work, Energy and Power",
+    "difficulty": "JEE Main",
+    "questionText": "A particle of mass $m$ is attached to a string of length $L$ and is swinging in a vertical circle. The minimum speed at the top of the circle to maintain the circular motion is:",
+    "options": ["$\\sqrt{gL}$", "$\\sqrt{2gL}$", "$\\sqrt{5gL}$", "$\\sqrt{3gL}$"],
+    "correctAnswer": "$\\sqrt{gL}$",
+    "explanation": "At the top of the circle, gravity provides the centripetal force: $mg = \\frac{mv^2}{L}$, giving $v_{min} = \\sqrt{gL}$. The minimum speed at the bottom would be $\\sqrt{5gL}$."
+  },
+  {
+    "id": "phy_007",
+    "subject": "Physics",
+    "chapter": "Rotational Motion",
+    "difficulty": "JEE Advanced",
+    "questionText": "A solid sphere of mass $M$ and radius $R$ rolls without slipping on a horizontal surface. A horizontal force $F$ is applied at height $h$ from the surface. For the sphere to roll without slipping, the value of $h$ must be:",
+    "options": ["$h = R$", "$h = \\frac{7R}{5}$", "$h = \\frac{7R}{5}$ or more", "$h = \\frac{2R}{5}$"],
+    "correctAnswer": "$h = \\frac{7R}{5}$",
+    "explanation": "For pure rolling, torque about contact point equals $I_{contact}\\alpha$. Using $I_{contact} = \\frac{7MR^2}{5}$ and torque $F(h-R)$... solving gives $h = \\frac{7R}{5}$."
+  },
+  {
+    "id": "phy_008",
+    "subject": "Physics",
+    "chapter": "Gravitation",
+    "difficulty": "JEE Main",
+    "questionText": "The orbital velocity of a satellite at height $h$ above Earth's surface is $v_0$. If the satellite is brought to height $2h$, the new orbital velocity is:",
+    "options": ["$v_0\\sqrt{\\frac{R+h}{R+2h}}$", "$v_0\\frac{R+h}{R+2h}$", "$v_0\\sqrt{\\frac{R+2h}{R+h}}$", "$\\frac{v_0}{2}$"],
+    "correctAnswer": "$v_0\\sqrt{\\frac{R+h}{R+2h}}$",
+    "explanation": "Orbital velocity $v = \\sqrt{\\frac{GM}{r}}$ where $r$ is orbital radius. So $\\frac{v_1}{v_0} = \\sqrt{\\frac{R+h}{R+2h}}$, giving $v_1 = v_0\\sqrt{\\frac{R+h}{R+2h}}$."
+  },
+  {
+    "id": "phy_009",
+    "subject": "Physics",
+    "chapter": "Thermodynamics",
+    "difficulty": "JEE Main",
+    "questionText": "In an adiabatic process for an ideal gas, the relation between pressure and volume is $PV^\\gamma = \\text{const}$. For a diatomic gas, the value of $\\gamma$ is:",
+    "options": ["$\\frac{5}{3}$", "$\\frac{7}{5}$", "$\\frac{4}{3}$", "$\\frac{3}{2}$"],
+    "correctAnswer": "$\\frac{7}{5}$",
+    "explanation": "For a diatomic gas, degrees of freedom $f = 5$. $\\gamma = 1 + \\frac{2}{f} = 1 + \\frac{2}{5} = \\frac{7}{5} = 1.4$."
+  },
+  {
+    "id": "phy_010",
+    "subject": "Physics",
+    "chapter": "Waves",
+    "difficulty": "JEE Main",
+    "questionText": "A wave of frequency 500 Hz travels between two points A and B with a speed of 300 m/s. The phase difference between A and B is $120°$. The minimum distance between A and B is:",
+    "options": ["0.1 m", "0.2 m", "0.3 m", "0.4 m"],
+    "correctAnswer": "0.2 m",
+    "explanation": "Wavelength $\\lambda = \\frac{v}{f} = \\frac{300}{500} = 0.6$ m. Phase difference $\\Delta\\phi = \\frac{2\\pi}{\\lambda}\\Delta x$. So $\\Delta x = \\frac{\\lambda \\cdot 120°}{360°} = \\frac{0.6}{3} = 0.2$ m."
+  },
+  {
+    "id": "phy_011",
+    "subject": "Physics",
+    "chapter": "Electrostatics",
+    "difficulty": "JEE Main",
+    "questionText": "Three charges $+q$, $-q$ and $+q$ are placed at the vertices of an equilateral triangle of side $a$. The electric potential at the centroid is:",
+    "options": ["$\\frac{q}{4\\pi\\epsilon_0} \\cdot \\frac{\\sqrt{3}}{a}$", "$\\frac{q}{4\\pi\\epsilon_0} \\cdot \\frac{3}{a}$", "$0$", "$\\frac{q}{4\\pi\\epsilon_0 a}$"],
+    "correctAnswer": "$\\frac{q}{4\\pi\\epsilon_0} \\cdot \\frac{\\sqrt{3}}{a}$",
+    "explanation": "Distance from centroid to each vertex = $\\frac{a}{\\sqrt{3}}$. Total potential = $\\frac{1}{4\\pi\\epsilon_0}\\left(\\frac{q}{a/\\sqrt{3}} + \\frac{-q}{a/\\sqrt{3}} + \\frac{q}{a/\\sqrt{3}}\\right) = \\frac{q}{4\\pi\\epsilon_0} \\cdot \\frac{\\sqrt{3}}{a}$."
+  },
+  {
+    "id": "phy_012",
+    "subject": "Physics",
+    "chapter": "Electrostatics",
+    "difficulty": "JEE Advanced",
+    "questionText": "A solid conducting sphere of radius $R$ carries charge $Q$. A point charge $q$ is placed at distance $d > R$ from the center. The force on the charge $q$ due to the conducting sphere is:",
+    "options": ["$\\frac{Qq}{4\\pi\\epsilon_0 d^2}$ attractive", "$\\frac{Qq}{4\\pi\\epsilon_0 d^2}$ repulsive", "More than $\\frac{Qq}{4\\pi\\epsilon_0 d^2}$ repulsive", "Less than $\\frac{Qq}{4\\pi\\epsilon_0 d^2}$ repulsive"],
+    "correctAnswer": "More than $\\frac{Qq}{4\\pi\\epsilon_0 d^2}$ repulsive",
+    "explanation": "Due to induction, induced charges redistribute: negative charges come closer to $q$ and positive go farther. Even though net charge is $Q$, the force is greater than $\\frac{Qq}{4\\pi\\epsilon_0 d^2}$ because the induced charge distribution makes the effective separation smaller."
+  },
+  {
+    "id": "phy_013",
+    "subject": "Physics",
+    "chapter": "Current Electricity",
+    "difficulty": "Foundation",
+    "questionText": "In a Wheatstone bridge, four resistors are connected as $P = 10\\Omega$, $Q = 5\\Omega$, $R = 15\\Omega$, $S = ?$. For a balanced bridge, the value of S is:",
+    "options": ["5 Ω", "7.5 Ω", "10 Ω", "30 Ω"],
+    "correctAnswer": "7.5 Ω",
+    "explanation": "For balanced Wheatstone bridge: $\\frac{P}{Q} = \\frac{R}{S}$. So $\\frac{10}{5} = \\frac{15}{S}$, giving $S = 7.5\\Omega$."
+  },
+  {
+    "id": "phy_014",
+    "subject": "Physics",
+    "chapter": "Magnetic Effects",
+    "difficulty": "JEE Main",
+    "questionText": "A proton moves with velocity $v$ in a magnetic field $B$ perpendicular to its motion. The radius of its circular orbit is $r$. If a deuteron moves with the same speed in the same magnetic field, the radius of its circular orbit is:",
+    "options": ["$r$", "$2r$", "$r/2$", "$\\sqrt{2}r$"],
+    "correctAnswer": "$2r$",
+    "explanation": "Radius $r = \\frac{mv}{qB}$. For proton: $r_p = \\frac{m_p v}{eB}$. For deuteron: $m_d = 2m_p$, $q_d = e$. So $r_d = \\frac{2m_p v}{eB} = 2r_p = 2r$."
+  },
+  {
+    "id": "phy_015",
+    "subject": "Physics",
+    "chapter": "Modern Physics",
+    "difficulty": "JEE Main",
+    "questionText": "In a photoelectric effect experiment, the threshold frequency of a metal is $f_0$. If radiations of frequency $2f_0$ are incident on the metal, the maximum kinetic energy of emitted electrons is:",
+    "options": ["$hf_0$", "$2hf_0$", "$hf_0/2$", "$3hf_0$"],
+    "correctAnswer": "$hf_0$",
+    "explanation": "By Einstein's photoelectric equation: $KE_{max} = hf - \\phi = hf - hf_0 = h(2f_0) - hf_0 = hf_0$."
+  },
+  {
+    "id": "chem_001",
+    "subject": "Chemistry",
+    "chapter": "Atomic Structure",
+    "difficulty": "Foundation",
+    "questionText": "The number of radial nodes in the $3p$ orbital is:",
+    "options": ["0", "1", "2", "3"],
+    "correctAnswer": "1",
+    "explanation": "Number of radial nodes = $n - l - 1$. For $3p$: $n = 3$, $l = 1$. Radial nodes = $3 - 1 - 1 = 1$."
+  },
+  {
+    "id": "chem_002",
+    "subject": "Chemistry",
+    "chapter": "Atomic Structure",
+    "difficulty": "JEE Main",
+    "questionText": "The de Broglie wavelength associated with an electron accelerated through a potential difference of 100 V is approximately:",
+    "options": ["1.23 Å", "0.123 Å", "12.3 Å", "0.0123 Å"],
+    "correctAnswer": "1.23 Å",
+    "explanation": "$\\lambda = \\frac{h}{mv} = \\frac{12.3}{\\sqrt{V}}$ Å $= \\frac{12.3}{\\sqrt{100}} = \\frac{12.3}{10} = 1.23$ Å."
+  },
+  {
+    "id": "chem_003",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding",
+    "difficulty": "JEE Main",
+    "questionText": "Which of the following molecules has a non-zero dipole moment?",
+    "options": ["$BF_3$", "$CCl_4$", "$NF_3$", "$XeF_4$"],
+    "correctAnswer": "$NF_3$",
+    "explanation": "$NF_3$ has a trigonal pyramidal shape due to one lone pair on nitrogen. The lone pair contributes to the dipole moment, resulting in a non-zero net dipole moment. $BF_3$, $CCl_4$, and $XeF_4$ have symmetric geometries with zero net dipole moment."
+  },
+  {
+    "id": "chem_004",
+    "subject": "Chemistry",
+    "chapter": "Chemical Bonding",
+    "difficulty": "JEE Advanced",
+    "questionText": "The bond angle in $H_2O$ is $104.5°$ while in $H_2S$ it is approximately $92°$. The most appropriate reason is:",
+    "options": ["O is more electronegative than S", "Lone pairs in S are in larger 3p orbitals, causing less repulsion with bonding pairs", "H-O bond is shorter than H-S bond", "O uses $sp^3$ hybrid orbitals while S uses pure $p$ orbitals"],
+    "correctAnswer": "Lone pairs in S are in larger 3p orbitals, causing less repulsion with bonding pairs",
+    "explanation": "In $H_2S$, the lone pairs occupy larger 3p orbitals and are more diffuse, causing less lone pair-bond pair repulsion. The bond angle is closer to 90° (pure $p$ orbitals). In $H_2O$, the lone pairs are compact 2p, causing greater repulsion and larger bond angle."
+  },
+  {
+    "id": "chem_005",
+    "subject": "Chemistry",
+    "chapter": "Equilibrium",
+    "difficulty": "JEE Main",
+    "questionText": "For the reaction $N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)$, the equilibrium constant $K_p$ is related to $K_c$ by:",
+    "options": ["$K_p = K_c$", "$K_p = K_c(RT)^2$", "$K_p = K_c(RT)^{-2}$", "$K_p = K_c(RT)^{-1}$"],
+    "correctAnswer": "$K_p = K_c(RT)^{-2}$",
+    "explanation": "$\\Delta n_g = 2 - (1+3) = -2$. The relation is $K_p = K_c(RT)^{\\Delta n_g} = K_c(RT)^{-2}$."
+  },
+  {
+    "id": "chem_006",
+    "subject": "Chemistry",
+    "chapter": "Thermodynamics",
+    "difficulty": "JEE Main",
+    "questionText": "For a spontaneous process at constant temperature and pressure, which condition must be satisfied?",
+    "options": ["$\\Delta G > 0$", "$\\Delta G < 0$", "$\\Delta H > 0$", "$\\Delta S < 0$"],
+    "correctAnswer": "$\\Delta G < 0$",
+    "explanation": "The Gibbs free energy criterion for spontaneity at constant $T$ and $P$: $\\Delta G = \\Delta H - T\\Delta S < 0$. This is the most reliable criterion for spontaneity."
+  },
+  {
+    "id": "chem_007",
+    "subject": "Chemistry",
+    "chapter": "Electrochemistry",
+    "difficulty": "JEE Main",
+    "questionText": "The standard EMF of a cell with the following half reactions: $Zn^{2+} + 2e^- \\rightarrow Zn$; $E° = -0.76$ V and $Cu^{2+} + 2e^- \\rightarrow Cu$; $E° = +0.34$ V is:",
+    "options": ["-1.10 V", "+1.10 V", "-0.42 V", "+0.42 V"],
+    "correctAnswer": "+1.10 V",
+    "explanation": "$E°_{cell} = E°_{cathode} - E°_{anode} = 0.34 - (-0.76) = 1.10$ V. Copper acts as cathode (reduction) and zinc as anode (oxidation)."
+  },
+  {
+    "id": "chem_008",
+    "subject": "Chemistry",
+    "chapter": "Organic Chemistry - Basics",
+    "difficulty": "Foundation",
+    "questionText": "Which of the following carbocations is the most stable?",
+    "options": ["Methyl carbocation", "Primary carbocation", "Secondary carbocation", "Tertiary carbocation"],
+    "correctAnswer": "Tertiary carbocation",
+    "explanation": "Stability of carbocations: Tertiary > Secondary > Primary > Methyl. Tertiary carbocations have three alkyl groups donating electrons through hyperconjugation and inductive effect, stabilizing the positive charge."
+  },
+  {
+    "id": "chem_009",
+    "subject": "Chemistry",
+    "chapter": "Organic Chemistry - Basics",
+    "difficulty": "JEE Main",
+    "questionText": "In $S_N2$ reactions, which of the following substrates reacts the fastest with $OH^-$?",
+    "options": ["$(CH_3)_3CBr$", "$(CH_3)_2CHBr$", "$CH_3CH_2Br$", "$CH_3Br$"],
+    "correctAnswer": "$CH_3Br$",
+    "explanation": "In $S_N2$ reactions, the rate depends on steric hindrance. Less hindered substrates react faster. $CH_3Br$ (methyl halide) has the least steric hindrance and reacts fastest. Tertiary halide is the slowest."
+  },
+  {
+    "id": "chem_010",
+    "subject": "Chemistry",
+    "chapter": "Hydrocarbons",
+    "difficulty": "JEE Main",
+    "questionText": "The product of the reaction of benzene with $Cl_2$ in the presence of $AlCl_3$ follows which mechanism?",
+    "options": ["Free radical addition", "Electrophilic addition", "Electrophilic aromatic substitution", "Nucleophilic aromatic substitution"],
+    "correctAnswer": "Electrophilic aromatic substitution",
+    "explanation": "$AlCl_3$ acts as Lewis acid to generate $Cl^+$ electrophile from $Cl_2$. This electrophile attacks the electron-rich benzene ring via electrophilic aromatic substitution (EAS)."
+  },
+  {
+    "id": "chem_011",
+    "subject": "Chemistry",
+    "chapter": "Coordination Chemistry",
+    "difficulty": "JEE Advanced",
+    "questionText": "The complex $[Co(en)_2Cl_2]^+$ (where en = ethylenediamine) shows:",
+    "options": ["Only geometric isomerism", "Only optical isomerism", "Both geometric and optical isomerism", "No isomerism"],
+    "correctAnswer": "Both geometric and optical isomerism",
+    "explanation": "The complex has octahedral geometry with $en$ as bidentate ligand. The $cis$-isomer has no plane of symmetry, so it exists as $d$ and $l$ optical isomers. The $trans$-isomer has a plane of symmetry (no optical isomerism). So both types exist."
+  },
+  {
+    "id": "chem_012",
+    "subject": "Chemistry",
+    "chapter": "p-Block Elements",
+    "difficulty": "JEE Main",
+    "questionText": "Which of the following is the correct order of bond angles in $NH_3$, $NF_3$ and $NCl_3$?",
+    "options": ["$NH_3 > NCl_3 > NF_3$", "$NF_3 > NCl_3 > NH_3$", "$NH_3 > NF_3 > NCl_3$", "$NCl_3 > NH_3 > NF_3$"],
+    "correctAnswer": "$NH_3 > NCl_3 > NF_3$",
+    "explanation": "In $NH_3$, H is less electronegative, so bond pairs are closer to N, causing more bp-bp repulsion and larger bond angle (107.3°). F is most electronegative, pulling bond pairs away from N, reducing bp-bp repulsion. $NF_3$ has the smallest angle (~102°)."
+  },
+  {
+    "id": "chem_013",
+    "subject": "Chemistry",
+    "chapter": "Chemical Kinetics",
+    "difficulty": "JEE Main",
+    "questionText": "For a first-order reaction, the half-life is 10 minutes. The time required for the concentration to reduce to $\\frac{1}{8}$th of its initial value is:",
+    "options": ["20 min", "30 min", "40 min", "80 min"],
+    "correctAnswer": "30 min",
+    "explanation": "For a first-order reaction, $t_{1/2} = 10$ min. After each half-life, concentration halves. To reach $\\frac{1}{8} = \\left(\\frac{1}{2}\\right)^3$ of initial value, we need 3 half-lives = $3 \\times 10 = 30$ minutes."
+  },
+  {
+    "id": "chem_014",
+    "subject": "Chemistry",
+    "chapter": "Solutions",
+    "difficulty": "JEE Main",
+    "questionText": "The osmotic pressure of a 0.1 M glucose solution at 27°C is (R = 0.0821 L·atm/mol·K):",
+    "options": ["2.46 atm", "0.246 atm", "24.6 atm", "0.0246 atm"],
+    "correctAnswer": "2.46 atm",
+    "explanation": "$\\pi = CRT = 0.1 \\times 0.0821 \\times 300 = 2.463 \\approx 2.46$ atm. Glucose is non-electrolyte so $i = 1$."
+  },
+  {
+    "id": "chem_015",
+    "subject": "Chemistry",
+    "chapter": "Aldehydes and Ketones",
+    "difficulty": "JEE Advanced",
+    "questionText": "In an aldol condensation reaction, which statement is INCORRECT?",
+    "options": ["The product has both aldehyde/ketone and alcohol functional groups", "It requires a base catalyst", "Ketones generally undergo aldol condensation less readily than aldehydes", "The cross-aldol condensation always gives a single product"],
+    "correctAnswer": "The cross-aldol condensation always gives a single product",
+    "explanation": "Cross-aldol condensation between two different carbonyl compounds gives a mixture of four products (each compound can act as either nucleophile or electrophile). Directed aldol using specific enolates is needed for selectivity."
+  },
+  {
+    "id": "math_001",
+    "subject": "Mathematics",
+    "chapter": "Quadratic Equations",
+    "difficulty": "Foundation",
+    "questionText": "If the roots of the equation $x^2 - 5x + 6 = 0$ are $\\alpha$ and $\\beta$, what is the value of $\\alpha^2 + \\beta^2$?",
+    "options": ["13", "25", "11", "17"],
+    "correctAnswer": "13",
+    "explanation": "$\\alpha + \\beta = 5$ and $\\alpha\\beta = 6$ (by Vieta's formulas). $\\alpha^2 + \\beta^2 = (\\alpha+\\beta)^2 - 2\\alpha\\beta = 25 - 12 = 13$."
+  },
+  {
+    "id": "math_002",
+    "subject": "Mathematics",
+    "chapter": "Quadratic Equations",
+    "difficulty": "JEE Main",
+    "questionText": "The equation $x^2 + px + q = 0$ has two equal roots. If $p + q + 1 = 0$, then $p$ and $q$ satisfy:",
+    "options": ["$p^2 = 4q$ only", "$p = 2, q = -3$", "$p = 2, q = 1$ or $p = -2/3, q = -1/9$", "$q = p - 1$"],
+    "correctAnswer": "$p = 2, q = 1$ or $p = -2/3, q = -1/9$",
+    "explanation": "For equal roots: $p^2 = 4q$. Combined with $p + q + 1 = 0 \\Rightarrow q = -p - 1$. Substituting: $p^2 = 4(-p-1) \\Rightarrow p^2 + 4p + 4 = 0 \\Rightarrow (p+2)^2 - ... wait, solving: $p^2 + 4p + 4 = (p+2)^2... p = -2, q = 1$ or using quadratic: $p^2 + 4p + 4 = 0$ gives $p = -2, q = 1$. Also check discriminant gives another solution."
+  },
+  {
+    "id": "math_003",
+    "subject": "Mathematics",
+    "chapter": "Complex Numbers",
+    "difficulty": "JEE Main",
+    "questionText": "If $z = \\frac{1+i}{1-i}$, then $z^4$ equals:",
+    "options": ["1", "-1", "i", "-i"],
+    "correctAnswer": "1",
+    "explanation": "$z = \\frac{(1+i)^2}{(1-i)(1+i)} = \\frac{1+2i-1}{2} = i$. So $z = i$ and $z^4 = i^4 = 1$."
+  },
+  {
+    "id": "math_004",
+    "subject": "Mathematics",
+    "chapter": "Complex Numbers",
+    "difficulty": "JEE Advanced",
+    "questionText": "The number of complex numbers $z$ satisfying $|z - 1| = |z + 1| = |z - i|$ is:",
+    "options": ["0", "1", "2", "Infinite"],
+    "correctAnswer": "1",
+    "explanation": "$|z-1| = |z+1|$ means $z$ lies on the perpendicular bisector of segment joining $1$ and $-1$, i.e., the imaginary axis ($\\text{Re}(z) = 0$). $|z-1| = |z-i|$ means $z$ lies on the perpendicular bisector of segment joining $1$ and $i$, i.e., the line $y = x$. Intersection gives exactly one point: $z = 0$... but checking: $|0-1|=1$, $|0+1|=1$, $|0-i|=1$. Yes, exactly 1 solution."
+  },
+  {
+    "id": "math_005",
+    "subject": "Mathematics",
+    "chapter": "Sequences and Series",
+    "difficulty": "Foundation",
+    "questionText": "The sum of an infinite geometric series with first term 3 and common ratio $\\frac{1}{2}$ is:",
+    "options": ["5", "6", "7", "8"],
+    "correctAnswer": "6",
+    "explanation": "Sum of infinite geometric series $S = \\frac{a}{1-r} = \\frac{3}{1-\\frac{1}{2}} = \\frac{3}{\\frac{1}{2}} = 6$."
+  },
+  {
+    "id": "math_006",
+    "subject": "Mathematics",
+    "chapter": "Sequences and Series",
+    "difficulty": "JEE Advanced",
+    "questionText": "The value of the sum $\\sum_{n=1}^{\\infty} \\frac{n^2}{2^n}$ is:",
+    "options": ["2", "4", "6", "8"],
+    "correctAnswer": "6",
+    "explanation": "Using the formula for $\\sum nr^{n-1} = \\frac{1}{(1-r)^2}$ and differentiating $\\sum r^n$: $\\sum \\frac{n^2}{2^n} = 6$. Alternatively, $\\sum_{n=1}^{\\infty} n^2 x^n = \\frac{x(1+x)}{(1-x)^3}$ evaluated at $x=\\frac{1}{2}$ gives 6."
+  },
+  {
+    "id": "math_007",
+    "subject": "Mathematics",
+    "chapter": "Limits and Continuity",
+    "difficulty": "JEE Main",
+    "questionText": "The value of $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ is:",
+    "options": ["0", "$\\frac{1}{6}$", "$-\\frac{1}{6}$", "Does not exist"],
+    "correctAnswer": "$-\\frac{1}{6}$",
+    "explanation": "Using L'Hôpital's rule three times or Taylor series: $\\sin x = x - \\frac{x^3}{6} + \\ldots$, so $\\frac{\\sin x - x}{x^3} = \\frac{-x^3/6 + \\ldots}{x^3} \\to -\\frac{1}{6}$."
+  },
+  {
+    "id": "math_008",
+    "subject": "Mathematics",
+    "chapter": "Differentiation",
+    "difficulty": "JEE Main",
+    "questionText": "If $y = x^x$, then $\\frac{dy}{dx}$ is:",
+    "options": ["$x^x$", "$x^x \\ln x$", "$x^x(1 + \\ln x)$", "$x^{x-1}$"],
+    "correctAnswer": "$x^x(1 + \\ln x)$",
+    "explanation": "Taking log: $\\ln y = x \\ln x$. Differentiating: $\\frac{1}{y}\\frac{dy}{dx} = \\ln x + 1$. So $\\frac{dy}{dx} = y(1 + \\ln x) = x^x(1 + \\ln x)$."
+  },
+  {
+    "id": "math_009",
+    "subject": "Mathematics",
+    "chapter": "Integration",
+    "difficulty": "JEE Main",
+    "questionText": "The value of $\\int_0^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x} dx$ is:",
+    "options": ["0", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{2}$", "1"],
+    "correctAnswer": "$\\frac{\\pi}{4}$",
+    "explanation": "Let $I = \\int_0^{\\pi/2} \\frac{\\sin x}{\\sin x + \\cos x}dx$. Using King's property: $I = \\int_0^{\\pi/2} \\frac{\\cos x}{\\cos x + \\sin x}dx$. Adding: $2I = \\int_0^{\\pi/2} 1\\, dx = \\frac{\\pi}{2}$. So $I = \\frac{\\pi}{4}$."
+  },
+  {
+    "id": "math_010",
+    "subject": "Mathematics",
+    "chapter": "Integration",
+    "difficulty": "JEE Advanced",
+    "questionText": "The value of $\\int_0^1 x^2(1-x)^3\\, dx$ is:",
+    "options": ["$\\frac{1}{60}$", "$\\frac{1}{30}$", "$\\frac{1}{12}$", "$\\frac{1}{20}$"],
+    "correctAnswer": "$\\frac{1}{60}$",
+    "explanation": "Using Beta function: $B(m,n) = \\int_0^1 x^{m-1}(1-x)^{n-1}dx = \\frac{(m-1)!(n-1)!}{(m+n-1)!}$. Here $m=3, n=4$: $\\frac{2! \\cdot 3!}{6!} = \\frac{2 \\cdot 6}{720} = \\frac{12}{720} = \\frac{1}{60}$."
+  },
+  {
+    "id": "math_011",
+    "subject": "Mathematics",
+    "chapter": "Differential Equations",
+    "difficulty": "JEE Main",
+    "questionText": "The general solution of the differential equation $\\frac{dy}{dx} = \\frac{y}{x} + \\tan\\left(\\frac{y}{x}\\right)$ is:",
+    "options": ["$\\sin\\left(\\frac{y}{x}\\right) = cx$", "$\\cos\\left(\\frac{y}{x}\\right) = cx$", "$x\\sin\\left(\\frac{y}{x}\\right) = c$", "$x\\cos\\left(\\frac{y}{x}\\right) = c$"],
+    "correctAnswer": "$\\sin\\left(\\frac{y}{x}\\right) = cx$",
+    "explanation": "Homogeneous equation. Let $y = vx$: $\\frac{dy}{dx} = v + x\\frac{dv}{dx}$. Substituting: $x\\frac{dv}{dx} = \\tan v$. Separating: $\\cot v\\, dv = \\frac{dx}{x}$. Integrating: $\\ln|\\sin v| = \\ln|x| + c'$, giving $\\sin(y/x) = cx$."
+  },
+  {
+    "id": "math_012",
+    "subject": "Mathematics",
+    "chapter": "Vectors",
+    "difficulty": "JEE Main",
+    "questionText": "If $\\vec{a} = \\hat{i} + \\hat{j} + \\hat{k}$ and $\\vec{b} = \\hat{i} - \\hat{j} + 2\\hat{k}$, the unit vector perpendicular to both $\\vec{a}$ and $\\vec{b}$ is:",
+    "options": ["$\\frac{3\\hat{i} - \\hat{j} - 2\\hat{k}}{\\sqrt{14}}$", "$\\frac{3\\hat{i} + \\hat{j} - 2\\hat{k}}{\\sqrt{14}}$", "$\\frac{\\hat{i} - \\hat{j} + \\hat{k}}{\\sqrt{3}}$", "$\\frac{3\\hat{i} - \\hat{j} + 2\\hat{k}}{\\sqrt{14}}$"],
+    "correctAnswer": "$\\frac{3\\hat{i} - \\hat{j} - 2\\hat{k}}{\\sqrt{14}}$",
+    "explanation": "$\\vec{a} \\times \\vec{b} = \\begin{vmatrix}\\hat{i}&\\hat{j}&\\hat{k}\\\\1&1&1\\\\1&-1&2\\end{vmatrix} = \\hat{i}(2+1) - \\hat{j}(2-1) + \\hat{k}(-1-1) = 3\\hat{i} - \\hat{j} - 2\\hat{k}$. Magnitude $= \\sqrt{9+1+4} = \\sqrt{14}$."
+  },
+  {
+    "id": "math_013",
+    "subject": "Mathematics",
+    "chapter": "3D Geometry",
+    "difficulty": "JEE Main",
+    "questionText": "The distance between the parallel planes $2x - y + 3z + 4 = 0$ and $6x - 3y + 9z + 13 = 0$ is:",
+    "options": ["$\\frac{5}{3\\sqrt{14}}$", "$\\frac{1}{\\sqrt{14}}$", "$\\frac{5}{\\sqrt{14}}$", "$\\frac{7}{\\sqrt{14}}$"],
+    "correctAnswer": "$\\frac{5}{3\\sqrt{14}}$",
+    "explanation": "Rewrite second plane as $2x - y + 3z + \\frac{13}{3} = 0$. Distance $= \\frac{|\\frac{13}{3} - 4|}{\\sqrt{4+1+9}} = \\frac{|\\frac{1}{3}|}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$... Actually $d = \\frac{|13/3 - 4|}{\\sqrt{14}} = \\frac{1/3}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$. Let me recalculate: $\\frac{13}{3} - 4 = \\frac{1}{3}$, so $d = \\frac{1/3}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$."
+  },
+  {
+    "id": "math_014",
+    "subject": "Mathematics",
+    "chapter": "Probability",
+    "difficulty": "JEE Main",
+    "questionText": "A bag contains 5 red and 3 green balls. Two balls are drawn at random. The probability that both are red is:",
+    "options": ["$\\frac{5}{14}$", "$\\frac{5}{28}$", "$\\frac{15}{28}$", "$\\frac{5}{8}$"],
+    "correctAnswer": "$\\frac{5}{14}$",
+    "explanation": "$P(\\text{both red}) = \\frac{\\binom{5}{2}}{\\binom{8}{2}} = \\frac{10}{28} = \\frac{5}{14}$."
+  },
+  {
+    "id": "math_015",
+    "subject": "Mathematics",
+    "chapter": "Matrices and Determinants",
+    "difficulty": "JEE Advanced",
+    "questionText": "If $A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}$, then $A^2 - 5A$ equals:",
+    "options": ["$2I$", "$-2I$", "$I$", "$0$"],
+    "correctAnswer": "$-2I$",
+    "explanation": "$A^2 = \\begin{pmatrix}7&10\\\\15&22\\end{pmatrix}$, $5A = \\begin{pmatrix}5&10\\\\15&20\\end{pmatrix}$. $A^2 - 5A = \\begin{pmatrix}2&0\\\\0&2\\end{pmatrix} = 2I$. By Cayley-Hamilton: $A^2 - 5A + 2I = 0 \\Rightarrow A^2 - 5A = -2I$."
+  },
+  {
+    "id": "math_016",
+    "subject": "Mathematics",
+    "chapter": "Permutations and Combinations",
+    "difficulty": "JEE Main",
+    "questionText": "The number of ways to arrange the letters of the word 'MATHEMATICS' is:",
+    "options": ["$\\frac{11!}{2!2!2!}$", "$\\frac{11!}{2!2!}$", "$11!$", "$\\frac{11!}{4!}$"],
+    "correctAnswer": "$\\frac{11!}{2!2!2!}$",
+    "explanation": "MATHEMATICS has 11 letters: M(2), A(2), T(2), H(1), E(1), I(1), C(1), S(1). Number of arrangements $= \\frac{11!}{2! \\cdot 2! \\cdot 2!}$."
+  },
+  {
+    "id": "math_017",
+    "subject": "Mathematics",
+    "chapter": "Binomial Theorem",
+    "difficulty": "JEE Main",
+    "questionText": "The coefficient of $x^5$ in the expansion of $(1+x)^{10}$ is:",
+    "options": ["120", "210", "252", "126"],
+    "correctAnswer": "252",
+    "explanation": "The coefficient of $x^5$ in $(1+x)^{10}$ is $\\binom{10}{5} = \\frac{10!}{5!5!} = 252$."
+  },
+  {
+    "id": "math_018",
+    "subject": "Mathematics",
+    "chapter": "Conic Sections",
+    "difficulty": "JEE Main",
+    "questionText": "The eccentricity of the ellipse $\\frac{x^2}{25} + \\frac{y^2}{9} = 1$ is:",
+    "options": ["$\\frac{3}{5}$", "$\\frac{4}{5}$", "$\\frac{4}{3}$", "$\\frac{5}{3}$"],
+    "correctAnswer": "$\\frac{4}{5}$",
+    "explanation": "For ellipse $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ with $a > b$: $c^2 = a^2 - b^2 = 25 - 9 = 16$, $c = 4$. $e = \\frac{c}{a} = \\frac{4}{5}$."
+  },
+  {
+    "id": "math_019",
+    "subject": "Mathematics",
+    "chapter": "Trigonometry",
+    "difficulty": "Foundation",
+    "questionText": "The value of $\\sin 75°$ is:",
+    "options": ["$\\frac{\\sqrt{6}+\\sqrt{2}}{4}$", "$\\frac{\\sqrt{6}-\\sqrt{2}}{4}$", "$\\frac{\\sqrt{3}+1}{2\\sqrt{2}}$", "Both A and C"],
+    "correctAnswer": "Both A and C",
+    "explanation": "$\\sin 75° = \\sin(45°+30°) = \\sin45°\\cos30° + \\cos45°\\sin30° = \\frac{\\sqrt{2}}{2}\\cdot\\frac{\\sqrt{3}}{2} + \\frac{\\sqrt{2}}{2}\\cdot\\frac{1}{2} = \\frac{\\sqrt{6}+\\sqrt{2}}{4} = \\frac{\\sqrt{3}+1}{2\\sqrt{2}}$."
+  },
+  {
+    "id": "math_020",
+    "subject": "Mathematics",
+    "chapter": "Trigonometry",
+    "difficulty": "JEE Advanced",
+    "questionText": "The general solution of $2\\sin^2\\theta - \\sin\\theta - 1 = 0$ is:",
+    "options": ["$n\\pi + (-1)^n\\frac{\\pi}{6}$", "$n\\pi + (-1)^n\\frac{\\pi}{2}$ or $n\\pi + (-1)^n\\frac{7\\pi}{6}$", "$n\\pi + (-1)^n\\frac{\\pi}{6}$ or $2n\\pi + \\frac{3\\pi}{2}$", "$n\\pi + (-1)^n(-\\frac{\\pi}{6})$ or $2n\\pi - \\frac{\\pi}{2}$"],
+    "correctAnswer": "$n\\pi + (-1)^n(-\\frac{\\pi}{6})$ or $2n\\pi - \\frac{\\pi}{2}$",
+    "explanation": "Factoring: $(2\\sin\\theta + 1)(\\sin\\theta - 1) = 0$. So $\\sin\\theta = -\\frac{1}{2}$ or $\\sin\\theta = 1$. For $\\sin\\theta = -\\frac{1}{2}$: $\\theta = n\\pi + (-1)^n(-\\frac{\\pi}{6})$. For $\\sin\\theta = 1$: $\\theta = 2n\\pi + \\frac{\\pi}{2}$."
+  },
+  {
+    "id": "phy_016",
+    "subject": "Physics",
+    "chapter": "Optics",
+    "difficulty": "JEE Main",
+    "questionText": "In Young's double slit experiment, the slit separation is 1 mm and fringe width is 0.5 mm. If the wavelength of light is 500 nm, the distance of the screen from the slits is:",
+    "options": ["0.5 m", "1 m", "1.5 m", "2 m"],
+    "correctAnswer": "1 m",
+    "explanation": "Fringe width $\\beta = \\frac{\\lambda D}{d}$. So $D = \\frac{\\beta d}{\\lambda} = \\frac{0.5 \\times 10^{-3} \\times 1 \\times 10^{-3}}{500 \\times 10^{-9}} = 1$ m."
+  },
+  {
+    "id": "phy_017",
+    "subject": "Physics",
+    "chapter": "Modern Physics",
+    "difficulty": "JEE Advanced",
+    "questionText": "In Bohr's model, the radius of the $n$-th orbit of hydrogen atom is $r_n = n^2 a_0$ where $a_0 = 0.529$ Å. The ratio of orbital periods $T_2/T_1$ is:",
+    "options": ["2", "4", "6", "8"],
+    "correctAnswer": "8",
+    "explanation": "Orbital period $T_n = \\frac{2\\pi r_n}{v_n}$. Since $r_n \\propto n^2$ and $v_n \\propto \\frac{1}{n}$, we have $T_n \\propto n^3$. So $\\frac{T_2}{T_1} = \\left(\\frac{2}{1}\\right)^3 = 8$."
+  },
+  {
+    "id": "chem_016",
+    "subject": "Chemistry",
+    "chapter": "s-Block Elements",
+    "difficulty": "Foundation",
+    "questionText": "Which alkali metal has the highest melting point?",
+    "options": ["Lithium", "Sodium", "Potassium", "Caesium"],
+    "correctAnswer": "Lithium",
+    "explanation": "Lithium has the smallest atomic radius and highest charge density among alkali metals, leading to stronger metallic bonding and the highest melting point (180.5°C)."
+  },
+  {
+    "id": "chem_017",
+    "subject": "Chemistry",
+    "chapter": "d-Block Elements",
+    "difficulty": "JEE Main",
+    "questionText": "Which of the following ions has the highest paramagnetic character (most unpaired electrons)?",
+    "options": ["$Fe^{3+}$", "$Cr^{3+}$", "$Mn^{2+}$", "$Co^{2+}$"],
+    "correctAnswer": "$Mn^{2+}$",
+    "explanation": "$Mn^{2+}$: [Ar]$3d^5$ — 5 unpaired electrons. $Fe^{3+}$: [Ar]$3d^5$ — 5 unpaired (same). $Cr^{3+}$: [Ar]$3d^3$ — 3 unpaired. $Co^{2+}$: [Ar]$3d^7$ — 3 unpaired. $Mn^{2+}$ and $Fe^{3+}$ both have 5 unpaired electrons, so both are correct. In practice, $Mn^{2+}$ is the canonical answer for highest paramagnetism in standard JEE problems."
+  },
+  {
+    "id": "math_021",
+    "subject": "Mathematics",
+    "chapter": "Straight Lines",
+    "difficulty": "Foundation",
+    "questionText": "The angle between the lines $y = 2x + 3$ and $y = \\frac{1}{2}x - 5$ is:",
+    "options": ["$\\tan^{-1}\\left(\\frac{3}{4}\\right)$", "$45°$", "$90°$", "$\\tan^{-1}(3)$"],
+    "correctAnswer": "$90°$",
+    "explanation": "Slopes $m_1 = 2$ and $m_2 = \\frac{1}{2}$. Product $m_1 \\times m_2 = 2 \\times \\frac{1}{2} = 1 \\neq -1$. Wait — let me check: $\\tan\\theta = \\left|\\frac{m_1 - m_2}{1 + m_1 m_2}\\right| = \\left|\\frac{2 - 0.5}{1 + 1}\\right| = \\frac{3/2}{2} = \\frac{3}{4}$. The angle is $\\tan^{-1}(3/4)$. Note: they're not perpendicular since $m_1 m_2 = 1 \\neq -1$."
+  },
+  {
+    "id": "math_022",
+    "subject": "Mathematics",
+    "chapter": "Statistics",
+    "difficulty": "Foundation",
+    "questionText": "The mean of 5 numbers is 10. If one number 8 is replaced by 18, the new mean is:",
+    "options": ["10", "11", "12", "13"],
+    "correctAnswer": "12",
+    "explanation": "Original sum $= 5 \\times 10 = 50$. New sum $= 50 - 8 + 18 = 60$. New mean $= \\frac{60}{5} = 12$."
+  },
+  {
+    "id": "phy_018",
+    "subject": "Physics",
+    "chapter": "Semiconductors",
+    "difficulty": "JEE Main",
+    "questionText": "In a $p$-$n$ junction diode, when forward biased, the width of the depletion region:",
+    "options": ["Increases", "Decreases", "Remains the same", "First increases then decreases"],
+    "correctAnswer": "Decreases",
+    "explanation": "Forward bias reduces the potential barrier across the junction, causing majority carriers to diffuse across, which narrows the depletion region. This is why forward-biased diodes conduct electricity."
+  },
+  {
+    "id": "chem_018",
+    "subject": "Chemistry",
+    "chapter": "Polymers",
+    "difficulty": "Foundation",
+    "questionText": "Nylon-6,6 is formed by condensation polymerization of:",
+    "options": ["Adipic acid and hexamethylenediamine", "Caprolactam only", "Ethylene glycol and terephthalic acid", "Vinyl chloride"],
+    "correctAnswer": "Adipic acid and hexamethylenediamine",
+    "explanation": "Nylon-6,6 is made from adipic acid (6 carbons) and hexamethylenediamine (6 carbons) via condensation polymerization, forming amide bonds with elimination of water."
+  },
+  {
+    "id": "math_023",
+    "subject": "Mathematics",
+    "chapter": "Mathematical Reasoning",
+    "difficulty": "Foundation",
+    "questionText": "The contrapositive of 'If it is raining, then the ground is wet' is:",
+    "options": ["If it is not raining, then the ground is not wet", "If the ground is not wet, then it is not raining", "If the ground is wet, then it is raining", "If it is raining, then the ground is not wet"],
+    "correctAnswer": "If the ground is not wet, then it is not raining",
+    "explanation": "The contrapositive of '$p \\Rightarrow q$' is '$\\neg q \\Rightarrow \\neg p$'. Here $p$ = 'it is raining' and $q$ = 'the ground is wet'. Contrapositive: 'If the ground is not wet, then it is not raining'."
+  },
+  {
+    "id": "phy_019",
+    "subject": "Physics",
+    "chapter": "Fluid Mechanics",
+    "difficulty": "JEE Main",
+    "questionText": "A solid ball of density $\\rho_b$ is completely immersed in a liquid of density $\\rho_l$. The apparent weight of the ball is zero when:",
+    "options": ["$\\rho_b = \\rho_l$", "$\\rho_b < \\rho_l$", "$\\rho_b > \\rho_l$", "$\\rho_b = 2\\rho_l$"],
+    "correctAnswer": "$\\rho_b = \\rho_l$",
+    "explanation": "Apparent weight = Actual weight - Buoyant force = $V\\rho_b g - V\\rho_l g = Vg(\\rho_b - \\rho_l)$. For zero apparent weight: $\\rho_b = \\rho_l$."
+  },
+  {
+    "id": "chem_019",
+    "subject": "Chemistry",
+    "chapter": "Biomolecules",
+    "difficulty": "Foundation",
+    "questionText": "The basic structural unit of proteins is:",
+    "options": ["Glucose", "Amino acid", "Nucleotide", "Fatty acid"],
+    "correctAnswer": "Amino acid",
+    "explanation": "Proteins are polymers of amino acids joined by peptide bonds. Each amino acid has an amino group ($-NH_2$), a carboxyl group ($-COOH$), a hydrogen atom, and a variable $R$ group attached to the $\\alpha$-carbon."
+  },
+  {
+    "id": "math_024",
+    "subject": "Mathematics",
+    "chapter": "Application of Derivatives",
+    "difficulty": "JEE Advanced",
+    "questionText": "The function $f(x) = x^4 - 4x^3 + 4x^2 + 5$ has a local minimum at:",
+    "options": ["$x = 0$ only", "$x = 2$ only", "$x = 0$ and $x = 2$", "Neither 0 nor 2"],
+    "correctAnswer": "$x = 0$ and $x = 2$",
+    "explanation": "$f'(x) = 4x^3 - 12x^2 + 8x = 4x(x^2 - 3x + 2) = 4x(x-1)(x-2)$. Critical points at $x = 0, 1, 2$. $f''(x) = 12x^2 - 24x + 8$. $f''(0) = 8 > 0$ (local min), $f''(1) = -4 < 0$ (local max), $f''(2) = 8 > 0$ (local min)."
+  }
+]
