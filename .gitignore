@@ -1,1 +1,14 @@
+# Firebase credentials — never commit real keys
 firebase-config.js
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+
+# Node (if added later)
+node_modules/
+.env
+.env.local

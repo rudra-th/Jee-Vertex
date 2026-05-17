@@ -1062,7 +1062,7 @@ async function saveLeaderboardName() {
   S.leaderboardName = nextName;
   save();
   try {
-    await updateLeaderboardName(nextName);
+    await updateLeaderboardName(nextName, S); // pass stats so Firestore rules pass
     toast('Leaderboard name updated.');
     updateProfilePage();
     if (document.getElementById('pg-leaderboard')?.classList.contains('active')) loadLeaderboard();

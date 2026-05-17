@@ -22,7 +22,7 @@ import { firebaseConfig } from './firebase-config.js';
 
 let auth = null;
 let db = null;
-let currentUser = undefined;
+let currentUser = undefined; // undefined = not yet resolved; null = resolved as logged-out; object = logged-in
 let configured = false;
 const authListeners = [];
 
@@ -48,19 +48,22 @@ export function initFirebase() {
 
 export function onAuthReady(cb) {
   if (!configured) {
+    // Firebase not set up — treat as logged-out immediately
     cb(null);
     return;
   }
-  // If auth has already resolved (user is known), fire immediately so callers
-  // registered after initFirebase() don't miss the event.
+  // If onAuthStateChanged has already fired (currentUser is no longer undefined),
+  // call the callback synchronously so late registrants don't miss the event.
   if (currentUser !== undefined) {
     cb(currentUser);
     return;
   }
+  // Still waiting for Firebase to resolve — queue the callback
   authListeners.push(cb);
 }
 
 export function getCurrentUser() {
+  // Return null for both "not configured" and "not logged in" states
   return currentUser ?? null;
 }
 
@@ -112,17 +115,28 @@ export async function getUserProfile() {
   return snap.exists() ? snap.data() : null;
 }
 
-export async function updateLeaderboardName(displayName) {
+export async function updateLeaderboardName(displayName, stats = {}) {
   if (!db || !currentUser) return;
+  // Must include all stats fields — Firestore rules enforce validStatsShape() on every write
+  const answered = stats.answered || 0;
+  const correct  = stats.correct  || 0;
+  const accuracy = answered ? Math.round((correct / answered) * 100) : 0;
   await setDoc(
     doc(db, 'users', currentUser.uid),
     {
-      uid: currentUser.uid,
-      displayName: cleanDisplayName(displayName || currentUser.displayName),
-      photoURL: currentUser.photoURL || '',
-      email: currentUser.email || '',
-      provider: 'google.com',
-      updatedAt: serverTimestamp(),
+      uid:               currentUser.uid,
+      displayName:       cleanDisplayName(displayName || currentUser.displayName),
+      photoURL:          currentUser.photoURL || '',
+      email:             currentUser.email || '',
+      provider:          'google.com',
+      totalSolved:       stats.totalSolved ?? answered,
+      level:             stats.level       ?? 1,
+      xp:                stats.xp          ?? 0,
+      bestStreak:        stats.bestStreak  ?? 0,
+      accuracy,
+      answered,
+      correct,
+      updatedAt:         serverTimestamp(),
     },
     { merge: true },
   );
