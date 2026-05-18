@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   signOut,
   onAuthStateChanged,
+  deleteUser,
 } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js';
 import {
   getFirestore,
@@ -17,6 +18,7 @@ import {
   limit,
   getDocs,
   getDoc,
+  deleteDoc,
 } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 import { firebaseConfig } from './firebase-config.js';
 
@@ -142,7 +144,7 @@ export async function updateLeaderboardName(displayName, stats = {}) {
   );
 }
 
-export async function fetchLeaderboard(field, topN = 50) {
+export async function fetchLeaderboard(field, topN = 100) {
   if (!db) return [];
   const q = query(collection(db, 'users'), orderBy(field, 'desc'), limit(topN));
   const snap = await getDocs(q);
@@ -151,6 +153,30 @@ export async function fetchLeaderboard(field, topN = 50) {
     id: d.id,
     ...d.data(),
   }));
+}
+
+export async function wipeFirestoreData() {
+  if (!db || !currentUser) return;
+  try {
+    await deleteDoc(doc(db, 'users', currentUser.uid));
+    return true;
+  } catch (e) {
+    console.error('[Vertex] Wipe failed:', e);
+    return false;
+  }
+}
+
+export async function deleteUserAccount() {
+  if (!db || !currentUser) return;
+  const uid = currentUser.uid;
+  try {
+    await deleteDoc(doc(db, 'users', uid));
+    await deleteUser(currentUser);
+    return true;
+  } catch (e) {
+    console.error('[Vertex] Account deletion failed:', e);
+    throw e;
+  }
 }
 
 function cleanDisplayName(name) {

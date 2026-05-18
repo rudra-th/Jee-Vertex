@@ -7,20 +7,23 @@
 import { S, allQ, loadQ, initFirebase, onAuthReady, integrityFailed, loadCloudProfile, syncCloud } from './js/store.js';
 import {
   reMath, closeLvl, toast,
-  updateNav, updateHome, updateStatsPage, renderHistory, clearHistory,
+  updateNav, updateHome, updateStatsPage, renderHistory, clearHistory, resetAllProgress,
+  handleAvatarError, updateSyncReminders, toggleProfileMenu,
+  toggleTheme, applyTheme, toggleBookmark, switchStatsTab, updateRankFromMarks,
 } from './js/ui.js';
 import { navTo, toggleMobileNav, closeMobileNav, onQuizKeydown } from './js/router.js';
 import {
-  populateChapters, updateCustomPreview,
-  startPractice, startCustom,
+  populateChapters, updateCustomPreview, updateMockPreview,
+  startPractice, startCustom, startMock, setMockExam,
   selDiff, togSub, allSubs, noneSubs,
   adjQ, setQN, selTMode, selPQP, onPQI, selTP, onTI,
   pickOpt, nextQ, skipQ, endQuiz, reviewAnswers,
   switchPracSub, selAllCh, clrAllCh,
+  startBookmarkedPractice, startWrongPractice, practiceChapter, startQuestionSet, jumpReview,
 } from './js/quiz.js';
 import { startRF, rfPick } from './js/rapid.js';
-import { switchLbTab } from './js/leaderboard.js';
-import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName } from './js/profile.js';
+import { switchLbTab, toggleLbExpand } from './js/leaderboard.js';
+import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName, deleteAccount } from './js/profile.js';
 
 // ═══ INIT ═══
 document.addEventListener('DOMContentLoaded', async () => {
@@ -28,6 +31,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   onAuthReady(async () => {
     await loadCloudProfile();
     updateProfilePage();
+    updateSyncReminders();
     syncCloud();
   });
   await loadQ();
@@ -39,13 +43,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     toast('❌ questions.json not found — place it in the same folder.');
   }
   updateNav();
+  applyTheme();
   updateHome();
   renderHistory();
   populateChapters();
   updateStatsPage();
+  updateSyncReminders();
   reMath();
   bindGlobals();
   updateCustomPreview();
+  updateMockPreview();
   document.addEventListener('keydown', onQuizKeydown);
 });
 
@@ -58,9 +65,12 @@ function bindGlobals() {
     closeMobileNav,
     closeLvl,
     clearHistory,
+    resetAllProgress,
     startRF,
     startPractice,
     startCustom,
+    startMock,
+    setMockExam,
     selDiff,
     togSub,
     allSubs,
@@ -82,8 +92,21 @@ function bindGlobals() {
     selAllCh,
     clrAllCh,
     switchLbTab,
+    toggleLbExpand,
+    toggleProfileMenu,
     loginGoogle,
     logoutGoogle,
     saveLeaderboardName,
+    deleteAccount,
+    handleAvatarError,
+    toggleTheme,
+    toggleBookmark,
+    switchStatsTab,
+    updateRankFromMarks,
+    startBookmarkedPractice,
+    startWrongPractice,
+    practiceChapter,
+    startQuestionSet,
+    jumpReview,
   });
 }

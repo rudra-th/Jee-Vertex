@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════
 // ROUTER.JS — Navigation & keyboard
 // ═══════════════════════════════════════
-import { reMath } from './ui.js';
+import { reMath, updateStatsPage } from './ui.js';
 import { loadLeaderboard } from './leaderboard.js';
 import { updateProfilePage } from './profile.js';
 
@@ -22,6 +22,7 @@ export function navTo(id) {
     'rapid-results': 'rapid',
     'practice-setup': 'practice',
     'custom-setup': 'custom',
+    'mock-setup': 'custom',
     quiz: 'quiz',
     results: 'results',
     stats: 'stats',
@@ -37,6 +38,7 @@ export function navTo(id) {
     if (bn) bn.classList.add('active');
   }
   if (id === 'leaderboard') loadLeaderboard();
+  if (id === 'stats') updateStatsPage();
   if (id === 'profile') updateProfilePage();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   reMath();

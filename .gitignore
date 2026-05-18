@@ -12,3 +12,4 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+filtered_dataset.csv

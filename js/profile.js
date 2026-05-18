@@ -2,21 +2,15 @@
 // PROFILE.JS — Auth UI & profile page
 // ═══════════════════════════════════════
 import { S, save, loadCloudProfile, syncCloud } from './store.js';
-import { setText, toast, updateStatsPage } from './ui.js';
+import { setText, toast, updateStatsPage, avatarUrl, updateSyncReminders } from './ui.js';
 import {
   getCurrentUser,
   signInWithGoogle,
   signOutUser,
   updateLeaderboardName,
+  deleteUserAccount,
 } from '../firebase.js';
 import { loadLeaderboard } from './leaderboard.js';
-
-function avatarUrl(u) {
-  return (
-    u.photoURL ||
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(u.displayName || 'V')}&background=5b6fff&color=fff&size=128`
-  );
-}
 
 function cleanLeaderboardName(name) {
   return String(name || '').trim().replace(/\s+/g, ' ').slice(0, 32);
@@ -42,24 +36,23 @@ export function updateProfilePage() {
   const name = document.getElementById('profileName');
   const nameInput = document.getElementById('profileNameInput');
   const email = document.getElementById('profileEmail');
-  if (img) img.src = user.photoURL || avatarUrl({ displayName });
+
+  const finalAvatar = avatarUrl({ photoURL: user.photoURL, displayName });
+  if (img) img.src = finalAvatar;
   if (name) name.textContent = displayName;
   if (nameInput) nameInput.value = displayName;
   if (email) email.textContent = user.email || '';
+  
   const navAv = document.getElementById('navAvatar');
   if (navAv) {
-    if (user.photoURL) {
-      navAv.src = user.photoURL;
-      navAv.style.display = 'block';
-    } else {
-      navAv.style.display = 'none';
-    }
+    navAv.src = finalAvatar;
+    navAv.style.display = 'block';
   }
   const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
   setText('profileLevel', S.level);
   setText('profileXP', S.xp);
   setText('profileSolved', S.totalSolved);
-  setText('profileStreak', S.bestStreak);
+  setText('profileStreak', S.dailyStreak || 0);
   setText('profileAcc', acc + '%');
   updateStatsPage();
 }
@@ -71,6 +64,7 @@ export async function loginGoogle() {
     toast('Signed in - your progress will sync to the cloud.');
     syncCloud();
     updateProfilePage();
+    updateSyncReminders();
   } catch (e) {
     if (e?.code !== 'auth/popup-closed-by-user') toast('Sign-in failed. Check Firebase Auth setup.');
   }
@@ -81,8 +75,32 @@ export async function logoutGoogle() {
     await signOutUser();
     toast('Signed out.');
     updateProfilePage();
+    updateSyncReminders();
   } catch {
     toast('Could not sign out.');
+  }
+}
+
+export async function deleteAccount() {
+  const user = getCurrentUser();
+  if (!user) return;
+  if (!confirm('🚨 CRITICAL: This will permanently delete your account and all cloud data. This cannot be undone.\n\nAre you sure?')) return;
+  try {
+    await deleteUserAccount();
+    toast('Account deleted.');
+    S.streak = 0; S.dailyStreak = 0; S.lastStudyDate = ''; S.bestStreak = 0; S.level = 1; S.xp = 0;
+    S.answered = 0; S.correct = 0; S.totalSolved = 0;
+    S.leaderboardName = '';
+    S.sessions = []; S.subjStats = {}; S.chapterStats = {}; S.bookmarks = []; S.wrongQuestionIds = []; S.achievements = []; S.spacedRepetition = {};
+    save();
+    updateProfilePage();
+    updateSyncReminders();
+  } catch (e) {
+    if (e?.code === 'auth/requires-recent-login') {
+      toast('Security: Please sign out and sign in again before deleting your account.');
+    } else {
+      toast('Failed to delete account.');
+    }
   }
 }
 

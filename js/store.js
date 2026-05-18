@@ -14,18 +14,35 @@ import {
 const SALT = 'v3x_s4lt_2026';
 
 function computeChecksum(stats) {
-  const payload = `${stats.answered}|${stats.correct}|${stats.bestStreak}|${stats.xp}|${stats.level}|${stats.totalSolved}|${SALT}`;
+  const sessionsStr = JSON.stringify(stats.sessions || []);
+  const subjStatsStr = JSON.stringify(stats.subjStats || {});
+  const chapterStatsStr = JSON.stringify(stats.chapterStats || {});
+  const bookmarksStr = JSON.stringify(stats.bookmarks || []);
+  const wrongStr = JSON.stringify(stats.wrongQuestionIds || []);
+  const achievementsStr = JSON.stringify(stats.achievements || []);
+  const srStr = JSON.stringify(stats.spacedRepetition || {});
+  const payload = `${stats.answered}|${stats.correct}|${stats.bestStreak}|${stats.dailyStreak || 0}|${stats.lastStudyDate || ''}|${stats.xp}|${stats.level}|${stats.totalSolved}|${sessionsStr}|${subjStatsStr}|${chapterStatsStr}|${bookmarksStr}|${wrongStr}|${achievementsStr}|${srStr}|${SALT}`;
+  
   let hash = 0;
   for (let i = 0; i < payload.length; i++) {
-    hash = ((hash << 5) - hash + payload.charCodeAt(i)) | 0;
+    const char = payload.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash |= 0; // Convert to 32bit integer
   }
   return hash.toString(36);
 }
 
 function validateIntegrity(stats) {
   const stored = localStorage.getItem('vx2_checksum');
-  if (!stored) return true; // first run, no checksum yet
+  if (!stored) {
+    saveChecksum(stats); // Generate for future runs
+    return true;
+  }
   return stored === computeChecksum(stats);
+}
+
+export function resetIntegrity() {
+  integrityFailed = false;
 }
 
 function saveChecksum(stats) {
@@ -39,6 +56,8 @@ export let integrityFailed = false;
 function loadState() {
   const raw = {
     streak:      +localStorage.getItem('vx2_streak')      || 0,
+    dailyStreak: +localStorage.getItem('vx2_dailyStreak') || 0,
+    lastStudyDate: localStorage.getItem('vx2_lastStudyDate') || '',
     bestStreak:  +localStorage.getItem('vx2_bestStreak')  || 0,
     level:       +localStorage.getItem('vx2_level')       || 1,
     xp:          +localStorage.getItem('vx2_xp')          || 0,
@@ -48,6 +67,12 @@ function loadState() {
     leaderboardName: localStorage.getItem('vx2_leaderboardName') || '',
     sessions:    JSON.parse(localStorage.getItem('vx2_sessions') || '[]'),
     subjStats:   JSON.parse(localStorage.getItem('vx2_subjStats') || '{}'),
+    chapterStats: JSON.parse(localStorage.getItem('vx2_chapterStats') || '{}'),
+    bookmarks:   JSON.parse(localStorage.getItem('vx2_bookmarks') || '[]'),
+    wrongQuestionIds: JSON.parse(localStorage.getItem('vx2_wrongQuestionIds') || '[]'),
+    achievements: JSON.parse(localStorage.getItem('vx2_achievements') || '[]'),
+    spacedRepetition: JSON.parse(localStorage.getItem('vx2_spacedRepetition') || '{}'),
+    theme: localStorage.getItem('vx2_theme') || 'dark',
   };
 
   if (!validateIntegrity(raw)) {
@@ -55,6 +80,8 @@ function loadState() {
     integrityFailed = true;
     // Reset core numeric stats
     raw.streak = 0;
+    raw.dailyStreak = 0;
+    raw.lastStudyDate = '';
     raw.bestStreak = 0;
     raw.level = 1;
     raw.xp = 0;
@@ -63,12 +90,20 @@ function loadState() {
     raw.totalSolved = 0;
     raw.sessions = [];
     raw.subjStats = {};
+    raw.chapterStats = {};
+    raw.wrongQuestionIds = [];
+    raw.achievements = [];
+    raw.spacedRepetition = {};
     // Persist the reset
-    ['streak', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
+    ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
       localStorage.setItem('vx2_' + k, raw[k]),
     );
     localStorage.setItem('vx2_sessions', '[]');
     localStorage.setItem('vx2_subjStats', '{}');
+    localStorage.setItem('vx2_chapterStats', '{}');
+    localStorage.setItem('vx2_wrongQuestionIds', '[]');
+    localStorage.setItem('vx2_achievements', '[]');
+    localStorage.setItem('vx2_spacedRepetition', '{}');
     saveChecksum(raw);
   }
 
@@ -103,6 +138,11 @@ export function filterQ({ subjects, chapters, diff, count }) {
   return count ? pool.slice(0, count) : pool;
 }
 
+export function questionsByIds(ids) {
+  const wanted = new Set(ids || []);
+  return allQ.filter(q => wanted.has(q.id));
+}
+
 export function shuffle(a) {
   const r = [...a];
   for (let i = r.length-1; i > 0; i--) {
@@ -114,21 +154,36 @@ export function shuffle(a) {
 
 // ── Persistence ──
 export function save() {
-  S.totalSolved = Math.max(S.totalSolved, S.answered);
-  ['streak', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
+  S.totalSolved = S.answered;
+  ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
     localStorage.setItem('vx2_' + k, S[k]),
   );
   localStorage.setItem('vx2_leaderboardName', S.leaderboardName || '');
   localStorage.setItem('vx2_sessions', JSON.stringify(S.sessions));
   localStorage.setItem('vx2_subjStats', JSON.stringify(S.subjStats));
+  localStorage.setItem('vx2_chapterStats', JSON.stringify(S.chapterStats || {}));
+  localStorage.setItem('vx2_bookmarks', JSON.stringify(S.bookmarks || []));
+  localStorage.setItem('vx2_wrongQuestionIds', JSON.stringify(S.wrongQuestionIds || []));
+  localStorage.setItem('vx2_achievements', JSON.stringify(S.achievements || []));
+  localStorage.setItem('vx2_spacedRepetition', JSON.stringify(S.spacedRepetition || {}));
+  localStorage.setItem('vx2_theme', S.theme || 'dark');
   saveChecksum(S);
   syncCloud();
 }
 
 // ── Cloud sync ──
+let syncTimeout = null;
 export function syncCloud() {
   if (!isFirebaseReady() || !getCurrentUser()) return;
-  syncUserStats(S).catch(() => {});
+  
+  if (syncTimeout) clearTimeout(syncTimeout);
+  syncTimeout = setTimeout(async () => {
+    try {
+      await syncUserStats(S);
+    } catch (e) {
+      console.error('[Vertex] Cloud sync failed:', e);
+    }
+  }, 2000); // Debounce for 2 seconds
 }
 
 export async function loadCloudProfile() {

@@ -12,7 +12,7 @@ service cloud.firestore {
         && validIdentity(userId)
         && validStatsShape()
         && validUpdateStep();
-      allow delete: if false;
+      allow delete: if isGoogleOwner(userId);
     }
 
     function isGoogleOwner(userId) {
