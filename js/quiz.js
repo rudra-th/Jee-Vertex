@@ -6,7 +6,7 @@ import {
   toast, flash, reMath, escHtml,
   updateNav, updateHome, updateStatsPage,
   gainXP, updateSubjStat, addSession,
-  updateChapterStat, rememberAnswer,
+  updateChapterStat, rememberAnswer, dateKey,
 } from './ui.js';
 import { navTo } from './router.js';
 
@@ -395,19 +395,44 @@ export function startMock() {
   renderQ();
 }
 
-export function startQuestionSet(idList) {
+export function startQuestionSet(idList, label = 'Saved Practice') {
   const ids = String(idList || '').split(',').filter(Boolean);
   const qs = questionsByIds(ids);
   if (!qs.length) { toast('No saved questions found.'); return; }
-  startQuizFromPool(shuffle(qs), 'practice', 'Saved Practice');
+  startQuizFromPool(shuffle(qs), 'practice', label);
 }
 
 export function startBookmarkedPractice() {
-  startQuestionSet((S.bookmarks || []).join(','));
+  startQuestionSet((S.bookmarks || []).join(','), 'Bookmarked Practice');
 }
 
 export function startWrongPractice() {
-  startQuestionSet((S.wrongQuestionIds || []).join(','));
+  startQuestionSet((S.wrongQuestionIds || []).join(','), 'Wrong Answer Practice');
+}
+
+export function startSRSReview() {
+  const today = dateKey();
+  const dueKeys = Object.keys(S.spacedRepetition || {}).filter(key => {
+    const item = S.spacedRepetition[key];
+    return !item.due || item.due <= today;
+  });
+  
+  if (!dueKeys.length) {
+    toast('No chapters due for review! Great job.');
+    return;
+  }
+
+  const pool = allQ.filter(q => {
+    const key = `${q.subject}::${q.chapter}`;
+    return dueKeys.includes(key);
+  });
+
+  if (!pool.length) {
+    toast('No questions found for due chapters.');
+    return;
+  }
+
+  startQuizFromPool(shuffle(pool).slice(0, 20), 'practice', 'SRS Review');
 }
 
 export function practiceChapter(subject, chapter) {

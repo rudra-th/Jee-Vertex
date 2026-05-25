@@ -7,7 +7,7 @@
 <title>Vertex — JEE Practice Platform</title>
 <link rel="icon" type="image/png" href="favicon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -550,9 +550,10 @@
 
   <div class="stats-tabs">
     <button class="stats-tab on" data-stats-tab="analytics" onclick="switchStatsTab('analytics')">Analytics</button>
-    <button class="stats-tab" data-stats-tab="bookmarks" onclick="switchStatsTab('bookmarks')">Bookmarks <span id="bookmarkCount">0</span></button>
+    <button class="stats-tab" data-stats-tab="bookmarks" onclick="switchStatsTab('bookmarks')">Saved <span id="bookmarkCount" class="tab-badge">0</span></button>
+    <button class="stats-tab" data-stats-tab="review" onclick="switchStatsTab('review')">Review <span id="srsCount" class="tab-badge">0</span></button>
     <button class="stats-tab" data-stats-tab="achievements" onclick="switchStatsTab('achievements')">Achievements</button>
-    <button class="stats-tab" data-stats-tab="rank" onclick="switchStatsTab('rank')">Rank Predictor</button>
+    <button class="stats-tab" data-stats-tab="rank" onclick="switchStatsTab('rank')">Rank</button>
   </div>
 
   <div class="stats-panel on" data-stats-panel="analytics">
@@ -627,12 +628,18 @@
   <div class="stats-panel" data-stats-panel="bookmarks">
     <div class="action-band">
       <div><strong>Saved questions</strong><span>Retry questions you marked during quizzes.</span></div>
-      <button class="btn btn-primary" onclick="startBookmarkedPractice()">Retry Bookmarks</button>
+      <div style="display:flex;gap:.5rem">
+        <button class="btn btn-primary" onclick="startBookmarkedPractice()">Retry All</button>
+        <button class="btn btn-ghost" onclick="clearBookmarks()">Clear All</button>
+      </div>
     </div>
     <div class="weak-list" id="bookmarkRows"></div>
     <div class="action-band">
       <div><strong>Wrong-answer practice</strong><span>Practice your <span id="wrongPracticeCount">0</span> active wrong questions.</span></div>
-      <button class="btn btn-danger" onclick="startWrongPractice()">Practice Wrong Answers</button>
+      <div style="display:flex;gap:.5rem">
+        <button class="btn btn-danger" onclick="startWrongPractice()">Retry All</button>
+        <button class="btn btn-ghost" onclick="clearWrongQueue()">Clear All</button>
+      </div>
     </div>
     <div class="weak-list" id="wrongRows"></div>
   </div>
@@ -657,6 +664,14 @@
       <div class="rank-card"><div class="rank-title">JEE Advanced estimate</div><div class="rank-score" id="rankAdvScore">0 / 360</div><div class="rank-range" id="rankAdvRank">-</div></div>
     </div>
     <p class="rank-note">Estimates use your app accuracy and attempted volume with approximate public marks-vs-rank bands. Real ranks vary by paper difficulty, normalization, category, and year.</p>
+  </div>
+
+  <div class="stats-panel" data-stats-panel="review">
+    <div class="action-band">
+      <div><strong>Due for Review</strong><span>Chapters you haven't practiced in a while. Practice these to keep your memory sharp.</span></div>
+      <button class="btn btn-primary" onclick="startSRSReview()">Review All Due</button>
+    </div>
+    <div class="weak-list" id="srsRows"></div>
   </div>
 
   <!-- MILESTONES -->
@@ -714,130 +729,129 @@
 
 <!-- PROFILE -->
 <div id="pg-profile" class="page">
-<div class="page-inner">
-  <div class="stats-hero" style="border:none;margin-bottom:1rem;padding-top:1rem">
-    <div class="stats-h">Profile & Stats</div>
-    <div class="stats-sub">Manage your account and track your global progress</div>
-  </div>
-  <div id="profileSyncReminder" class="sync-banner-sm"></div>
-
-  <div class="profile-wrap">
-    <div id="profileGuest" class="profile-card profile-card-guest">
-      <div class="profile-guest-icon">👤</div>
-      <h3 class="profile-guest-h">Join the Arena</h3>
-      <p class="profile-guest-p">Sync your progress and appear on the global leaderboard by signing in with Google.</p>
-      <button class="btn-google" onclick="loginGoogle()">
-        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-        Login with Google
-      </button>
-    </div>
-
-    <div id="profileAuthed" class="profile-card" style="display:none">
-      <button class="profile-options-btn" onclick="toggleProfileMenu(event)" aria-label="Account options">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-      </button>
-
-      <div id="profileMenu" class="profile-menu">
-        <button class="profile-menu-item" onclick="navTo('leaderboard')">
-          <span>🏆</span> View Leaderboard
-        </button>
-        <div class="profile-menu-sep"></div>
-        <button class="profile-menu-item" onclick="resetAllProgress()">
-          <span>🗑</span> Reset Progress
-        </button>
-        <button class="profile-menu-item danger" onclick="deleteAccount()">
-          <span>⚠️</span> Delete Account
-        </button>
-        <div class="profile-menu-sep"></div>
-        <button class="profile-menu-item" onclick="logoutGoogle()">
-          <span>🚪</span> Sign Out
-        </button>
-      </div>
-
-      <div class="profile-header">
-        <div class="profile-avatar-wrap">
-          <img id="profileAvatar" class="profile-avatar" alt="Profile" onerror="handleAvatarError(this)"/>
-        </div>
-        <div class="profile-name" id="profileName">-</div>
-        <div class="profile-email" id="profileEmail">-</div>
-      </div>
-
-      <div class="profile-name-edit">
-        <label class="profile-name-label" for="profileNameInput">Leaderboard Name</label>
-        <div class="profile-name-row">
-          <input id="profileNameInput" class="profile-name-input" type="text" maxlength="32" placeholder="Your name on leaderboard"/>
-          <button class="btn btn-primary btn-sm" onclick="saveLeaderboardName()">Save</button>
-        </div>
-      </div>
-
-      <div class="profile-stats-grid">
-        <div class="profile-stat-card">
-          <div class="profile-stat-icon">📊</div>
-          <div class="profile-stat-n" id="profileLevel" style="color:var(--accentL)">1</div>
-          <div class="profile-stat-l">Level</div>
-        </div>
-        <div class="profile-stat-card">
-          <div class="profile-stat-icon">💎</div>
-          <div class="profile-stat-n" id="profileXP" style="color:var(--sky)">0</div>
-          <div class="profile-stat-l">XP</div>
-        </div>
-        <div class="profile-stat-card">
-          <div class="profile-stat-icon">✅</div>
-          <div class="profile-stat-n" id="profileSolved" style="color:var(--gold)">0</div>
-          <div class="profile-stat-l">Solved</div>
-        </div>
-        <div class="profile-stat-card">
-          <div class="profile-stat-icon">🔥</div>
-          <div class="profile-stat-n" id="profileStreak" style="color:var(--rose)">0</div>
-          <div class="profile-stat-l">Streak</div>
-        </div>
-        <div class="profile-stat-card" style="grid-column: 1 / -1; flex-direction: row; justify-content: space-between; padding: 1rem 1.5rem;">
-          <div style="display: flex; align-items: center; gap: 0.75rem;">
-            <span style="font-size: 1.25rem;">🎯</span>
-            <span class="profile-stat-l" style="margin: 0; font-size: 0.75rem;">Overall Accuracy</span>
+<div class="page-inner narrow">
+  
+  <div class="p-wrap-v3">
+    <!-- Floating Identity -->
+    <div id="profileAuthed" style="display:none">
+      <div class="p-id-card">
+        <div class="p-id-top">
+          <div class="p-avatar-main">
+            <img id="profileAvatar" alt="Profile" onerror="handleAvatarError(this)"/>
+            <div class="p-lvl-tag" id="profileLevelBadge">1</div>
           </div>
-          <div class="profile-stat-n" id="profileAcc" style="color:var(--emerald)">0%</div>
+          <div class="p-id-info">
+            <div class="p-name-row">
+              <h2 id="profileName">-</h2>
+              <div class="google-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            </div>
+            <p class="p-rank" id="profileRankTitle">Foundation Novice</p>
+            <p class="p-meta"><span id="profileEmail">-</span> <span class="dot-sep">•</span> <span id="profileJoinedDate">Joined May 2026</span></p>
+          </div>
+        </div>
+
+        <div class="p-lvl-progress">
+          <div class="p-lvl-label">
+            <span id="profileLvlNextTxt">Next: Level 2</span>
+            <span id="p-xp-pct">0%</span>
+          </div>
+          <div class="p-lvl-track"><div class="p-lvl-fill" id="profileLvlBarFill"></div></div>
+        </div>
+
+        <div class="p-stats-row">
+          <div class="p-stat-item">
+            <span class="p-stat-val" id="profileStreak" style="color:var(--rose)">0</span>
+            <span class="p-stat-lbl">Day Streak</span>
+          </div>
+          <div class="p-stat-item">
+            <span class="p-stat-val" id="profileAcc" style="color:var(--emerald)">0%</span>
+            <span class="p-stat-lbl">Accuracy</span>
+          </div>
+          <div class="p-stat-item">
+            <span class="p-stat-val" id="profileXP" style="color:var(--accentL)">0</span>
+            <span class="p-stat-lbl">Total XP</span>
+          </div>
         </div>
       </div>
+
+      <div class="p-section-label">Account Settings</div>
+      <div class="p-settings-card">
+        <div class="p-setting-row">
+          <div class="p-s-info">
+            <div class="p-s-icon">📝</div>
+            <div class="p-s-txt">
+              <label for="profileNameInput">Leaderboard Name</label>
+              <div class="p-name-input-wrap">
+                <input id="profileNameInput" type="text" maxlength="32" placeholder="Public name"/>
+                <button class="btn btn-primary btn-sm" onclick="saveLeaderboardName()">Update</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-sep"></div>
+
+        <div class="p-setting-row">
+          <div class="p-s-info">
+            <div class="p-s-icon">⚙️</div>
+            <div class="p-s-txt">
+              <strong>Auto-remove wrong questions</strong>
+              <p>Clear queue on correct answer</p>
+            </div>
+          </div>
+          <button id="toggleAutoRemove" class="toggle-btn" onclick="toggleAutoRemoveWrong()"><div class="toggle-slider"></div></button>
+        </div>
+
+        <div class="p-sep"></div>
+
+        <div class="p-setting-row">
+          <div class="p-s-info">
+            <div class="p-s-icon">🌓</div>
+            <div class="p-s-txt">
+              <strong>App Theme</strong>
+              <p>Switch dark/light appearance</p>
+            </div>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="toggleTheme()" id="themeLabel">Dark</button>
+        </div>
+      </div>
+
+      <div class="p-section-label">Support & Security</div>
+      <div class="p-settings-card">
+        <button class="p-menu-btn" onclick="copyUID()">
+          <span class="p-s-icon">🆔</span>
+          <span class="p-s-txt"><strong>Copy Support ID</strong><p>Unique identifier for your account</p></span>
+        </button>
+        <div class="p-sep"></div>
+        <button class="p-menu-btn" onclick="resetAllProgress()">
+          <span class="p-s-icon">🗑️</span>
+          <span class="p-s-txt"><strong>Reset Progress</strong><p>Clear all local and cloud stats</p></span>
+        </button>
+        <div class="p-sep"></div>
+        <button class="p-menu-btn danger" onclick="deleteAccount()">
+          <span class="p-s-icon">⚠️</span>
+          <span class="p-s-txt"><strong>Delete Account</strong><p>Permanently wipe account data</p></span>
+        </button>
+      </div>
+
+      <button class="btn btn-ghost btn-lg" style="width:100%; margin-top:2rem; border-radius:30px;" onclick="logoutGoogle()">🚪 Sign Out</button>
     </div>
+
+    <!-- Guest State -->
+    <div id="profileGuest" class="p-guest-hero">
+      <div class="p-guest-icon">👋</div>
+      <h1>Ready to compete?</h1>
+      <p>Sign in to sync your progress across devices and appear on the global leaderboard.</p>
+      <button class="btn-google" style="border-radius:30px; padding: 1rem 2rem;" onclick="loginGoogle()">
+        <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continue with Google
+      </button>
+    </div>
+
   </div>
 
-  <div class="sec-hd" style="margin-top:2.5rem"><h2>Overview</h2><div class="sec-rule"></div></div>
-  <div class="big-stats">
-    <div class="big-stat"><div class="big-val" id="profileStatAnswered" style="color:var(--sky)">0</div><div class="big-lbl">Total Answered</div></div>
-    <div class="big-stat"><div class="big-val" id="profileStatCorrect" style="color:var(--emerald)">0</div><div class="big-lbl">Correct</div></div>
-    <div class="big-stat"><div class="big-val" id="profileStatAcc" style="color:var(--gold)">0%</div><div class="big-lbl">Accuracy</div></div>
-    <div class="big-stat"><div class="big-val" id="profileStatBest" style="color:var(--rose)">0</div><div class="big-lbl">Best Streak</div></div>
-  </div>
-
-  <div class="sec-hd"><h2>By Subject</h2><div class="sec-rule"></div></div>
-  <div class="subj-breakdown">
-    <div class="subj-card">
-      <div class="subj-name" style="color:var(--phy)">? Physics</div>
-      <div class="subj-acc" id="profilePhyAcc" style="color:var(--phy)">-</div>
-      <div class="subj-bar"><div class="subj-bar-fill" id="profilePhyBar" style="width:0%;background:var(--phy)"></div></div>
-      <div class="subj-meta" id="profilePhyMeta">No data yet</div>
-    </div>
-    <div class="subj-card">
-      <div class="subj-name" style="color:var(--chem)">Chemistry</div>
-      <div class="subj-acc" id="profileChemAcc" style="color:var(--chem)">-</div>
-      <div class="subj-bar"><div class="subj-bar-fill" id="profileChemBar" style="width:0%;background:var(--chem)"></div></div>
-      <div class="subj-meta" id="profileChemMeta">No data yet</div>
-    </div>
-    <div class="subj-card">
-      <div class="subj-name" style="color:var(--math)">Mathematics</div>
-      <div class="subj-acc" id="profileMathAcc" style="color:var(--math)">-</div>
-      <div class="subj-bar"><div class="subj-bar-fill" id="profileMathBar" style="width:0%;background:var(--math)"></div></div>
-      <div class="subj-meta" id="profileMathMeta">No data yet</div>
-    </div>
-  </div>
-
-  <div class="sec-hd"><h2>Recent Sessions</h2><div class="sec-rule"></div></div>
-  <div class="hist-wrap" id="profileHistWrap">
-    <div class="hist-head">
-      <span>Mode</span><span>Details</span><span>Score</span><span>Date</span>
-    </div>
-    <div id="profileHistRows"></div>
+</div>
+</div>
   </div>
 </div>
 </div>

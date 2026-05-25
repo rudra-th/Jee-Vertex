@@ -1,7 +1,5 @@
 # Firebase credentials — never commit real keys
 firebase-config.js
-settings.json
-/vscode
 
 # OS junk
 .DS_Store
@@ -14,3 +12,4 @@ Thumbs.db
 node_modules/
 .env
 .env.local
+filtered_dataset.csv

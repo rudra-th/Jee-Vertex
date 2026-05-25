@@ -21,7 +21,7 @@ function computeChecksum(stats) {
   const wrongStr = JSON.stringify(stats.wrongQuestionIds || []);
   const achievementsStr = JSON.stringify(stats.achievements || []);
   const srStr = JSON.stringify(stats.spacedRepetition || {});
-  const payload = `${stats.answered}|${stats.correct}|${stats.bestStreak}|${stats.dailyStreak || 0}|${stats.lastStudyDate || ''}|${stats.xp}|${stats.level}|${stats.totalSolved}|${sessionsStr}|${subjStatsStr}|${chapterStatsStr}|${bookmarksStr}|${wrongStr}|${achievementsStr}|${srStr}|${SALT}`;
+  const payload = `${stats.answered}|${stats.correct}|${stats.bestStreak}|${stats.dailyStreak || 0}|${stats.lastStudyDate || ''}|${stats.xp}|${stats.level}|${stats.totalSolved}|${stats.autoRemoveWrong}|${stats.joinedAt}|${sessionsStr}|${subjStatsStr}|${chapterStatsStr}|${bookmarksStr}|${wrongStr}|${achievementsStr}|${srStr}|${SALT}`;
   
   let hash = 0;
   for (let i = 0; i < payload.length; i++) {
@@ -73,6 +73,8 @@ function loadState() {
     achievements: JSON.parse(localStorage.getItem('vx2_achievements') || '[]'),
     spacedRepetition: JSON.parse(localStorage.getItem('vx2_spacedRepetition') || '{}'),
     theme: localStorage.getItem('vx2_theme') || 'dark',
+    autoRemoveWrong: localStorage.getItem('vx2_autoRemoveWrong') !== 'false',
+    joinedAt: localStorage.getItem('vx2_joinedAt') || new Date().toISOString(),
   };
 
   if (!validateIntegrity(raw)) {
@@ -94,6 +96,8 @@ function loadState() {
     raw.wrongQuestionIds = [];
     raw.achievements = [];
     raw.spacedRepetition = {};
+    raw.autoRemoveWrong = true;
+    raw.joinedAt = new Date().toISOString();
     // Persist the reset
     ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
       localStorage.setItem('vx2_' + k, raw[k]),
@@ -104,6 +108,7 @@ function loadState() {
     localStorage.setItem('vx2_wrongQuestionIds', '[]');
     localStorage.setItem('vx2_achievements', '[]');
     localStorage.setItem('vx2_spacedRepetition', '{}');
+    localStorage.setItem('vx2_autoRemoveWrong', 'true');
     saveChecksum(raw);
   }
 
@@ -167,6 +172,8 @@ export function save() {
   localStorage.setItem('vx2_achievements', JSON.stringify(S.achievements || []));
   localStorage.setItem('vx2_spacedRepetition', JSON.stringify(S.spacedRepetition || {}));
   localStorage.setItem('vx2_theme', S.theme || 'dark');
+  localStorage.setItem('vx2_autoRemoveWrong', S.autoRemoveWrong ?? true);
+  localStorage.setItem('vx2_joinedAt', S.joinedAt || new Date().toISOString());
   saveChecksum(S);
   syncCloud();
 }

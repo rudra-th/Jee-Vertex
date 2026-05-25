@@ -43,18 +43,51 @@ export function updateProfilePage() {
   if (nameInput) nameInput.value = displayName;
   if (email) email.textContent = user.email || '';
   
-  const navAv = document.getElementById('navAvatar');
-  if (navAv) {
-    navAv.src = finalAvatar;
-    navAv.style.display = 'block';
-  }
   const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
-  setText('profileLevel', S.level);
-  setText('profileXP', S.xp);
-  setText('profileSolved', S.totalSolved);
   setText('profileStreak', S.dailyStreak || 0);
+  setText('profileXP', S.xp);
   setText('profileAcc', acc + '%');
+  setText('profileLevelBadge', S.level);
+  setText('profileRankTitle', getRankTitle(S.level));
+  
+  // Joined Date
+  let joined;
+  try {
+    joined = new Date(S.joinedAt || Date.now());
+    if (isNaN(joined.getTime())) joined = new Date();
+  } catch {
+    joined = new Date();
+  }
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  setText('profileJoinedDate', `Member since ${monthNames[joined.getMonth()]} ${joined.getFullYear()}`);
+
+  // Level Progress Bar
+  const currentXP = S.xp % 100;
+  const nextLvl = S.level + 1;
+  const fill = document.getElementById('profileLvlBarFill');
+  if (fill) fill.style.width = currentXP + '%';
+  setText('profileLvlNextTxt', `Next: Level ${nextLvl}`);
+  setText('p-xp-pct', `${currentXP}%`);
+
+  const toggle = document.getElementById('toggleAutoRemove');
+  if (toggle) toggle.classList.toggle('on', S.autoRemoveWrong !== false);
+
+  const themeLabel = document.getElementById('themeLabel');
+  if (themeLabel) themeLabel.textContent = S.theme === 'light' ? 'Light' : 'Dark';
+
   updateStatsPage();
+}
+
+function getRankTitle(lvl) {
+  if (lvl >= 50) return 'Vertex Grandmaster';
+  if (lvl >= 40) return 'Physics Titan';
+  if (lvl >= 30) return 'Quant Architect';
+  if (lvl >= 25) return 'JEE Elite';
+  if (lvl >= 20) return 'Master Practitioner';
+  if (lvl >= 15) return 'Rising Scholar';
+  if (lvl >= 10) return 'Active Aspirant';
+  if (lvl >= 5)  return 'Dedicated Learner';
+  return 'Foundation Novice';
 }
 
 export async function loginGoogle() {
@@ -79,6 +112,13 @@ export async function logoutGoogle() {
   } catch {
     toast('Could not sign out.');
   }
+}
+
+export function copyUID() {
+  const user = getCurrentUser();
+  if (!user) { toast('Sign in to see your ID.'); return; }
+  navigator.clipboard.writeText(user.uid);
+  toast('Support ID copied to clipboard!');
 }
 
 export async function deleteAccount() {

@@ -10,6 +10,7 @@ import {
   updateNav, updateHome, updateStatsPage, renderHistory, clearHistory, resetAllProgress,
   handleAvatarError, updateSyncReminders, toggleProfileMenu,
   toggleTheme, applyTheme, toggleBookmark, switchStatsTab, updateRankFromMarks,
+  removeBookmark, removeWrong, clearBookmarks, clearWrongQueue, toggleAutoRemoveWrong,
 } from './js/ui.js';
 import { navTo, toggleMobileNav, closeMobileNav, onQuizKeydown } from './js/router.js';
 import {
@@ -19,14 +20,15 @@ import {
   adjQ, setQN, selTMode, selPQP, onPQI, selTP, onTI,
   pickOpt, nextQ, skipQ, endQuiz, reviewAnswers,
   switchPracSub, selAllCh, clrAllCh,
-  startBookmarkedPractice, startWrongPractice, practiceChapter, startQuestionSet, jumpReview,
+  startBookmarkedPractice, startWrongPractice, startSRSReview, practiceChapter, startQuestionSet, jumpReview,
 } from './js/quiz.js';
 import { startRF, rfPick } from './js/rapid.js';
 import { switchLbTab, toggleLbExpand } from './js/leaderboard.js';
-import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName, deleteAccount } from './js/profile.js';
+import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName, deleteAccount, copyUID } from './js/profile.js';
 
 // ═══ INIT ═══
 document.addEventListener('DOMContentLoaded', async () => {
+  bindGlobals();
   initFirebase();
   onAuthReady(async () => {
     await loadCloudProfile();
@@ -50,7 +52,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   updateStatsPage();
   updateSyncReminders();
   reMath();
-  bindGlobals();
   updateCustomPreview();
   updateMockPreview();
   document.addEventListener('keydown', onQuizKeydown);
@@ -98,13 +99,20 @@ function bindGlobals() {
     logoutGoogle,
     saveLeaderboardName,
     deleteAccount,
+    copyUID,
     handleAvatarError,
     toggleTheme,
     toggleBookmark,
+    removeBookmark,
+    removeWrong,
+    clearBookmarks,
+    clearWrongQueue,
+    toggleAutoRemoveWrong,
     switchStatsTab,
     updateRankFromMarks,
     startBookmarkedPractice,
     startWrongPractice,
+    startSRSReview,
     practiceChapter,
     startQuestionSet,
     jumpReview,

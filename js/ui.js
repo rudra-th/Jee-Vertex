@@ -79,7 +79,7 @@ export function toast(msg) {
   }
 }
 
-function dateKey(d = new Date()) {
+export function dateKey(d = new Date()) {
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, '0');
   const day = String(d.getDate()).padStart(2, '0');
@@ -184,11 +184,55 @@ function updateSpacedRepetition(q, isCorrect) {
 export function rememberAnswer(q, isCorrect, skipSave = false) {
   if (!q?.id) return;
   const wrong = new Set(S.wrongQuestionIds || []);
-  if (isCorrect) wrong.delete(q.id);
-  else wrong.add(q.id);
+  if (isCorrect) {
+    if (S.autoRemoveWrong !== false) wrong.delete(q.id);
+  } else {
+    wrong.add(q.id);
+  }
   S.wrongQuestionIds = [...wrong];
   if (!skipSave) save();
 }
+
+export function toggleAutoRemoveWrong() {
+  S.autoRemoveWrong = !S.autoRemoveWrong;
+  save();
+  toast(S.autoRemoveWrong ? 'Auto-remove enabled.' : 'Auto-remove disabled.');
+  updateProfilePage();
+}
+
+export function removeBookmark(id) {
+  const set = new Set(S.bookmarks || []);
+  set.delete(id);
+  S.bookmarks = [...set];
+  save();
+  updateBookmarkButtons(id);
+  updateStatsPage();
+}
+
+export function removeWrong(id) {
+  const set = new Set(S.wrongQuestionIds || []);
+  set.delete(id);
+  S.wrongQuestionIds = [...set];
+  save();
+  updateStatsPage();
+}
+
+export function clearBookmarks() {
+  if (!confirm('Remove all bookmarked questions?')) return;
+  S.bookmarks = [];
+  save();
+  updateStatsPage();
+  toast('Bookmarks cleared.');
+}
+
+export function clearWrongQueue() {
+  if (!confirm('Clear your entire wrong-answer queue?')) return;
+  S.wrongQuestionIds = [];
+  save();
+  updateStatsPage();
+  toast('Wrong-answer queue cleared.');
+}
+
 
 export function toggleBookmark(id) {
   if (!id) return;
@@ -399,32 +443,67 @@ function renderDueChapters() {
   const due = Object.values(S.spacedRepetition || {})
     .filter(item => !item.due || item.due <= today)
     .sort((a, b) => String(a.due || '').localeCompare(String(b.due || '')))
-    .slice(0, 8);
+    .slice(0, 5);
   if (!due.length) {
     box.innerHTML = '<div class="empty-mini">No chapters due today.</div>';
     return;
   }
-  box.innerHTML = due.map(item => `<div class="weak-row">
-    <div><div class="weak-title">${escHtml(item.chapter)}</div><div class="weak-meta">${escHtml(item.subject)} · due ${escHtml(item.due || today)} · interval ${item.interval || 0}d</div></div>
-    <button class="btn btn-ghost btn-sm" onclick="practiceChapter('${encodeURIComponent(item.subject)}','${encodeURIComponent(item.chapter)}')">Review</button>
-  </div>`).join('');
+  box.innerHTML = due.map(srsChapterRow).join('');
 }
 
 function renderSavedQuestions() {
   const savedBox = document.getElementById('bookmarkRows');
   const wrongBox = document.getElementById('wrongRows');
+  const srsBox   = document.getElementById('srsRows');
+  const srsCount = document.getElementById('srsCount');
+
   const saved = questionsByIds(S.bookmarks || []);
   const wrong = questionsByIds(S.wrongQuestionIds || []);
+  
+  const today = dateKey();
+  const srsItems = Object.values(S.spacedRepetition || {}).sort((a,b) => a.due.localeCompare(b.due));
+  const dueItems = srsItems.filter(item => item.due <= today);
+
   setText('bookmarkCount', saved.length);
   setText('wrongPracticeCount', wrong.length);
-  if (savedBox) savedBox.innerHTML = saved.length ? saved.slice(0, 20).map(q => savedQuestionRow(q)).join('') : '<div class="empty-mini">No bookmarked questions yet.</div>';
-  if (wrongBox) wrongBox.innerHTML = wrong.length ? wrong.slice(0, 20).map(q => savedQuestionRow(q)).join('') : '<div class="empty-mini">No wrong-answer queue yet. Nice work.</div>';
+  if (srsCount) srsCount.textContent = dueItems.length;
+
+  if (savedBox) savedBox.innerHTML = saved.length ? saved.slice(0, 20).map(q => savedQuestionRow(q, 'bookmark')).join('') : '<div class="empty-mini">No bookmarked questions yet.</div>';
+  if (wrongBox) wrongBox.innerHTML = wrong.length ? wrong.slice(0, 20).map(q => savedQuestionRow(q, 'wrong')).join('') : '<div class="empty-mini">No wrong-answer queue yet. Nice work.</div>';
+  if (srsBox)   srsBox.innerHTML   = srsItems.length ? srsItems.slice(0, 20).map(srsChapterRow).join('') : '<div class="empty-mini">Start practicing chapters to see review tasks here!</div>';
+
+  // Also update the "Due for Review" list in Analytics tab
+  const analyticsSRS = document.getElementById('dueChapterRows');
+  if (analyticsSRS) {
+    analyticsSRS.innerHTML = dueItems.length 
+      ? dueItems.slice(0, 5).map(srsChapterRow).join('') 
+      : '<div class="empty-mini">No reviews due today. Keep it up!</div>';
+  }
 }
 
-function savedQuestionRow(q) {
+function srsChapterRow(item) {
+  const diff = daysBetween(dateKey(), item.due);
+  const isDue = diff <= 0;
+  const status = isDue ? '<span style="color:var(--rose);font-weight:700">DUE NOW</span>' : `<span style="color:var(--txt3)">in ${diff}d</span>`;
+  const btnClass = isDue ? 'btn-primary' : 'btn-ghost';
+  
+  return `<div class="saved-q-row">
+    <div>
+      <div class="saved-q-text">${escHtml(item.chapter)}</div>
+      <div class="weak-meta">${escHtml(item.subject)} · Seen ${item.seen}x · ${status}</div>
+    </div>
+    <button class="btn ${btnClass} btn-sm" onclick="practiceChapter('${encodeURIComponent(item.subject)}','${encodeURIComponent(item.chapter)}')">Review</button>
+  </div>`;
+}
+
+function savedQuestionRow(q, type) {
+  const removeFn = type === 'bookmark' ? `removeBookmark('${q.id}')` : `removeWrong('${q.id}')`;
   return `<div class="saved-q-row">
     <div><div class="saved-q-text">${escHtml(q.questionText)}</div><div class="weak-meta">${escHtml(q.subject)} · ${escHtml(q.chapter)}</div></div>
-    <button class="btn btn-ghost btn-sm" onclick="startQuestionSet('${q.id}')">Retry</button>
+    <div style="display:flex;gap:.4rem">
+      <button class="btn btn-ghost btn-sm" onclick="startQuestionSet('${q.id}')">Retry</button>
+      <button class="btn btn-ghost btn-sm" onclick="${removeFn}" title="Remove">✕</button>
+    </div>
   </div>`;
 }
 
