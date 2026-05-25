@@ -117,19 +117,19 @@ export function rfPick(btn, idx) {
     S.answered++;
     S.streak++;
     if (S.streak > S.bestStreak) S.bestStreak = S.streak;
-    gainXP(5);
+    gainXP(5, true);
   } else {
     RF.streak = 0;
     flash(false);
     S.answered++;
     S.streak = 0;
   }
-  updateSubjStat(q.subject, ok);
-  updateChapterStat(q, ok);
-  rememberAnswer(q, ok);
+  updateSubjStat(q.subject, ok, true);
+  updateChapterStat(q, ok, true);
+  rememberAnswer(q, ok, true);
   if (DOM.score)  DOM.score.textContent = RF.score;
   if (DOM.streak) DOM.streak.textContent = RF.streak + '🔥';
-  updateNav(); // Batched save: we only call save() in endRF
+  updateNav(); // UI update only; save() is deferred until endRF or manually called
   RF.cur++;
   setTimeout(renderRFQ, 500);
 }

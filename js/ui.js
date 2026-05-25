@@ -2,7 +2,7 @@
 // UI.JS — Shared DOM helpers & display
 // ═══════════════════════════════════════
 import { S, save, resetIntegrity, questionsByIds } from './store.js';
-import { getCurrentUser } from '../firebase.js';
+import { getCurrentUser, wipeFirestoreData } from '../firebase.js';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -114,7 +114,7 @@ export function closeLvl() {
 }
 
 // ── XP / Level ──
-export function gainXP(n) {
+export function gainXP(n, skipSave = false) {
   S.xp += n;
   const lvl = Math.floor(S.xp / 100) + 1;
   if (lvl > S.level) {
@@ -124,18 +124,21 @@ export function gainXP(n) {
     if (modal) modal.style.display = 'flex';
     starBurst();
   }
-  updateNav(); save();
+  if (!skipSave) {
+    updateNav();
+    save();
+  }
 }
 
 // ── Subject stat tracking ──
-export function updateSubjStat(subject, isCorrect) {
-  if (!S.subjStats[subject]) S.subjStats[subject] = { ans:0, cor:0 };
+export function updateSubjStat(subject, isCorrect, skipSave = false) {
+  if (!S.subjStats[subject]) S.subjStats[subject] = { ans: 0, cor: 0 };
   S.subjStats[subject].ans++;
   if (isCorrect) S.subjStats[subject].cor++;
-  save();
+  if (!skipSave) save();
 }
 
-export function updateChapterStat(q, isCorrect) {
+export function updateChapterStat(q, isCorrect, skipSave = false) {
   if (!q?.chapter) return;
   const key = `${q.subject}::${q.chapter}`;
   if (!S.chapterStats[key]) S.chapterStats[key] = { subject: q.subject, chapter: q.chapter, ans: 0, cor: 0 };
@@ -148,7 +151,7 @@ export function updateChapterStat(q, isCorrect) {
   if (beforeAcc !== null && beforeAcc < 50 && afterAcc >= 75 && S.chapterStats[key].ans >= 8) {
     unlockAchievement(`comeback_${q.subject}_${q.chapter}`, 'Comeback Kid');
   }
-  save();
+  if (!skipSave) save();
 }
 
 function updateSpacedRepetition(q, isCorrect) {
@@ -178,13 +181,13 @@ function updateSpacedRepetition(q, isCorrect) {
   S.spacedRepetition[key] = current;
 }
 
-export function rememberAnswer(q, isCorrect) {
+export function rememberAnswer(q, isCorrect, skipSave = false) {
   if (!q?.id) return;
   const wrong = new Set(S.wrongQuestionIds || []);
   if (isCorrect) wrong.delete(q.id);
   else wrong.add(q.id);
   S.wrongQuestionIds = [...wrong];
-  save();
+  if (!skipSave) save();
 }
 
 export function toggleBookmark(id) {
@@ -606,8 +609,18 @@ export function avatarUrl(user) {
   );
 }
 
-export function resetAllProgress() {
+export async function resetAllProgress() {
   if (!confirm('⚠️ This will reset ALL your stats, XP, level, streaks, and session history. This cannot be undone.\n\nAre you sure?')) return;
+  
+  const user = getCurrentUser();
+  if (user) {
+    const ok = await wipeFirestoreData();
+    if (!ok) {
+      toast('⚠️ Could not wipe cloud data. Check your connection.');
+      // We continue with local reset anyway, but warn the user.
+    }
+  }
+
   S.streak = 0; S.dailyStreak = 0; S.lastStudyDate = ''; S.bestStreak = 0; S.level = 1; S.xp = 0;
   S.answered = 0; S.correct = 0; S.totalSolved = 0;
   S.leaderboardName = '';

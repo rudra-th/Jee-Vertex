@@ -123,11 +123,12 @@ export async function updateLeaderboardName(displayName, stats = {}) {
   const answered = stats.answered || 0;
   const correct  = stats.correct  || 0;
   const accuracy = answered ? Math.round((correct / answered) * 100) : 0;
+  const finalName = cleanDisplayName(displayName || currentUser.displayName);
   await setDoc(
     doc(db, 'users', currentUser.uid),
     {
       uid:               currentUser.uid,
-      displayName:       cleanDisplayName(displayName || currentUser.displayName),
+      displayName:       finalName,
       photoURL:          currentUser.photoURL || '',
       email:             currentUser.email || '',
       provider:          'google.com',

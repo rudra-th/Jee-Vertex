@@ -526,13 +526,13 @@ export function endQuiz() {
         S.correct++;
         S.streak++;
         if (S.streak > S.bestStreak) S.bestStreak = S.streak;
-        gainXP(4);
+        gainXP(4, true);
       } else {
         S.streak = 0;
       }
-      updateSubjStat(q.subject, ok);
-      updateChapterStat(q, ok);
-      rememberAnswer(q, ok);
+      updateSubjStat(q.subject, ok, true);
+      updateChapterStat(q, ok, true);
+      rememberAnswer(q, ok, true);
     });
   }
   
