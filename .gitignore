@@ -1,5 +1,6 @@
 # Firebase credentials — never commit real keys
 firebase-config.js
+.vscode
 
 # OS junk
 .DS_Store
