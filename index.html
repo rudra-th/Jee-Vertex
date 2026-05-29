@@ -15,18 +15,18 @@
 </head>
 <body>
 <div class="amb"></div>
-<div class="grid-lines"></div>
 
 <div id="app">
 
 <!-- ═══ TOPBAR ═══ -->
 <nav class="topbar">
-  <div class="logo" onclick="navTo('home')" title="Go to Home">
-    <div class="logo-dot"></div>
-    Vertex<span class="logo-tag">JEE</span>
+  <div class="nav-left">
+    <button type="button" class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu" aria-expanded="false" onclick="toggleSidebar()">&#9776;</button>
+    <div class="logo" onclick="navTo('home')" title="Go to Home">
+      <div class="logo-dot"></div>
+      Vertex<span class="logo-tag">JEE</span>
+    </div>
   </div>
-
-  <button type="button" class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">&#9776;</button>
 
   <div class="nav-links">
     <button class="nav-link active" onclick="navTo('home')" data-nav="home"><span class="nav-icon">&#127968;</span> Home</button>
@@ -39,29 +39,42 @@
   </div>
 
   <div class="nav-right">
-    <button type="button" class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle light mode" title="Toggle theme">🌙</button>
+    <button type="button" class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">🌙</button>
     <div class="stat-pill streak-pill" title="Current streak">&#128293; <span id="streakN">0</span></div>
-    <div class="nav-xp-pill" onclick="navTo('profile')" title="Your level and XP">
-      <svg class="xp-ring" viewBox="0 0 28 28">
-        <circle class="xp-bg" cx="14" cy="14" r="11"/>
-        <circle class="xp-fg" cx="14" cy="14" r="11" stroke-dasharray="69.1" stroke-dashoffset="69.1" id="xpArc" transform="rotate(-90 14 14)"/>
-      </svg>
-      <span class="nav-xp-label">LVL <span id="levelN">1</span></span>
-    </div>
     <img id="navAvatar" class="nav-avatar" alt="Profile" onclick="navTo('profile')" title="View Profile" onerror="handleAvatarError(this)"/>
   </div>
 </nav>
 
-<div class="mobile-nav-drawer" id="mobileNav" aria-hidden="true">
-  <button type="button" class="mobile-nav-link" onclick="navTo('home')">&#127968; Home</button>
-  <button type="button" class="mobile-nav-link" onclick="navTo('rapid-setup')">&#9889; Rapid Fire</button>
-  <button type="button" class="mobile-nav-link" onclick="navTo('custom-setup')">&#129513; Custom Test</button>
-  <button type="button" class="mobile-nav-link" onclick="navTo('practice-setup')">&#128218; Practice</button>
-  <button type="button" class="mobile-nav-link" onclick="navTo('leaderboard')">&#127942; Leaderboard</button>
-  <button type="button" class="mobile-nav-link" onclick="navTo('stats')">&#128202; Stats</button>
-  <button type="button" class="mobile-nav-link" onclick="navTo('profile')">&#128100; Profile</button>
+<div class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="sidebar-header">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <span>Vertex<span class="logo-tag">JEE</span></span>
+    </div>
+    <button type="button" class="sidebar-close" onclick="toggleSidebar()" aria-label="Close menu">&times;</button>
+  </div>
+  <div class="sidebar-body">
+    <div class="sidebar-section-label">Navigate</div>
+    <button type="button" class="sidebar-link" onclick="navTo('home')"><span class="sidebar-icon">&#127968;</span> Home</button>
+    <button type="button" class="sidebar-link" onclick="navTo('rapid-setup')"><span class="sidebar-icon">&#9889;</span> Rapid Fire</button>
+    <button type="button" class="sidebar-link" onclick="navTo('practice-setup')"><span class="sidebar-icon">&#128218;</span> Practice</button>
+    <button type="button" class="sidebar-link" onclick="navTo('custom-setup')"><span class="sidebar-icon">&#129513;</span> Custom Test</button>
+    <button type="button" class="sidebar-link" onclick="navTo('leaderboard')"><span class="sidebar-icon">&#127942;</span> Leaderboard</button>
+    <button type="button" class="sidebar-link" onclick="navTo('stats')"><span class="sidebar-icon">&#128202;</span> Stats</button>
+    <button type="button" class="sidebar-link" onclick="navTo('profile')"><span class="sidebar-icon">&#128100;</span> Profile</button>
+
+    <div class="sidebar-section-label" style="margin-top:1.25rem">Preferences</div>
+    <div class="sidebar-pref-row">
+      <span class="sidebar-pref-label">&#128293; Streak</span>
+      <span class="sidebar-pref-val" id="dailyStreakN">0</span>
+    </div>
+    <div class="sidebar-pref-row">
+      <span class="sidebar-pref-label">Theme</span>
+      <button class="btn btn-ghost btn-sm" onclick="toggleTheme()" id="themeLabel">Dark</button>
+    </div>
+  </div>
 </div>
-<div class="mobile-nav-backdrop" id="mobileNavBackdrop" onclick="closeMobileNav()"></div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
 
 <nav class="bottom-nav" aria-label="Main navigation">
   <button type="button" class="bottom-nav-item active" onclick="navTo('home')" data-bnav="home">Home</button>
@@ -73,116 +86,129 @@
 <!-- ═══ MAIN ═══ -->
 <main>
 
-<!-- ── HOME ── -->
+<!-- ── HOME / LAUNCHPAD ── -->
 <div id="pg-home" class="page active">
-<div class="page-inner wide">
+<div class="page-inner">
 
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-label">
-        <div class="hero-label-dot"></div>
-        JEE Preparation Platform
+  <div class="launch">
+    <div class="launch-badge">JEE MAIN &amp; ADVANCED</div>
+    <h1 class="launch-h">Master JEE with <span class="hl">precision</span></h1>
+    <p class="launch-p">Adaptive drills · Mock exams · Real-time performance</p>
+
+    <div class="launch-actions">
+      <button class="btn btn-primary btn-xl" onclick="navTo('practice-setup')">→ Start Practice</button>
+      <button class="btn btn-gold btn-xl" onclick="navTo('mock-setup')">📝 Take Mock Test</button>
+    </div>
+
+    <div class="launch-grid">
+      <div class="launch-card" onclick="navTo('practice-setup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('practice-setup')">
+        <div class="lc-icon">📚</div>
+        <div class="lc-body">
+          <div class="lc-name">Practice</div>
+          <div class="lc-desc">Chapter-wise</div>
+        </div>
       </div>
-      <h1>
-        Crack JEE with<br>
-        <span class="hl">absolute clarity</span>
-      </h1>
-      <p class="hero-p">Physics, Chemistry, Mathematics — adaptive quizzes built for the way top rankers actually study.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" onclick="navTo('rapid-setup')">⚡ Start Rapid Fire</button>
-        <button class="btn btn-ghost btn-lg" onclick="navTo('custom-setup')">Build a Test →</button>
+      <div class="launch-card" onclick="navTo('rapid-setup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('rapid-setup')">
+        <div class="lc-icon">⚡</div>
+        <div class="lc-body">
+          <div class="lc-name">Rapid Fire</div>
+          <div class="lc-desc">2-min sprint</div>
+        </div>
+      </div>
+      <div class="launch-card" onclick="navTo('custom-setup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('custom-setup')">
+        <div class="lc-icon">🎯</div>
+        <div class="lc-body">
+          <div class="lc-name">Custom Test</div>
+          <div class="lc-desc">Your rules</div>
+        </div>
+      </div>
+      <div class="launch-card" onclick="navTo('leaderboard')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('leaderboard')">
+        <div class="lc-icon">🏆</div>
+        <div class="lc-body">
+          <div class="lc-name">Leaderboard</div>
+          <div class="lc-desc">See rankings</div>
+        </div>
       </div>
     </div>
 
-    <div class="hero-right">
-      <div class="stat-board">
-        <div class="sb-title">Your Progress</div>
-        <div class="sb-grid">
-          <div class="sb-card">
-            <div class="sb-val" id="sbAnswered" style="color:var(--sky)">0</div>
-            <div class="sb-lbl">Answered</div>
-          </div>
-          <div class="sb-card">
-            <div class="sb-val" id="sbCorrect" style="color:var(--emerald)">0</div>
-            <div class="sb-lbl">Correct</div>
-          </div>
-          <div class="sb-card">
-            <div class="sb-val" id="sbAcc" style="color:var(--gold)">0%</div>
-            <div class="sb-lbl">Accuracy</div>
-          </div>
-          <div class="sb-card">
-            <div class="sb-val" id="sbBest" style="color:var(--rose)">0</div>
-            <div class="sb-lbl">Best Streak</div>
-          </div>
-        </div>
-        <div class="sb-progress">
-          <div class="sb-prog-label">
-            <span>XP Progress</span>
-            <span id="xpPct">0 / 100 XP</span>
-          </div>
-          <div class="sb-bar"><div class="sb-bar-fill" id="xpBar" style="width:0%"></div></div>
-        </div>
-      </div>
+    <div class="launch-status">
+      <span>🔥 <span id="heroStreak">0</span> day streak</span>
+      <span class="ls-dot">·</span>
+      <span><span id="heroAnswered">0</span> answered</span>
+      <span class="ls-dot">·</span>
+      <span><span id="heroAcc">0%</span> accuracy</span>
     </div>
   </div>
 
-  <!-- MODE CARDS -->
-  <div class="sec-hd"><h2>Choose Your Mode</h2><div class="sec-rule"></div></div>
-  <div class="mode-grid mode-grid-four">
-    <div class="mode-card rapid" role="button" aria-label="Launch Rapid Fire mode" onclick="navTo('rapid-setup')" tabindex="0" onkeydown="if(event.key==='Enter')navTo('rapid-setup')">
-      <div class="mc-content">
-        <div class="mc-tag hot">Hot Mode</div>
-        <div class="mc-icon">⚡</div>
-        <div class="mc-name">Rapid Fire</div>
-        <p class="mc-desc">120 seconds. Maximum questions. Combo streaks. Pure survival — designed to push your limits and test real exam speed.</p>
-        <div class="mc-arrow">Launch <span>→</span></div>
+  <!-- SUBJECT CARDS -->
+  <div class="home-subjects">
+    <div class="hs-card" onclick="navTo('practice-setup')" style="--hs-accent:var(--phy)">
+      <div class="hs-icon">⚛️</div>
+      <div class="hs-body">
+        <div class="hs-name">Physics</div>
+        <div class="hs-desc">Mechanics, EM, Optics &amp; more</div>
+      </div>
+      <span class="hs-arrow">→</span>
+    </div>
+    <div class="hs-card" onclick="navTo('practice-setup')" style="--hs-accent:var(--chem)">
+      <div class="hs-icon">🧪</div>
+      <div class="hs-body">
+        <div class="hs-name">Chemistry</div>
+        <div class="hs-desc">Physical, Organic &amp; Inorganic</div>
+      </div>
+      <span class="hs-arrow">→</span>
+    </div>
+    <div class="hs-card" onclick="navTo('practice-setup')" style="--hs-accent:var(--math)">
+      <div class="hs-icon">📐</div>
+      <div class="hs-body">
+        <div class="hs-name">Mathematics</div>
+        <div class="hs-desc">Algebra, Calculus, Geometry</div>
+      </div>
+      <span class="hs-arrow">→</span>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="home-guide">
+    <div class="hg-step">
+      <div class="hg-num">1</div>
+      <div class="hg-body">
+        <div class="hg-title">Pick your mode</div>
+        <div class="hg-desc">Practice chapter-wise, go rapid-fire, or simulate the real exam with a full-length mock.</div>
       </div>
     </div>
-    <div class="mode-card custom" role="button" aria-label="Configure Custom Test" onclick="navTo('custom-setup')" tabindex="0" onkeydown="if(event.key==='Enter')navTo('custom-setup')">
-      <div class="mc-content">
-        <div class="mc-tag flex">Flex Mode</div>
-        <div class="mc-icon">🎯</div>
-        <div class="mc-name">Custom Test</div>
-        <p class="mc-desc">Design your own mock exam. Choose subjects, chapters, difficulty, and time controls for the exact practice you need.</p>
-        <div class="mc-arrow">Configure <span>→</span></div>
+    <div class="hg-step">
+      <div class="hg-num">2</div>
+      <div class="hg-body">
+        <div class="hg-title">Answer &amp; review</div>
+        <div class="hg-desc">Tackle JEE-level questions with instant feedback, detailed solutions, and bookmark tough ones.</div>
       </div>
     </div>
-    <div class="mode-card prac" role="button" aria-label="Start Practice Mode" onclick="navTo('practice-setup')" tabindex="0" onkeydown="if(event.key==='Enter')navTo('practice-setup')">
-      <div class="mc-content">
-        <div class="mc-tag core">Core Mode</div>
-        <div class="mc-icon">📚</div>
-        <div class="mc-name">Practice Mode</div>
-        <p class="mc-desc">Untimed. Detailed explanations after every answer. Chapter-by-chapter deep study with full conceptual breakdown.</p>
-        <div class="mc-arrow">Practice <span>→</span></div>
-      </div>
-    </div>
-    <div class="mode-card mock" role="button" aria-label="Start JEE Mock Test" onclick="navTo('mock-setup')" tabindex="0" onkeydown="if(event.key==='Enter')navTo('mock-setup')">
-      <div class="mc-content">
-        <div class="mc-tag exam">Exam Mode</div>
-        <div class="mc-icon">📝</div>
-        <div class="mc-name">JEE Mock</div>
-        <p class="mc-desc">Subject sections, locked timing, and +4/-1 marking for a more realistic JEE Main or Advanced practice run.</p>
-        <div class="mc-arrow">Start <span>→</span></div>
+    <div class="hg-step">
+      <div class="hg-num">3</div>
+      <div class="hg-body">
+        <div class="hg-title">Track &amp; improve</div>
+        <div class="hg-desc">Monitor accuracy by subject, revisit weak chapters, and climb the leaderboard.</div>
       </div>
     </div>
   </div>
 
   <!-- HISTORY -->
-  <div class="sec-hd">
-    <h2>Session History</h2>
-    <div class="sec-rule"></div>
-    <button class="btn btn-ghost btn-sm" onclick="clearHistory()">Clear all</button>
-  </div>
-  <div class="hist-wrap">
-    <div class="hist-head">
-      <span>Mode</span>
-      <span>Details</span>
-      <span>Score</span>
-      <span>Date</span>
+  <div class="launch-history">
+    <div class="lh-head">
+      <span>Recent Activity</span>
+      <button class="btn btn-ghost btn-sm" onclick="clearHistory()">Clear</button>
     </div>
-    <div id="histRows">
-      <div style="padding:2.5rem;text-align:center;color:var(--txt3);font-size:.85rem;font-style:italic">
-        No sessions yet — pick a mode and start practicing!
+    <div class="hist-wrap" id="homeHistWrap">
+      <div class="hist-head">
+        <span>Mode</span>
+        <span>Details</span>
+        <span>Score</span>
+      </div>
+      <div id="histRows">
+        <div style="padding:2.5rem;text-align:center;color:var(--txt3);font-size:.85rem;font-style:italic">
+          No sessions yet — pick a mode and start practicing!
+        </div>
       </div>
     </div>
   </div>
@@ -210,9 +236,9 @@
   <div class="setup-card">
     <div class="sc-label">Difficulty</div>
     <div class="diff-row" id="rfDiffRow">
-      <button class="diff-btn df" data-diff="Foundation" onclick="selDiff('rfDiffRow',this,d=>RF.difficulty=d)">Foundation<span class="diff-sub">Beginner</span></button>
-      <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('rfDiffRow',this,d=>RF.difficulty=d)">JEE Main<span class="diff-sub">Intermediate</span></button>
-      <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('rfDiffRow',this,d=>RF.difficulty=d)">JEE Advanced<span class="diff-sub">Expert</span></button>
+      <button class="diff-btn df" data-diff="Foundation" onclick="selDiff('rfDiffRow',this,setRFDifficulty)">Foundation<span class="diff-sub">Beginner</span></button>
+      <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('rfDiffRow',this,setRFDifficulty)">JEE Main<span class="diff-sub">Intermediate</span></button>
+      <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('rfDiffRow',this,setRFDifficulty)">JEE Advanced<span class="diff-sub">Expert</span></button>
     </div>
   </div>
   <div style="margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap">
@@ -344,10 +370,10 @@
   <div class="setup-card" style="margin-bottom:1rem">
     <div class="sc-label">Difficulty</div>
     <div class="diff-row" id="pracDiffRow">
-      <button class="diff-btn df" data-diff="Foundation" onclick="selDiff('pracDiffRow',this,d=>pracSetup.diff=d)">Foundation<span class="diff-sub">School Level</span></button>
-      <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('pracDiffRow',this,d=>pracSetup.diff=d)">JEE Main<span class="diff-sub">Moderate</span></button>
-      <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('pracDiffRow',this,d=>pracSetup.diff=d)">JEE Advanced<span class="diff-sub">Expert</span></button>
-      <button class="diff-btn" data-diff="All" onclick="selDiff('pracDiffRow',this,d=>pracSetup.diff=d)">All Levels<span class="diff-sub">Mixed</span></button>
+      <button class="diff-btn df" data-diff="Foundation" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">Foundation<span class="diff-sub">School Level</span></button>
+      <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">JEE Main<span class="diff-sub">Moderate</span></button>
+      <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">JEE Advanced<span class="diff-sub">Expert</span></button>
+      <button class="diff-btn" data-diff="All" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">All Levels<span class="diff-sub">Mixed</span></button>
     </div>
   </div>
 
@@ -399,10 +425,10 @@
     <div class="setup-card full">
       <div class="sc-label">Difficulty</div>
       <div class="diff-row" id="custDiffRow">
-        <button class="diff-btn dall" data-diff="All" onclick="selDiff('custDiffRow',this,d=>custSetup.diff=d)">All Levels<span class="diff-sub">Mixed</span></button>
-        <button class="diff-btn" data-diff="Foundation" onclick="selDiff('custDiffRow',this,d=>custSetup.diff=d)">Foundation<span class="diff-sub">Beginner</span></button>
-        <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('custDiffRow',this,d=>custSetup.diff=d)">JEE Main<span class="diff-sub">Intermediate</span></button>
-        <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('custDiffRow',this,d=>custSetup.diff=d)">JEE Advanced<span class="diff-sub">Expert</span></button>
+        <button class="diff-btn dall" data-diff="All" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">All Levels<span class="diff-sub">Mixed</span></button>
+        <button class="diff-btn" data-diff="Foundation" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">Foundation<span class="diff-sub">Beginner</span></button>
+        <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">JEE Main<span class="diff-sub">Intermediate</span></button>
+        <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">JEE Advanced<span class="diff-sub">Expert</span></button>
       </div>
     </div>
 
@@ -480,6 +506,7 @@
     <div class="q-prog-track"><div class="q-prog-fill" id="qProgFill" style="width:0%"></div></div>
     <div class="q-prog-meta"><span id="qProgL">Question 1</span><span id="qProgR">0% done</span></div>
   </div>
+  <div class="q-palette" id="qPalette" aria-label="Question navigation"></div>
 
   <div id="quizQArea"></div>
 
@@ -568,10 +595,8 @@
   </div>
 
   <!-- PERFORMANCE CARDS -->
-  <div class="sec-hd"><h2>Performance</h2><div class="sec-rule"></div></div>
+  <div class="sec-hd"><h2>Milestones</h2><div class="sec-rule"></div></div>
   <div class="big-stats">
-    <div class="big-stat"><div class="big-val" id="stXP" style="color:var(--accent)">0</div><div class="big-lbl">Total XP</div></div>
-    <div class="big-stat"><div class="big-val" id="stLevel" style="color:var(--emerald)">1</div><div class="big-lbl">Level</div></div>
     <div class="big-stat"><div class="big-val" id="stSessions" style="color:var(--sky)">0</div><div class="big-lbl">Sessions</div></div>
     <div class="big-stat"><div class="big-val" id="stDaily" style="color:var(--rose)">0</div><div class="big-lbl">Daily Streak</div></div>
   </div>
@@ -705,8 +730,8 @@
 <div id="pg-leaderboard" class="page">
 <div class="page-inner wide">
   <div class="lb-hero">
-    <div class="lb-hero-title">Global Leaderboard</div>
-    <p class="lb-hero-sub">Top 50 Vertex students worldwide. Google sign-in is required before your name can appear here.</p>
+    <div class="lb-hero-title">Leaderboard</div>
+    <p class="lb-hero-sub">Compare streaks, solved volume, and accuracy after signing in. Guest practice stays fully available offline.</p>
     <div class="lb-hero-stats" id="lbHeroStats"></div>
   </div>
   <div class="lb-tabs">
@@ -738,24 +763,14 @@
         <div class="p-id-top">
           <div class="p-avatar-main">
             <img id="profileAvatar" alt="Profile" onerror="handleAvatarError(this)"/>
-            <div class="p-lvl-tag" id="profileLevelBadge">1</div>
           </div>
           <div class="p-id-info">
             <div class="p-name-row">
               <h2 id="profileName">-</h2>
               <div class="google-badge"><svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
             </div>
-            <p class="p-rank" id="profileRankTitle">Foundation Novice</p>
             <p class="p-meta"><span id="profileEmail">-</span> <span class="dot-sep">•</span> <span id="profileJoinedDate">Joined May 2026</span></p>
           </div>
-        </div>
-
-        <div class="p-lvl-progress">
-          <div class="p-lvl-label">
-            <span id="profileLvlNextTxt">Next: Level 2</span>
-            <span id="p-xp-pct">0%</span>
-          </div>
-          <div class="p-lvl-track"><div class="p-lvl-fill" id="profileLvlBarFill"></div></div>
         </div>
 
         <div class="p-stats-row">
@@ -768,8 +783,8 @@
             <span class="p-stat-lbl">Accuracy</span>
           </div>
           <div class="p-stat-item">
-            <span class="p-stat-val" id="profileXP" style="color:var(--accentL)">0</span>
-            <span class="p-stat-lbl">Total XP</span>
+            <span class="p-stat-val" id="profileAnswered" style="color:var(--sky)">0</span>
+            <span class="p-stat-lbl">Answered</span>
           </div>
         </div>
       </div>
@@ -812,7 +827,7 @@
               <p>Switch dark/light appearance</p>
             </div>
           </div>
-          <button class="btn btn-ghost btn-sm" onclick="toggleTheme()" id="themeLabel">Dark</button>
+          <button class="btn btn-ghost btn-sm" onclick="toggleTheme()" id="profileThemeLabel">Dark</button>
         </div>
       </div>
 
@@ -840,45 +855,28 @@
     <!-- Guest State -->
     <div id="profileGuest" class="p-guest-hero">
       <div class="p-guest-icon">👋</div>
-      <h1>Ready to compete?</h1>
-      <p>Sign in to sync your progress across devices and appear on the global leaderboard.</p>
+      <h1>Keep your progress safe</h1>
+      <p>Sign in when you want cloud sync and leaderboard ranking. Practice, stats, and review tools still work without an account.</p>
       <button class="btn-google" style="border-radius:30px; padding: 1rem 2rem;" onclick="loginGoogle()">
         <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         Continue with Google
       </button>
     </div>
 
+    <div class="p-credits">
+      <a href="https://github.com/rudra-th" target="_blank" rel="noopener" class="p-credit-link">
+        <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        <span>Built by Rudra</span>
+      </a>
+    </div>
+
   </div>
 
-</div>
-</div>
-  </div>
 </div>
 </div>
 </main>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-brand">Vertex — Absolute Practice</div>
-  <div class="footer-right">
-    <a href="https://github.com/rudra-th" target="_blank" rel="noopener" class="footer-link">
-      <svg class="gh-icon" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-      Rudra
-    </a>
-  </div>
-</footer>
-
 </div><!-- /app -->
-
-<!-- LEVEL UP MODAL -->
-<div id="lvlModal" class="modal-bg" style="display:none" onclick="closeLvl()">
-  <div class="modal-box" onclick="event.stopPropagation()">
-    <div class="modal-icon">🚀</div>
-    <div class="modal-h">Level Up!</div>
-    <p style="color:var(--txt2);margin:.5rem 0 1.5rem;font-size:.88rem">You're now <strong style="color:var(--gold)" id="newLvlTxt">Level 2</strong> — built different, no cap 🔥</p>
-    <button class="btn btn-primary" onclick="closeLvl()">Keep Grinding →</button>
-  </div>
-</div>
 
 <div id="flashArea" aria-live="polite" aria-atomic="true"></div>
 <div class="toast-area" id="toastArea" aria-live="polite" aria-atomic="true"></div>

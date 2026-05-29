@@ -5,7 +5,7 @@ import { S, save, filterQ, allQ, questionsByIds, shuffle } from './store.js';
 import {
   toast, flash, reMath, escHtml,
   updateNav, updateHome, updateStatsPage,
-  gainXP, updateSubjStat, addSession,
+  updateSubjStat, addSession,
   updateChapterStat, rememberAnswer, dateKey,
 } from './ui.js';
 import { navTo } from './router.js';
@@ -27,6 +27,14 @@ export const custSetup = {
 };
 export const mockSetup = { exam:'main' };
 
+export function setPracticeDifficulty(difficulty) {
+  pracSetup.diff = difficulty;
+}
+
+export function setCustomDifficulty(difficulty) {
+  custSetup.diff = difficulty;
+}
+
 // ── DOM Cache ──
 const DOM = {
   rtTxt: null, rtFg: null,
@@ -34,7 +42,7 @@ const DOM = {
   sectionWrap: null, sectionTxt: null, sectionFill: null,
   qCur: null, qTot: null,
   qProgFill: null, qProgL: null, qProgR: null,
-  area: null, btnNext: null, btnSkip: null
+  area: null, btnNext: null, btnSkip: null, qPalette: null
 };
 
 function initDom() {
@@ -53,6 +61,7 @@ function initDom() {
   DOM.area = document.getElementById('quizQArea');
   DOM.btnNext = document.getElementById('btnNext');
   DOM.btnSkip = document.getElementById('btnSkip');
+  DOM.qPalette = document.getElementById('qPalette');
 }
 
 // ═══ CHAPTER HELPERS ═══
@@ -472,7 +481,32 @@ function renderQ() {
     DOM.area.innerHTML = buildQHTML(q, false);
     reMath(DOM.area);
   }
+  renderQPalette();
   if (Q.timerMode === 'perq') { Q.pqLeft = Q.pqSecs; startPQTimer(); }
+}
+
+function renderQPalette() {
+  if (!DOM.qPalette || !Q.qs.length) return;
+  DOM.qPalette.innerHTML = Q.qs.map((_, i) => {
+    const status = i === Q.cur ? 'cur' : Q.ans[i] === null ? 'open' : 'done';
+    return `<button type="button" class="q-dot ${status}" onclick="jumpToQuestion(${i})" aria-label="Go to question ${i + 1}">${i + 1}</button>`;
+  }).join('');
+}
+
+export function jumpToQuestion(i) {
+  const next = Number(i);
+  if (!Number.isInteger(next) || next < 0 || next >= Q.qs.length) return;
+  if (Q.mode === 'mock') {
+    const sec = Q.sections[Q.sectionIndex];
+    if (sec && (next < sec.start || next > sec.end)) {
+      toast('Finish the current section before moving ahead.');
+      return;
+    }
+  }
+  stopPQTimer();
+  Q.cur = next;
+  renderQ();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function buildQHTML(q, reveal, chosen = null) {
@@ -503,12 +537,13 @@ export function pickOpt(btn, idx) {
     return;
   }
   S.answered++;
-  if (ok) { S.correct++; S.streak++; if (S.streak > S.bestStreak) S.bestStreak = S.streak; gainXP(10); flash(true); }
+  if (ok) { S.correct++; S.streak++; if (S.streak > S.bestStreak) S.bestStreak = S.streak; flash(true); }
   else { S.streak = 0; flash(false); }
-  updateSubjStat(q.subject, ok);
-  updateChapterStat(q, ok);
-  rememberAnswer(q, ok);
-  updateNav(); updateHome(); // save() is batched for the end of the quiz
+  updateSubjStat(q.subject, ok, true);
+  updateChapterStat(q, ok, true);
+  rememberAnswer(q, ok, true);
+  updateNav(); updateHome();
+  save();
   const pct = ((Q.cur+1) / Q.qs.length) * 100;
   if (DOM.qProgFill) DOM.qProgFill.style.width = pct + '%';
   if (DOM.qProgR) DOM.qProgR.textContent = Math.round(pct) + '% done';
@@ -518,6 +553,7 @@ export function pickOpt(btn, idx) {
   }
   if (DOM.btnNext) DOM.btnNext.style.display = 'inline-flex';
   if (DOM.btnSkip) DOM.btnSkip.style.display = 'none';
+  renderQPalette();
 }
 
 export function nextQ() {
@@ -537,6 +573,7 @@ export function skipQ()  {
 export function endQuiz() {
   stopPQTimer(); stopSectionTimer(); clearInterval(Q.totalTimer);
   if (!Q.qs.length) { navTo('home'); return; }
+  if (!confirm(`End this ${Q.mode} session? Your ${Q.ans.filter(a => a !== null).length} answered questions will be saved.`)) return;
   let correct=0, wrong=0, skipped=0;
   Q.ans.forEach((a, i) => { if (a === null) skipped++; else if (a === Q.qs[i].correctAnswer) correct++; else wrong++; });
   const total = Q.qs.length, pct = Math.round((correct/total)*100);
@@ -551,7 +588,6 @@ export function endQuiz() {
         S.correct++;
         S.streak++;
         if (S.streak > S.bestStreak) S.bestStreak = S.streak;
-        gainXP(4, true);
       } else {
         S.streak = 0;
       }
@@ -567,12 +603,12 @@ export function endQuiz() {
   document.getElementById('resPct').textContent     = pct + '%';
   
   let emoji, title, pill;
-  if      (pct >= 95) { emoji='🏆'; title='Absolutely Cooked!'; pill='No cap, you ate that fr fr 🔥'; }
-  else if (pct >= 85) { emoji='🔥'; title='Bussin\'!'; pill='Bro is actually built different ⚡'; }
-  else if (pct >= 75) { emoji='⚡'; title='That\'s Fire!'; pill='Main character energy detected 🎯'; }
-  else if (pct >= 60) { emoji='📚'; title='Decent Vibes!'; pill='Lowkey impressed ngl 💅'; }
-  else if (pct >= 40) { emoji='😤'; title='Keep Grinding!'; pill='Touch grass and retry, bestie 🌿'; }
-  else                { emoji='💀'; title='L + Ratio...'; pill='Glow-up arc loading 📈'; }
+  if      (pct >= 95) { emoji='🏆'; title='Excellent control'; pill='Almost every decision was correct. Review speed and keep this standard repeatable.'; }
+  else if (pct >= 85) { emoji='🔥'; title='Strong session'; pill='Your accuracy is exam-ready here. Now protect it under tighter timing.'; }
+  else if (pct >= 75) { emoji='⚡'; title='Good progress'; pill='The base is solid. Review the misses and convert them into reliable marks.'; }
+  else if (pct >= 60) { emoji='📚'; title='Useful practice'; pill='You are finding the gaps. Slow down, review the concepts, then retry targeted chapters.'; }
+  else if (pct >= 40) { emoji='🎯'; title='Needs focused repair'; pill='Do not rush the next test. Revisit the weakest chapters and rebuild accuracy first.'; }
+  else                { emoji='🧭'; title='Reset the approach'; pill='This topic needs foundation work. Start with explanations, then attempt a smaller set.'; }
   
   document.getElementById('resEmoji').textContent = emoji;
   document.getElementById('resTitle').textContent = title;
@@ -583,7 +619,7 @@ export function endQuiz() {
   document.getElementById('reviewPanel').style.display = 'none';
   renderWrongSummary();
   
-  addSession({ mode:Q.mode, score:pct, mockScore, correct, wrong, skipped, total, date:new Date().toLocaleDateString() });
+  addSession({ mode:Q.mode, score:pct, mockScore, correct, wrong, skipped, total, date:dateKey() });
   updateHome(); updateStatsPage();
   save(); // Final batch save
   navTo('results');

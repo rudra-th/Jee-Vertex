@@ -6,28 +6,31 @@
 
 import { S, allQ, loadQ, initFirebase, onAuthReady, integrityFailed, loadCloudProfile, syncCloud } from './js/store.js';
 import {
-  reMath, closeLvl, toast,
+  reMath, toast,
   updateNav, updateHome, updateStatsPage, renderHistory, clearHistory, resetAllProgress,
   handleAvatarError, updateSyncReminders, toggleProfileMenu,
   toggleTheme, applyTheme, toggleBookmark, switchStatsTab, updateRankFromMarks,
   removeBookmark, removeWrong, clearBookmarks, clearWrongQueue, toggleAutoRemoveWrong,
 } from './js/ui.js';
-import { navTo, toggleMobileNav, closeMobileNav, onQuizKeydown } from './js/router.js';
+import { navTo, toggleSidebar, closeSidebar, onQuizKeydown } from './js/router.js';
 import {
   populateChapters, updateCustomPreview, updateMockPreview,
+  pracSetup, custSetup,
+  setPracticeDifficulty, setCustomDifficulty,
   startPractice, startCustom, startMock, setMockExam,
   selDiff, togSub, allSubs, noneSubs,
   adjQ, setQN, selTMode, selPQP, onPQI, selTP, onTI,
   pickOpt, nextQ, skipQ, endQuiz, reviewAnswers,
   switchPracSub, selAllCh, clrAllCh,
-  startBookmarkedPractice, startWrongPractice, startSRSReview, practiceChapter, startQuestionSet, jumpReview,
+  startBookmarkedPractice, startWrongPractice, startSRSReview, practiceChapter, startQuestionSet, jumpReview, jumpToQuestion,
 } from './js/quiz.js';
-import { startRF, rfPick } from './js/rapid.js';
+import { startRF, rfPick, setRFDifficulty } from './js/rapid.js';
 import { switchLbTab, toggleLbExpand } from './js/leaderboard.js';
 import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName, deleteAccount, copyUID } from './js/profile.js';
 
 // ═══ INIT ═══
 document.addEventListener('DOMContentLoaded', async () => {
+  console.log('[Vertex] DOMContentLoaded - Initializing...');
   bindGlobals();
   initFirebase();
   onAuthReady(async () => {
@@ -55,19 +58,24 @@ document.addEventListener('DOMContentLoaded', async () => {
   updateCustomPreview();
   updateMockPreview();
   document.addEventListener('keydown', onQuizKeydown);
+  console.log('[Vertex] Initialization complete.');
 });
 
 // ═══ GLOBAL BINDINGS ═══
 // Exposes functions to `window` so inline onclick= handlers in index.html work.
 function bindGlobals() {
-  Object.assign(window, {
+  const globals = {
     navTo,
-    toggleMobileNav,
-    closeMobileNav,
-    closeLvl,
+    toggleSidebar,
+    closeSidebar,
+    pracSetup,
+    custSetup,
+    setPracticeDifficulty,
+    setCustomDifficulty,
     clearHistory,
     resetAllProgress,
     startRF,
+    setRFDifficulty,
     startPractice,
     startCustom,
     startMock,
@@ -86,6 +94,7 @@ function bindGlobals() {
     pickOpt,
     nextQ,
     skipQ,
+    jumpToQuestion,
     endQuiz,
     reviewAnswers,
     rfPick,
@@ -101,20 +110,25 @@ function bindGlobals() {
     deleteAccount,
     copyUID,
     handleAvatarError,
-    toggleTheme,
     toggleBookmark,
+    switchStatsTab,
+    updateRankFromMarks,
+    toggleTheme,
+    applyTheme,
     removeBookmark,
     removeWrong,
     clearBookmarks,
     clearWrongQueue,
     toggleAutoRemoveWrong,
-    switchStatsTab,
-    updateRankFromMarks,
     startBookmarkedPractice,
     startWrongPractice,
     startSRSReview,
     practiceChapter,
     startQuestionSet,
-    jumpReview,
+    jumpReview
+  };
+  Object.keys(globals).forEach(key => {
+    if (globals[key] === undefined) console.error(`[Vertex] Global ${key} is undefined!`);
   });
+  Object.assign(window, globals);
 }

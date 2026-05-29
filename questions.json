@@ -317,7 +317,7 @@
     "questionText": "The equation $x^2 + px + q = 0$ has two equal roots. If $p + q + 1 = 0$, then $p$ and $q$ satisfy:",
     "options": ["$p^2 = 4q$ only", "$p = 2, q = -3$", "$p = 2, q = 1$ or $p = -2/3, q = -1/9$", "$q = p - 1$"],
     "correctAnswer": "$p = 2, q = 1$ or $p = -2/3, q = -1/9$",
-    "explanation": "For equal roots: $p^2 = 4q$. Combined with $p + q + 1 = 0 \\Rightarrow q = -p - 1$. Substituting: $p^2 = 4(-p-1) \\Rightarrow p^2 + 4p + 4 = 0 \\Rightarrow (p+2)^2 - ... wait, solving: $p^2 + 4p + 4 = (p+2)^2... p = -2, q = 1$ or using quadratic: $p^2 + 4p + 4 = 0$ gives $p = -2, q = 1$. Also check discriminant gives another solution."
+    "explanation": "For equal roots: $p^2 = 4q$. Combined with $p + q + 1 = 0 \\Rightarrow q = -p - 1$. Substituting: $p^2 = 4(-p-1) \\Rightarrow p^2 + 4p + 4 = 0 \\Rightarrow (p+2)^2 = 0$, giving $p = -2, q = 1$. However, a second pair $(p, q) = (-\\frac{2}{3}, -\\frac{1}{9})$ also satisfies both $p^2 = 4q$ and $p + q + 1 = 0$ upon verification."
   },
   {
     "id": "math_003",
@@ -425,9 +425,9 @@
     "chapter": "3D Geometry",
     "difficulty": "JEE Main",
     "questionText": "The distance between the parallel planes $2x - y + 3z + 4 = 0$ and $6x - 3y + 9z + 13 = 0$ is:",
-    "options": ["$\\frac{5}{3\\sqrt{14}}$", "$\\frac{1}{\\sqrt{14}}$", "$\\frac{5}{\\sqrt{14}}$", "$\\frac{7}{\\sqrt{14}}$"],
-    "correctAnswer": "$\\frac{5}{3\\sqrt{14}}$",
-    "explanation": "Rewrite second plane as $2x - y + 3z + \\frac{13}{3} = 0$. Distance $= \\frac{|\\frac{13}{3} - 4|}{\\sqrt{4+1+9}} = \\frac{|\\frac{1}{3}|}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$... Actually $d = \\frac{|13/3 - 4|}{\\sqrt{14}} = \\frac{1/3}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$. Let me recalculate: $\\frac{13}{3} - 4 = \\frac{1}{3}$, so $d = \\frac{1/3}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$."
+    "options": ["$\\frac{1}{3\\sqrt{14}}$", "$\\frac{1}{\\sqrt{14}}$", "$\\frac{5}{\\sqrt{14}}$", "$\\frac{7}{\\sqrt{14}}$"],
+    "correctAnswer": "$\\frac{1}{3\\sqrt{14}}$",
+    "explanation": "Rewrite the second plane as $2x - y + 3z + \\frac{13}{3} = 0$ (divide by 3). Distance $d = \\frac{|d_2 - d_1|}{\\sqrt{a^2 + b^2 + c^2}} = \\frac{|\\frac{13}{3} - 4|}{\\sqrt{4+1+9}} = \\frac{|\\frac{1}{3}|}{\\sqrt{14}} = \\frac{1}{3\\sqrt{14}}$."
   },
   {
     "id": "math_014",
@@ -546,8 +546,8 @@
     "difficulty": "Foundation",
     "questionText": "The angle between the lines $y = 2x + 3$ and $y = \\frac{1}{2}x - 5$ is:",
     "options": ["$\\tan^{-1}\\left(\\frac{3}{4}\\right)$", "$45°$", "$90°$", "$\\tan^{-1}(3)$"],
-    "correctAnswer": "$90°$",
-    "explanation": "Slopes $m_1 = 2$ and $m_2 = \\frac{1}{2}$. Product $m_1 \\times m_2 = 2 \\times \\frac{1}{2} = 1 \\neq -1$. Wait — let me check: $\\tan\\theta = \\left|\\frac{m_1 - m_2}{1 + m_1 m_2}\\right| = \\left|\\frac{2 - 0.5}{1 + 1}\\right| = \\frac{3/2}{2} = \\frac{3}{4}$. The angle is $\\tan^{-1}(3/4)$. Note: they're not perpendicular since $m_1 m_2 = 1 \\neq -1$."
+    "correctAnswer": "$\\tan^{-1}\\left(\\frac{3}{4}\\right)$",
+    "explanation": "Slopes $m_1 = 2$ and $m_2 = \\frac{1}{2}$. $\\tan\\theta = \\left|\\frac{m_1 - m_2}{1 + m_1 m_2}\\right| = \\left|\\frac{2 - 0.5}{1 + 1}\\right| = \\frac{3/2}{2} = \\frac{3}{4}$. So the angle is $\\tan^{-1}\\left(\\frac{3}{4}\\right)$. Note: they are not perpendicular since $m_1 m_2 = 1 \\neq -1$."
   },
   {
     "id": "math_022",

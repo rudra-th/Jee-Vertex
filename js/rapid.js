@@ -5,7 +5,7 @@ import { S, save, filterQ, shuffle } from './store.js';
 import {
   toast, flash, reMath, escHtml,
   updateNav, updateHome, updateStatsPage,
-  gainXP, updateSubjStat, addSession, starBurst, updateChapterStat, rememberAnswer,
+  updateSubjStat, addSession, updateChapterStat, rememberAnswer, dateKey, starBurst,
 } from './ui.js';
 import { navTo } from './router.js';
 
@@ -14,6 +14,10 @@ export let RF = {
   qs:[], cur:0, score:0, correct:0, total:0, streak:0, bestStreak:0,
   timer:null, left:120, difficulty:'Foundation',
 };
+
+export function setRFDifficulty(difficulty) {
+  RF.difficulty = difficulty;
+}
 
 const DOM = {
   timer: null,
@@ -55,6 +59,7 @@ export function startRF() {
     bestAtStart,
     timer: null,
     left: 120,
+    startTime: Date.now(),
     difficulty: RF.difficulty,
   };
   navTo('rapid-quiz');
@@ -67,7 +72,8 @@ export function startRF() {
   if (DOM.streak) DOM.streak.textContent = '0';
   renderRFQ();
   RF.timer = setInterval(() => {
-    RF.left--;
+    const elapsed = Math.floor((Date.now() - RF.startTime) / 1000);
+    RF.left = Math.max(0, 120 - elapsed);
     const m = Math.floor(RF.left/60), s = RF.left%60;
     if (DOM.timer) {
       DOM.timer.textContent = m + ':' + String(s).padStart(2,'0');
@@ -75,7 +81,7 @@ export function startRF() {
     }
     if (DOM.bar) DOM.bar.style.width = ((RF.left/120)*100) + '%';
     if (RF.left <= 0) { stopRFTimer(); endRF(); }
-  }, 1000);
+  }, 500);
 }
 
 function renderRFQ() {
@@ -117,7 +123,6 @@ export function rfPick(btn, idx) {
     S.answered++;
     S.streak++;
     if (S.streak > S.bestStreak) S.bestStreak = S.streak;
-    gainXP(5, true);
   } else {
     RF.streak = 0;
     flash(false);
@@ -140,11 +145,11 @@ function endRF() {
   if (newBest) S.bestStreak = RF.bestStreak;
   const acc = RF.total ? Math.round((RF.correct/RF.total)*100) : 0;
   let emoji, pill;
-  if      (acc >= 85) { emoji='🏆'; pill='Goated behavior fr, not taking any Ls 👑'; }
-  else if (acc >= 70) { emoji='🔥'; pill='Slay! You cooked those qs deadass ⚡'; }
-  else if (acc >= 55) { emoji='⚡'; pill='Lowkey not bad, kinda poggers ngl 🎯'; }
-  else if (acc >= 40) { emoji='📚'; pill='Midrange arc... time to grind bestie 📖'; }
-  else               { emoji='💀'; pill='Bro got ratio\'d by physics lmaoo 💀'; }
+  if      (acc >= 85) { emoji='🏆'; pill='Fast and accurate. Keep this as your recall benchmark.'; }
+  else if (acc >= 70) { emoji='🔥'; pill='Good speed. Review the misses so speed does not cost marks.'; }
+  else if (acc >= 55) { emoji='⚡'; pill='Useful drill. Accuracy needs to rise before increasing pace.'; }
+  else if (acc >= 40) { emoji='📚'; pill='Slow the next round down. Identify the pattern behind wrong answers.'; }
+  else               { emoji='🧭'; pill='Recall is not stable yet. Return to chapter practice before speed drills.'; }
   
   document.getElementById('rfResEmoji').textContent   = emoji;
   document.getElementById('rfResPill').textContent    = pill;
@@ -154,7 +159,7 @@ function endRF() {
   document.getElementById('rfResTotal').textContent   = RF.total;
   document.getElementById('rfNewBest').style.display  = newBest ? 'block' : 'none';
   
-  addSession({ mode:'rapid', score:RF.score, correct:RF.correct, wrong:RF.total-RF.correct, skipped:0, total:RF.total, streak:RF.bestStreak, date:new Date().toLocaleDateString() });
+  addSession({ mode:'rapid', score:RF.score, correct:RF.correct, wrong:RF.total-RF.correct, skipped:0, total:RF.total, streak:RF.bestStreak, date:dateKey() });
   if (newBest) starBurst();
   updateHome(); updateStatsPage(); 
   save(); // Persist and sync everything once at the end

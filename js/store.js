@@ -14,20 +14,36 @@ import {
 const SALT = 'v3x_s4lt_2026';
 
 function computeChecksum(stats) {
-  const sessionsStr = JSON.stringify(stats.sessions || []);
+  const sessionsStr = JSON.stringify((stats.sessions || []).map(s => ({ ...s, createdAt: 0 })));
   const subjStatsStr = JSON.stringify(stats.subjStats || {});
   const chapterStatsStr = JSON.stringify(stats.chapterStats || {});
-  const bookmarksStr = JSON.stringify(stats.bookmarks || []);
-  const wrongStr = JSON.stringify(stats.wrongQuestionIds || []);
-  const achievementsStr = JSON.stringify(stats.achievements || []);
+  const bookmarksStr = JSON.stringify([...(stats.bookmarks || [])].sort());
+  const wrongStr = JSON.stringify([...(stats.wrongQuestionIds || [])].sort());
+  const achievementsStr = JSON.stringify([...(stats.achievements || [])].sort());
   const srStr = JSON.stringify(stats.spacedRepetition || {});
-  const payload = `${stats.answered}|${stats.correct}|${stats.bestStreak}|${stats.dailyStreak || 0}|${stats.lastStudyDate || ''}|${stats.xp}|${stats.level}|${stats.totalSolved}|${stats.autoRemoveWrong}|${stats.joinedAt}|${sessionsStr}|${subjStatsStr}|${chapterStatsStr}|${bookmarksStr}|${wrongStr}|${achievementsStr}|${srStr}|${SALT}`;
+  
+  const payload = [
+    stats.answered || 0,
+    stats.correct || 0,
+    stats.bestStreak || 0,
+    stats.dailyStreak || 0,
+    stats.totalSolved || 0,
+    !!stats.autoRemoveWrong,
+    sessionsStr,
+    subjStatsStr,
+    chapterStatsStr,
+    bookmarksStr,
+    wrongStr,
+    achievementsStr,
+    srStr,
+    SALT
+  ].join('|');
   
   let hash = 0;
   for (let i = 0; i < payload.length; i++) {
     const char = payload.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
-    hash |= 0; // Convert to 32bit integer
+    hash |= 0; 
   }
   return hash.toString(36);
 }
@@ -59,8 +75,6 @@ function loadState() {
     dailyStreak: +localStorage.getItem('vx2_dailyStreak') || 0,
     lastStudyDate: localStorage.getItem('vx2_lastStudyDate') || '',
     bestStreak:  +localStorage.getItem('vx2_bestStreak')  || 0,
-    level:       +localStorage.getItem('vx2_level')       || 1,
-    xp:          +localStorage.getItem('vx2_xp')          || 0,
     answered:    +localStorage.getItem('vx2_answered')    || 0,
     correct:     +localStorage.getItem('vx2_correct')     || 0,
     totalSolved: +localStorage.getItem('vx2_totalSolved') || +localStorage.getItem('vx2_answered') || 0,
@@ -85,8 +99,6 @@ function loadState() {
     raw.dailyStreak = 0;
     raw.lastStudyDate = '';
     raw.bestStreak = 0;
-    raw.level = 1;
-    raw.xp = 0;
     raw.answered = 0;
     raw.correct = 0;
     raw.totalSolved = 0;
@@ -99,7 +111,7 @@ function loadState() {
     raw.autoRemoveWrong = true;
     raw.joinedAt = new Date().toISOString();
     // Persist the reset
-    ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
+    ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'answered', 'correct', 'totalSolved'].forEach(k =>
       localStorage.setItem('vx2_' + k, raw[k]),
     );
     localStorage.setItem('vx2_sessions', '[]');
@@ -160,7 +172,7 @@ export function shuffle(a) {
 // ── Persistence ──
 export function save() {
   S.totalSolved = S.answered;
-  ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'level', 'xp', 'answered', 'correct', 'totalSolved'].forEach(k =>
+  ['streak', 'dailyStreak', 'lastStudyDate', 'bestStreak', 'answered', 'correct', 'totalSolved'].forEach(k =>
     localStorage.setItem('vx2_' + k, S[k]),
   );
   localStorage.setItem('vx2_leaderboardName', S.leaderboardName || '');
@@ -197,9 +209,20 @@ export async function loadCloudProfile() {
   if (!isFirebaseReady() || !getCurrentUser()) return;
   try {
     const profile = await getUserProfile();
-    if (profile?.displayName) {
+    if (!profile) return;
+    if (profile.displayName) {
       S.leaderboardName = profile.displayName;
       localStorage.setItem('vx2_leaderboardName', S.leaderboardName);
+    }
+    if ((profile.answered || 0) > S.answered) {
+      S.answered = profile.answered;
+      S.correct = profile.correct;
+      S.totalSolved = profile.totalSolved || profile.answered;
+      S.bestStreak = profile.bestStreak || 0;
+      // Also save the overwritten values back to localStorage
+      ['answered', 'correct', 'totalSolved', 'bestStreak'].forEach(k =>
+        localStorage.setItem('vx2_' + k, S[k]),
+      );
     }
   } catch {
     // Local stats still work if the profile document is not readable yet.

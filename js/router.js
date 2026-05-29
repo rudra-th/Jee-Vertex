@@ -12,7 +12,7 @@ export function navTo(id) {
     void el.offsetWidth;
     el.classList.add('active');
   }
-  closeMobileNav();
+  closeSidebar();
   // update active nav link
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
   const map = {
@@ -44,22 +44,22 @@ export function navTo(id) {
   reMath();
 }
 
-export function toggleMobileNav() {
-  const drawer = document.getElementById('mobileNav');
+export function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
   const btn = document.getElementById('navMenuBtn');
-  if (!drawer) return;
-  const open = drawer.classList.toggle('open');
+  if (!sidebar) return;
+  const open = sidebar.classList.toggle('open');
   if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  document.body.classList.toggle('nav-open', open);
+  document.body.classList.toggle('sidebar-open', open);
 }
 
-export function closeMobileNav() {
-  const drawer = document.getElementById('mobileNav');
+export function closeSidebar() {
+  const sidebar = document.getElementById('sidebar');
   const btn = document.getElementById('navMenuBtn');
-  if (!drawer?.classList.contains('open')) return;
-  drawer.classList.remove('open');
+  if (!sidebar?.classList.contains('open')) return;
+  sidebar.classList.remove('open');
   if (btn) btn.setAttribute('aria-expanded', 'false');
-  document.body.classList.remove('nav-open');
+  document.body.classList.remove('sidebar-open');
 }
 
 export function onQuizKeydown(e) {

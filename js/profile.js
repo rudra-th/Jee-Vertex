@@ -45,11 +45,9 @@ export function updateProfilePage() {
   
   const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
   setText('profileStreak', S.dailyStreak || 0);
-  setText('profileXP', S.xp);
   setText('profileAcc', acc + '%');
-  setText('profileLevelBadge', S.level);
-  setText('profileRankTitle', getRankTitle(S.level));
-  
+  setText('profileAnswered', S.answered);
+
   // Joined Date
   let joined;
   try {
@@ -61,33 +59,16 @@ export function updateProfilePage() {
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   setText('profileJoinedDate', `Member since ${monthNames[joined.getMonth()]} ${joined.getFullYear()}`);
 
-  // Level Progress Bar
-  const currentXP = S.xp % 100;
-  const nextLvl = S.level + 1;
-  const fill = document.getElementById('profileLvlBarFill');
-  if (fill) fill.style.width = currentXP + '%';
-  setText('profileLvlNextTxt', `Next: Level ${nextLvl}`);
-  setText('p-xp-pct', `${currentXP}%`);
-
   const toggle = document.getElementById('toggleAutoRemove');
   if (toggle) toggle.classList.toggle('on', S.autoRemoveWrong !== false);
 
-  const themeLabel = document.getElementById('themeLabel');
-  if (themeLabel) themeLabel.textContent = S.theme === 'light' ? 'Light' : 'Dark';
+  const themeLabel = document.getElementById('profileThemeLabel');
+  if (themeLabel) {
+    const labels = { dark: 'Dark', light: 'Light', amber: 'Amber' };
+    themeLabel.textContent = labels[S.theme] || 'Dark';
+  }
 
   updateStatsPage();
-}
-
-function getRankTitle(lvl) {
-  if (lvl >= 50) return 'Vertex Grandmaster';
-  if (lvl >= 40) return 'Physics Titan';
-  if (lvl >= 30) return 'Quant Architect';
-  if (lvl >= 25) return 'JEE Elite';
-  if (lvl >= 20) return 'Master Practitioner';
-  if (lvl >= 15) return 'Rising Scholar';
-  if (lvl >= 10) return 'Active Aspirant';
-  if (lvl >= 5)  return 'Dedicated Learner';
-  return 'Foundation Novice';
 }
 
 export async function loginGoogle() {
@@ -128,7 +109,7 @@ export async function deleteAccount() {
   try {
     await deleteUserAccount();
     toast('Account deleted.');
-    S.streak = 0; S.dailyStreak = 0; S.lastStudyDate = ''; S.bestStreak = 0; S.level = 1; S.xp = 0;
+    S.streak = 0; S.dailyStreak = 0; S.lastStudyDate = ''; S.bestStreak = 0;
     S.answered = 0; S.correct = 0; S.totalSolved = 0;
     S.leaderboardName = '';
     S.sessions = []; S.subjStats = {}; S.chapterStats = {}; S.bookmarks = []; S.wrongQuestionIds = []; S.achievements = []; S.spacedRepetition = {};

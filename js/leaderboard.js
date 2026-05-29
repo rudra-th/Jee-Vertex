@@ -15,9 +15,9 @@ let lbExpanded = false;
 
 export async function loadLeaderboard() {
   const hero = document.getElementById('lbHeroStats');
-  if (hero) hero.innerHTML = '<span class="lb-loading">Syncing global ranks…</span>';
+  if (hero) hero.innerHTML = '<span class="lb-loading">Loading rank data...</span>';
   if (!isFirebaseReady()) {
-    renderLeaderboardEmpty('Configure firebase-config.js to enable the global leaderboard.');
+    renderLeaderboardEmpty('Leaderboard is optional. Configure Firebase when you want public rankings; practice and local stats work now.');
     return;
   }
   try {
@@ -41,7 +41,7 @@ export async function loadLeaderboard() {
     renderLbHero();
     renderLbTab(lbTab);
   } catch {
-    renderLeaderboardEmpty('Could not load leaderboard. Check Firestore rules and indexes.');
+    renderLeaderboardEmpty('Leaderboard could not load right now. Your local practice data is still safe.');
   }
 }
 
@@ -50,7 +50,8 @@ function renderLbHero() {
   if (!el) return;
   const me = getCurrentUser();
   const pool = leaderboardCache[lbTab] || [];
-  const myRank = me ? pool.findIndex((u) => u.id === me.uid) + 1 : 0;
+  const idx = me ? pool.findIndex((u) => u.id === me.uid) : -1;
+  const myRank = idx >= 0 ? idx + 1 : null;
   
   let metricLabel = 'Questions Solved';
   let metricValue = S.totalSolved;
@@ -67,7 +68,7 @@ function renderLbHero() {
   el.innerHTML = `
     <div class="lb-hero-stat"><span class="lb-hero-val">${pool.length}</span><span class="lb-hero-lbl">Ranked Players</span></div>
     <div class="lb-hero-stat"><span class="lb-hero-val">${myRank || '—'}</span><span class="lb-hero-lbl">Your Rank</span></div>
-    <div class="lb-hero-stat"><span class="lb-hero-val">${S.level}</span><span class="lb-hero-lbl">Your Level</span></div>
+    <div class="lb-hero-stat"><span class="lb-hero-val">${S.answered}</span><span class="lb-hero-lbl">Questions Solved</span></div>
     <div class="lb-hero-stat"><span class="lb-hero-val">${metricValue}</span><span class="lb-hero-lbl">${metricLabel}</span></div>`;
 }
 
@@ -110,7 +111,7 @@ function renderLbTab(tab) {
 
   if (!list.length) {
     podium.innerHTML = '';
-    rows.innerHTML = '<div class="lb-empty">No rankings yet — be the first to climb the board!</div>';
+    rows.innerHTML = '<div class="lb-empty">No rankings yet. Sign in after a few sessions to publish your score.</div>';
     if (actions) actions.style.display = 'none';
     return;
   }
@@ -122,12 +123,13 @@ function renderLbTab(tab) {
   podium.innerHTML = top3
     .map((u, i) => {
       const val = lbMetricValue(u, tab);
+      const displayName = u.displayName || 'Student';
       return `<div class="lb-podium-card lb-podium-${i + 1}">
         <div class="lb-podium-rank" style="color:${colors[i]}">${medals[i]}</div>
-        <img class="lb-avatar lb-avatar-lg" src="${avatarUrl(u)}" alt="" loading="lazy" onerror="handleAvatarError(this)"/>
-        <div class="lb-podium-name">${escHtml(u.displayName || 'Student')}</div>
+        <img class="lb-avatar lb-avatar-lg" src="${avatarUrl(u)}" alt="" loading="lazy" data-name="${escHtml(displayName)}" onerror="handleAvatarError(this)"/>
+        <div class="lb-podium-name">${escHtml(displayName)}</div>
         <div class="lb-podium-val">${val}</div>
-        <div class="lb-podium-meta">LVL ${u.level || 1}</div>
+        <div class="lb-podium-meta">${u.totalSolved || 0} solved</div>
       </div>`;
     })
     .join('');
@@ -140,12 +142,13 @@ function renderLbTab(tab) {
     .map((u) => {
       const val = lbMetricValue(u, tab);
       const isMe = getCurrentUser() && u.id === getCurrentUser().uid;
+      const displayName = u.displayName || 'Student';
       return `<div class="lb-row${isMe ? ' lb-row-me' : ''}">
       <span class="lb-rank">${u.rank}</span>
-      <img class="lb-avatar" src="${avatarUrl(u)}" alt="" loading="lazy" onerror="handleAvatarError(this)"/>
+      <img class="lb-avatar" src="${avatarUrl(u)}" alt="" loading="lazy" data-name="${escHtml(displayName)}" onerror="handleAvatarError(this)"/>
       <div class="lb-row-info">
-        <div class="lb-row-name">${escHtml(u.displayName || 'Student')}${isMe ? ' <span class="lb-you">YOU</span>' : ''}</div>
-        <div class="lb-row-meta">Level ${u.level || 1} · ${u.totalSolved || 0} solved</div>
+        <div class="lb-row-name">${escHtml(displayName)}${isMe ? ' <span class="lb-you">YOU</span>' : ''}</div>
+        <div class="lb-row-meta">${u.totalSolved || 0} solved</div>
       </div>
       <div class="lb-row-val">${val}</div>
     </div>`;

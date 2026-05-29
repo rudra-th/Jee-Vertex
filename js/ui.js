@@ -48,7 +48,7 @@ export function flash(ok) {
   const el = document.createElement('div');
   el.className = 'flash ' + (ok ? 'ok' : 'bad');
   el.setAttribute('role', 'status');
-  el.textContent = ok ? '✓ Correct! +10 XP' : '✗ Wrong';
+  el.textContent = ok ? 'Correct!' : 'Incorrect';
   const area = document.getElementById('flashArea');
   if (area) {
     area.appendChild(el);
@@ -57,13 +57,13 @@ export function flash(ok) {
 }
 
 export function starBurst() {
-  for (let i = 0; i < 18; i++) {
+  for (let i = 0; i < 12; i++) {
     const s = document.createElement('div');
     s.className = 'star';
-    const a = (i / 18) * 360, d = 80 + Math.random() * 80;
-    s.style.cssText = `width:${4+Math.random()*5}px;height:${4+Math.random()*5}px;left:50%;top:40%;background:hsl(${a},100%,65%);--dx:${Math.cos(a*Math.PI/180)*d}px;--dy:${Math.sin(a*Math.PI/180)*d}px`;
+    const a = (i / 12) * 360, d = 60 + Math.random() * 60;
+    s.style.cssText = `left:50%;top:40%;width:4px;height:4px;background:hsl(${a},100%,65%);--dx:${Math.cos(a*Math.PI/180)*d}px;--dy:${Math.sin(a*Math.PI/180)*d}px`;
     document.body.appendChild(s);
-    setTimeout(() => s.remove(), 900);
+    setTimeout(() => s.remove(), 800);
   }
 }
 
@@ -93,42 +93,30 @@ function daysBetween(a, b) {
 }
 
 export function applyTheme() {
-  document.documentElement.dataset.theme = S.theme === 'light' ? 'light' : 'dark';
+  const themes = ['dark', 'light', 'amber'];
+  const theme = themes.includes(S.theme) ? S.theme : 'dark';
+  document.documentElement.dataset.theme = theme;
+  const icons = { dark: '🌙', light: '☀️', amber: '🌅' };
+  const labels = { dark: 'Dark', light: 'Light', amber: 'Amber' };
   const btn = document.getElementById('themeToggle');
-  if (btn) btn.textContent = S.theme === 'light' ? '☀️' : '🌙';
+  if (btn) btn.textContent = icons[theme];
   const label = document.getElementById('themeLabel');
-  if (label) label.textContent = S.theme === 'light' ? 'Light' : 'Dark';
+  if (label) label.textContent = labels[theme];
+  const profileLabel = document.getElementById('profileThemeLabel');
+  if (profileLabel) profileLabel.textContent = labels[theme];
 }
 
 export function toggleTheme() {
-  S.theme = S.theme === 'light' ? 'dark' : 'light';
+  const order = ['dark', 'light', 'amber'];
+  const idx = order.indexOf(S.theme);
+  S.theme = idx === -1 ? 'light' : order[(idx + 1) % order.length];
   applyTheme();
   save();
-  toast(S.theme === 'light' ? 'Light mode on.' : 'Dark mode on.');
+  const msgs = { dark: 'Dark mode on.', light: 'Light mode on.', amber: 'Amber mode — warm tones activated.' };
+  toast(msgs[S.theme]);
 }
 
-// ── Level-up modal ──
-export function closeLvl() {
-  const el = document.getElementById('lvlModal');
-  if (el) el.style.display = 'none';
-}
 
-// ── XP / Level ──
-export function gainXP(n, skipSave = false) {
-  S.xp += n;
-  const lvl = Math.floor(S.xp / 100) + 1;
-  if (lvl > S.level) {
-    S.level = lvl;
-    setText('newLvlTxt', 'Level ' + lvl);
-    const modal = document.getElementById('lvlModal');
-    if (modal) modal.style.display = 'flex';
-    starBurst();
-  }
-  if (!skipSave) {
-    updateNav();
-    save();
-  }
-}
 
 // ── Subject stat tracking ──
 export function updateSubjStat(subject, isCorrect, skipSave = false) {
@@ -174,10 +162,12 @@ function updateSpacedRepetition(q, isCorrect) {
     current.interval = current.interval <= 0 ? 1 : Math.min(30, Math.ceil(current.interval * (current.ease || 2.2)));
     current.ease = Math.min(2.8, (current.ease || 2.2) + 0.12);
   } else {
-    current.interval = 1;
+    current.interval = 0; // Immediate review needed
     current.ease = Math.max(1.4, (current.ease || 2.2) - 0.25);
   }
-  current.due = dateKey(new Date(Date.now() + current.interval * DAY_MS));
+  const nextDate = new Date();
+  nextDate.setDate(nextDate.getDate() + current.interval);
+  current.due = dateKey(nextDate);
   S.spacedRepetition[key] = current;
 }
 
@@ -285,22 +275,14 @@ export function checkSessionAchievements(session) {
 export function updateNav() {
   setText('streakN', S.dailyStreak || 0);
   setText('dailyStreakN', S.dailyStreak || 0);
-  setText('levelN', S.level);
-  const xpPct = S.xp % 100;
-  const arc   = document.getElementById('xpArc');
-  if (arc) arc.style.strokeDashoffset = 69.1 * (1 - xpPct / 100);
 }
 
 // ── Home page ──
 export function updateHome() {
-  setText('sbAnswered', S.answered);
-  setText('sbCorrect', S.correct);
   const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
-  setText('sbAcc', acc + '%');
-  setText('sbBest', S.bestStreak);
-  setText('xpPct', (S.xp % 100) + ' / 100 XP');
-  const bar = document.getElementById('xpBar');
-  if (bar) bar.style.width = (S.xp % 100) + '%';
+  setText('heroStreak', S.dailyStreak || 0);
+  setText('heroAnswered', S.answered);
+  setText('heroAcc', acc + '%');
 }
 
 // ── Stats page ──
@@ -317,10 +299,7 @@ export function updateStatsPage() {
   setText('stDaily', S.dailyStreak || 0);
 
   // Performance extras
-  setText('stXP',      S.xp      ?? 0);
-  setText('stLevel',   S.level   ?? 1);
   setText('stSessions', (S.sessions || []).length);
-  setText('stWrong',   (S.answered || 0) - (S.correct || 0));
   setText('profileStreak', S.dailyStreak || 0);
 
   // Subject breakdown
@@ -641,16 +620,18 @@ function estimateAdvRank(score) {
 }
 
 export function handleAvatarError(img) {
+  if (!img) return;
   img.onerror = null;
-  img.src = 'https://ui-avatars.com/api/?name=V&background=5b6fff&color=fff&size=128';
+  const name = img.getAttribute('data-name') || 'V';
+  img.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=5b6fff&color=fff&size=128`;
 }
 
 export function updateSyncReminders() {
   const user = getCurrentUser();
   const ids = ['syncReminder', 'statsSyncReminder', 'profileSyncReminder'];
   const msg = user
-    ? '✅ Your progress is syncing to the cloud'
-    : '💡 Sync Your Progress — Sign in with Google to join the global leaderboard!';
+    ? 'Progress is syncing to the cloud.'
+    : 'Local practice is active. Sign in only when you want cloud sync and leaderboard ranking.';
 
   ids.forEach(id => {
     const el = document.getElementById(id);
@@ -689,7 +670,7 @@ export function avatarUrl(user) {
 }
 
 export async function resetAllProgress() {
-  if (!confirm('⚠️ This will reset ALL your stats, XP, level, streaks, and session history. This cannot be undone.\n\nAre you sure?')) return;
+  if (!confirm('⚠️ This will reset ALL your stats, streaks, and session history. This cannot be undone.\n\nAre you sure?')) return;
   
   const user = getCurrentUser();
   if (user) {
@@ -700,7 +681,7 @@ export async function resetAllProgress() {
     }
   }
 
-  S.streak = 0; S.dailyStreak = 0; S.lastStudyDate = ''; S.bestStreak = 0; S.level = 1; S.xp = 0;
+  S.streak = 0; S.dailyStreak = 0; S.lastStudyDate = ''; S.bestStreak = 0;
   S.answered = 0; S.correct = 0; S.totalSolved = 0;
   S.leaderboardName = '';
   S.sessions = []; S.subjStats = {};
@@ -735,5 +716,19 @@ export function renderHistory() {
     rows.innerHTML = '<div style="padding:2.5rem;text-align:center;color:var(--txt3);font-size:.85rem;font-style:italic">No sessions yet — pick a mode and start practicing!</div>';
     return;
   }
-  rows.innerHTML = S.sessions.slice(0, 15).map(buildHistRow).join('');
+  rows.innerHTML = S.sessions.slice(0, 15).map(s => {
+    const b    = s.mode === 'rapid' ? 'hm-rapid' : s.mode === 'mock' ? 'hm-mock' : s.mode === 'custom' ? 'hm-custom' : 'hm-practice';
+    const ml   = s.mode === 'rapid' ? 'Rapid' : s.mode === 'mock' ? 'Mock' : s.mode === 'custom' ? 'Custom' : 'Practice';
+    const st   = s.mode === 'rapid' ? escHtml(s.score + ' pts') : s.mode === 'mock' ? escHtml((s.mockScore || 0) + ' marks') : escHtml(s.score + '%');
+    const det  = s.mode === 'rapid'
+      ? `${escHtml(s.correct)}/${escHtml(s.total)} correct - streak ${escHtml(s.streak || 0)}`
+      : s.mode === 'mock'
+        ? `${escHtml(s.correct)}/${escHtml(s.total)} correct - ${escHtml(s.wrong)} wrong - ${escHtml(s.skipped)} skipped`
+        : `${escHtml(s.correct)}/${escHtml(s.total)} correct - ${escHtml(s.wrong)} wrong`;
+    return `<div class="hist-row">
+      <span class="h-mode-tag ${b}">${ml}</span>
+      <div><div class="h-detail">${det}</div></div>
+      <div class="h-score">${st}</div>
+    </div>`;
+  }).join('');
 }

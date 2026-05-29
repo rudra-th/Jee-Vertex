@@ -4,12 +4,23 @@ firebase-config.js
 # OS junk
 .DS_Store
 Thumbs.db
+Desktop.ini
+*.swp
+*.swo
 
 # Editor
-.vscode/settings.json
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 
-# Node (if added later)
+# Node
 node_modules/
 .env
 .env.local
+.env.*
+*.log
+npm-debug.log*
+
+
 filtered_dataset.csv
