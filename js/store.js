@@ -92,7 +92,6 @@ function loadState() {
   };
 
   if (!validateIntegrity(raw)) {
-    console.warn('[Vertex] Stats integrity check failed — resetting stats.');
     integrityFailed = true;
     // Reset core numeric stats
     raw.streak = 0;
@@ -199,8 +198,8 @@ export function syncCloud() {
   syncTimeout = setTimeout(async () => {
     try {
       await syncUserStats(S);
-    } catch (e) {
-      console.error('[Vertex] Cloud sync failed:', e);
+    } catch {
+      // Cloud sync failed silently — local data is safe
     }
   }, 2000); // Debounce for 2 seconds
 }

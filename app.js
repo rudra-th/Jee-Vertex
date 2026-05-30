@@ -1,24 +1,23 @@
 // ═══════════════════════════════════════
 // APP.JS — Orchestrator
 // ═══════════════════════════════════════
-// Thin entry point: imports all modules, initialises the app,
-// and exposes handler functions to `window` for inline onclick attrs.
+// Entry point: imports all modules, initialises the app,
+// and sets up data-action event delegation.
 
 import { S, allQ, loadQ, initFirebase, onAuthReady, integrityFailed, loadCloudProfile, syncCloud } from './js/store.js';
 import {
   reMath, toast,
   updateNav, updateHome, updateStatsPage, renderHistory, clearHistory, resetAllProgress,
   handleAvatarError, updateSyncReminders, toggleProfileMenu,
-  toggleTheme, applyTheme, toggleBookmark, switchStatsTab, updateRankFromMarks,
+  toggleTheme, applyTheme, toggleBookmark, switchStatsTab,
   removeBookmark, removeWrong, clearBookmarks, clearWrongQueue, toggleAutoRemoveWrong,
 } from './js/ui.js';
-import { navTo, toggleSidebar, closeSidebar, onQuizKeydown } from './js/router.js';
+import { navTo, toggleSidebar, onQuizKeydown } from './js/router.js';
 import {
   populateChapters, updateCustomPreview, updateMockPreview,
-  pracSetup, custSetup,
   setPracticeDifficulty, setCustomDifficulty,
   startPractice, startCustom, startMock, setMockExam,
-  selDiff, togSub, allSubs, noneSubs,
+  togSub, allSubs, noneSubs,
   adjQ, setQN, selTMode, selPQP, onPQI, selTP, onTI,
   pickOpt, nextQ, skipQ, endQuiz, reviewAnswers,
   switchPracSub, selAllCh, clrAllCh,
@@ -28,10 +27,130 @@ import { startRF, rfPick, setRFDifficulty } from './js/rapid.js';
 import { switchLbTab, toggleLbExpand } from './js/leaderboard.js';
 import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName, deleteAccount, copyUID } from './js/profile.js';
 
+const diffCls = (d) => d === 'Foundation' ? 'df' : d === 'JEE Main' ? 'dm' : d === 'JEE Advanced' ? 'da' : 'dall';
+
+// Single window binding for inline onerror handlers on <img> elements
+// (error events don't bubble, so delegation doesn't work for them).
+window.handleAvatarError = handleAvatarError;
+
+const actions = {
+  navTo:          (el) => navTo(el.dataset.route),
+  toggleSidebar:  () => toggleSidebar(),
+
+  toggleTheme:    () => toggleTheme(),
+
+  // Rapid Fire
+  startRF:        () => startRF(),
+  setRFDifficulty: (el) => {
+    document.querySelectorAll('#rfDiffRow .diff-btn').forEach(b => b.className = 'diff-btn');
+    el.classList.add(diffCls(el.dataset.diff));
+    setRFDifficulty(el.dataset.diff);
+  },
+
+  // Practice
+  startPractice:    () => startPractice(),
+  switchPracSub:    (el) => switchPracSub(el),
+  selAllCh:         () => selAllCh(),
+  clrAllCh:         () => clrAllCh(),
+  setPracticeDifficulty: (el) => {
+    document.querySelectorAll('#pracDiffRow .diff-btn').forEach(b => b.className = 'diff-btn');
+    el.classList.add(diffCls(el.dataset.diff));
+    setPracticeDifficulty(el.dataset.diff);
+  },
+
+  // Custom
+  startCustom:       () => startCustom(),
+  togSub:            (el) => togSub(el),
+  allSubs:           () => allSubs(),
+  noneSubs:          () => noneSubs(),
+  adjQ:              (el) => adjQ(parseInt(el.dataset.delta)),
+  setQN:             (el) => setQN(parseInt(el.dataset.count), el),
+  selTMode:          (el) => selTMode(el),
+  selPQP:            (el) => selPQP(el),
+  selTP:             (el) => selTP(el),
+  onPQI:             (el) => onPQI(el),
+  onTI:              (el) => onTI(el),
+  setCustomDifficulty: (el) => {
+    document.querySelectorAll('#custDiffRow .diff-btn').forEach(b => b.className = 'diff-btn');
+    el.classList.add(diffCls(el.dataset.diff));
+    setCustomDifficulty(el.dataset.diff);
+    updateCustomPreview();
+  },
+
+  // Mock
+  startMock:        () => startMock(),
+  setMockExam:      (el) => setMockExam(el.dataset.exam, el),
+
+  // Quiz
+  pickOpt:          (el) => pickOpt(el, parseInt(el.dataset.idx)),
+  rfPick:           (el) => rfPick(el, parseInt(el.dataset.idx)),
+  nextQ:            () => nextQ(),
+  skipQ:            () => skipQ(),
+  endQuiz:          () => endQuiz(),
+  reviewAnswers:    () => reviewAnswers(),
+  jumpToQuestion:   (el) => jumpToQuestion(parseInt(el.dataset.idx)),
+  jumpReview:       (el) => jumpReview(parseInt(el.dataset.idx)),
+  toggleBookmark:   (el) => toggleBookmark(el.dataset.id),
+
+  // Stats
+  switchStatsTab:   (el) => switchStatsTab(el.dataset.tab),
+
+  // Leaderboard
+  switchLbTab:      (el) => switchLbTab(el.dataset.tab, el),
+  toggleLbExpand:   () => toggleLbExpand(),
+
+  // Profile
+  loginGoogle:            () => loginGoogle(),
+  logoutGoogle:           () => logoutGoogle(),
+  saveLeaderboardName:    () => saveLeaderboardName(),
+  deleteAccount:          () => deleteAccount(),
+  copyUID:                () => copyUID(),
+  toggleAutoRemoveWrong:  () => toggleAutoRemoveWrong(),
+
+  // Data
+  clearHistory:       () => clearHistory(),
+  resetAllProgress:   () => resetAllProgress(),
+  toggleProfileMenu:  (el) => toggleProfileMenu(el),
+
+  // Saved questions
+  startBookmarkedPractice: () => startBookmarkedPractice(),
+  startWrongPractice:      () => startWrongPractice(),
+  startSRSReview:          () => startSRSReview(),
+  clearBookmarks:          () => clearBookmarks(),
+  clearWrongQueue:         () => clearWrongQueue(),
+  removeBookmark:          (el) => removeBookmark(el.dataset.id),
+  removeWrong:             (el) => removeWrong(el.dataset.id),
+  startQuestionSet:        (el) => startQuestionSet(el.dataset.id),
+  practiceChapter:         (el) => practiceChapter(el.dataset.subject, el.dataset.chapter),
+};
+
+// ═══ EVENT DELEGATION ═══
+document.addEventListener('click', (e) => {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const fn = actions[el.dataset.action];
+  if (fn) { fn(el); }
+});
+
+document.addEventListener('input', (e) => {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  if (el.dataset.action === 'onPQI' || el.dataset.action === 'onTI') {
+    actions[el.dataset.action](el);
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const el = e.target.closest('[data-action]');
+  if (!el || el.tagName === 'BUTTON' || el.tagName === 'A') return;
+  e.preventDefault();
+  const fn = actions[el.dataset.action];
+  if (fn) fn(el);
+});
+
 // ═══ INIT ═══
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log('[Vertex] DOMContentLoaded - Initializing...');
-  bindGlobals();
   initFirebase();
   onAuthReady(async () => {
     await loadCloudProfile();
@@ -40,7 +159,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     syncCloud();
   });
   await loadQ();
-  // Show toast messages deferred from store.js (no circular dep)
   if (integrityFailed) {
     toast('⚠️ Stats were tampered with and have been reset.');
   }
@@ -58,77 +176,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   updateCustomPreview();
   updateMockPreview();
   document.addEventListener('keydown', onQuizKeydown);
-  console.log('[Vertex] Initialization complete.');
 });
-
-// ═══ GLOBAL BINDINGS ═══
-// Exposes functions to `window` so inline onclick= handlers in index.html work.
-function bindGlobals() {
-  const globals = {
-    navTo,
-    toggleSidebar,
-    closeSidebar,
-    pracSetup,
-    custSetup,
-    setPracticeDifficulty,
-    setCustomDifficulty,
-    clearHistory,
-    resetAllProgress,
-    startRF,
-    setRFDifficulty,
-    startPractice,
-    startCustom,
-    startMock,
-    setMockExam,
-    selDiff,
-    togSub,
-    allSubs,
-    noneSubs,
-    adjQ,
-    setQN,
-    selTMode,
-    selPQP,
-    onPQI,
-    selTP,
-    onTI,
-    pickOpt,
-    nextQ,
-    skipQ,
-    jumpToQuestion,
-    endQuiz,
-    reviewAnswers,
-    rfPick,
-    switchPracSub,
-    selAllCh,
-    clrAllCh,
-    switchLbTab,
-    toggleLbExpand,
-    toggleProfileMenu,
-    loginGoogle,
-    logoutGoogle,
-    saveLeaderboardName,
-    deleteAccount,
-    copyUID,
-    handleAvatarError,
-    toggleBookmark,
-    switchStatsTab,
-    updateRankFromMarks,
-    toggleTheme,
-    applyTheme,
-    removeBookmark,
-    removeWrong,
-    clearBookmarks,
-    clearWrongQueue,
-    toggleAutoRemoveWrong,
-    startBookmarkedPractice,
-    startWrongPractice,
-    startSRSReview,
-    practiceChapter,
-    startQuestionSet,
-    jumpReview
-  };
-  Object.keys(globals).forEach(key => {
-    if (globals[key] === undefined) console.error(`[Vertex] Global ${key} is undefined!`);
-  });
-  Object.assign(window, globals);
-}

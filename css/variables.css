@@ -1,0 +1,57 @@
+
+/* ═══ DESIGN TOKENS ═══ */
+:root {
+  --bg:      #08080f;
+  --bg2:     #0d0d18;
+  --bg3:     #13131f;
+  --bg4:     #1a1a2e;
+  --line:    rgba(255,255,255,0.04);
+  --line2:   rgba(255,255,255,0.07);
+  --line3:   rgba(255,255,255,0.12);
+  --txt:     #e4e4ed;
+  --txt2:    #8888a0;
+  --txt3:    #4a4a60;
+  --accent:  #7c5cfc;
+  --accentL: #9d7cff;
+  --gold:    #f0a030;
+  --emerald: #00c9a7;
+  --rose:    #ff6b6b;
+  --sky:     #4fc3f7;
+  --violet:  #b388ff;
+  --phy:     #4fc3f7;
+  --chem:    #00c9a7;
+  --math:    #f0a030;
+  --topbar:  rgba(8,8,15,0.75);
+  --shadow:  0 8px 28px rgba(0,0,0,.4);
+  --spring:  cubic-bezier(.34,1.56,.64,1);
+  --out:     cubic-bezier(.16,1,.3,1);
+  --serif:   'Syne', sans-serif;
+  --sans:    'Inter', -apple-system, sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+}
+
+:root[data-theme="light"] {
+  --bg:      #f5f6fa;
+  --bg2:     #ffffff;
+  --bg3:     #eef0f4;
+  --bg4:     #e2e5eb;
+  --line:    rgba(0,0,0,0.06);
+  --line2:   rgba(0,0,0,0.10);
+  --line3:   rgba(0,0,0,0.16);
+  --txt:     #0f141f;
+  --txt2:    #5a6577;
+  --txt3:    #8a94a6;
+  --accent:  #6d4aff;
+  --accentL: #8b6fff;
+  --gold:    #d97706;
+  --emerald: #059669;
+  --rose:    #dc2626;
+  --sky:     #0284c7;
+  --violet:  #7c3aed;
+  --phy:     #0284c7;
+  --chem:    #059669;
+  --math:    #d97706;
+  --shadow:  0 2px 8px rgba(0,0,0,0.06);
+  --topbar:  rgba(245,246,250,0.80);
+  color-scheme: light;
+}

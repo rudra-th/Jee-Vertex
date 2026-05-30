@@ -5,7 +5,23 @@ import { reMath, updateStatsPage } from './ui.js';
 import { loadLeaderboard } from './leaderboard.js';
 import { updateProfilePage } from './profile.js';
 
+const pageTitles = {
+  home: 'Home — Vertex JEE',
+  'rapid-setup': 'Rapid Fire — Vertex JEE',
+  'practice-setup': 'Practice — Vertex JEE',
+  'custom-setup': 'Custom Test — Vertex JEE',
+  'mock-setup': 'Mock Test — Vertex JEE',
+  stats: 'Stats — Vertex JEE',
+  leaderboard: 'Leaderboard — Vertex JEE',
+  profile: 'Profile — Vertex JEE',
+  quiz: 'Quiz — Vertex JEE',
+  'rapid-quiz': 'Rapid Fire — Vertex JEE',
+  results: 'Results — Vertex JEE',
+  'rapid-results': 'Results — Vertex JEE',
+};
+
 export function navTo(id) {
+  document.title = pageTitles[id] || 'Vertex — JEE Practice Platform';
   document.querySelectorAll('.page').forEach((p) => p.classList.remove('active'));
   const el = document.getElementById('pg-' + id);
   if (el) {
@@ -61,6 +77,10 @@ export function closeSidebar() {
   if (btn) btn.setAttribute('aria-expanded', 'false');
   document.body.classList.remove('sidebar-open');
 }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeSidebar();
+});
 
 export function onQuizKeydown(e) {
   if (e.repeat || e.ctrlKey || e.metaKey || e.altKey) return;

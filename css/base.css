@@ -1,0 +1,81 @@
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; color-scheme: dark; }
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: var(--sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--line3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--txt3); }
+
+/* AMBIENT EFFECTS */
+.amb {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 45% at 25% 15%, rgba(124,92,252,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 35% at 75% 20%, rgba(0,201,167,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 80%, rgba(240,160,48,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 10% 70%, rgba(179,136,255,0.03) 0%, transparent 50%);
+}
+.amb::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 22%, rgba(255,255,255,0.06) 0%, transparent 100%),
+    radial-gradient(1px 1px at 22% 55%, rgba(255,255,255,0.04) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 35% 12%, rgba(255,255,255,0.05) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 72%, rgba(255,255,255,0.03) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 62% 35%, rgba(255,255,255,0.05) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 58%, rgba(255,255,255,0.04) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 18%, rgba(255,255,255,0.03) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 90%, rgba(255,255,255,0.04) 0%, transparent 100%);
+  background-size: 180px 180px;
+  opacity: .6;
+}
+
+/* KEYFRAMES */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeUpBounce {
+  0%   { opacity: 0; transform: translateY(24px); }
+  60%  { opacity: 1; transform: translateY(-3px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-4px); }
+}
+@keyframes glowPulse {
+  0%,100% { filter: drop-shadow(0 0 10px rgba(124,92,252,0.12)); }
+  50%     { filter: drop-shadow(0 0 20px rgba(124,92,252,0.3)) drop-shadow(0 0 40px rgba(124,92,252,0.1)); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes borderGlow {
+  0%,100% { opacity: .25; }
+  50%     { opacity: .6; }
+}
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+@keyframes pgIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes timePulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+@keyframes star { 0%{opacity:1;transform:scale(1) translate(0,0)} 100%{opacity:0;transform:scale(0) translate(var(--dx),var(--dy))} }
+@keyframes flIn  { from{opacity:0;transform:translateX(20px) scale(.9)} to{opacity:1;transform:translateX(0) scale(1)} }
+@keyframes flOut { from{opacity:1} to{opacity:0;transform:translateX(20px)} }
+@keyframes tIn  { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+@keyframes tOut { from{opacity:1} to{opacity:0} }

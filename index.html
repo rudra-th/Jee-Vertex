@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"/>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="css/variables.css"/>
+<link rel="stylesheet" href="css/base.css"/>
 <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
@@ -21,27 +23,27 @@
 <!-- ═══ TOPBAR ═══ -->
 <nav class="topbar">
   <div class="nav-left">
-    <button type="button" class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu" aria-expanded="false" onclick="toggleSidebar()">&#9776;</button>
-    <div class="logo" onclick="navTo('home')" title="Go to Home">
+    <button type="button" class="nav-menu-btn" id="navMenuBtn" aria-label="Open menu" aria-expanded="false" data-action="toggleSidebar">&#9776;</button>
+    <div class="logo" data-action="navTo" data-route="home" title="Go to Home" tabindex="0" role="button">
       <div class="logo-dot"></div>
       Vertex<span class="logo-tag">JEE</span>
     </div>
   </div>
 
   <div class="nav-links">
-    <button class="nav-link active" onclick="navTo('home')" data-nav="home"><span class="nav-icon">&#127968;</span> Home</button>
-    <button class="nav-link" onclick="navTo('rapid-setup')" data-nav="rapid"><span class="nav-icon">&#9889;</span> Rapid Fire</button>
-    <button class="nav-link" onclick="navTo('custom-setup')" data-nav="custom"><span class="nav-icon">&#129513;</span> Custom</button>
-    <button class="nav-link" onclick="navTo('practice-setup')" data-nav="practice"><span class="nav-icon">&#128218;</span> Practice</button>
-    <button class="nav-link" onclick="navTo('leaderboard')" data-nav="leaderboard"><span class="nav-icon">&#127942;</span> Leaderboard</button>
-    <button class="nav-link" onclick="navTo('stats')" data-nav="stats"><span class="nav-icon">&#128202;</span> Stats</button>
-    <button class="nav-link" onclick="navTo('profile')" data-nav="profile"><span class="nav-icon">&#128100;</span> Profile</button>
+    <button class="nav-link active" data-action="navTo" data-route="home" data-nav="home"><span class="nav-icon">&#127968;</span> Home</button>
+    <button class="nav-link" data-action="navTo" data-route="rapid-setup" data-nav="rapid"><span class="nav-icon">&#9889;</span> Rapid Fire</button>
+    <button class="nav-link" data-action="navTo" data-route="custom-setup" data-nav="custom"><span class="nav-icon">&#129513;</span> Custom</button>
+    <button class="nav-link" data-action="navTo" data-route="practice-setup" data-nav="practice"><span class="nav-icon">&#128218;</span> Practice</button>
+    <button class="nav-link" data-action="navTo" data-route="leaderboard" data-nav="leaderboard"><span class="nav-icon">&#127942;</span> Leaderboard</button>
+    <button class="nav-link" data-action="navTo" data-route="stats" data-nav="stats"><span class="nav-icon">&#128202;</span> Stats</button>
+    <button class="nav-link" data-action="navTo" data-route="profile" data-nav="profile"><span class="nav-icon">&#128100;</span> Profile</button>
   </div>
 
   <div class="nav-right">
-    <button type="button" class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <button type="button" class="theme-toggle" id="themeToggle" data-action="toggleTheme" aria-label="Toggle theme" title="Toggle theme">🌙</button>
     <div class="stat-pill streak-pill" title="Current streak">&#128293; <span id="streakN">0</span></div>
-    <img id="navAvatar" class="nav-avatar" alt="Profile" onclick="navTo('profile')" title="View Profile" onerror="handleAvatarError(this)"/>
+    <img id="navAvatar" class="nav-avatar" alt="Profile" data-action="navTo" data-route="profile" title="View Profile" onerror="handleAvatarError(this)"/>
   </div>
 </nav>
 
@@ -51,17 +53,17 @@
       <div class="logo-dot"></div>
       <span>Vertex<span class="logo-tag">JEE</span></span>
     </div>
-    <button type="button" class="sidebar-close" onclick="toggleSidebar()" aria-label="Close menu">&times;</button>
+    <button type="button" class="sidebar-close" data-action="toggleSidebar" aria-label="Close menu">&times;</button>
   </div>
   <div class="sidebar-body">
     <div class="sidebar-section-label">Navigate</div>
-    <button type="button" class="sidebar-link" onclick="navTo('home')"><span class="sidebar-icon">&#127968;</span> Home</button>
-    <button type="button" class="sidebar-link" onclick="navTo('rapid-setup')"><span class="sidebar-icon">&#9889;</span> Rapid Fire</button>
-    <button type="button" class="sidebar-link" onclick="navTo('practice-setup')"><span class="sidebar-icon">&#128218;</span> Practice</button>
-    <button type="button" class="sidebar-link" onclick="navTo('custom-setup')"><span class="sidebar-icon">&#129513;</span> Custom Test</button>
-    <button type="button" class="sidebar-link" onclick="navTo('leaderboard')"><span class="sidebar-icon">&#127942;</span> Leaderboard</button>
-    <button type="button" class="sidebar-link" onclick="navTo('stats')"><span class="sidebar-icon">&#128202;</span> Stats</button>
-    <button type="button" class="sidebar-link" onclick="navTo('profile')"><span class="sidebar-icon">&#128100;</span> Profile</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="home"><span class="sidebar-icon">&#127968;</span> Home</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="rapid-setup"><span class="sidebar-icon">&#9889;</span> Rapid Fire</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="practice-setup"><span class="sidebar-icon">&#128218;</span> Practice</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="custom-setup"><span class="sidebar-icon">&#129513;</span> Custom Test</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="leaderboard"><span class="sidebar-icon">&#127942;</span> Leaderboard</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="stats"><span class="sidebar-icon">&#128202;</span> Stats</button>
+    <button type="button" class="sidebar-link" data-action="navTo" data-route="profile"><span class="sidebar-icon">&#128100;</span> Profile</button>
 
     <div class="sidebar-section-label" style="margin-top:1.25rem">Preferences</div>
     <div class="sidebar-pref-row">
@@ -70,17 +72,17 @@
     </div>
     <div class="sidebar-pref-row">
       <span class="sidebar-pref-label">Theme</span>
-      <button class="btn btn-ghost btn-sm" onclick="toggleTheme()" id="themeLabel">Dark</button>
+      <button class="btn btn-ghost btn-sm" data-action="toggleTheme" id="themeLabel">Dark</button>
     </div>
   </div>
 </div>
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" data-action="toggleSidebar"></div>
 
 <nav class="bottom-nav" aria-label="Main navigation">
-  <button type="button" class="bottom-nav-item active" onclick="navTo('home')" data-bnav="home">Home</button>
-  <button type="button" class="bottom-nav-item" onclick="navTo('practice-setup')" data-bnav="practice">Practice</button>
-  <button type="button" class="bottom-nav-item" onclick="navTo('leaderboard')" data-bnav="leaderboard">Board</button>
-  <button type="button" class="bottom-nav-item" onclick="navTo('profile')" data-bnav="profile">Profile</button>
+  <button type="button" class="bottom-nav-item active" data-action="navTo" data-route="home" data-bnav="home">Home</button>
+  <button type="button" class="bottom-nav-item" data-action="navTo" data-route="practice-setup" data-bnav="practice">Practice</button>
+  <button type="button" class="bottom-nav-item" data-action="navTo" data-route="leaderboard" data-bnav="leaderboard">Board</button>
+  <button type="button" class="bottom-nav-item" data-action="navTo" data-route="profile" data-bnav="profile">Profile</button>
 </nav>
 
 <!-- ═══ MAIN ═══ -->
@@ -96,33 +98,33 @@
     <p class="launch-p">Adaptive drills · Mock exams · Real-time performance</p>
 
     <div class="launch-actions">
-      <button class="btn btn-primary btn-xl" onclick="navTo('practice-setup')">→ Start Practice</button>
-      <button class="btn btn-gold btn-xl" onclick="navTo('mock-setup')">📝 Take Mock Test</button>
+      <button class="btn btn-primary btn-xl" data-action="navTo" data-route="practice-setup">→ Start Practice</button>
+      <button class="btn btn-gold btn-xl" data-action="navTo" data-route="mock-setup">📝 Take Mock Test</button>
     </div>
 
     <div class="launch-grid">
-      <div class="launch-card" onclick="navTo('practice-setup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('practice-setup')">
+      <div class="launch-card" data-action="navTo" data-route="practice-setup" role="button" tabindex="0">
         <div class="lc-icon">📚</div>
         <div class="lc-body">
           <div class="lc-name">Practice</div>
           <div class="lc-desc">Chapter-wise</div>
         </div>
       </div>
-      <div class="launch-card" onclick="navTo('rapid-setup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('rapid-setup')">
+      <div class="launch-card" data-action="navTo" data-route="rapid-setup" role="button" tabindex="0">
         <div class="lc-icon">⚡</div>
         <div class="lc-body">
           <div class="lc-name">Rapid Fire</div>
           <div class="lc-desc">2-min sprint</div>
         </div>
       </div>
-      <div class="launch-card" onclick="navTo('custom-setup')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('custom-setup')">
+      <div class="launch-card" data-action="navTo" data-route="custom-setup" role="button" tabindex="0">
         <div class="lc-icon">🎯</div>
         <div class="lc-body">
           <div class="lc-name">Custom Test</div>
           <div class="lc-desc">Your rules</div>
         </div>
       </div>
-      <div class="launch-card" onclick="navTo('leaderboard')" role="button" tabindex="0" onkeydown="if(event.key==='Enter')navTo('leaderboard')">
+      <div class="launch-card" data-action="navTo" data-route="leaderboard" role="button" tabindex="0">
         <div class="lc-icon">🏆</div>
         <div class="lc-body">
           <div class="lc-name">Leaderboard</div>
@@ -142,7 +144,7 @@
 
   <!-- SUBJECT CARDS -->
   <div class="home-subjects">
-    <div class="hs-card" onclick="navTo('practice-setup')" style="--hs-accent:var(--phy)">
+    <div class="hs-card" data-action="navTo" data-route="practice-setup" style="--hs-accent:var(--phy)" tabindex="0" role="button">
       <div class="hs-icon">⚛️</div>
       <div class="hs-body">
         <div class="hs-name">Physics</div>
@@ -150,7 +152,7 @@
       </div>
       <span class="hs-arrow">→</span>
     </div>
-    <div class="hs-card" onclick="navTo('practice-setup')" style="--hs-accent:var(--chem)">
+    <div class="hs-card" data-action="navTo" data-route="practice-setup" style="--hs-accent:var(--chem)" tabindex="0" role="button">
       <div class="hs-icon">🧪</div>
       <div class="hs-body">
         <div class="hs-name">Chemistry</div>
@@ -158,7 +160,7 @@
       </div>
       <span class="hs-arrow">→</span>
     </div>
-    <div class="hs-card" onclick="navTo('practice-setup')" style="--hs-accent:var(--math)">
+    <div class="hs-card" data-action="navTo" data-route="practice-setup" style="--hs-accent:var(--math)" tabindex="0" role="button">
       <div class="hs-icon">📐</div>
       <div class="hs-body">
         <div class="hs-name">Mathematics</div>
@@ -197,7 +199,7 @@
   <div class="launch-history">
     <div class="lh-head">
       <span>Recent Activity</span>
-      <button class="btn btn-ghost btn-sm" onclick="clearHistory()">Clear</button>
+      <button class="btn btn-ghost btn-sm" data-action="clearHistory">Clear</button>
     </div>
     <div class="hist-wrap" id="homeHistWrap">
       <div class="hist-head">
@@ -222,7 +224,7 @@
 <div class="page-inner narrow">
 
   <div class="sec-hd"><h2>⚡ Rapid Fire</h2><div class="sec-rule"></div>
-    <button class="btn btn-ghost btn-sm" onclick="navTo('home')">← Back</button>
+    <button class="btn btn-ghost btn-sm" data-action="navTo" data-route="home">← Back</button>
   </div>
 
   <div class="rf-setup-hero">
@@ -236,13 +238,13 @@
   <div class="setup-card">
     <div class="sc-label">Difficulty</div>
     <div class="diff-row" id="rfDiffRow">
-      <button class="diff-btn df" data-diff="Foundation" onclick="selDiff('rfDiffRow',this,setRFDifficulty)">Foundation<span class="diff-sub">Beginner</span></button>
-      <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('rfDiffRow',this,setRFDifficulty)">JEE Main<span class="diff-sub">Intermediate</span></button>
-      <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('rfDiffRow',this,setRFDifficulty)">JEE Advanced<span class="diff-sub">Expert</span></button>
+      <button class="diff-btn df" data-action="setRFDifficulty" data-diff="Foundation">Foundation<span class="diff-sub">Beginner</span></button>
+      <button class="diff-btn" data-action="setRFDifficulty" data-diff="JEE Main">JEE Main<span class="diff-sub">Intermediate</span></button>
+      <button class="diff-btn" data-action="setRFDifficulty" data-diff="JEE Advanced">JEE Advanced<span class="diff-sub">Expert</span></button>
     </div>
   </div>
   <div style="margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap">
-    <button class="btn btn-danger btn-lg" onclick="startRF()">⚡ Launch Rapid Fire</button>
+    <button class="btn btn-danger btn-lg" data-action="startRF">⚡ Launch Rapid Fire</button>
   </div>
 
 </div>
@@ -301,8 +303,8 @@
     </div>
 
     <div class="res-actions">
-      <button class="btn btn-danger btn-lg" onclick="startRF()">⚡ Play Again</button>
-      <button class="btn btn-ghost" onclick="navTo('home')">← Home</button>
+      <button class="btn btn-danger btn-lg" data-action="startRF">⚡ Play Again</button>
+      <button class="btn btn-ghost" data-action="navTo" data-route="home">← Home</button>
     </div>
   </div>
 
@@ -314,14 +316,14 @@
 <div id="pg-mock-setup" class="page">
 <div class="page-inner narrow">
   <div class="sec-hd"><h2>JEE Mock Test</h2><div class="sec-rule"></div>
-    <button class="btn btn-ghost btn-sm" onclick="navTo('home')">Back</button>
+    <button class="btn btn-ghost btn-sm" data-action="navTo" data-route="home">Back</button>
   </div>
 
   <div class="setup-card" style="margin-bottom:1rem">
     <div class="sc-label">Exam</div>
     <div class="diff-row" id="mockExamRow">
-      <button class="diff-btn dm" onclick="setMockExam('main', this)">JEE Main<span class="diff-sub">75 questions - 300 marks</span></button>
-      <button class="diff-btn" onclick="setMockExam('advanced', this)">JEE Advanced<span class="diff-sub">54 questions - 216 marks</span></button>
+      <button class="diff-btn dm" data-action="setMockExam" data-exam="main">JEE Main<span class="diff-sub">75 questions - 300 marks</span></button>
+      <button class="diff-btn" data-action="setMockExam" data-exam="advanced">JEE Advanced<span class="diff-sub">54 questions - 216 marks</span></button>
     </div>
     <p id="mockPreview" class="cust-hint ok">Preparing mock preview...</p>
   </div>
@@ -335,7 +337,7 @@
     </div>
   </div>
 
-  <button class="btn btn-primary btn-lg" onclick="startMock()">Start Mock Test</button>
+  <button class="btn btn-primary btn-lg" data-action="startMock">Start Mock Test</button>
 </div>
 </div>
 
@@ -345,23 +347,23 @@
 <div class="page-inner narrow">
 
   <div class="sec-hd"><h2>📚 Practice Mode</h2><div class="sec-rule"></div>
-    <button class="btn btn-ghost btn-sm" onclick="navTo('home')">← Back</button>
+    <button class="btn btn-ghost btn-sm" data-action="navTo" data-route="home">← Back</button>
   </div>
 
   <div class="setup-card" style="margin-bottom:1rem">
     <div class="sc-label">Subject</div>
     <div class="sub-tabs" id="pracSubTabs">
-      <button class="sub-tab ap" data-subject="Physics" onclick="switchPracSub(this)">⚛ Physics</button>
-      <button class="sub-tab" data-subject="Chemistry" onclick="switchPracSub(this)">🧪 Chemistry</button>
-      <button class="sub-tab" data-subject="Mathematics" onclick="switchPracSub(this)">📐 Mathematics</button>
+      <button class="sub-tab ap" data-action="switchPracSub" data-subject="Physics">⚛ Physics</button>
+      <button class="sub-tab" data-action="switchPracSub" data-subject="Chemistry">🧪 Chemistry</button>
+      <button class="sub-tab" data-action="switchPracSub" data-subject="Mathematics">📐 Mathematics</button>
     </div>
   </div>
 
   <div class="setup-card" style="margin-bottom:1rem">
     <div class="sc-label">Chapters</div>
     <div class="ch-actions">
-      <button class="btn btn-ghost btn-sm" onclick="selAllCh()">✓ Select All</button>
-      <button class="btn btn-ghost btn-sm" onclick="clrAllCh()">✕ Clear</button>
+      <button class="btn btn-ghost btn-sm" data-action="selAllCh">✓ Select All</button>
+      <button class="btn btn-ghost btn-sm" data-action="clrAllCh">✕ Clear</button>
       <span class="ch-count" id="chCount">0 selected</span>
     </div>
     <div class="ch-grid" id="pracChGrid"></div>
@@ -370,15 +372,15 @@
   <div class="setup-card" style="margin-bottom:1rem">
     <div class="sc-label">Difficulty</div>
     <div class="diff-row" id="pracDiffRow">
-      <button class="diff-btn df" data-diff="Foundation" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">Foundation<span class="diff-sub">School Level</span></button>
-      <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">JEE Main<span class="diff-sub">Moderate</span></button>
-      <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">JEE Advanced<span class="diff-sub">Expert</span></button>
-      <button class="diff-btn" data-diff="All" onclick="selDiff('pracDiffRow',this,setPracticeDifficulty)">All Levels<span class="diff-sub">Mixed</span></button>
+      <button class="diff-btn df" data-action="setPracticeDifficulty" data-diff="Foundation">Foundation<span class="diff-sub">School Level</span></button>
+      <button class="diff-btn" data-action="setPracticeDifficulty" data-diff="JEE Main">JEE Main<span class="diff-sub">Moderate</span></button>
+      <button class="diff-btn" data-action="setPracticeDifficulty" data-diff="JEE Advanced">JEE Advanced<span class="diff-sub">Expert</span></button>
+      <button class="diff-btn" data-action="setPracticeDifficulty" data-diff="All">All Levels<span class="diff-sub">Mixed</span></button>
     </div>
   </div>
 
   <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-    <button class="btn btn-primary btn-lg" onclick="startPractice()">📚 Start Practice</button>
+    <button class="btn btn-primary btn-lg" data-action="startPractice">📚 Start Practice</button>
   </div>
 
 </div>
@@ -390,77 +392,77 @@
 <div class="page-inner narrow">
 
   <div class="sec-hd"><h2>🎯 Custom Test</h2><div class="sec-rule"></div>
-    <button class="btn btn-ghost btn-sm" onclick="navTo('home')">← Back</button>
+    <button class="btn btn-ghost btn-sm" data-action="navTo" data-route="home">← Back</button>
   </div>
 
   <div class="setup-grid">
     <div class="setup-card">
       <div class="sc-label">Questions</div>
       <div class="q-stepper">
-        <button class="step-btn" onclick="adjQ(-5)">−</button>
+        <button class="step-btn" data-action="adjQ" data-delta="-5">−</button>
         <div class="step-val" id="custQCount">20</div>
-        <button class="step-btn" onclick="adjQ(5)">+</button>
+        <button class="step-btn" data-action="adjQ" data-delta="5">+</button>
       </div>
       <div class="presets">
-        <button class="preset" onclick="setQN(10,this)">10</button>
-        <button class="preset on" onclick="setQN(20,this)">20</button>
-        <button class="preset" onclick="setQN(30,this)">30</button>
-        <button class="preset" onclick="setQN(45,this)">45</button>
+        <button class="preset" data-action="setQN" data-count="10">10</button>
+        <button class="preset on" data-action="setQN" data-count="20">20</button>
+        <button class="preset" data-action="setQN" data-count="30">30</button>
+        <button class="preset" data-action="setQN" data-count="45">45</button>
       </div>
     </div>
 
     <div class="setup-card">
       <div class="sc-label">Subjects</div>
       <div class="subj-row" id="subjRow">
-        <button class="subj-btn sp" data-sub="Physics" onclick="togSub(this)">⚛ Physics</button>
-        <button class="subj-btn sc" data-sub="Chemistry" onclick="togSub(this)">🧪 Chem</button>
-        <button class="subj-btn sm" data-sub="Mathematics" onclick="togSub(this)">📐 Math</button>
+        <button class="subj-btn sp" data-action="togSub" data-sub="Physics">⚛ Physics</button>
+        <button class="subj-btn sc" data-action="togSub" data-sub="Chemistry">🧪 Chem</button>
+        <button class="subj-btn sm" data-action="togSub" data-sub="Mathematics">📐 Math</button>
       </div>
       <div style="display:flex;gap:.4rem;margin-top:.75rem">
-        <button class="btn btn-ghost btn-sm" onclick="allSubs()">✓ All</button>
-        <button class="btn btn-ghost btn-sm" onclick="noneSubs()">✕ None</button>
+        <button class="btn btn-ghost btn-sm" data-action="allSubs">✓ All</button>
+        <button class="btn btn-ghost btn-sm" data-action="noneSubs">✕ None</button>
       </div>
     </div>
 
     <div class="setup-card full">
       <div class="sc-label">Difficulty</div>
       <div class="diff-row" id="custDiffRow">
-        <button class="diff-btn dall" data-diff="All" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">All Levels<span class="diff-sub">Mixed</span></button>
-        <button class="diff-btn" data-diff="Foundation" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">Foundation<span class="diff-sub">Beginner</span></button>
-        <button class="diff-btn" data-diff="JEE Main" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">JEE Main<span class="diff-sub">Intermediate</span></button>
-        <button class="diff-btn" data-diff="JEE Advanced" onclick="selDiff('custDiffRow',this,setCustomDifficulty)">JEE Advanced<span class="diff-sub">Expert</span></button>
+        <button class="diff-btn dall" data-action="setCustomDifficulty" data-diff="All">All Levels<span class="diff-sub">Mixed</span></button>
+        <button class="diff-btn" data-action="setCustomDifficulty" data-diff="Foundation">Foundation<span class="diff-sub">Beginner</span></button>
+        <button class="diff-btn" data-action="setCustomDifficulty" data-diff="JEE Main">JEE Main<span class="diff-sub">Intermediate</span></button>
+        <button class="diff-btn" data-action="setCustomDifficulty" data-diff="JEE Advanced">JEE Advanced<span class="diff-sub">Expert</span></button>
       </div>
     </div>
 
     <div class="setup-card full">
       <div class="sc-label">Timer</div>
       <div class="tm-row" id="tmRow">
-        <button class="tm-opt" data-tmode="none" onclick="selTMode(this)">No Limit</button>
-        <button class="tm-opt on" data-tmode="perq" onclick="selTMode(this)">Per Question</button>
-        <button class="tm-opt" data-tmode="total" onclick="selTMode(this)">Total Time</button>
+        <button class="tm-opt" data-action="selTMode" data-tmode="none">No Limit</button>
+        <button class="tm-opt on" data-action="selTMode" data-tmode="perq">Per Question</button>
+        <button class="tm-opt" data-action="selTMode" data-tmode="total">Total Time</button>
       </div>
       <div id="perQArea">
         <div class="tpc-row">
-          <button class="tpc" data-tpq="105" onclick="selPQP(this)">1m 45s<br><span style="font-size:.6rem;color:var(--txt3)">Foundation</span></button>
-          <button class="tpc on" data-tpq="150" onclick="selPQP(this)">2m 30s<br><span style="font-size:.6rem;color:var(--txt3)">JEE Main</span></button>
-          <button class="tpc" data-tpq="210" onclick="selPQP(this)">3m 30s<br><span style="font-size:.6rem;color:var(--txt3)">JEE Adv</span></button>
+          <button class="tpc" data-action="selPQP" data-tpq="105">1m 45s<br><span style="font-size:.6rem;color:var(--txt3)">Foundation</span></button>
+          <button class="tpc on" data-action="selPQP" data-tpq="150">2m 30s<br><span style="font-size:.6rem;color:var(--txt3)">JEE Main</span></button>
+          <button class="tpc" data-action="selPQP" data-tpq="210">3m 30s<br><span style="font-size:.6rem;color:var(--txt3)">JEE Adv</span></button>
         </div>
         <div class="t-custom-row">
           <span class="t-lbl">Custom:</span>
-          <input type="number" class="t-inp" id="perQInput" value="150" min="10" max="600" oninput="onPQI(this)"/>
+          <input type="number" class="t-inp" id="perQInput" value="150" min="10" max="600" data-action="onPQI"/>
           <span class="t-lbl">sec / question</span>
         </div>
       </div>
       <div id="totalArea" style="display:none">
         <div class="tpc-row">
-          <button class="tpc" data-ttot="30" onclick="selTP(this)">30 min</button>
-          <button class="tpc on" data-ttot="60" onclick="selTP(this)">60 min</button>
-          <button class="tpc" data-ttot="90" onclick="selTP(this)">90 min</button>
-          <button class="tpc" data-ttot="120" onclick="selTP(this)">120 min</button>
+          <button class="tpc" data-action="selTP" data-ttot="30">30 min</button>
+          <button class="tpc on" data-action="selTP" data-ttot="60">60 min</button>
+          <button class="tpc" data-action="selTP" data-ttot="90">90 min</button>
+          <button class="tpc" data-action="selTP" data-ttot="120">120 min</button>
         </div>
         <div class="t-custom-row">
           <span class="t-lbl">Custom:</span>
-          <input type="number" class="t-inp" id="totalInput" value="60" min="5" max="300" oninput="onTI(this)"/>
+          <input type="number" class="t-inp" id="totalInput" value="60" min="5" max="300" data-action="onTI"/>
           <span class="t-lbl">minutes total</span>
         </div>
       </div>
@@ -469,7 +471,7 @@
 
   <p id="custMatchHint" class="cust-hint" role="status"></p>
   <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.25rem">
-    <button type="button" id="btnStartCustom" class="btn btn-sky btn-lg" onclick="startCustom()">🎯 Start Test</button>
+    <button type="button" id="btnStartCustom" class="btn btn-sky btn-lg" data-action="startCustom">🎯 Start Test</button>
   </div>
 
 </div>
@@ -498,7 +500,7 @@
         <div class="section-txt" id="sectionTxt">Section --</div>
         <div class="section-bar"><div class="section-fill" id="sectionFill" style="width:100%"></div></div>
       </div>
-      <button class="btn btn-ghost btn-sm" onclick="endQuiz()">End Quiz</button>
+      <button class="btn btn-ghost btn-sm" data-action="endQuiz">End Quiz</button>
     </div>
   </div>
 
@@ -511,8 +513,8 @@
   <div id="quizQArea"></div>
 
   <div class="quiz-footer">
-    <button class="btn btn-ghost" id="btnSkip" onclick="skipQ()">Skip →</button>
-    <button class="btn btn-primary" id="btnNext" onclick="nextQ()" style="display:none">Next →</button>
+    <button class="btn btn-ghost" id="btnSkip" data-action="skipQ">Skip →</button>
+    <button class="btn btn-primary" id="btnNext" data-action="nextQ" style="display:none">Next →</button>
   </div>
 
 </div>
@@ -551,8 +553,8 @@
     <div class="mini-panel" id="wrongSummary"></div>
 
     <div class="res-actions">
-      <button class="btn btn-primary btn-lg" onclick="reviewAnswers()">📋 Review Answers</button>
-      <button class="btn btn-ghost" onclick="navTo('home')">← Home</button>
+      <button class="btn btn-primary btn-lg" data-action="reviewAnswers">📋 Review Answers</button>
+      <button class="btn btn-ghost" data-action="navTo" data-route="home">← Home</button>
     </div>
   </div>
 
@@ -576,11 +578,11 @@
   <div id="statsSyncReminder" class="sync-banner-sm"></div>
 
   <div class="stats-tabs">
-    <button class="stats-tab on" data-stats-tab="analytics" onclick="switchStatsTab('analytics')">Analytics</button>
-    <button class="stats-tab" data-stats-tab="bookmarks" onclick="switchStatsTab('bookmarks')">Saved <span id="bookmarkCount" class="tab-badge">0</span></button>
-    <button class="stats-tab" data-stats-tab="review" onclick="switchStatsTab('review')">Review <span id="srsCount" class="tab-badge">0</span></button>
-    <button class="stats-tab" data-stats-tab="achievements" onclick="switchStatsTab('achievements')">Achievements</button>
-    <button class="stats-tab" data-stats-tab="rank" onclick="switchStatsTab('rank')">Rank</button>
+    <button class="stats-tab on" data-action="switchStatsTab" data-tab="analytics">Analytics</button>
+    <button class="stats-tab" data-action="switchStatsTab" data-tab="bookmarks">Saved <span id="bookmarkCount" class="tab-badge">0</span></button>
+    <button class="stats-tab" data-action="switchStatsTab" data-tab="review">Review <span id="srsCount" class="tab-badge">0</span></button>
+    <button class="stats-tab" data-action="switchStatsTab" data-tab="achievements">Achievements</button>
+    <!-- Rank tab removed -->
   </div>
 
   <div class="stats-panel on" data-stats-panel="analytics">
@@ -654,16 +656,16 @@
     <div class="action-band">
       <div><strong>Saved questions</strong><span>Retry questions you marked during quizzes.</span></div>
       <div style="display:flex;gap:.5rem">
-        <button class="btn btn-primary" onclick="startBookmarkedPractice()">Retry All</button>
-        <button class="btn btn-ghost" onclick="clearBookmarks()">Clear All</button>
+        <button class="btn btn-primary" data-action="startBookmarkedPractice">Retry All</button>
+        <button class="btn btn-ghost" data-action="clearBookmarks">Clear All</button>
       </div>
     </div>
     <div class="weak-list" id="bookmarkRows"></div>
     <div class="action-band">
       <div><strong>Wrong-answer practice</strong><span>Practice your <span id="wrongPracticeCount">0</span> active wrong questions.</span></div>
       <div style="display:flex;gap:.5rem">
-        <button class="btn btn-danger" onclick="startWrongPractice()">Retry All</button>
-        <button class="btn btn-ghost" onclick="clearWrongQueue()">Clear All</button>
+        <button class="btn btn-danger" data-action="startWrongPractice">Retry All</button>
+        <button class="btn btn-ghost" data-action="clearWrongQueue">Clear All</button>
       </div>
     </div>
     <div class="weak-list" id="wrongRows"></div>
@@ -673,28 +675,12 @@
     <div class="achievement-grid" id="achievementRows"></div>
   </div>
 
-  <div class="stats-panel" data-stats-panel="rank">
-    <div class="rank-input-grid">
-      <label class="rank-input-card">
-        <span>JEE Main marks</span>
-        <input id="rankMainInput" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="0 - 300" oninput="updateRankFromMarks()"/>
-      </label>
-      <label class="rank-input-card">
-        <span>JEE Advanced marks</span>
-        <input id="rankAdvInput" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="3" placeholder="0 - 360" oninput="updateRankFromMarks()"/>
-      </label>
-    </div>
-    <div class="rank-grid">
-      <div class="rank-card"><div class="rank-title">JEE Main estimate</div><div class="rank-score" id="rankMainScore">0 / 300</div><div class="rank-range" id="rankMainRank">-</div></div>
-      <div class="rank-card"><div class="rank-title">JEE Advanced estimate</div><div class="rank-score" id="rankAdvScore">0 / 360</div><div class="rank-range" id="rankAdvRank">-</div></div>
-    </div>
-    <p class="rank-note">Estimates use your app accuracy and attempted volume with approximate public marks-vs-rank bands. Real ranks vary by paper difficulty, normalization, category, and year.</p>
-  </div>
+  <!-- Rank predictor removed -->
 
   <div class="stats-panel" data-stats-panel="review">
     <div class="action-band">
       <div><strong>Due for Review</strong><span>Chapters you haven't practiced in a while. Practice these to keep your memory sharp.</span></div>
-      <button class="btn btn-primary" onclick="startSRSReview()">Review All Due</button>
+      <button class="btn btn-primary" data-action="startSRSReview">Review All Due</button>
     </div>
     <div class="weak-list" id="srsRows"></div>
   </div>
@@ -735,9 +721,9 @@
     <div class="lb-hero-stats" id="lbHeroStats"></div>
   </div>
   <div class="lb-tabs">
-    <button class="lb-tab on" data-tab="streak" onclick="switchLbTab('streak', this)">🔥 Best Streak</button>
-    <button class="lb-tab" data-tab="solved" onclick="switchLbTab('solved', this)">📊 Questions Solved</button>
-    <button class="lb-tab" data-tab="accuracy" onclick="switchLbTab('accuracy', this)">🎯 Overall Accuracy</button>
+    <button class="lb-tab on" data-action="switchLbTab" data-tab="streak">🔥 Best Streak</button>
+    <button class="lb-tab" data-action="switchLbTab" data-tab="solved">📊 Questions Solved</button>
+    <button class="lb-tab" data-action="switchLbTab" data-tab="accuracy">🎯 Overall Accuracy</button>
   </div>
   <div class="sec-hd"><h2>Podium</h2><div class="sec-rule"></div></div>
   <div class="lb-podium" id="lbPodium"></div>
@@ -746,7 +732,7 @@
     <div class="lb-board-hd"><span>#</span><span>Player</span><span>Score</span></div>
     <div class="lb-list" id="lbList"><div class="lb-loading">Loading rankings…</div></div>
     <div class="lb-actions" id="lbActions" style="display:none">
-      <button class="btn btn-ghost btn-sm" id="btnLbToggle" onclick="toggleLbExpand()">View All Top 100</button>
+      <button class="btn btn-ghost btn-sm" id="btnLbToggle" data-action="toggleLbExpand">View All Top 100</button>
     </div>
   </div>
 </div>
@@ -762,7 +748,7 @@
       <div class="p-id-card">
         <div class="p-id-top">
           <div class="p-avatar-main">
-            <img id="profileAvatar" alt="Profile" onerror="handleAvatarError(this)"/>
+            <img id="profileAvatar" alt="Profile" loading="lazy" onerror="handleAvatarError(this)"/>
           </div>
           <div class="p-id-info">
             <div class="p-name-row">
@@ -798,7 +784,7 @@
               <label for="profileNameInput">Leaderboard Name</label>
               <div class="p-name-input-wrap">
                 <input id="profileNameInput" type="text" maxlength="32" placeholder="Public name"/>
-                <button class="btn btn-primary btn-sm" onclick="saveLeaderboardName()">Update</button>
+                <button class="btn btn-primary btn-sm" data-action="saveLeaderboardName">Update</button>
               </div>
             </div>
           </div>
@@ -814,7 +800,7 @@
               <p>Clear queue on correct answer</p>
             </div>
           </div>
-          <button id="toggleAutoRemove" class="toggle-btn" onclick="toggleAutoRemoveWrong()"><div class="toggle-slider"></div></button>
+          <button id="toggleAutoRemove" class="toggle-btn" data-action="toggleAutoRemoveWrong"><div class="toggle-slider"></div></button>
         </div>
 
         <div class="p-sep"></div>
@@ -827,29 +813,29 @@
               <p>Switch dark/light appearance</p>
             </div>
           </div>
-          <button class="btn btn-ghost btn-sm" onclick="toggleTheme()" id="profileThemeLabel">Dark</button>
+          <button class="btn btn-ghost btn-sm" data-action="toggleTheme" id="profileThemeLabel">Dark</button>
         </div>
       </div>
 
       <div class="p-section-label">Support & Security</div>
       <div class="p-settings-card">
-        <button class="p-menu-btn" onclick="copyUID()">
+        <button class="p-menu-btn" data-action="copyUID">
           <span class="p-s-icon">🆔</span>
           <span class="p-s-txt"><strong>Copy Support ID</strong><p>Unique identifier for your account</p></span>
         </button>
         <div class="p-sep"></div>
-        <button class="p-menu-btn" onclick="resetAllProgress()">
+        <button class="p-menu-btn" data-action="resetAllProgress">
           <span class="p-s-icon">🗑️</span>
           <span class="p-s-txt"><strong>Reset Progress</strong><p>Clear all local and cloud stats</p></span>
         </button>
         <div class="p-sep"></div>
-        <button class="p-menu-btn danger" onclick="deleteAccount()">
+        <button class="p-menu-btn danger" data-action="deleteAccount">
           <span class="p-s-icon">⚠️</span>
           <span class="p-s-txt"><strong>Delete Account</strong><p>Permanently wipe account data</p></span>
         </button>
       </div>
 
-      <button class="btn btn-ghost btn-lg" style="width:100%; margin-top:2rem; border-radius:30px;" onclick="logoutGoogle()">🚪 Sign Out</button>
+      <button class="btn btn-ghost btn-lg" style="width:100%; margin-top:2rem; border-radius:30px;" data-action="logoutGoogle">🚪 Sign Out</button>
     </div>
 
     <!-- Guest State -->
@@ -857,7 +843,7 @@
       <div class="p-guest-icon">👋</div>
       <h1>Keep your progress safe</h1>
       <p>Sign in when you want cloud sync and leaderboard ranking. Practice, stats, and review tools still work without an account.</p>
-      <button class="btn-google" style="border-radius:30px; padding: 1rem 2rem;" onclick="loginGoogle()">
+      <button class="btn-google" style="border-radius:30px; padding: 1rem 2rem;" data-action="loginGoogle">
         <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         Continue with Google
       </button>

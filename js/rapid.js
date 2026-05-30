@@ -93,13 +93,13 @@ function renderRFQ() {
   const opts = q.options
     .map(
       (opt, i) =>
-        `<button type="button" class="opt" onclick="rfPick(this,${i})" aria-keyshortcuts="${ls[i]}">` +
+        `<button type="button" class="opt" data-action="rfPick" data-idx="${i}" aria-keyshortcuts="${ls[i]}">` +
         `<span class="opt-key">${ls[i]}</span><span class="opt-body">${escHtml(opt)}</span></button>`,
     )
     .join('');
   if (!DOM.area) return;
   const marked = (S.bookmarks || []).includes(q.id);
-  DOM.area.innerHTML = `<div class="q-card"><button type="button" class="bookmark-btn ${marked ? 'on' : ''}" data-bookmark-id="${escHtml(q.id)}" aria-pressed="${marked ? 'true' : 'false'}" onclick="toggleBookmark('${escHtml(q.id)}')" title="${marked ? 'Remove bookmark' : 'Bookmark question'}">★</button><div class="q-tags"><span class="q-tag qt-${sc}">${escHtml(q.subject)}</span><span class="q-tag qt-${dc}">${escHtml(q.difficulty)}</span><span class="q-tag">${escHtml(q.chapter || '')}</span></div><div class="q-text">${escHtml(q.questionText)}</div></div><div class="opts">${opts}</div>`;
+  DOM.area.innerHTML = `<div class="q-card"><button type="button" class="bookmark-btn ${marked ? 'on' : ''}" data-action="toggleBookmark" data-id="${escHtml(q.id)}" data-bookmark-id="${escHtml(q.id)}" aria-pressed="${marked ? 'true' : 'false'}" title="${marked ? 'Remove bookmark' : 'Bookmark question'}">★</button><div class="q-tags"><span class="q-tag qt-${sc}">${escHtml(q.subject)}</span><span class="q-tag qt-${dc}">${escHtml(q.difficulty)}</span><span class="q-tag">${escHtml(q.chapter || '')}</span></div><div class="q-text">${escHtml(q.questionText)}</div></div><div class="opts">${opts}</div>`;
   reMath(DOM.area);
 }
 

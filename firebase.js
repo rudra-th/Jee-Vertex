@@ -34,7 +34,7 @@ function isConfigured() {
 
 export function initFirebase() {
   if (!isConfigured()) {
-    console.warn('[Vertex] Firebase not configured — edit firebase-config.js');
+    // Firebase not configured
     return false;
   }
   const app = initializeApp(firebaseConfig);
@@ -161,8 +161,7 @@ export async function wipeFirestoreData() {
   try {
     await deleteDoc(doc(db, 'users', currentUser.uid));
     return true;
-  } catch (e) {
-    console.error('[Vertex] Wipe failed:', e);
+  } catch {
     return false;
   }
 }
@@ -175,7 +174,6 @@ export async function deleteUserAccount() {
     await deleteUser(currentUser);
     return true;
   } catch (e) {
-    console.error('[Vertex] Account deletion failed:', e);
     throw e;
   }
 }

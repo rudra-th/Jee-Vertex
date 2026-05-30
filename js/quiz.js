@@ -489,7 +489,7 @@ function renderQPalette() {
   if (!DOM.qPalette || !Q.qs.length) return;
   DOM.qPalette.innerHTML = Q.qs.map((_, i) => {
     const status = i === Q.cur ? 'cur' : Q.ans[i] === null ? 'open' : 'done';
-    return `<button type="button" class="q-dot ${status}" onclick="jumpToQuestion(${i})" aria-label="Go to question ${i + 1}">${i + 1}</button>`;
+    return `<button type="button" class="q-dot ${status}" data-action="jumpToQuestion" data-idx="${i}" aria-label="Go to question ${i + 1}">${i + 1}</button>`;
   }).join('');
 }
 
@@ -516,12 +516,12 @@ function buildQHTML(q, reveal, chosen = null) {
   const opts = q.options.map((opt, i) => {
     let cls = 'opt';
     if (reveal) { if (opt === q.correctAnswer) cls += ' correct'; else if (opt === chosen && opt !== q.correctAnswer) cls += ' wrong'; }
-    return `<button type="button" class="${cls}" ${reveal ? 'disabled' : ''} onclick="pickOpt(this,${i})" aria-keyshortcuts="${ls[i]}">`
+    return `<button type="button" class="${cls}" ${reveal ? 'disabled' : ''} data-action="pickOpt" data-idx="${i}" aria-keyshortcuts="${ls[i]}">`
       + `<span class="opt-key">${ls[i]}</span><span class="opt-body">${escHtml(opt)}</span></button>`;
   }).join('');
   const expl = reveal ? `<div class="expl"><div class="expl-tag">💡 Explanation</div><div class="expl-body">${escHtml(q.explanation)}</div></div>` : '';
   const marked = (S.bookmarks || []).includes(q.id);
-  return `<div class="q-card"><button type="button" class="bookmark-btn ${marked ? 'on' : ''}" data-bookmark-id="${escHtml(q.id)}" aria-pressed="${marked ? 'true' : 'false'}" onclick="toggleBookmark('${escHtml(q.id)}')" title="${marked ? 'Remove bookmark' : 'Bookmark question'}">★</button><div class="q-tags"><span class="q-tag qt-${sc}">${escHtml(q.subject)}</span><span class="q-tag qt-${dc}">${escHtml(q.difficulty)}</span><span class="q-tag">${escHtml(q.chapter || '')}</span></div><div class="q-text">${escHtml(q.questionText)}</div></div><div class="opts">${opts}</div>${expl}`;
+  return `<div class="q-card"><button type="button" class="bookmark-btn ${marked ? 'on' : ''}" data-action="toggleBookmark" data-id="${escHtml(q.id)}" data-bookmark-id="${escHtml(q.id)}" aria-pressed="${marked ? 'true' : 'false'}" title="${marked ? 'Remove bookmark' : 'Bookmark question'}">★</button><div class="q-tags"><span class="q-tag qt-${sc}">${escHtml(q.subject)}</span><span class="q-tag qt-${dc}">${escHtml(q.difficulty)}</span><span class="q-tag">${escHtml(q.chapter || '')}</span></div><div class="q-text">${escHtml(q.questionText)}</div></div><div class="opts">${opts}</div>${expl}`;
 }
 
 export function pickOpt(btn, idx) {
@@ -649,10 +649,10 @@ function renderWrongSummary() {
     return;
   }
   box.innerHTML = `<div class="mini-panel-title">Wrong answers to review</div>` + wrongs.slice(0, 8).map(x => `
-    <button class="wrong-summary-row" onclick="jumpReview(${x.i})">
+    <button class="wrong-summary-row" data-action="jumpReview" data-idx="${x.i}">
       <span>${escHtml(x.q.questionText)}</span>
       <strong>${escHtml(x.q.correctAnswer)}</strong>
-    </button>`).join('') + `<button class="btn btn-ghost btn-sm" onclick="startWrongPractice()">Practice your ${S.wrongQuestionIds?.length || wrongs.length} wrong answers</button>`;
+    </button>`).join('') + `<button class="btn btn-ghost btn-sm" data-action="startWrongPractice">Practice your ${S.wrongQuestionIds?.length || wrongs.length} wrong answers</button>`;
 }
 
 export function reviewAnswers() {

@@ -93,11 +93,11 @@ function daysBetween(a, b) {
 }
 
 export function applyTheme() {
-  const themes = ['dark', 'light', 'amber'];
+  const themes = ['dark', 'light'];
   const theme = themes.includes(S.theme) ? S.theme : 'dark';
   document.documentElement.dataset.theme = theme;
-  const icons = { dark: '🌙', light: '☀️', amber: '🌅' };
-  const labels = { dark: 'Dark', light: 'Light', amber: 'Amber' };
+  const icons = { dark: '🌙', light: '☀️' };
+  const labels = { dark: 'Dark', light: 'Light' };
   const btn = document.getElementById('themeToggle');
   if (btn) btn.textContent = icons[theme];
   const label = document.getElementById('themeLabel');
@@ -107,13 +107,12 @@ export function applyTheme() {
 }
 
 export function toggleTheme() {
-  const order = ['dark', 'light', 'amber'];
+  const order = ['dark', 'light'];
   const idx = order.indexOf(S.theme);
   S.theme = idx === -1 ? 'light' : order[(idx + 1) % order.length];
   applyTheme();
   save();
-  const msgs = { dark: 'Dark mode on.', light: 'Light mode on.', amber: 'Amber mode — warm tones activated.' };
-  toast(msgs[S.theme]);
+  toast(S.theme === 'dark' ? 'Dark mode on.' : 'Light mode on.');
 }
 
 
@@ -336,7 +335,6 @@ export function updateStatsPage() {
   renderDueChapters();
   renderSavedQuestions();
   renderAchievements();
-  renderRankPredictor();
 
   // Milestones
   const milestones = [
@@ -373,7 +371,7 @@ export function addSession(s) {
   s.createdAt = s.createdAt || Date.now();
   updateDailyStreak();
   S.sessions.unshift(s);
-  if (S.sessions.length > 30) S.sessions.pop();
+  if (S.sessions.length > 200) S.sessions.pop();
   checkSessionAchievements(s);
   save(); renderHistory(); updateStatsPage();
 }
@@ -411,7 +409,7 @@ function renderWeakChapters() {
   box.innerHTML = rows.map(ch => `<div class="weak-row">
     <div><div class="weak-title">${escHtml(ch.chapter)}</div><div class="weak-meta">${escHtml(ch.subject)} · ${ch.cor}/${ch.ans} correct</div></div>
     <div class="weak-acc">${ch.acc}%</div>
-    <button class="btn btn-ghost btn-sm" onclick="practiceChapter('${encodeURIComponent(ch.subject)}','${encodeURIComponent(ch.chapter)}')">Practice</button>
+    <button class="btn btn-ghost btn-sm" data-action="practiceChapter" data-subject="${encodeURIComponent(ch.subject)}" data-chapter="${encodeURIComponent(ch.chapter)}">Practice</button>
   </div>`).join('');
 }
 
@@ -471,17 +469,17 @@ function srsChapterRow(item) {
       <div class="saved-q-text">${escHtml(item.chapter)}</div>
       <div class="weak-meta">${escHtml(item.subject)} · Seen ${item.seen}x · ${status}</div>
     </div>
-    <button class="btn ${btnClass} btn-sm" onclick="practiceChapter('${encodeURIComponent(item.subject)}','${encodeURIComponent(item.chapter)}')">Review</button>
+    <button class="btn ${btnClass} btn-sm" data-action="practiceChapter" data-subject="${encodeURIComponent(item.subject)}" data-chapter="${encodeURIComponent(item.chapter)}">Review</button>
   </div>`;
 }
 
 function savedQuestionRow(q, type) {
-  const removeFn = type === 'bookmark' ? `removeBookmark('${q.id}')` : `removeWrong('${q.id}')`;
+  const action = type === 'bookmark' ? 'removeBookmark' : 'removeWrong';
   return `<div class="saved-q-row">
     <div><div class="saved-q-text">${escHtml(q.questionText)}</div><div class="weak-meta">${escHtml(q.subject)} · ${escHtml(q.chapter)}</div></div>
     <div style="display:flex;gap:.4rem">
-      <button class="btn btn-ghost btn-sm" onclick="startQuestionSet('${q.id}')">Retry</button>
-      <button class="btn btn-ghost btn-sm" onclick="${removeFn}" title="Remove">✕</button>
+      <button class="btn btn-ghost btn-sm" data-action="startQuestionSet" data-id="${q.id}">Retry</button>
+      <button class="btn btn-ghost btn-sm" data-action="${action}" data-id="${q.id}" title="Remove">✕</button>
     </div>
   </div>`;
 }
@@ -543,81 +541,7 @@ function renderProgressChart() {
   points.forEach(p => { ctx.beginPath(); ctx.arc(p.x, p.y, 4, 0, Math.PI * 2); ctx.fill(); });
 }
 
-function renderRankPredictor() {
-  const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
-  const attempted = Math.max(1, Math.min(75, S.answered || 25));
-  const mainScore = Math.round((acc / 100) * attempted * 4);
-  const advScore = Math.round((acc / 100) * attempted * 4.8);
-  const mainInput = document.getElementById('rankMainInput');
-  const advInput = document.getElementById('rankAdvInput');
-  if (mainInput?.value || advInput?.value) {
-    updateRankFromMarks();
-    return;
-  }
-  setText('rankMainScore', `${Math.min(300, mainScore)} / 300`);
-  setText('rankAdvScore', `${Math.min(360, advScore)} / 360`);
-  setText('rankMainRank', estimateMainRank(mainScore));
-  setText('rankAdvRank', estimateAdvRank(advScore));
-}
 
-export function updateRankFromMarks() {
-  const mainInput = document.getElementById('rankMainInput');
-  const advInput = document.getElementById('rankAdvInput');
-  const mainRaw = mainInput?.value === '' ? null : Number(mainInput?.value);
-  const advRaw = advInput?.value === '' ? null : Number(advInput?.value);
-
-  if (mainRaw !== null && Number.isFinite(mainRaw)) {
-    const mainScore = Math.max(0, Math.min(300, Math.round(mainRaw)));
-    setText('rankMainScore', `${mainScore} / 300`);
-    setText('rankMainRank', estimateMainRank(mainScore));
-  } else {
-    const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
-    const attempted = Math.max(1, Math.min(75, S.answered || 25));
-    const score = Math.round((acc / 100) * attempted * 4);
-    setText('rankMainScore', `${Math.min(300, score)} / 300`);
-    setText('rankMainRank', estimateMainRank(score));
-  }
-
-  if (advRaw !== null && Number.isFinite(advRaw)) {
-    const advScore = Math.max(0, Math.min(360, Math.round(advRaw)));
-    setText('rankAdvScore', `${advScore} / 360`);
-    setText('rankAdvRank', estimateAdvRank(advScore));
-  } else {
-    const acc = S.answered ? Math.round((S.correct / S.answered) * 100) : 0;
-    const attempted = Math.max(1, Math.min(75, S.answered || 25));
-    const score = Math.round((acc / 100) * attempted * 4.8);
-    setText('rankAdvScore', `${Math.min(360, score)} / 360`);
-    setText('rankAdvRank', estimateAdvRank(score));
-  }
-}
-
-function estimateMainRank(score) {
-  if (score >= 290) return 'Top 150';
-  if (score >= 280) return '150 - 400';
-  if (score >= 270) return '400 - 900';
-  if (score >= 260) return '900 - 1,500';
-  if (score >= 240) return '1,500 - 7,500';
-  if (score >= 200) return '7,500 - 15,000';
-  if (score >= 180) return '15,000 - 30,000';
-  if (score >= 160) return '30,000 - 60,000';
-  if (score >= 140) return '60,000 - 1,05,000';
-  if (score >= 100) return '1.5L - 2.25L';
-  return '2.25L+';
-}
-
-function estimateAdvRank(score) {
-  if (score >= 278) return '1 - 101';
-  if (score >= 262) return '101 - 500';
-  if (score >= 234) return '201 - 1,000';
-  if (score >= 208) return '501 - 1,500';
-  if (score >= 181) return '1,501 - 2,000';
-  if (score >= 165) return '2,501 - 3,000';
-  if (score >= 149) return '4,001 - 5,000';
-  if (score >= 120) return '6,801 - 9,901';
-  if (score >= 100) return '15,001 - 17,001';
-  if (score >= 74) return 'Rank-list range';
-  return 'Below CRL cutoff trend';
-}
 
 export function handleAvatarError(img) {
   if (!img) return;
@@ -716,19 +640,5 @@ export function renderHistory() {
     rows.innerHTML = '<div style="padding:2.5rem;text-align:center;color:var(--txt3);font-size:.85rem;font-style:italic">No sessions yet — pick a mode and start practicing!</div>';
     return;
   }
-  rows.innerHTML = S.sessions.slice(0, 15).map(s => {
-    const b    = s.mode === 'rapid' ? 'hm-rapid' : s.mode === 'mock' ? 'hm-mock' : s.mode === 'custom' ? 'hm-custom' : 'hm-practice';
-    const ml   = s.mode === 'rapid' ? 'Rapid' : s.mode === 'mock' ? 'Mock' : s.mode === 'custom' ? 'Custom' : 'Practice';
-    const st   = s.mode === 'rapid' ? escHtml(s.score + ' pts') : s.mode === 'mock' ? escHtml((s.mockScore || 0) + ' marks') : escHtml(s.score + '%');
-    const det  = s.mode === 'rapid'
-      ? `${escHtml(s.correct)}/${escHtml(s.total)} correct - streak ${escHtml(s.streak || 0)}`
-      : s.mode === 'mock'
-        ? `${escHtml(s.correct)}/${escHtml(s.total)} correct - ${escHtml(s.wrong)} wrong - ${escHtml(s.skipped)} skipped`
-        : `${escHtml(s.correct)}/${escHtml(s.total)} correct - ${escHtml(s.wrong)} wrong`;
-    return `<div class="hist-row">
-      <span class="h-mode-tag ${b}">${ml}</span>
-      <div><div class="h-detail">${det}</div></div>
-      <div class="h-score">${st}</div>
-    </div>`;
-  }).join('');
+  rows.innerHTML = S.sessions.slice(0, 15).map(buildHistRow).join('');
 }

@@ -64,8 +64,7 @@ export function updateProfilePage() {
 
   const themeLabel = document.getElementById('profileThemeLabel');
   if (themeLabel) {
-    const labels = { dark: 'Dark', light: 'Light', amber: 'Amber' };
-    themeLabel.textContent = labels[S.theme] || 'Dark';
+    themeLabel.textContent = S.theme === 'light' ? 'Light' : 'Dark';
   }
 
   updateStatsPage();
