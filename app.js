@@ -125,7 +125,8 @@ const actions = {
     if (!el) return;
     const c = parseInt(el.dataset.clicks || '0') + 1;
     el.dataset.clicks = c;
-    if (c >= 7) {
+    if (c >= 3) {
+      window.open('PYQ Mania/index.html', '_blank');
       const wrap = document.getElementById('premiumToggleWrap');
       if (wrap) {
         wrap.style.display = 'block';
@@ -134,7 +135,7 @@ const actions = {
       }
       el.classList.add('active');
       el.style.cursor = 'default';
-      el.title = 'Secret unlocked!';
+      el.title = 'PYQ Mania unlocked!';
     }
   },
 
