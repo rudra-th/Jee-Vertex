@@ -20,7 +20,7 @@ export let Q = {
 };
 
 // ── Setup state ──
-export const pracSetup = { subject:'Physics', chapters:new Set(), diff:'Foundation' };
+export const pracSetup = { subject:'Physics', chapters:new Set(), diff:'JEE Main' };
 export const custSetup = {
   count:20, subjects:new Set(['Physics','Chemistry','Mathematics']),
   diff:'All', timerMode:'perq', perQSecs:150, totalMins:60,
@@ -66,7 +66,7 @@ function initDom() {
 
 // ═══ CHAPTER HELPERS ═══
 function scCls(sub) { return sub === 'Physics' ? 'sp' : sub === 'Chemistry' ? 'sc' : 'sm'; }
-function diffCls(d) { return d==='Foundation'?'df':d==='JEE Main'?'dm':d==='JEE Advanced'?'da':'dall'; }
+function diffCls(d) { return d==='JEE Main'?'dm':d==='JEE Advanced'?'da':'dall'; }
 
 export function updateChCount() {
   const el = document.getElementById('chCount');
@@ -320,7 +320,7 @@ export function startPractice() {
   const qs = filterQ({ subjects: new Set([pracSetup.subject]), chapters: pracSetup.chapters, diff: pracSetup.diff === 'All' ? null : pracSetup.diff });
   if (!qs.length) { toast('No questions match — try different settings.'); return; }
   initDom();
-  Q = { qs, cur:0, ans:new Array(qs.length).fill(null), mode:'practice', timerMode:'none', totalTimer:null, totalLeft:0, totalSecs:0, pqTimer:null, pqLeft:0, pqSecs:0 };
+  Q = { qs, cur:0, ans:new Array(qs.length).fill(null), mode:'practice', timerMode:'none', totalTimer:null, totalLeft:0, totalSecs:0, pqTimer:null, pqLeft:0, pqSecs:0, sections:[], sectionIndex:0, sectionTimer:null, sectionLeft:0, sectionSecs:0, mockScore:0, positive:4, negative:1 };
   document.getElementById('modeBadge').textContent = '📚 Practice';
   document.getElementById('pqTimerWrap').style.display = 'none';
   document.getElementById('totalTimerWrap').style.display = 'none';
@@ -342,7 +342,9 @@ export function startCustom() {
   initDom();
   Q = { qs, cur:0, ans:new Array(qs.length).fill(null), mode:'custom', timerMode:custSetup.timerMode,
         totalTimer:null, totalLeft:custSetup.totalMins*60, totalSecs:custSetup.totalMins*60,
-        pqTimer:null, pqLeft:custSetup.perQSecs, pqSecs:custSetup.perQSecs };
+        pqTimer:null, pqLeft:custSetup.perQSecs, pqSecs:custSetup.perQSecs,
+        sections:[], sectionIndex:0, sectionTimer:null, sectionLeft:0, sectionSecs:0,
+        mockScore:0, positive:4, negative:1 };
   document.getElementById('modeBadge').textContent = '🎯 Custom';
   document.getElementById('pqTimerWrap').style.display  = custSetup.timerMode === 'perq'  ? 'flex'  : 'none';
   document.getElementById('totalTimerWrap').style.display = custSetup.timerMode === 'total' ? 'block' : 'none';
@@ -455,7 +457,9 @@ export function practiceChapter(subject, chapter) {
 function startQuizFromPool(qs, mode, label) {
   initDom();
   Q = { qs, cur:0, ans:new Array(qs.length).fill(null), mode, timerMode:'none',
-        totalTimer:null, totalLeft:0, totalSecs:0, pqTimer:null, pqLeft:0, pqSecs:0 };
+        totalTimer:null, totalLeft:0, totalSecs:0, pqTimer:null, pqLeft:0, pqSecs:0,
+        sections:[], sectionIndex:0, sectionTimer:null, sectionLeft:0, sectionSecs:0,
+        mockScore:0, positive:4, negative:1 };
   document.getElementById('modeBadge').textContent = label || 'Practice';
   document.getElementById('pqTimerWrap').style.display = 'none';
   document.getElementById('totalTimerWrap').style.display = 'none';
@@ -512,7 +516,7 @@ export function jumpToQuestion(i) {
 function buildQHTML(q, reveal, chosen = null) {
   const ls = ['A','B','C','D'];
   const sc = q.subject === 'Physics' ? 'phy' : q.subject === 'Chemistry' ? 'chem' : 'math';
-  const dc = q.difficulty === 'Foundation' ? 'fnd' : q.difficulty === 'JEE Main' ? 'main' : 'adv';
+  const dc = q.difficulty === 'JEE Main' ? 'main' : q.difficulty === 'JEE Advanced' ? 'adv' : q.difficulty === 'Easy' ? 'easy' : q.difficulty === 'Medium' ? 'medium' : q.difficulty === 'Hard' ? 'hard' : 'main';
   const opts = q.options.map((opt, i) => {
     let cls = 'opt';
     if (reveal) { if (opt === q.correctAnswer) cls += ' correct'; else if (opt === chosen && opt !== q.correctAnswer) cls += ' wrong'; }

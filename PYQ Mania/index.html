@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PYQ Mania</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#000;--bg2:#0d0d0d;--bg3:#141414;--border:#1a1a1a;--txt:#e0e0e0;--txt2:#888;--txt3:#555;--phy:#6eb5ff;--chem:#6fcf97;--math:#f2994a;--gold:#c9a84c;--rose:#ff6b6b;--em:#4ecdc4;--mark:#ffd93d;--font:'Inter',system-ui,-apple-system,sans-serif;--mono:'JetBrains Mono','SF Mono',monospace}
+html{background:var(--bg);color:var(--txt);font-family:var(--font);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;overflow-x:hidden}
+::selection{background:rgba(255,255,255,0.1)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track:var(--bg)
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+input,button,textarea{font:inherit;color:inherit;background:none;border:none;outline:none}
+button{cursor:pointer}
+a{color:var(--txt2);text-decoration:none}
+a:hover{color:var(--txt)}
+.page{display:none;animation:fadeIn .3s ease}
+.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* LAYOUT */
+.screen{padding:2rem 1.5rem;max-width:720px;margin:0 auto}
+.screen.wide{max-width:900px}
+.hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.hd h2{font-size:1.1rem;font-weight:600;letter-spacing:-.3px}
+.hd h2 span{color:var(--gold)}
+.hd .back{font-size:.8rem;color:var(--txt3);padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;transition:all .2s}
+.hd .back:hover{color:var(--txt);border-color:var(--txt3)}
+.math-fallback,.math-fallback-inline{font-family:var(--mono);background:var(--bg2);padding:.15rem .4rem;border-radius:3px;font-size:.8rem;color:var(--txt3);border:1px solid var(--border)}
+
+/* MENU */
+#menu .hero{margin:3rem 0 2rem;text-align:center}
+#menu .hero h1{font-size:2.6rem;font-weight:700;letter-spacing:-1.5px}
+#menu .hero h1 span{color:var(--gold)}
+#menu .hero p{color:var(--txt3);font-size:.85rem;margin-top:.5rem}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.mode-card{padding:2rem 1.5rem;border:1px solid var(--border);border-radius:12px;text-align:center;transition:all .25s;background:var(--bg2);cursor:pointer}
+.mode-card:hover{border-color:var(--txt3);background:var(--bg3);transform:translateY(-2px)}
+.mode-card .icon{font-size:2rem;margin-bottom:.75rem}
+.mode-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.4rem}
+.mode-card p{font-size:.8rem;color:var(--txt3);line-height:1.4}
+.menu-links{margin-top:1.5rem;text-align:center;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.menu-links a,.menu-links button{font-size:.8rem;color:var(--txt3);padding:.5rem 1rem;border:1px solid var(--border);border-radius:8px;transition:all .2s;background:transparent;font-family:inherit}
+.menu-links a:hover,.menu-links button:hover{color:var(--txt);border-color:var(--txt3)}
+.menu-links.big{margin-top:1.5rem;gap:1rem}
+.menu-links.big a,.menu-links.big button{font-size:.95rem;padding:.7rem 1.5rem;border-radius:10px}
+
+/* EXAM FILTER */
+.exam-row{display:flex;gap:.5rem;margin-bottom:1.5rem}
+.exam-btn{padding:.6rem 1.2rem;border:1px solid var(--border);border-radius:8px;font-size:.85rem;transition:all .2s;background:var(--bg2);color:var(--txt3)}
+.exam-btn:hover{border-color:var(--txt3);color:var(--txt)}
+.exam-btn.active{border-color:var(--gold);color:var(--gold)}
+
+.menu-links.big{margin-top:1.5rem;gap:1rem}
+.menu-links.big a{font-size:.95rem;padding:.7rem 1.5rem;border-radius:10px}
+.menu-btm{margin-top:2.5rem;text-align:center}
+.menu-btm .btm-row{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:.4rem}
+.menu-btm .btm-row a{font-size:.7rem;color:var(--txt3);padding:.25rem .6rem;border:1px solid var(--border);border-radius:5px;transition:all .2s;display:inline-block}
+.menu-btm .btm-row a:hover{color:var(--txt);border-color:var(--txt3)}
+.menu-btm .btm-status{font-size:.7rem;color:var(--txt3)}
+
+/* SUBJECT / CHAPTER */
+.subj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.5rem}
+.subj-btn{padding:1.25rem .75rem;border:1px solid var(--border);border-radius:10px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg2)}
+.subj-btn:hover{border-color:var(--txt3)}
+.subj-btn .s-icon{font-size:1.5rem;margin-bottom:.3rem}
+.subj-btn .s-name{font-size:.85rem;font-weight:500}
+.subj-btn .s-count{font-size:.7rem;color:var(--txt3);margin-top:.15rem}
+.subj-btn.active{border-color:var(--txt)}
+.subj-btn.active.phy{border-color:var(--phy)}
+.subj-btn.active.chem{border-color:var(--chem)}
+.subj-btn.active.math{border-color:var(--math)}
+
+.ch-section{margin-bottom:1.25rem}
+.ch-section .ch-hd{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--txt3);margin-bottom:.5rem;padding-bottom:.35rem;border-bottom:1px solid var(--border)}
+.ch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.4rem}
+.ch-item{padding:.5rem .7rem;border:1px solid var(--border);border-radius:6px;font-size:.75rem;cursor:pointer;transition:all .2s;background:var(--bg2);color:var(--txt2)}
+.ch-item:hover{border-color:var(--txt3);color:var(--txt)}
+.ch-item.selected{border-color:var(--txt);color:var(--txt);background:var(--bg3)}
+.ch-actions{display:flex;gap:.5rem;margin-bottom:.6rem}
+.ch-actions button{font-size:.7rem;padding:.35rem .7rem;border:1px solid var(--border);border-radius:5px;color:var(--txt3);transition:all .2s}
+.ch-actions button:hover{color:var(--txt);border-color:var(--txt3)}
+.ch-info{font-size:.7rem;color:var(--txt3);margin-top:.4rem}
+
+/* QUIZ */
+.q-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;gap:1rem}
+.q-prog{flex:1}
+.q-prog-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.q-prog-fill{height:100%;background:var(--txt);border-radius:2px;transition:width .3s}
+.q-prog-meta{display:flex;justify-content:space-between;font-size:.7rem;color:var(--txt3);margin-top:.3rem}
+.q-info{text-align:right;font-size:.75rem;color:var(--txt2);flex-shrink:0}
+.q-info .q-subj{color:var(--txt3);font-size:.7rem}
+.q-meta{display:flex;gap:.75rem;align-items:center;margin-bottom:1rem}
+.q-meta .q-marked{font-size:.7rem;padding:.2rem .5rem;border:1px solid var(--mark);border-radius:4px;color:var(--mark);opacity:0}
+.q-meta .q-marked.show{opacity:1}
+.q-card{padding:1.5rem;border:1px solid var(--border);border-radius:12px;background:var(--bg2);margin-bottom:1rem}
+.q-card .q-meta-tag{display:flex;gap:.5rem;margin-bottom:.6rem;flex-wrap:wrap}
+.q-card .q-meta-tag span{font-size:.65rem;padding:.15rem .5rem;border-radius:4px;border:1px solid var(--border);color:var(--txt3)}
+.q-card .q-meta-tag .tag-exam{color:var(--gold);border-color:var(--gold)}
+.q-card .q-text{font-size:1rem;line-height:1.7}
+.q-opts{display:grid;gap:.5rem;margin-bottom:1rem}
+.q-opt{padding:.8rem 1rem;border:1px solid var(--border);border-radius:8px;cursor:pointer;transition:all .2s;background:var(--bg2);text-align:left;font-size:.85rem;line-height:1.4}
+.q-opt:hover{border-color:var(--txt3);background:var(--bg3)}
+.q-opt.selected{border-color:var(--txt);background:rgba(255,255,255,0.05)}
+.q-opt.correct{border-color:var(--em);background:rgba(78,205,196,0.08);color:var(--em)}
+.q-opt.wrong{border-color:var(--rose);color:var(--rose);background:rgba(255,107,107,0.08)}
+.q-opt.disabled{pointer-events:none;opacity:.6}
+.q-opt .opt-label{font-weight:600;margin-right:.5rem;color:var(--txt3)}
+.q-num-input{width:100%;padding:.9rem 1.1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg2);color:var(--txt);font-family:var(--mono);font-size:1rem;margin-bottom:1rem}
+.q-num-input:focus{border-color:var(--txt3)}
+.q-num-input.disabled{opacity:.4;pointer-events:none}
+.q-num-result{padding:.8rem 1rem;border-radius:8px;font-size:.85rem;margin-bottom:1rem;display:none}
+.q-num-result.show{display:block}
+.q-num-result.correct{border:1px solid var(--em);background:rgba(78,205,196,0.08);color:var(--em)}
+.q-num-result.wrong{border:1px solid var(--rose);background:rgba(255,107,107,0.08);color:var(--rose)}
+.q-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.q-actions button{padding:.6rem 1.1rem;border-radius:8px;font-size:.8rem;font-weight:500;border:1px solid var(--border)}
+.q-actions .btn-star{border-color:var(--gold);color:var(--gold);border-width:1px}
+.q-actions .btn-star:hover{background:rgba(201,168,76,0.08)}
+.q-actions .btn-star.starred{background:var(--gold);color:var(--bg)}
+.q-actions .btn-menu{border-color:var(--txt3);color:var(--txt3);font-size:.78rem}
+.q-actions .btn-menu:hover{color:var(--txt);border-color:var(--txt)}
+.q-actions .btn-mark{border-color:var(--mark);color:var(--mark)}
+.q-actions .btn-mark:hover{background:rgba(255,217,61,0.08)}
+.q-actions .btn-mark.marked{background:var(--mark);color:var(--bg)}
+.q-actions .btn-end{border-color:var(--rose);color:var(--rose)}
+.q-actions .btn-end:hover{background:rgba(255,107,107,0.08)}
+.q-actions .btn-next{background:var(--txt);color:var(--bg);border-color:var(--txt)}
+.q-actions .btn-next:hover{opacity:.85}
+.q-actions .btn-next:disabled{opacity:.3;pointer-events:none}
+.q-actions .btn-submit{border-color:var(--em);color:var(--em)}
+.q-actions .btn-submit:hover{background:rgba(78,205,196,0.08)}
+.q-palette{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:1rem}
+.q-palette .dot{width:24px;height:24px;border-radius:50%;border:1px solid var(--border);font-size:.65rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;background:var(--bg2);color:var(--txt3)}
+.q-palette .dot:hover{border-color:var(--txt3)}
+.q-palette .dot.current{border-color:var(--txt);color:var(--txt)}
+.q-palette .dot.answered{border-color:var(--em);color:var(--em);background:rgba(78,205,196,0.08)}
+.q-palette .dot.marked{border-color:var(--mark);color:var(--mark);background:rgba(255,217,61,0.08)}
+
+/* RESULTS */
+.res{margin-top:1.5rem}
+.res .res-hero{text-align:center;margin-bottom:1.5rem}
+.res .res-hero .big{font-size:2.5rem;font-weight:700;letter-spacing:-2px}
+.res .res-hero .big span{color:var(--gold)}
+.res .res-hero .sub{color:var(--txt3);font-size:.85rem;margin-top:.3rem}
+.res-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-bottom:1.5rem}
+.res-stat{padding:.8rem;border:1px solid var(--border);border-radius:10px;text-align:center;background:var(--bg2)}
+.res-stat .val{font-size:1.2rem;font-weight:700}
+.res-stat .lbl{font-size:.65rem;color:var(--txt3);margin-top:.15rem}
+.res-detail{margin-bottom:1.5rem}
+.res-detail .q-review{padding:.8rem;border:1px solid var(--border);border-radius:6px;margin-bottom:.4rem;background:var(--bg2);font-size:.8rem}
+.res-detail .q-review .q-r-text{margin-bottom:.3rem}
+
+/* ANALYTICS & MARKED */
+.analytics-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.an-card{padding:1.1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg2)}
+.an-card.full{grid-column:1/-1}
+.an-card h4{font-size:.65rem;text-transform:uppercase;letter-spacing:1px;color:var(--txt3);margin-bottom:.4rem}
+.an-card .big-num{font-size:1.8rem;font-weight:700;letter-spacing:-1px}
+.an-card .big-num.gold{color:var(--gold)}
+.an-card .big-num.em{color:var(--em)}
+.an-card .big-num.rose{color:var(--rose)}
+.subj-acc{margin-top:.5rem}
+.subj-acc .sa-row{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid var(--border);font-size:.8rem}
+.subj-acc .sa-row:last-child{border:none}
+.subj-acc .sa-row .sa-bar{flex:1;height:3px;background:var(--border);border-radius:2px;margin:0 .75rem;overflow:hidden}
+.subj-acc .sa-row .sa-bar .sa-fill{height:100%;border-radius:2px;transition:width .5s}
+.subj-acc .sa-row .sa-pct{font-size:.75rem;font-weight:600;min-width:2.5rem;text-align:right}
+.marked-list{display:grid;gap:.4rem}
+.marked-list .ml-item{padding:.6rem .8rem;border:1px solid var(--border);border-radius:6px;font-size:.75rem;background:var(--bg2);display:flex;justify-content:space-between;align-items:center;gap:.6rem}
+.marked-list .ml-item .ml-text{flex:1;line-height:1.4;color:var(--txt2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.marked-list .ml-item .ml-tag{font-size:.6rem;padding:.15rem .4rem;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.marked-list .ml-item .ml-tag.phy{background:rgba(110,181,255,0.1);color:var(--phy)}
+.marked-list .ml-item .ml-tag.chem{background:rgba(111,207,151,0.1);color:var(--chem)}
+.marked-list .ml-item .ml-tag.math{background:rgba(242,153,74,0.1);color:var(--math)}
+.empty-state{text-align:center;padding:2rem 1rem;color:var(--txt3);font-size:.8rem}
+
+/* QUOTE */
+.quote-section{margin-top:2rem;padding:1.25rem;border:1px solid var(--border);border-radius:10px;background:var(--bg2);text-align:center}
+.quote-section .qt{font-size:.9rem;font-style:italic;color:var(--txt2);line-height:1.6;max-width:500px;margin:0 auto}
+.quote-section .qt-author{margin-top:.4rem;font-size:.7rem;color:var(--txt3)}
+.quote-section .tip{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
+.quote-section .tip .tip-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:.25rem}
+.quote-section .tip .tip-txt{font-size:.8rem;color:var(--txt2)}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:none;align-items:center;justify-content:center;z-index:50;backdrop-filter:blur(4px)}
+.overlay.show{display:flex}
+.overlay .modal{padding:2rem;border:1px solid var(--border);border-radius:12px;background:var(--bg);max-width:340px;width:90%;text-align:center}
+.overlay .modal h3{font-size:1rem;margin-bottom:.4rem}
+.overlay .modal p{color:var(--txt3);font-size:.8rem;margin-bottom:1rem}
+.overlay .modal .modal-actions{display:flex;gap:.5rem;justify-content:center}
+.overlay .modal .modal-actions button{padding:.5rem 1.1rem;border-radius:8px;font-size:.8rem;border:1px solid var(--border)}
+.overlay .modal .modal-actions .confirm{background:var(--rose);color:var(--bg);border-color:var(--rose)}
+.overlay .modal .modal-actions .cancel{color:var(--txt3)}
+.overlay .modal .modal-actions .cancel:hover{color:var(--txt)}
+
+@media(max-width:600px){
+  .modes{grid-template-columns:1fr}
+  .res-stats{grid-template-columns:repeat(2,1fr)}
+  .analytics-grid{grid-template-columns:1fr}
+  #menu .hero h1{font-size:2rem}
+  .q-card{padding:1.1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- MENU -->
+<div id="menu" class="page active">
+  <div class="screen">
+    <div class="hero">
+      <h1>PYQ<span>Mania</span></h1>
+      <p>Previous Year Questions — engineered for JEE toppers</p>
+    </div>
+    <div class="modes">
+      <div class="mode-card" id="modeFree">
+        <div class="icon">🎲</div>
+        <h3>Free Mode</h3>
+        <p>Unlimited PYQs — pick subjects &amp; go.</p>
+      </div>
+      <div class="mode-card" id="modeMock">
+        <div class="icon">🏆</div>
+        <h3>Mock Test</h3>
+        <p>JEE Main / Advanced full-length mock.</p>
+      </div>
+    </div>
+    <div class="menu-links big">
+      <button id="linkCustom">🎯 Custom</button>
+      <a href="#" id="linkAnalytics">📊 Analytics</a>
+      <a href="#" id="linkStarred">⭐ Starred</a>
+    </div>
+    <div class="menu-btm">
+      <div class="btm-row">
+        <a href="#" id="unloadBtn">✕ Unload</a>
+        <a href="#" id="reloadBtn">↻ Reload questions</a>
+      </div>
+      <div class="btm-status" id="loadStatus">⟳ Loading question bank…</div>
+    </div>
+  </div>
+</div>
+
+<!-- FREE SETUP -->
+<div id="freeSetup" class="page">
+  <div class="screen">
+    <div class="hd"><h2>Free Mode</h2><button class="back" id="freeBack">← Back</button></div>
+    <p style="color:var(--txt3);font-size:.85rem;margin-bottom:1rem">Pick subjects and exam type. Unlimited questions, no timer.</p>
+    <div class="exam-row">
+      <button class="exam-btn active" data-exam="both">Both</button>
+      <button class="exam-btn" data-exam="main">JEE Main</button>
+      <button class="exam-btn" data-exam="advanced">JEE Advanced</button>
+    </div>
+    <div class="subj-grid" id="freeSubjGrid">
+      <div class="subj-btn active phy" data-subj="Physics"><div class="s-icon">⚛</div><div class="s-name">Physics</div></div>
+      <div class="subj-btn active chem" data-subj="Chemistry"><div class="s-icon">🧪</div><div class="s-name">Chemistry</div></div>
+      <div class="subj-btn active math" data-subj="Mathematics"><div class="s-icon">📐</div><div class="s-name">Mathematics</div></div>
+    </div>
+    <div style="display:flex;gap:.75rem;margin-top:1.5rem">
+      <button class="q-actions btn-next" id="freeStart" style="padding:.7rem 2rem;border-radius:8px;font-size:.85rem;font-weight:600">Start Practice</button>
+    </div>
+  </div>
+</div>
+
+<!-- MOCK SETUP -->
+<div id="mockSetup" class="page">
+  <div class="screen">
+    <div class="hd"><h2>Mock Test</h2><button class="back" id="mockBack">← Back</button></div>
+    <p style="color:var(--txt3);font-size:.85rem;margin-bottom:1rem">Select exam pattern:</p>
+    <div class="exam-row">
+      <button class="exam-btn active" data-exam="main">JEE Main</button>
+      <button class="exam-btn" data-exam="advanced">JEE Advanced</button>
+    </div>
+    <div style="margin-top:1rem;font-size:.8rem;color:var(--txt3);line-height:1.6" id="mockInfo"></div>
+    <div style="display:flex;gap:.75rem;margin-top:1.5rem">
+      <button class="q-actions btn-next" id="mockStart" style="padding:.7rem 2rem;border-radius:8px;font-size:.85rem;font-weight:600">Start Mock</button>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOM SETUP -->
+<div id="customSetup" class="page">
+  <div class="screen">
+    <div class="hd"><h2>Custom Mode</h2><button class="back" id="customBack">← Back</button></div>
+    <div class="exam-row">
+      <button class="exam-btn active" data-exam="both">Both</button>
+      <button class="exam-btn" data-exam="main">JEE Main</button>
+      <button class="exam-btn" data-exam="advanced">JEE Advanced</button>
+    </div>
+    <div class="subj-grid" id="subjGrid">
+      <div class="subj-btn active phy" data-subj="Physics"><div class="s-icon">⚛</div><div class="s-name">Physics</div><div class="s-count" id="subjCount-Physics">—</div></div>
+      <div class="subj-btn active chem" data-subj="Chemistry"><div class="s-icon">🧪</div><div class="s-name">Chemistry</div><div class="s-count" id="subjCount-Chemistry">—</div></div>
+      <div class="subj-btn active math" data-subj="Mathematics"><div class="s-icon">📐</div><div class="s-name">Mathematics</div><div class="s-count" id="subjCount-Mathematics">—</div></div>
+    </div>
+    <div id="chaptersArea"></div>
+    <div class="ch-info" id="chInfo">Select subjects and chapters</div>
+    <div style="margin-top:1rem;display:flex;gap:.75rem">
+      <button class="q-actions btn-next" id="customStart" style="padding:.7rem 2rem;border-radius:8px;font-size:.85rem;font-weight:600">Start</button>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="page">
+  <div class="screen">
+    <div class="q-top">
+      <div class="q-prog"><div class="q-prog-bar"><div class="q-prog-fill" id="progFill"></div></div><div class="q-prog-meta"><span id="qProgress">Question 1</span><span id="qProgressPct">0%</span></div></div>
+      <div class="q-info"><span id="qCount">1/10</span><div class="q-subj" id="qSubject"></div></div>
+    </div>
+    <div class="q-palette" id="qPalette"></div>
+    <div class="q-card">
+      <div class="q-meta-tag" id="qMetaTags"></div>
+      <div class="q-text" id="qText"></div>
+    </div>
+    <div id="qAnswerArea"></div>
+    <div class="q-meta"><div class="q-marked" id="qMarkedBadge">Marked for Review</div></div>
+    <div class="q-actions">
+      <button class="btn-menu" id="btnMenu">← Menu</button>
+      <button class="btn-star" id="btnStar">☆ Star</button>
+      <button class="btn-mark" id="btnMark">Mark for Review</button>
+      <button class="btn-end" id="btnEnd">End Test</button>
+      <button class="btn-next" id="btnNext">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="results" class="page">
+  <div class="screen">
+    <div class="res">
+      <div class="res-hero"><div class="big"><span id="resScore">0</span><span style="font-size:.9rem;color:var(--txt3)">/<span id="resTotal">0</span></span></div><div class="sub" id="resSub">Test Complete</div></div>
+      <div class="res-stats">
+        <div class="res-stat"><div class="val" style="color:var(--em)" id="resCorrect">0</div><div class="lbl">Correct</div></div>
+        <div class="res-stat"><div class="val" style="color:var(--rose)" id="resWrong">0</div><div class="lbl">Wrong</div></div>
+        <div class="res-stat"><div class="val" style="color:var(--txt3)" id="resSkipped">0</div><div class="lbl">Skipped</div></div>
+        <div class="res-stat"><div class="val" style="color:var(--gold)" id="resAccuracy">0%</div><div class="lbl">Accuracy</div></div>
+      </div>
+      <div class="res-detail" id="resReview"></div>
+      <div class="q-actions" style="justify-content:center"><button class="btn-next" id="resMenu">← Main Menu</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYTICS -->
+<div id="analytics" class="page">
+  <div class="screen wide">
+    <div class="hd"><h2>📊 Analytics</h2><div style="display:flex;gap:.5rem"><button class="back" id="analyticsStarred" style="border-color:var(--gold);color:var(--gold)">⭐ Starred</button><button class="back" id="analyticsBack">← Back</button></div></div>
+    <div class="analytics-grid">
+      <div class="an-card"><h4>Answered</h4><div class="big-num gold" id="anTotal">0</div></div>
+      <div class="an-card"><h4>Accuracy</h4><div class="big-num em" id="anAccuracy">0%</div></div>
+      <div class="an-card"><h4>Correct</h4><div class="big-num em" id="anCorrect">0</div></div>
+      <div class="an-card"><h4>Wrong</h4><div class="big-num rose" id="anWrong">0</div></div>
+      <div class="an-card full"><h4>Subject Accuracy</h4><div class="subj-acc" id="anSubjAcc"></div></div>
+    </div>
+    <div class="quote-section" id="quoteSection">
+      <div class="qt" id="quoteText"></div>
+      <div class="qt-author" id="quoteAuthor"></div>
+      <div class="tip"><div class="tip-lbl">Tip</div><div class="tip-txt" id="tipText"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- STARRED -->
+<div id="starred" class="page">
+  <div class="screen wide">
+    <div class="hd"><h2>⭐ Starred</h2><div style="display:flex;gap:.5rem"><button class="back" id="starredAnalytics" style="border-color:var(--em);color:var(--em)">📊 Analytics</button><button class="back" id="starredBack">← Back</button></div></div>
+    <div id="starredList"></div>
+    <div id="starredView" style="display:none">
+      <div class="q-top">
+        <div class="q-prog"><div class="q-prog-bar"><div class="q-prog-fill" id="starProgFill"></div></div><div class="q-prog-meta"><span id="starProgress">Question 1</span></div></div>
+        <div class="q-info"><span id="starCount">1/N</span><div class="q-subj" id="starSubject"></div></div>
+      </div>
+      <div class="q-card">
+        <div class="q-meta-tag" id="starMetaTags"></div>
+        <div class="q-text" id="starText"></div>
+      </div>
+      <div id="starAnswerArea"></div>
+      <div style="display:flex;gap:.5rem;margin-top:1rem">
+        <button class="back" id="starPrev">← Prev</button>
+        <button class="back" id="starNext" style="margin-left:auto">Next →</button>
+        <button class="back" id="starBackToList" style="color:var(--txt3)">Back to List</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="endOverlay">
+  <div class="modal"><h3>End Test?</h3><p>You have unanswered questions. Submit now?</p><div class="modal-actions"><button class="cancel" id="endCancel">Cancel</button><button class="confirm" id="endConfirm">Submit</button></div></div>
+</div>
+
+<script>
+const STORAGE_KEY = 'pyqmania_data';
+const STARS_KEY = 'pyqmania_stars';
+let NUM_CHUNKS = 0;
+const CHUNK_SIZE = 1500;
+
+let index = null;
+let questionsCache = {};
+let chaptersBySubject = {};
+let state = {
+  mode: null, exam: 'both',
+  qList: [], current: 0, total: 0,
+  answers: {}, marked: {},
+  stats: { answered: 0, correct: 0, wrong: 0, subjectStats: {} }
+};
+let examFilter = 'both';
+let customSubjects = { Physics: true, Chemistry: true, Mathematics: true };
+let freeSubjects = { Physics: true, Chemistry: true, Mathematics: true };
+let customChapters = {};
+let ready = false;
+let starList = []; // array of {qIdx, entry, q}
+
+const $ = id => document.getElementById(id);
+const show = id => { document.querySelectorAll('.page').forEach(p => p.classList.remove('active')); $(id).classList.add('active'); };
+
+const QUOTES = [
+  { q: 'Consistency beats intensity. Show up every day.', a: '— JEE Topper' },
+  { q: 'It does not matter how slowly you go as long as you do not stop.', a: '— Confucius' },
+  { q: 'The only way to do great work is to love what you do.', a: '— Steve Jobs' },
+  { q: 'Success is not final, failure is not fatal: it is the courage to continue that counts.', a: '— Winston Churchill' },
+  { q: 'The secret of getting ahead is getting started.', a: '— Mark Twain' },
+  { q: 'Focus on your goal, not your fear.', a: '— JEE Topper' },
+  { q: 'The harder you work, the greater you\'ll feel when you achieve it.', a: '— Unknown' },
+  { q: 'Discipline is doing what needs to be done, even when you don\'t want to.', a: '— JEE Topper' },
+  { q: 'Small daily improvements over time lead to massive results.', a: '— Unknown' },
+  { q: 'Your limitation is only your imagination.', a: '— Unknown' }
+];
+const TIPS = [
+  'Master NCERT first, then move to advanced problems.',
+  'Review your wrong answers before starting new questions.',
+  'Time management is as important as knowledge.',
+  'Focus on understanding concepts, not memorizing solutions.',
+  'Sleep 7-8 hours. A rested brain performs better.',
+  'Practice 3-4 PYQs daily from each subject.',
+  'Teach what you learn — it reinforces concepts.',
+  'Try full-length mocks every weekend.',
+  'Analyze every mistake: conceptual or silly? Fix accordingly.',
+  'Stay consistent. Even 2 hours daily beats 10 hours once a week.'
+];
+
+function saveStats() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.stats)); } catch(e) {} }
+function loadStats() {
+  try { const d = localStorage.getItem(STORAGE_KEY); if (d) Object.assign(state.stats, JSON.parse(d)); } catch(e) {}
+}
+function saveStars() { try { localStorage.setItem(STARS_KEY, JSON.stringify(starList)); } catch(e) {} }
+function loadStars() {
+  try { const d = localStorage.getItem(STARS_KEY); if (d) { starList = JSON.parse(d); } } catch(e) {}
+  if (!Array.isArray(starList)) starList = [];
+}
+
+// ---- INDEXEDDB CACHE ----
+const DB_NAME = 'PYQMania';
+const DB_VER = 3;
+
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, DB_VER);
+    req.onupgradeneeded = () => {
+      const db = req.result;
+      if (db.objectStoreNames.contains('cache')) db.deleteObjectStore('cache');
+      if (!db.objectStoreNames.contains('chunks')) db.createObjectStore('chunks');
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function loadAllCached() {
+  try {
+    const db = await openDB();
+    const cache = {};
+    let count = 0;
+    for (let i = 1; i <= NUM_CHUNKS; i++) {
+      const data = await new Promise((resolve, reject) => {
+        const tx = db.transaction('chunks', 'readonly');
+        const req = tx.objectStore('chunks').get('chunk_' + i);
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+      if (data) {
+        data.forEach(q => { cache[q.i] = q; count++; });
+      }
+    }
+    db.close();
+    return count > 0 ? { cache, count } : null;
+  } catch(e) { return null; }
+}
+
+async function saveChunkToCache(i, data) {
+  try {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction('chunks', 'readwrite');
+      tx.objectStore('chunks').put(data, 'chunk_' + i);
+      tx.oncomplete = () => { db.close(); resolve(); };
+      tx.onerror = () => { db.close(); reject(tx.error); };
+    });
+  } catch(e) { /* chunk save failed */ }
+}
+
+async function clearCache() {
+  try {
+    const db = await openDB();
+    const tx = db.transaction('chunks', 'readwrite');
+    tx.objectStore('chunks').clear();
+    tx.oncomplete = () => db.close();
+  } catch(e) {}
+}
+
+// ---- BACKGROUND FULL LOADING ----
+let totalQ = 0;
+let loadCancelled = false;
+
+async function loadAllChunks() {
+  for (let i = 1; i <= NUM_CHUNKS; i++) {
+    if (loadCancelled) return;
+    try {
+      const res = await fetch('data/chunk_' + i + '.json');
+      const data = await res.json();
+      data.forEach(q => { questionsCache[q.i] = q; });
+      saveChunkToCache(i, data);
+      totalQ = Object.keys(questionsCache).length;
+      if (ready) {
+        $('loadStatus').textContent = '⟳ ' + totalQ + ' / ' + index.length + ' loaded';
+      }
+      await new Promise(r => setTimeout(r, 0));
+    } catch(e) { console.warn('chunk_' + i + ' failed:', e); }
+  }
+  $('loadStatus').textContent = '✓ ' + totalQ + ' questions cached';
+}
+
+async function ensureQuestions(indices) {
+  const needed = new Set();
+  indices.forEach(idx => {
+    const entry = index[idx];
+    if (!entry || questionsCache[entry[0]]) return;
+    needed.add(Math.floor(idx / CHUNK_SIZE) + 1);
+  });
+  for (const n of needed) {
+    try {
+      const res = await fetch('data/chunk_' + n + '.json');
+      const data = await res.json();
+      data.forEach(q => { questionsCache[q.i] = q; });
+    } catch(e) { console.warn('chunk ' + n + ' fallback failed:', e); }
+  }
+}
+
+// ---- INDEX LOADING ----
+async function loadIndex() {
+  try {
+    const res = await fetch('data/index.json');
+    index = await res.json();
+    NUM_CHUNKS = Math.ceil(index.length / CHUNK_SIZE);
+
+    // Build chapter index
+    index.forEach(entry => {
+      const subj = entry[1], ch = entry[2];
+      if (!chaptersBySubject[subj]) chaptersBySubject[subj] = new Set();
+      if (ch) chaptersBySubject[subj].add(ch);
+    });
+    Object.keys(chaptersBySubject).forEach(s => {
+      chaptersBySubject[s] = [...chaptersBySubject[s]].sort();
+      customChapters[s] = {};
+      chaptersBySubject[s].forEach(ch => customChapters[s][ch] = true);
+    });
+    totalQ = index.length;
+    ready = true;
+
+    // Try IndexedDB cache now that we know NUM_CHUNKS
+    const cached = await loadAllCached();
+    if (cached) {
+      questionsCache = cached.cache;
+    }
+
+    const cachedCount = Object.keys(questionsCache).length;
+    if (cachedCount >= totalQ) {
+      $('loadStatus').textContent = '✓ ' + totalQ + ' questions ready';
+    } else {
+      $('loadStatus').textContent = '⟳ Loading ' + cachedCount + ' / ' + totalQ + ' …';
+    }
+    loadStats();
+    loadStars();
+    if (cachedCount < totalQ) {
+      loadAllChunks();
+    }
+  } catch(e) {
+    $('loadStatus').textContent = '⚠ Failed to load question bank';
+  }
+}
+
+// ---- UNLOAD / RELOAD ----
+async function unloadQuestions() {
+  await clearCache();
+  questionsCache = {};
+  totalQ = 0;
+  $('loadStatus').textContent = '— questions unloaded';
+}
+$('unloadBtn').onclick = unloadQuestions;
+
+async function reloadQuestions() {
+  $('loadStatus').textContent = '⟳ Loading questions…';
+  loadCancelled = true;
+  await new Promise(r => setTimeout(r, 50));
+  loadCancelled = false;
+  await loadAllChunks();
+}
+$('reloadBtn').onclick = reloadQuestions;
+
+// ---- MATH RENDERING ----
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function cleanLatex(s) {
+  if (!s) return s;
+  // 1. Replace JSON-escaped newlines with space
+  s = s.replace(/\n/g, ' ');
+  // 2. Convert \[...\] → $$...$$  and  \(...\) → $...$
+  s = s.replace(/\\\[/g, '$$$$').replace(/\\\]/g, '$$$$');
+  s = s.replace(/\\\(/g, '$').replace(/\\\)/g, '$');
+  // 3. Fix \text { ... } → \text{...}  (remove space after \text before {)
+  s = s.replace(/(\\text(?:bf|it|rm|tt|sf|sc|md|up|sl|normal)?)\s*\{/g, '$1{');
+  // 4. Remove trailing space inside \text{... }
+  s = s.replace(/(\\text\{[^}]*?)\s+\}/g, '$1}');
+  // 5. Strip embedded CSS (tg class styles) and HTML/MathML tags
+  s = s.replace(/\.tg\s*\{[^}]*\}/g, '');
+  s = s.replace(/<[^>]+>/g, '');
+  // 6. Replace double-backslash-newline combos left from stripping
+  s = s.replace(/\\\\\s+/g, '\\\\ ');
+  return s;
+}
+
+function renderMath(text) {
+  if (!text) return '';
+  let s = cleanLatex(text);
+  // Escape HTML (safe after cleanup)
+  s = escHtml(s);
+  // Render display math $$...$$
+  s = s.replace(/\$\$([\s\S]*?)\$\$/g, (_, m) => {
+    try { return katex.renderToString(m.trim(), { displayMode: true, throwOnError: false }); }
+    catch(e) { return '<div class="math-fallback">' + escHtml(m) + '</div>'; }
+  });
+  // Render inline math $...$
+  s = s.replace(/\$([^$]+?)\$/g, (_, m) => {
+    try { return katex.renderToString(m.trim(), { displayMode: false, throwOnError: false }); }
+    catch(e) { return '<span class="math-fallback-inline">' + escHtml(m) + '</span>'; }
+  });
+  // Collapse multiple spaces into one (browser preserves them in innerHTML)
+  s = s.replace(/  +/g, ' ');
+  return s;
+}
+
+// ---- START ----
+loadIndex();
+
+// ---- MENU ----
+$('modeFree').onclick = () => {
+  document.querySelectorAll('#freeSetup .exam-btn').forEach(b => b.classList.toggle('active', b.dataset.exam === examFilter));
+  document.querySelectorAll('#freeSubjGrid .subj-btn').forEach(b => b.classList.add('active'));
+  freeSubjects = { Physics: true, Chemistry: true, Mathematics: true };
+  show('freeSetup');
+};
+$('modeMock').onclick = () => {
+  document.querySelectorAll('#mockSetup .exam-btn').forEach(b => b.classList.toggle('active', b.dataset.exam === examFilter));
+  show('mockSetup'); updateMockInfo();
+};
+$('linkCustom').onclick = () => {
+  document.querySelectorAll('#customSetup .exam-btn').forEach(b => b.classList.toggle('active', b.dataset.exam === examFilter));
+  show('customSetup'); renderCustomMode();
+};
+$('linkAnalytics').onclick = () => { renderAnalytics(); show('analytics'); };
+$('linkStarred').onclick = () => { renderStarred(); show('starred'); };
+$('freeBack').onclick = () => show('menu');
+$('mockBack').onclick = () => show('menu');
+$('customBack').onclick = () => show('menu');
+$('analyticsBack').onclick = () => show('menu');
+$('analyticsStarred').onclick = () => { renderStarred(); show('starred'); };
+$('resMenu').onclick = () => show('menu');
+$('endCancel').onclick = () => $('endOverlay').classList.remove('show');
+$('endConfirm').onclick = endTest;
+$('btnMark').onclick = toggleMark;
+$('btnStar').onclick = toggleStar;
+$('btnMenu').onclick = () => show('menu');
+$('btnEnd').onclick = () => $('endOverlay').classList.add('show');
+$('btnNext').onclick = nextQuestion;
+
+// Exam filter
+function initExamRow(containerId, onChange) {
+  const container = $(containerId);
+  container.querySelectorAll('.exam-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.exam-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      examFilter = btn.dataset.exam;
+      if (onChange) onChange();
+    });
+  });
+}
+initExamRow('freeSetup');
+initExamRow('mockSetup', () => updateMockInfo());
+initExamRow('customSetup', () => renderCustomMode());
+
+$('freeStart').onclick = startFreeMode;
+$('mockStart').onclick = startMockMode;
+$('customStart').onclick = startCustomMode;
+
+// Free mode subject selection
+document.querySelectorAll('#freeSubjGrid .subj-btn').forEach(btn => {
+  btn.onclick = () => {
+    const subj = btn.dataset.subj;
+    freeSubjects[subj] = !freeSubjects[subj];
+    btn.classList.toggle('active');
+  };
+});
+
+// ---- CUSTOM MODE ----
+function renderCustomMode() {
+  const e = examFilter;
+  ['Physics','Chemistry','Mathematics'].forEach(s => {
+    const el = $('subjCount-' + s);
+    if (!el) return;
+    const count = index ? index.filter(entry => entry[1] === s && (e === 'both' || entry[3] === (e === 'main' ? 'JEE Main' : 'JEE Advanced'))).length : 0;
+    el.textContent = count;
+  });
+  renderChapterGrid();
+  updateCustomCount();
+  document.querySelectorAll('#subjGrid .subj-btn').forEach(btn => {
+    btn.onclick = () => {
+      const subj = btn.dataset.subj;
+      customSubjects[subj] = !customSubjects[subj];
+      btn.classList.toggle('active');
+      updateCustomCount();
+    };
+  });
+}
+
+function getChaptersForSubject(subj) {
+  if (!chaptersBySubject[subj]) return [];
+  return chaptersBySubject[subj].filter(ch => {
+    return index.some(entry => entry[1] === subj && entry[2] === ch && (examFilter === 'both' || entry[3] === (examFilter === 'main' ? 'JEE Main' : 'JEE Advanced')));
+  });
+}
+
+function renderChapterGrid() {
+  const area = $('chaptersArea'); area.innerHTML = '';
+  Object.keys(chaptersBySubject).forEach(subj => {
+    const chs = getChaptersForSubject(subj);
+    if (chs.length === 0) return;
+    const sec = document.createElement('div'); sec.className = 'ch-section';
+    const color = subj === 'Physics' ? 'var(--phy)' : subj === 'Chemistry' ? 'var(--chem)' : 'var(--math)';
+    sec.innerHTML = '<div class="ch-hd" style="color:' + color + '">' + subj + '</div>';
+    const actions = document.createElement('div'); actions.className = 'ch-actions';
+    const selAll = document.createElement('button'); selAll.textContent = 'Select All';
+    selAll.onclick = () => { chs.forEach(ch => customChapters[subj][ch] = true); renderChapterGrid(); updateCustomCount(); };
+    const clrAll = document.createElement('button'); clrAll.textContent = 'Clear';
+    clrAll.onclick = () => { chs.forEach(ch => customChapters[subj][ch] = false); renderChapterGrid(); updateCustomCount(); };
+    actions.appendChild(selAll); actions.appendChild(clrAll); sec.appendChild(actions);
+    const grid = document.createElement('div'); grid.className = 'ch-grid';
+    chs.forEach(ch => {
+      const item = document.createElement('div');
+      item.className = 'ch-item' + (customChapters[subj][ch] ? ' selected' : '');
+      item.textContent = ch;
+      item.onclick = () => { customChapters[subj][ch] = !customChapters[subj][ch]; item.classList.toggle('selected'); updateCustomCount(); };
+      grid.appendChild(item);
+    });
+    sec.appendChild(grid); area.appendChild(sec);
+  });
+}
+
+function updateCustomCount() {
+  const count = getFilteredIndices().length;
+  $('chInfo').textContent = count + ' questions available';
+  $('customStart').style.display = count > 0 ? 'inline-flex' : 'none';
+}
+
+function getFilteredIndices() {
+  return index.reduce((acc, entry, i) => {
+    if (examFilter !== 'both' && entry[3] !== (examFilter === 'main' ? 'JEE Main' : 'JEE Advanced')) return acc;
+    if (!customSubjects[entry[1]]) return acc;
+    if (!customChapters[entry[1]] || !customChapters[entry[1]][entry[2]]) return acc;
+    acc.push(i);
+    return acc;
+  }, []);
+}
+
+function shuffleArray(arr) { for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [arr[i], arr[j]] = [arr[j], arr[i]]; } return arr; }
+
+function updateMockInfo() {
+  const isMain = examFilter === 'main';
+  const info = isMain
+    ? 'JEE Main pattern:<br>• 90 questions (30 Physics + 30 Chemistry + 30 Mathematics)<br>• 20 MCQ + 10 Numerical per subject<br>• Duration: 180 minutes<br>• +4 correct, −1 wrong (MCQ), no negative for numerical'
+    : 'JEE Advanced pattern:<br>• 2 papers of 180 min each<br>• Mix of MCQ, multi-correct & numerical<br>• No fixed split (varies yearly)<br>• Negative marks vary by question type';
+  $('mockInfo').innerHTML = info;
+}
+
+// ---- START MODES ----
+async function startFreeMode() {
+  if (!index || index.length === 0) return;
+  const activeSubjects = Object.keys(freeSubjects).filter(s => freeSubjects[s]);
+  if (activeSubjects.length === 0) return;
+  const indices = index.reduce((acc, entry, i) => {
+    if (examFilter !== 'both' && entry[3] !== (examFilter === 'main' ? 'JEE Main' : 'JEE Advanced')) return acc;
+    if (!freeSubjects[entry[1]]) return acc;
+    acc.push(i); return acc;
+  }, []);
+  if (indices.length === 0) return;
+  state.mode = 'free';
+  state.answers = {}; state.marked = {}; state.current = 0;
+  state.qList = shuffleArray([...indices]);
+  await ensureQuestions(state.qList);
+  enterQuiz();
+}
+
+async function startMockMode() {
+  if (!index || index.length === 0) return;
+  const isMain = examFilter === 'main';
+  let qCount, perSubject;
+  if (isMain) {
+    perSubject = 30; // 20 MCQ + 10 numerical
+    qCount = 90;
+  } else {
+    perSubject = 18; // ~54 total for Advanced
+    qCount = 54;
+  }
+  const subjects = ['Physics', 'Chemistry', 'Mathematics'];
+  const indices = [];
+  subjects.forEach(subj => {
+    const pool = index.reduce((acc, entry, i) => {
+      if (entry[1] !== subj) return acc;
+      if (entry[3] !== (examFilter === 'main' ? 'JEE Main' : 'JEE Advanced')) return acc;
+      acc.push(i); return acc;
+    }, []);
+    const shuffled = shuffleArray([...pool]);
+    indices.push(...shuffled.slice(0, Math.min(perSubject, shuffled.length)));
+  });
+  if (indices.length === 0) return;
+  state.mode = 'mock';
+  state.answers = {}; state.marked = {}; state.current = 0;
+  state.qList = shuffleArray(indices);
+  state.total = state.qList.length;
+  await ensureQuestions(state.qList);
+  enterQuiz();
+  state.mockTimer = setTimeout(() => endTest(), isMain ? 180 * 60 * 1000 : 180 * 60 * 1000);
+}
+
+async function startCustomMode() {
+  const indices = getFilteredIndices();
+  if (indices.length === 0) return;
+  state.mode = 'custom';
+  state.answers = {}; state.marked = {}; state.current = 0;
+  const shuffled = shuffleArray([...indices]);
+  state.qList = shuffled.slice(0, Math.min(shuffled.length, 50));
+  state.total = state.qList.length;
+  await ensureQuestions(state.qList);
+  enterQuiz();
+}
+
+// ---- QUIZ ENGINE ----
+function enterQuiz() { show('quiz'); if (state.mode !== 'free') renderPalette(); renderQuestion(); }
+
+function renderPalette() {
+  const pal = $('qPalette'); pal.innerHTML = '';
+  state.qList.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === state.current ? ' current' : '') + (i in state.answers ? ' answered' : '') + (state.marked[i] ? ' marked' : '');
+    dot.textContent = i + 1;
+    dot.onclick = () => { state.current = i; renderQuestion(); renderPalette(); };
+    pal.appendChild(dot);
+  });
+}
+
+function getQ(i) {
+  const idx = state.qList[i];
+  const entry = index[idx];
+  return questionsCache[entry[0]] || entry;
+}
+
+function renderQuestion() {
+  const idx = state.current, qIdx = state.qList[idx], entry = index[qIdx];
+  const qId = entry[0];
+  let q = questionsCache[qId];
+  if (!q) return;
+
+  const isFree = state.mode === 'free';
+  $('qCount').textContent = isFree ? '' : (idx+1) + '/' + state.total;
+  $('qCount').style.display = isFree ? 'none' : '';
+  $('qProgress').textContent = isFree ? '' : 'Question ' + (idx+1);
+  $('qProgressPct').textContent = isFree ? '' : Math.round((idx/state.total)*100) + '%';
+  $('progFill').style.width = isFree ? '0%' : (idx/state.total)*100 + '%';
+  $('qSubject').textContent = entry[1] + ' · ' + entry[2];
+
+  const tags = $('qMetaTags'); tags.innerHTML = '';
+  const et = document.createElement('span'); et.className = 'tag-exam'; et.textContent = entry[3]; tags.appendChild(et);
+  if (entry[4]) { const yt = document.createElement('span'); yt.textContent = entry[4]; tags.appendChild(yt); }
+
+  $('qText').innerHTML = renderMath(q.q || 'Loading question text…');
+
+  const type = entry[5] || q.t || 'mcq';
+  const area = $('qAnswerArea'); area.innerHTML = '';
+
+  if (type === 'numerical') {
+    const input = document.createElement('input');
+    input.type = 'text'; input.className = 'q-num-input'; input.placeholder = 'Type your answer…'; input.id = 'numInput';
+    if (idx in state.answers) { input.value = state.answers[idx]; input.classList.add('disabled'); input.disabled = true; }
+    area.appendChild(input);
+    const result = document.createElement('div'); result.className = 'q-num-result'; result.id = 'numResult'; area.appendChild(result);
+    if (!(idx in state.answers)) {
+      const sb = document.createElement('button'); sb.className = 'btn-submit'; sb.textContent = 'Submit';
+      sb.style.cssText = 'padding:.6rem 1.1rem;border-radius:8px;font-size:.8rem;border:1px solid var(--em);color:var(--em);background:transparent';
+      sb.onclick = () => submitNumerical(idx, q);
+      area.appendChild(sb);
+    } else { showNumResult(idx, q); }
+  } else {
+    const opts = document.createElement('div'); opts.className = 'q-opts'; opts.id = 'qOptions';
+    const labels = ['A','B','C','D'];
+    const options = q.o || [];
+    options.forEach((opt, i) => {
+      const btn = document.createElement('div'); btn.className = 'q-opt';
+      if (idx in state.answers) {
+        btn.classList.add('disabled');
+        if (type === 'multi') {
+          const correctIndices = q.a.split(',').map(Number);
+          if (correctIndices.includes(i)) btn.classList.add('correct');
+          const sel = state.answers[idx];
+          const selI = sel ? sel.split(',').map(Number) : [];
+          if (selI.includes(i) && !correctIndices.includes(i)) btn.classList.add('wrong');
+        } else {
+          if (i === Number(q.a)) btn.classList.add('correct');
+          if (i === Number(state.answers[idx]) && Number(state.answers[idx]) !== Number(q.a)) btn.classList.add('wrong');
+        }
+        const sa = state.answers[idx];
+        if (sa && (type === 'multi' ? sa.split(',').map(Number).includes(i) : Number(sa) === i)) btn.classList.add('selected');
+      }
+      btn.innerHTML = '<span class="opt-label">' + labels[i] + '.</span>' + renderMath(opt);
+      btn.onclick = () => selectOption(i);
+      opts.appendChild(btn);
+    });
+    area.appendChild(opts);
+  }
+
+  // Free mode: minimal UI
+  $('qPalette').style.display = isFree ? 'none' : '';
+  $('qMarkedBadge').style.display = isFree ? 'none' : '';
+  $('btnMark').style.display = isFree ? 'none' : '';
+  $('btnEnd').style.display = isFree ? 'none' : '';
+  $('btnMenu').style.display = isFree ? 'inline-flex' : 'none';
+
+  const isMarked = state.marked[idx];
+  if (!isFree) {
+    $('btnMark').textContent = isMarked ? 'Unmark' : 'Mark for Review';
+    $('btnMark').classList.toggle('marked', !!isMarked);
+    $('qMarkedBadge').classList.toggle('show', !!isMarked);
+  }
+
+  const isStarred = starList.some(s => s.qIdx === qIdx);
+  $('btnStar').textContent = isStarred ? '★ Starred' : '☆ Star';
+  $('btnStar').classList.toggle('starred', !!isStarred);
+
+  const nb = $('btnNext');
+  nb.style.display = 'inline-flex'; nb.disabled = false;
+  nb.textContent = 'Next →';
+}
+
+function selectOption(optIdx) {
+  const idx = state.current;
+  if (idx in state.answers) return;
+  state.answers[idx] = String(optIdx);
+  renderQuestion();
+  if (state.mode === 'free') return;
+  renderPalette();
+  setTimeout(() => {
+    if (state.current < state.total - 1) { state.current++; renderQuestion(); renderPalette(); }
+    else $('endOverlay').classList.add('show');
+  }, 600);
+}
+
+function submitNumerical(idx, q) {
+  if (idx in state.answers) return;
+  const input = $('numInput');
+  if (!input || !input.value.trim()) return;
+  state.answers[idx] = input.value.trim();
+  input.classList.add('disabled'); input.disabled = true;
+  showNumResult(idx, q);
+  document.querySelectorAll('#qAnswerArea .btn-submit').forEach(b => b.remove());
+  if (state.mode === 'free') return;
+  renderPalette();
+  setTimeout(() => {
+    if (state.current < state.total - 1) { state.current++; renderQuestion(); renderPalette(); }
+    else $('endOverlay').classList.add('show');
+  }, 1200);
+}
+
+function showNumResult(idx, q) {
+  const result = $('numResult'); if (!result) return;
+  const isCorrect = Math.abs(parseFloat(state.answers[idx]) - parseFloat(q.a)) < 0.01;
+  result.className = 'q-num-result show ' + (isCorrect ? 'correct' : 'wrong');
+  result.textContent = isCorrect ? '✓ Correct! (' + q.a + ')' : '✗ Wrong. Correct answer: ' + q.a;
+}
+
+function toggleMark() {
+  const idx = state.current;
+  if (state.marked[idx]) delete state.marked[idx]; else state.marked[idx] = true;
+  renderQuestion();
+  if (state.mode !== 'free') renderPalette();
+}
+
+function toggleStar() {
+  const idx = state.current, qIdx = state.qList[idx], entry = index[qIdx];
+  const q = questionsCache[entry[0]];
+  const existing = starList.findIndex(s => s.qIdx === qIdx);
+  if (existing >= 0) { starList.splice(existing, 1); }
+  else { starList.push({ qIdx, entry, q }); }
+  saveStars();
+  renderQuestion();
+}
+
+function nextQuestion() {
+  if (state.mode === 'free') {
+    if (state.current >= state.qList.length - 1) {
+      // Load more questions
+      const used = new Set(state.qList);
+      const available = index.reduce((acc, entry, i) => {
+        if (used.has(i)) return acc;
+        if (examFilter !== 'both' && entry[3] !== (examFilter === 'main' ? 'JEE Main' : 'JEE Advanced')) return acc;
+        if (!freeSubjects[entry[1]]) return acc;
+        acc.push(i); return acc;
+      }, []);
+      if (available.length > 0) {
+        const more = shuffleArray(available).slice(0, 50);
+        state.qList.push(...more);
+      }
+    }
+    if (state.current < state.qList.length - 1) { state.current++; renderQuestion(); }
+    return;
+  }
+  if (state.current < state.total - 1) { state.current++; renderQuestion(); renderPalette(); }
+  else $('endOverlay').classList.add('show');
+}
+
+function endTest() {
+  if (state.mockTimer) { clearTimeout(state.mockTimer); state.mockTimer = null; }
+  $('endOverlay').classList.remove('show');
+  let correct = 0, wrong = 0, skipped = 0;
+  const details = [];
+  state.qList.forEach((qIdx, i) => {
+    const entry = index[qIdx];
+    let q = questionsCache[entry[0]];
+    const ans = state.answers[i];
+    let result;
+    const type = entry[5] || (q ? q.t : 'mcq');
+    if (ans === undefined) { skipped++; result = 'skipped'; }
+    else if (type === 'numerical') {
+      const ca = q ? q.a : entry[6];
+      const isCorr = Math.abs(parseFloat(ans) - parseFloat(ca)) < 0.01;
+      if (isCorr) { correct++; result = 'correct'; } else { wrong++; result = 'wrong'; }
+    } else if (type === 'multi') {
+      const ca = q ? q.a : entry[6];
+      const ci = ca.split(',').map(Number).sort().join(',');
+      const ui = ans.split(',').map(Number).sort().join(',');
+      if (ui === ci) { correct++; result = 'correct'; } else { wrong++; result = 'wrong'; }
+    } else {
+      const ca = q ? q.a : entry[6];
+      if (ans === ca) { correct++; result = 'correct'; } else { wrong++; result = 'wrong'; }
+    }
+    details.push({ qIdx, answer: ans, result, entry, q });
+    if (result !== 'skipped') {
+      state.stats.answered++;
+      if (result === 'correct') state.stats.correct++;
+      else if (result === 'wrong') state.stats.wrong++;
+      const subj = entry[1];
+      if (!state.stats.subjectStats[subj]) state.stats.subjectStats[subj] = { answered: 0, correct: 0 };
+      state.stats.subjectStats[subj].answered++;
+      if (result === 'correct') state.stats.subjectStats[subj].correct++;
+    }
+  });
+  saveStats();
+  showResults(correct, wrong, skipped, details);
+}
+
+function showResults(correct, wrong, skipped, details) {
+  const answered = correct + wrong;
+  const total = answered + skipped;
+  const acc = answered > 0 ? Math.round((correct / answered) * 100) : 0;
+  $('resScore').textContent = correct;
+  $('resTotal').textContent = answered;
+  $('resCorrect').textContent = correct;
+  $('resWrong').textContent = wrong;
+  $('resSkipped').textContent = skipped;
+  $('resAccuracy').textContent = answered > 0 ? acc + '%' : '—';
+  $('resSub').textContent = state.mode === 'free' ? 'Free Mode' : state.mode === 'mock' ? 'Mock Test' : 'Custom Test';
+  const rev = $('resReview');
+  rev.innerHTML = '<h4 style="font-size:.8rem;color:var(--txt3);margin-bottom:.6rem">Review</h4>';
+  details.forEach((d, i) => {
+    const q = d.q;
+    const entry = d.entry;
+    const labels = ['A','B','C','D'];
+    const item = document.createElement('div'); item.className = 'q-review';
+    const st = d.result === 'correct' ? '✓' : d.result === 'wrong' ? '✗' : '—';
+    const clr = d.result === 'correct' ? 'var(--em)' : d.result === 'wrong' ? 'var(--rose)' : 'var(--txt3)';
+    let ansText = 'Skipped';
+    const type = entry[5] || (q ? q.t : 'mcq');
+    if (d.answer !== undefined) {
+      if (type === 'numerical') ansText = d.answer;
+      else if (type === 'multi') ansText = d.answer.split(',').map(i => labels[Number(i)]).join(', ');
+      else ansText = labels[Number(d.answer)];
+    }
+    const qt = q ? q.q : ('Q#' + entry[0]);
+    const ca = q ? q.a : entry[6];
+    const correctText = type === 'numerical' ? ca : type === 'multi' ? (ca || '').split(',').map(i => labels[Number(i)]).join(', ') : labels[Number(ca)];
+    item.innerHTML = '<div class="q-r-text"><span style="color:' + clr + ';font-weight:600">' + st + ' Q' + (i+1) + '.</span> ' + renderMath(qt.substring(0,70) + (qt.length > 70 ? '…' : '')) + '</div><div style="font-size:.7rem;color:var(--txt3)">Your: ' + ansText + ' · Correct: ' + correctText + (state.marked[i] ? ' · 🔖 Marked' : '') + '</div>';
+    rev.appendChild(item);
+  });
+  show('results');
+}
+
+function renderAnalytics() {
+  const s = state.stats;
+  const attempted = (s.correct||0) + (s.wrong||0);
+  const acc = attempted > 0 ? Math.round((s.correct / attempted) * 100) : 0;
+  $('anTotal').textContent = (s.answered||0);
+  $('anAccuracy').textContent = attempted > 0 ? acc+'%' : '—';
+  $('anCorrect').textContent = s.correct||0;
+  $('anWrong').textContent = s.wrong||0;
+  const subjAcc = $('anSubjAcc'); subjAcc.innerHTML = '';
+  const subjects = ['Physics','Chemistry','Mathematics'];
+  const colors = ['var(--phy)','var(--chem)','var(--math)'];
+  subjects.forEach((subj, i) => {
+    const ss = s.subjectStats && s.subjectStats[subj];
+    const a = ss ? (ss.answered||0) : 0;
+    const c = ss ? (ss.correct||0) : 0;
+    const pct = a > 0 ? Math.round((c/a)*100) : 0;
+    const row = document.createElement('div'); row.className = 'sa-row';
+    row.innerHTML = '<span style="color:' + colors[i] + ';font-weight:500">' + subj + '</span><span class="sa-bar"><span class="sa-fill" style="width:' + pct + '%;background:' + colors[i] + '"></span></span><span class="sa-pct" style="color:' + colors[i] + '">' + (a > 0 ? pct+'%' : '—') + '</span>';
+    subjAcc.appendChild(row);
+  });
+  const qi = Math.floor(Math.random() * QUOTES.length);
+  $('quoteText').textContent = '"' + QUOTES[qi].q + '"';
+  $('quoteAuthor').textContent = QUOTES[qi].a;
+  $('tipText').textContent = TIPS[Math.floor(Math.random() * TIPS.length)];
+}
+
+// ---- STARRED ----
+let starViewIdx = 0;
+
+function renderStarred() {
+  const list = $('starredList');
+  const view = $('starredView');
+  $('starredBack').onclick = () => show('menu');
+  $('starredAnalytics').onclick = () => { renderAnalytics(); show('analytics'); };
+  $('starBackToList').onclick = () => { list.style.display = ''; view.style.display = 'none'; };
+
+  if (starList.length === 0) {
+    list.style.display = ''; view.style.display = 'none';
+    list.innerHTML = '<div class="empty-state">⭐ No starred questions yet.<br>Star questions during practice to save them here.</div>';
+    return;
+  }
+
+  // Show list
+  list.style.display = ''; view.style.display = 'none';
+  let html = '<div class="marked-list">';
+  starList.forEach((s, i) => {
+    const subj = s.entry ? s.entry[1] : '';
+    const cls = subj === 'Physics' ? 'phy' : subj === 'Chemistry' ? 'chem' : 'math';
+    const text = s.q ? s.q.q || ('Q#' + s.entry[0]) : ('Q#' + s.entry[0]);
+    html += '<div class="ml-item" style="cursor:pointer" onclick="openStarred(' + i + ')"><span class="ml-text">' + text.substring(0, 80) + '</span><span class="ml-tag ' + cls + '">' + subj + '</span></div>';
+  });
+  html += '</div>';
+  const cl = document.createElement('div'); cl.style.cssText = 'margin-top:.75rem;display:flex;justify-content:center';
+  const clBtn = document.createElement('button'); clBtn.className = 'back'; clBtn.style.cssText = 'color:var(--rose);border-color:var(--rose);font-size:.75rem';
+  clBtn.textContent = 'Clear All Stars';
+  clBtn.onclick = () => { if (confirm('Remove all starred?')) { starList = []; saveStars(); renderStarred(); } };
+  cl.appendChild(clBtn);
+  list.innerHTML = html;
+  list.appendChild(cl);
+}
+
+function openStarred(i) {
+  starViewIdx = i;
+  $('starredList').style.display = 'none';
+  $('starredView').style.display = '';
+  $('starPrev').style.display = i > 0 ? 'inline-flex' : 'none';
+  $('starNext').style.display = i < starList.length - 1 ? 'inline-flex' : 'none';
+  $('starPrev').onclick = () => openStarred(i - 1);
+  $('starNext').onclick = () => openStarred(i + 1);
+
+  const s = starList[i];
+  const entry = s.entry;
+  const q = s.q;
+  if (!entry) { $('starText').textContent = 'Question data unavailable'; return; }
+
+  $('starCount').textContent = (i + 1) + '/' + starList.length;
+  $('starProgress').textContent = 'Question ' + (i + 1);
+  $('starProgFill').style.width = ((i + 1) / starList.length * 100) + '%';
+  $('starSubject').textContent = entry[1] + ' · ' + entry[2];
+
+  const tags = $('starMetaTags'); tags.innerHTML = '';
+  const et = document.createElement('span'); et.className = 'tag-exam'; et.textContent = entry[3]; tags.appendChild(et);
+  if (entry[4]) { const yt = document.createElement('span'); yt.textContent = entry[4]; tags.appendChild(yt); }
+
+  $('starText').innerHTML = renderMath(q ? q.q : ('Q#' + entry[0]));
+
+  const area = $('starAnswerArea'); area.innerHTML = '';
+  const type = entry[5] || (q ? q.t : 'mcq');
+  if (type === 'numerical') {
+    if (q) { area.innerHTML = '<div style="padding:.8rem 1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg2);font-size:.85rem;color:var(--txt3)">Answer: <span style="color:var(--em);font-weight:600">' + q.a + '</span></div>'; }
+  } else {
+    const labels = ['A','B','C','D'];
+    const options = q ? q.o : [];
+    if (options.length > 0) {
+      const optsDiv = document.createElement('div'); optsDiv.className = 'q-opts';
+      options.forEach((opt, oi) => {
+        const btn = document.createElement('div'); btn.className = 'q-opt disabled';
+        const ca = q ? q.a : entry[6];
+        if (type === 'multi') {
+          if (ca && ca.split(',').map(Number).includes(oi)) btn.classList.add('correct');
+        } else {
+          if (Number(ca) === oi) btn.classList.add('correct');
+        }
+        btn.innerHTML = '<span class="opt-label">' + labels[oi] + '.</span>' + renderMath(opt);
+        optsDiv.appendChild(btn);
+      });
+      area.appendChild(optsDiv);
+    }
+  }
+}
+</script>
+</body>
+</html>

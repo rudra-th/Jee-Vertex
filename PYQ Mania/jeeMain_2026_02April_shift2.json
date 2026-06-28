@@ -1,0 +1,1202 @@
+[
+  {
+    "question_number": 1,
+    "subject": "Mathematics",
+    "topic": "Quadratic Equations",
+    "question_text": "Let $\\alpha, \\beta$ be the roots of the equation $x^2 - 3x + r = 0$, and $\\frac{\\alpha}{2}, 2\\beta$ be the roots of the equation $x^2 + 3x + r = 0$. If the roots of the equation $x^2 + 6x = m$ are $2\\alpha + \\beta + 2r$ and $\\alpha - 2\\beta - \\frac{r}{2}$, then $m$ is equal to:",
+    "options": {
+      "a": "$-135$",
+      "b": "$-567$",
+      "c": "$135$",
+      "d": "$567$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "Let $\\alpha, \\beta$ be roots of $x^2 - 3x + r = 0 \\implies \\alpha + \\beta = 3$ and $\\alpha\\beta = r$.\nAlso, $\\frac{\\alpha}{2}, 2\\beta$ are roots of $x^2 + 3x + r = 0 \\implies \\frac{\\alpha}{2} + 2\\beta = -3$ and $(\\frac{\\alpha}{2})(2\\beta) = r \\implies \\alpha\\beta = r$, which is consistent.\nSolving the linear equations $\\alpha + \\beta = 3$ and $\\alpha + 4\\beta = -6$, we get $3\\beta = -9 \\implies \\beta = -3$, and $\\alpha = 6$. Then $r = -18$.\nThe given roots of $x^2 + 6x - m = 0$ are $r_1 = 2\\alpha + \\beta + 2r = 12 - 3 - 36 = -27$ and $r_2 = \\alpha - 2\\beta - \\frac{r}{2} = 6 + 6 + 9 = 21$.\nNotice that $r_1 + r_2 = -6$, matching the sum of roots. The product of roots is $-m = (-27)(21) = -567$, giving $m = 567$.",
+    "section_id": null
+  },
+  {
+    "question_number": 2,
+    "subject": "Mathematics",
+    "topic": "Complex Numbers",
+    "question_text": "Let the circles $C_1 : |z| = r$ and $C_2 : |z - 3 - 4i| = 5, z \\in \\mathbb{C}$, be such that $C_2$ lies within $C_1$. If $z_1$ moves on $C_1$, $z_2$ moves on $C_2$ and $\\min |z_1 - z_2| = 2$, then $\\max |z_1 - z_2|$ is equal to:",
+    "options": {
+      "a": "$12$",
+      "b": "$17$",
+      "c": "$22$",
+      "d": "$24$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Center of $C_1$ is at origin $(0,0)$ with radius $r$. Center of $C_2$ is $C(3,4)$ with radius $5$. Since $C_2$ lies within $C_1$, the minimum distance between points on the two circles along the common radius is $\\min |z_1 - z_2| = r - (d + 5)$, where $d = |C| = \\sqrt{3^2 + 4^2} = 5$.\nGiven minimum distance is $2 \\implies r - (5 + 5) = 2 \\implies r = 12$.\nThe maximum distance between points on the circles occurs diametrically opposite through the centers: $\\max |z_1 - z_2| = r + d + 5 = 12 + 5 + 5 = 22$.",
+    "section_id": null
+  },
+  {
+    "question_number": 3,
+    "subject": "Mathematics",
+    "topic": "Matrices and Determinants",
+    "question_text": "If the system of equations\n$x + 5y + 6z = 4$,\n$2x + 3y + 4z = 7$,\n$x + 6y + az = b$\nhas infinitely many solutions, then the point $(a, b)$ lies on the line:",
+    "options": {
+      "a": "$y - x = 3$",
+      "b": "$x - y = 3$",
+      "c": "$x + y = 11$",
+      "d": "$x + y = 12$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "For infinitely many solutions, the determinant of coefficients must be zero:\n$\\Delta = \\begin{vmatrix} 1 & 5 & 6 \\\\ 2 & 3 & 4 \\\\ 1 & 6 & a \\end{vmatrix} = 0 \\implies -7a + 50 = 0 \\implies a = \\frac{50}{7}$.\nNow using elimination to find $b$, subtracting $R_1$ from $R_3$ gives $y + (a-6)z = b-4$. Subtracting $2R_1$ from $R_2$ gives $-7y - 8z = -1 \\implies 7y + 8z = 1$.\nFor proportional rows: $\\frac{1}{7} = \\frac{a-6}{8} = \\frac{b-4}{1}$.\n$b-4 = \\frac{1}{7} \\implies b = \\frac{29}{7}$.\nSo, $(a, b) = (\\frac{50}{7}, \\frac{29}{7})$. Checking the options, $a - b = \\frac{50}{7} - \\frac{29}{7} = \\frac{21}{7} = 3$, so it lies on $x - y = 3$.",
+    "section_id": null
+  },
+  {
+    "question_number": 4,
+    "subject": "Mathematics",
+    "topic": "Sequences and Series",
+    "question_text": "Let $a_1, a_2, a_3, \\dots$ be an A.P. and $g_1 = a_1, g_2, g_3, \\dots$ be an increasing G.P. If $a_1 = a_2 + g_2 = 1$ and $a_3 + g_3 = 4$, then $a_{10} + g_5$ is equal to:",
+    "options": {
+      "a": "$81$",
+      "b": "$76$",
+      "c": "$62$",
+      "d": "$55$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "From the given, $a_1 = 1$. Let $d$ be common difference of AP and $r$ be common ratio of GP. Then $a_2 = 1 + d$ and $g_2 = r$.\nWe have $a_2 + g_2 = 1 \\implies 1 + d + r = 1 \\implies d = -r$.\nAlso, $a_3 + g_3 = 4 \\implies (1 + 2d) + r^2 = 4 \\implies 1 - 2r + r^2 = 4 \\implies (r-1)^2 = 4$.\nSince the GP is increasing ($r > 1$), $r-1 = 2 \\implies r = 3$. Then $d = -3$.\n$a_{10} = 1 + 9(-3) = -26$. $g_5 = 1 \\cdot 3^4 = 81$.\n$a_{10} + g_5 = -26 + 81 = 55$.",
+    "section_id": null
+  },
+  {
+    "question_number": 5,
+    "subject": "Mathematics",
+    "topic": "Sequences and Series",
+    "question_text": "The sum $\\frac{1^3}{1} + \\frac{1^3 + 2^3}{1 + 3} + \\frac{1^3 + 2^3 + 3^3}{1 + 3 + 5} + \\dots$ up to 8 terms, is:",
+    "options": {
+      "a": "$70$",
+      "b": "$71$",
+      "c": "$72$",
+      "d": "$73$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "The general term $T_k = \\frac{\\sum_{i=1}^k i^3}{\\sum_{i=1}^k (2i-1)} = \\frac{(k(k+1)/2)^2}{k^2} = \\frac{(k+1)^2}{4}$.\nSum to 8 terms = $\\sum_{k=1}^8 \\frac{(k+1)^2}{4} = \\frac{1}{4} (2^2 + 3^2 + \\dots + 9^2)$.\nThis equals $\\frac{1}{4} (\\frac{9 \\times 10 \\times 19}{6} - 1^2) = \\frac{1}{4}(285 - 1) = \\frac{284}{4} = 71$.",
+    "section_id": null
+  },
+  {
+    "question_number": 6,
+    "subject": "Mathematics",
+    "topic": "Binomial Theorem",
+    "question_text": "If for $3 \\leq r \\leq 30$, $\\binom{30}{30-r} + 3\\binom{30}{31-r} + 3\\binom{30}{32-r} + \\binom{30}{33-r} = \\binom{m}{r}$, then $m$ equals:",
+    "options": {
+      "a": "$31$",
+      "b": "$32$",
+      "c": "$33$",
+      "d": "$34$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "Using the identity $\\binom{n}{k} = \\binom{n}{n-k}$, we can write the expression as $\\binom{30}{r} + 3\\binom{30}{r-1} + 3\\binom{30}{r-2} + \\binom{30}{r-3}$.\nThis corresponds to the sum of combinations forming the coefficient of $x^r$ in the expansion of $(1+x)^{30} (1+x)^3 = (1+x)^{33}$.\nThus, it equals $\\binom{33}{r}$, making $m = 33$.",
+    "section_id": null
+  },
+  {
+    "question_number": 7,
+    "subject": "Mathematics",
+    "topic": "Permutations and Combinations",
+    "question_text": "Let $p_n$ denote the total number of triangles formed by joining the vertices of an $n$-sided regular polygon. If $p_{n+1} - p_n = 66$, then the sum of all distinct prime divisors of $n$ is:",
+    "options": {
+      "a": "$7$",
+      "b": "$8$",
+      "c": "$5$",
+      "d": "$6$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "The number of triangles formed by joining vertices of an $n$-sided polygon is $p_n = \\binom{n}{3}$.\n$p_{n+1} - p_n = \\binom{n+1}{3} - \\binom{n}{3} = \\binom{n}{2}$.\nGiven $\\binom{n}{2} = 66 \\implies \\frac{n(n-1)}{2} = 66 \\implies n(n-1) = 132$. Thus, $n = 12$.\nDistinct prime divisors of $12$ are $2$ and $3$. Their sum is $2 + 3 = 5$.",
+    "section_id": null
+  },
+  {
+    "question_number": 8,
+    "subject": "Mathematics",
+    "topic": "Probability",
+    "question_text": "A man throws a fair coin repeatedly. He gets 10 points for each head he throws and 5 points for each tail he throws. If the probability that he gets exactly 30 points is $\\frac{m}{n}$, $\\gcd(m, n) = 1$, then $m + n$ is equal to:",
+    "options": {
+      "a": "$53$",
+      "b": "$55$",
+      "c": "$107$",
+      "d": "$105$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Hard",
+    "explanation": "Let $P(k)$ be the probability of getting exactly $5k$ points. On each toss, adding a Head gives $10$ points (two units of $5$) and adding a Tail gives $5$ points (one unit of $5$). \nTherefore, $P(k) = \\frac{1}{2} P(k-2) + \\frac{1}{2} P(k-1)$ with $P(0) = 1$ and $P(1) = 1/2$.\nEvaluating recursively:\n$P(2) = \\frac{1}{2}(1) + \\frac{1}{2}(\\frac{1}{2}) = \\frac{3}{4}$\n$P(3) = \\frac{1}{2}(\\frac{1}{2}) + \\frac{1}{2}(\\frac{3}{4}) = \\frac{5}{8}$\n$P(4) = \\frac{1}{2}(\\frac{3}{4}) + \\frac{1}{2}(\\frac{5}{8}) = \\frac{11}{16}$\n$P(5) = \\frac{1}{2}(\\frac{5}{8}) + \\frac{1}{2}(\\frac{11}{16}) = \\frac{21}{32}$\n$P(6) = \\frac{1}{2}(\\frac{11}{16}) + \\frac{1}{2}(\\frac{21}{32}) = \\frac{43}{64}$.\n$30$ points means $k=6$. So probability is $43/64$, meaning $m = 43$ and $n = 64$. $m+n = 107$.",
+    "section_id": null
+  },
+  {
+    "question_number": 9,
+    "subject": "Mathematics",
+    "topic": "Statistics",
+    "question_text": "The mean and variance of $n$ observations are $8$ and $16$, respectively. If the sum of the first $(n - 1)$ observations is $48$ and the sum of squares of the first $(n - 1)$ observations is $496$, then the value of $n$ is:",
+    "options": {
+      "a": "$21$",
+      "b": "$16$",
+      "c": "$13$",
+      "d": "$7$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "Let total sum of $n$ observations be $S_n$ and sum of squares be $Q_n$.\nGiven mean is $8 \\implies S_n = 8n$. Variance is $16 \\implies \\frac{Q_n}{n} - 8^2 = 16 \\implies Q_n = 80n$.\nLet the $n$-th observation be $x_n$. $x_n = S_n - 48 = 8n - 48$.\n$x_n^2 = Q_n - 496 = 80n - 496$.\n$(8n-48)^2 = 80n - 496 \\implies 64n^2 - 768n + 2304 = 80n - 496 \\implies 64n^2 - 848n + 2800 = 0$.\nDividing by $16 \\implies 4n^2 - 53n + 175 = 0$.\nSolving gives $n = \\frac{53 \\pm \\sqrt{2809 - 2800}}{8} = \\frac{53 \\pm 3}{8}$. Hence $n=7$ (as $n=50/8$ is not an integer).",
+    "section_id": null
+  },
+  {
+    "question_number": 10,
+    "subject": "Mathematics",
+    "topic": "Straight Lines and Circles",
+    "question_text": "Let a circle pass through the origin and its centre be the point of intersection of two mutually perpendicular lines $x + (k - 1)y + 3 = 0$ and $2x + k^2y - 4 = 0$. If the line $x - y + 2 = 0$ intersects the circle at the points A and B, then $(AB)^2$ is equal to:",
+    "options": {
+      "a": "$10$",
+      "b": "$27$",
+      "c": "$18$",
+      "d": "$34$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Since the two lines are perpendicular, the product of their slopes is $-1$: $\\frac{-1}{k-1} \\times \\frac{-2}{k^2} = -1 \\implies k^3 - k^2 + 2 = 0$. Using trial and error, $k = -1$.\nThe lines become $x - 2y + 3 = 0$ and $2x + y - 4 = 0$. Solving these gives the intersection center point $C(1, 2)$.\nThe circle passes through $(0,0)$, so its radius squared $R^2 = 1^2 + 2^2 = 5$.\nThe perpendicular distance $p$ from $C(1,2)$ to line $x - y + 2 = 0$ is $p = \\frac{|1 - 2 + 2|}{\\sqrt{2}} = \\frac{1}{\\sqrt{2}}$.\nThe length of chord $AB$ is $2\\sqrt{R^2 - p^2} = 2\\sqrt{5 - 1/2} = 2\\sqrt{9/2} = \\sqrt{18}$. Therefore, $(AB)^2 = 18$.",
+    "section_id": null
+  },
+  {
+    "question_number": 11,
+    "subject": "Mathematics",
+    "topic": "Conic Sections (Hyperbola)",
+    "question_text": "Let O be the origin, and P and Q be two points on the rectangular hyperbola $xy = 12$ such that the mid point of the line segment PQ is $(\\frac{1}{2}, -\\frac{1}{2})$. Then the area of the triangle OPQ equals:",
+    "options": {
+      "a": "$\\frac{3}{2}$",
+      "b": "$\\frac{5}{2}$",
+      "c": "$\\frac{7}{2}$",
+      "d": "$\\frac{9}{2}$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Equation of chord with a given midpoint $(x_1, y_1)$ for $xy=c^2$ is given by $T = S_1$:\n$\\frac{x y_1 + y x_1}{2} - 12 = x_1 y_1 - 12 \\implies \\frac{x(-1/2) + y(1/2)}{2} = \\frac{-1/4}{2} \\implies -x + y = -1 \\implies y = x - 1$.\nSubstituting into the hyperbola equation: $x(x - 1) = 12 \\implies x^2 - x - 12 = 0 \\implies x = 4, -3$.\nThe points $P$ and $Q$ are $(4, 3)$ and $(-3, -4)$.\nThe area of $\\Delta OPQ$ is $\\frac{1}{2}|x_1y_2 - x_2y_1| = \\frac{1}{2}|(4)(-4) - (3)(-3)| = \\frac{1}{2}|-16 + 9| = \\frac{7}{2}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 12,
+    "subject": "Mathematics",
+    "topic": "Conic Sections (Parabola)",
+    "question_text": "Let the parabola $y = x^2 + px + q$ passing through the point $(1, -1)$ be such that the distance between its vertex and the $x$-axis is minimum. Then the value of $p^2 + q^2$ is:",
+    "options": {
+      "a": "$2$",
+      "b": "$4$",
+      "c": "$5$",
+      "d": "$8$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Easy",
+    "explanation": "Since the parabola passes through $(1,-1)$, we have $-1 = 1 + p + q \\implies q = -2 - p$.\nThe vertex of the parabola is at $(-\\frac{p}{2}, -\\frac{p^2}{4} + q)$. The distance to the $x$-axis is $|-\\frac{p^2}{4} + q| = |-\\frac{p^2}{4} - p - 2| = \\frac{1}{4}|p^2 + 4p + 8|$.\nTo minimize $\\frac{1}{4}((p+2)^2 + 4)$, we set $p = -2$. \nThen $q = -2 - (-2) = 0$.\nThe value of $p^2 + q^2 = (-2)^2 + 0^2 = 4$.",
+    "section_id": null
+  },
+  {
+    "question_number": 13,
+    "subject": "Mathematics",
+    "topic": "Trigonometry",
+    "question_text": "Let $P = \\{\\theta \\in [0, 4\\pi] : \\tan^2 \\theta \neq 1\\}$ and $S = \\{a \\in \\mathbb{Z} : 2(\\cos^8 \\theta - \\sin^8 \\theta)\\sec 2\\theta = a^2, \\theta \\in P\\}$. Then $n(S)$ is:",
+    "options": {
+      "a": "$0$",
+      "b": "$1$",
+      "c": "$2$",
+      "d": "$3$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "Consider the expression $\\cos^8 \\theta - \\sin^8 \\theta = (\\cos^4 \\theta - \\sin^4 \\theta)(\\cos^4 \\theta + \\sin^4 \\theta) = (\\cos^2 \\theta - \\sin^2 \\theta)(\\cos^2 \\theta + \\sin^2 \\theta)(1 - 2\\sin^2\\theta\\cos^2\\theta) = \\cos 2\\theta (1 - \\frac{1}{2}\\sin^2 2\\theta)$.\nThus, $2(\\cos^8 \\theta - \\sin^8 \\theta)\\sec 2\\theta = 2(1 - \\frac{1}{2}\\sin^2 2\\theta)\\cos 2\\theta \\frac{1}{\\cos 2\\theta} = 2 - \\sin^2 2\\theta$.\nWe are given this equals $a^2$, so $a^2 = 2 - \\sin^2 2\\theta$. \nSince $\\tan^2\\theta \neq 1$, $\\sin^2 2\\theta \neq 1$. Therefore, $0 \\leq \\sin^2 2\\theta < 1$, which gives $1 < a^2 \\leq 2$.\nSince $a$ must be an integer, there are no integer values whose square lies strictly in $(1, 2]$. Hence, $n(S) = 0$.",
+    "section_id": null
+  },
+  {
+    "question_number": 14,
+    "subject": "Mathematics",
+    "topic": "Vectors",
+    "question_text": "Let the vectors $\\vec{a} = -\\hat{i} + \\hat{j} + 3\\hat{k}$ and $\\vec{b} = \\hat{i} + 3\\hat{j} + \\hat{k}$. For some $\\lambda, \\mu \\in \\mathbb{R}$, let $\\vec{c} = \\lambda\\vec{a} + \\mu\\vec{b}$. If $\\vec{c} \\cdot (3\\hat{i} - 6\\hat{j} + 2\\hat{k}) = 10$ and $\\vec{c} \\cdot (\\hat{i} + \\hat{j} + \\hat{k}) = -2$, then $|\\vec{c}|^2$ is equal to:",
+    "options": {
+      "a": "$8$",
+      "b": "$12$",
+      "c": "$14$",
+      "d": "$15$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Since $\\vec{c}$ lies in the plane of $\\vec{a}$ and $\\vec{b}$, $\\vec{c} \\cdot (\\vec{a} \\times \\vec{b}) = 0$. $\\vec{a} \\times \\vec{b} = -8\\hat{i} + 4\\hat{j} - 4\\hat{k}$. Simplifying the direction, $-2\\hat{i} + \\hat{j} - \\hat{k}$. Letting $\\vec{c} = x\\hat{i} + y\\hat{j} + z\\hat{k}$, we get $2x - y + z = 0$.\nWe are given $3x - 6y + 2z = 10$ and $x + y + z = -2 \\implies z = -x -y -2$.\nSubstitute $z$: $2x - y + (-x - y - 2) = 0 \\implies x = 2y + 2$.\nSubstitute into the second equation: $3(2y+2) - 6y + 2(-(2y+2) - y - 2) = 10 \\implies -6y = 12 \\implies y = -2$.\nThen $x = -2$, and $z = 2$. Therefore $\\vec{c} = -2\\hat{i} - 2\\hat{j} + 2\\hat{k}$.\n$|\\vec{c}|^2 = (-2)^2 + (-2)^2 + 2^2 = 12$.",
+    "section_id": null
+  },
+  {
+    "question_number": 15,
+    "subject": "Mathematics",
+    "topic": "Three Dimensional Geometry",
+    "question_text": "Let the point A be the foot of perpendicular drawn from the point $P(a, b, 0)$ on the line $\\frac{x - 1}{2} = \\frac{y - 2}{1} = \\frac{z - \\alpha}{3}$. If the midpoint of the line segment PA is $(0, \\frac{3}{4}, -\\frac{1}{4})$, then the value of $a^2 + b^2 + \\alpha^2$ is equal to:",
+    "options": {
+      "a": "$1$",
+      "b": "$2$",
+      "c": "$6$",
+      "d": "$9$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "Let the midpoint be $M(0, 3/4, -1/4)$. Using section formula, coordinates of A are $2M - P = (-a, \\frac{3}{2} - b, -\\frac{1}{2})$.\nSince A lies on the line: $\\frac{-a - 1}{2} = \\frac{\\frac{3}{2} - b - 2}{1} = \\frac{-\\frac{1}{2} - \\alpha}{3} = t$.\nDirection ratios of the line are $\\vec{d} = 2\\hat{i} + \\hat{j} + 3\\hat{k}$ and $\\vec{PA} = -2a\\hat{i} + (\\frac{3}{2} - 2b)\\hat{j} - \\frac{1}{2}\\hat{k}$. Since $PA \\perp \\vec{d}$, $\\vec{PA} \\cdot \\vec{d} = 0 \\implies -4a + \\frac{3}{2} - 2b - \\frac{3}{2} = 0 \\implies b = -2a$.\nSubstitute $b$ into the line equation for $A$: $\\frac{-a-1}{2} = \\frac{3/2 - (-2a) - 2}{1} \\implies 2a - \\frac{1}{2} = \\frac{-a-1}{2} \\implies 4a - 1 = -a - 1 \\implies a = 0$. So $b = 0$.\nThe parameter $t = \\frac{-0-1}{2} = -\\frac{1}{2}$. Then $\\frac{-1/2 - \\alpha}{3} = -\\frac{1}{2} \\implies \\alpha = 1$.\nTherefore, $a^2 + b^2 + \\alpha^2 = 0 + 0 + 1 = 1$.",
+    "section_id": null
+  },
+  {
+    "question_number": 16,
+    "subject": "Mathematics",
+    "topic": "Vectors",
+    "question_text": "Two adjacent sides of a parallelogram PQRS are given by $\\vec{PQ} = \\hat{j} + \\hat{k}$ and $\\vec{PS} = \\hat{i} - \\hat{j}$. If the side PS is rotated about the point P by an acute angle $\\alpha$ in the plane of the parallelogram so that it becomes perpendicular to the side PQ, then $\\sin^2 \\left(\\frac{5\\alpha}{2}\\right) - \\sin^2 \\left(\\frac{\\alpha}{2}\\right)$ is equal to:",
+    "options": {
+      "a": "$\\frac{1}{2}$",
+      "b": "$\\frac{\\sqrt{3}}{2}$",
+      "c": "$\\frac{\\sqrt{3}}{4}$",
+      "d": "$\\frac{2\\sqrt{3}}{5}$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Let initial angle between $\\vec{PQ}$ and $\\vec{PS}$ be $\\theta$. $\\cos \\theta = \\frac{\\vec{PQ} \\cdot \\vec{PS}}{|\\vec{PQ}| |\\vec{PS}|} = \\frac{(0)(1) + (1)(-1) + (1)(0)}{\\sqrt{2}\\sqrt{2}} = -\\frac{1}{2} \\implies \\theta = 120^\\circ$.\nThe side is rotated to be perpendicular ($90^\\circ$) by an acute angle $\\alpha$. Hence, the rotation angle $\\alpha = 120^\\circ - 90^\\circ = 30^\\circ$.\nWe need to compute $\\sin^2 \\left(\\frac{5(30^\\circ)}{2}\\right) - \\sin^2 \\left(\\frac{30^\\circ}{2}\\right) = \\sin^2 75^\\circ - \\sin^2 15^\\circ$.\nUsing the identity $\\sin^2 A - \\sin^2 B = \\sin(A+B)\\sin(A-B) = \\sin(90^\\circ)\\sin(60^\\circ) = 1 \\times \\frac{\\sqrt{3}}{2} = \\frac{\\sqrt{3}}{2}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 17,
+    "subject": "Mathematics",
+    "topic": "Definite Integration",
+    "question_text": "The value of $\\int_0^{20\\pi} (\\sin^4 x + \\cos^4 x) dx$ is equal to:",
+    "options": {
+      "a": "$\\frac{15\\pi}{2}$",
+      "b": "$25\\pi$",
+      "c": "$15\\pi$",
+      "d": "$\\frac{25\\pi}{2}$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "The integrand simplifies to $\\sin^4 x + \\cos^4 x = (\\sin^2 x + \\cos^2 x)^2 - 2\\sin^2 x \\cos^2 x = 1 - \\frac{1}{2} \\sin^2 2x = 1 - \\frac{1}{4} (1 - \\cos 4x) = \\frac{3}{4} + \\frac{1}{4} \\cos 4x$.\nThus $\\int_0^{20\\pi} (\\frac{3}{4} + \\frac{1}{4} \\cos 4x) dx = \\left[ \\frac{3}{4}x + \\frac{1}{16}\\sin 4x \\right]_0^{20\\pi}$.\nSince $\\sin(80\\pi) = 0$, the value is just $\\frac{3}{4} \\times 20\\pi = 15\\pi$.",
+    "section_id": null
+  },
+  {
+    "question_number": 18,
+    "subject": "Mathematics",
+    "topic": "Application of Derivatives",
+    "question_text": "Let $f(x)$ be a polynomial of degree 5, and have extrema at $x = 1$ and $x = -1$. If $\\lim_{x \\to 0} \\left( \\frac{f(x)}{x^3} \\right) = -5$, then $f(2) - f(-2)$ is equal to:",
+    "options": {
+      "a": "$0$",
+      "b": "$50$",
+      "c": "$92$",
+      "d": "$112$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "Since $\\lim_{x \\to 0} \\frac{f(x)}{x^3} = -5$, the polynomial $f(x)$ must have the form $f(x) = ax^5 + bx^4 - 5x^3$.\nThus $f'(x) = 5ax^4 + 4bx^3 - 15x^2 = x^2(5ax^2 + 4bx - 15)$.\nExtrema occur at $x=1$ and $x=-1$, meaning $f'(1)=0$ and $f'(-1)=0$. Substituting, we get $5a + 4b - 15 = 0$ and $5a - 4b - 15 = 0$.\nAdding them yields $10a = 30 \\implies a = 3$, and $b = 0$. So $f(x) = 3x^5 - 5x^3$.\nCalculate $f(2) = 3(32) - 5(8) = 96 - 40 = 56$.\nCalculate $f(-2) = 3(-32) - 5(-8) = -96 + 40 = -56$.\nHence, $f(2) - f(-2) = 56 - (-56) = 112$.",
+    "section_id": null
+  },
+  {
+    "question_number": 19,
+    "subject": "Mathematics",
+    "topic": "Indefinite Integration",
+    "question_text": "Let $f(x) = \\int \\left(\\frac{16x + 24}{x^2 + 2x - 15}\\right) dx$. If $f(4) = 14 \\log_e(3)$ and $f(7) = \\log_e(2^\\alpha \\cdot 3^\\beta), \\alpha, \\beta \\in \\mathbb{N}$, then $\\alpha + \\beta$ is equal to:",
+    "options": {
+      "a": "$31$",
+      "b": "$37$",
+      "c": "$39$",
+      "d": "$41$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Hard",
+    "explanation": "Integrand uses partial fractions: $\\frac{16x + 24}{(x+5)(x-3)} = \\frac{A}{x+5} + \\frac{B}{x-3}$.\n$A = \\frac{16(-5)+24}{-5-3} = \\frac{-56}{-8} = 7$, and $B = \\frac{16(3)+24}{3+5} = \\frac{72}{8} = 9$.\nSo $f(x) = 7\\ln|x+5| + 9\\ln|x-3| + C$.\nApplying $f(4) = 14\\ln 3$: $f(4) = 7\\ln 9 + 9\\ln 1 + C = 14\\ln 3 + C \\implies C = 0$.\nThen $f(7) = 7\\ln 12 + 9\\ln 4 = 7\\ln(2^2 \\cdot 3) + 9\\ln(2^2) = 14\\ln 2 + 7\\ln 3 + 18\\ln 2 = 32\\ln 2 + 7\\ln 3 = \\ln(2^{32} \\cdot 3^7)$.\nThus $\\alpha = 32$ and $\\beta = 7$, yielding $\\alpha + \\beta = 39$.",
+    "section_id": null
+  },
+  {
+    "question_number": 20,
+    "subject": "Mathematics",
+    "topic": "Differential Equations",
+    "question_text": "Let $x = x(y)$ be the solution of the differential equation $2y^2 \\frac{dx}{dy} - 2xy + x^2 = 0, y > 1, x(e) = e$. Then $x(e^2)$ is equal to:",
+    "options": {
+      "a": "$\\frac{3}{2}e^2$",
+      "b": "$\\frac{2}{3}e^2$",
+      "c": "$e^2$",
+      "d": "$2e^2$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Rewrite DE: $\\frac{dx}{dy} - \\frac{x}{y} + \\frac{x^2}{2y^2} = 0$. This is a Bernoulli equation.\nDivide by $x^2$: $x^{-2} \\frac{dx}{dy} - \\frac{1}{y}x^{-1} = -\\frac{1}{2y^2}$.\nLet $v = x^{-1} \\implies \\frac{dv}{dy} = -x^{-2} \\frac{dx}{dy}$. Equation becomes $\\frac{dv}{dy} + \\frac{1}{y}v = \\frac{1}{2y^2}$.\nIntegrating factor IF $= e^{\\int (1/y)dy} = y$.\nSolution: $v \\cdot y = \\int \\frac{1}{2y^2} y dy = \\frac{1}{2} \\ln y + C \\implies \\frac{y}{x} = \\frac{1}{2}\\ln y + C$.\nGiven $x(e) = e \\implies \\frac{e}{e} = \\frac{1}{2}\\ln e + C \\implies 1 = \\frac{1}{2} + C \\implies C = \\frac{1}{2}$.\nSo $\\frac{y}{x} = \\frac{1}{2}\\ln y + \\frac{1}{2}$.\nSubstitute $y = e^2$: $\\frac{e^2}{x} = \\frac{1}{2}\\ln(e^2) + \\frac{1}{2} = 1 + \\frac{1}{2} = \\frac{3}{2} \\implies x = \\frac{2}{3}e^2$.",
+    "section_id": null
+  },
+  {
+    "question_number": 21,
+    "subject": "Mathematics",
+    "topic": "Relations",
+    "question_text": "Let $A = \\{2, 3, 4, 5, 6\\}$. Let $R$ be a relation on the set $A \\times A$ given by $(x, y) R (z, w)$ if and only if $x$ divides $z$ and $y \\leq w$. Then the number of elements in $R$ is:",
+    "options": {
+      "a": "$60$",
+      "b": "$90$",
+      "c": "$120$",
+      "d": "$150$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "A pair $((x,y), (z,w))$ is in $R$ if $x$ divides $z$ and $y \\leq w$.\nThe number of ways to pick $x$ and $z$ from $A$ such that $x | z$:\n- $x=2$: $z \\in \\{2, 4, 6\\}$ (3 ways)\n- $x=3$: $z \\in \\{3, 6\\}$ (2 ways)\n- $x=4$: $z \\in \\{4\\}$ (1 way)\n- $x=5$: $z \\in \\{5\\}$ (1 way)\n- $x=6$: $z \\in \\{6\\}$ (1 way)\nTotal $(x,z)$ pairs = $8$.\nThe number of ways to pick $y$ and $w$ from $A$ such that $y \\leq w$:\nThis is equivalent to picking 2 elements with replacement, $\\binom{5}{2} + 5 = 15$.\nTotal number of elements in $R = 8 \\times 15 = 120$.",
+    "section_id": null
+  },
+  {
+    "question_number": 22,
+    "subject": "Mathematics",
+    "topic": "Matrices",
+    "question_text": "Consider the matrices $A = \\begin{bmatrix} 2 & -2 \\\\ 4 & -2 \\end{bmatrix}$ and $B = \\begin{bmatrix} 3 & 9 \\\\ 1 & 3 \\end{bmatrix}$. If matrices $P$ and $Q$ are such that $PA = B$ and $AQ = B$, then the absolute value of the sum of the diagonal elements of $2(P + Q)$ is:",
+    "options": {
+      "a": "$17$",
+      "b": "$34$",
+      "c": "$51$",
+      "d": "$68$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "$|A| = -4 - (-8) = 4 \neq 0$, so $A$ is invertible.\n$A^{-1} = \\frac{1}{4}\\begin{bmatrix} -2 & 2 \\\\ -4 & 2 \\end{bmatrix} = \\begin{bmatrix} -1/2 & 1/2 \\\\ -1 & 1/2 \\end{bmatrix}$.\n$P = B A^{-1} \\implies Tr(P) = Tr(B A^{-1})$.\n$Q = A^{-1} B \\implies Tr(Q) = Tr(A^{-1} B) = Tr(B A^{-1}) = Tr(P)$.\nCalculate $P = \\begin{bmatrix} 3 & 9 \\\\ 1 & 3 \\end{bmatrix} \\begin{bmatrix} -1/2 & 1/2 \\\\ -1 & 1/2 \\end{bmatrix} = \\begin{bmatrix} -21/2 & 6 \\\\ -7/2 & 2 \\end{bmatrix}$.\n$Tr(P) = -21/2 + 2 = -17/2$.\n$Tr(2(P + Q)) = 2[Tr(P) + Tr(Q)] = 4 Tr(P) = 4(-17/2) = -34$.\nAbsolute value is $|-34| = 34$.",
+    "section_id": null
+  },
+  {
+    "question_number": 23,
+    "subject": "Mathematics",
+    "topic": "Conic Sections (Ellipse)",
+    "question_text": "Let $A$ be the point $(3, 0)$ and circles with variable diameter $AB$ touch the circle $x^2 + y^2 = 36$ internally. Let the curve $C$ be the locus of the point $B$. If the eccentricity of $C$ is $e$, then $72e^2$ is equal to:",
+    "options": {
+      "a": "$9$",
+      "b": "$12$",
+      "c": "$18$",
+      "d": "$36$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Hard",
+    "explanation": "Let the center of the variable circle with diameter $AB$ be $M$. Its radius is $r = AB/2$.\nThe circle touches $x^2 + y^2 = 6^2$ internally, meaning the distance between its center $M$ and the origin $O(0,0)$ equals $6 - r$.\n$OM = 6 - AB/2 \\implies OM + AB/2 = 6$.\nSince $M$ is the midpoint of $AB$, $OM$ is the median of triangle $OAB$. However, expressing everything in terms of $B(h,k)$:\n$M = \\left( \\frac{h+3}{2}, \\frac{k}{2} \\right)$, $r = \\frac{\\sqrt{(h-3)^2 + k^2}}{2}$.\n$OM = \\sqrt{ \\left(\\frac{h+3}{2}\\right)^2 + \\left(\\frac{k}{2}\\right)^2 }$.\n$2 OM + 2 r = 12 \\implies \\sqrt{(h+3)^2 + k^2} + \\sqrt{(h-3)^2 + k^2} = 12$.\nThis is the definition of an ellipse with foci at $(\\pm 3, 0)$ and $2a = 12 \\implies a = 6$.\nThe distance between foci is $2ae = 6 \\implies 12e = 6 \\implies e = 1/2$.\n$72e^2 = 72(1/4) = 18$.",
+    "section_id": null
+  },
+  {
+    "question_number": 24,
+    "subject": "Mathematics",
+    "topic": "Area Under Curves",
+    "question_text": "If the area of the region bounded by $16x^2 - 9y^2 = 144$ and $8x - 3y = 24$ is $A$, then $3(A + 6 \\log_e(3))$ is equal to:",
+    "options": {
+      "a": "$12$",
+      "b": "$16$",
+      "c": "$20$",
+      "d": "$24$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Hard",
+    "explanation": "Rewrite curve as hyperbola $\\frac{x^2}{9} - \\frac{y^2}{16} = 1 \\implies y = \\frac{4}{3}\\sqrt{x^2 - 9}$ and line $y = \\frac{8}{3}(x - 3)$.\nIntersection points satisfy: $\\frac{16}{9}(x^2 - 9) = \\frac{64}{9}(x-3)^2 \\implies x^2 - 9 = 4(x^2 - 6x + 9) \\implies 3x^2 - 24x + 45 = 0 \\implies x=3, x=5$.\nThe line lies below the hyperbola in this interval. Thus $A = \\int_3^5 \\left( \\frac{4}{3}\\sqrt{x^2 - 9} - \\frac{8}{3}(x - 3) \\right) dx$.\n$= \\left[ \\frac{4}{3} \\left( \\frac{x}{2}\\sqrt{x^2-9} - \\frac{9}{2}\\ln(x+\\sqrt{x^2-9}) \\right) - \\frac{4}{3}(x-3)^2 \\right]_3^5$.\n$= \\left( \\frac{4}{3} (10 - \\frac{9}{2}\\ln 9) - \\frac{4}{3}(4) \\right) - \\left( -6\\ln 3 - 0 \\right) = 8 - 6\\ln 3$.\nWe find $3(A + 6\\ln 3) = 3(8 - 6\\ln 3 + 6\\ln 3) = 24$.",
+    "section_id": null
+  },
+  {
+    "question_number": 25,
+    "subject": "Mathematics",
+    "topic": "Continuity and Differentiability",
+    "question_text": "The number of points in the interval $[2, 4]$, at which the function $f(x) = \\left[ x^2 - x - \\frac{1}{2} \\right]$, where $[\\cdot]$ denotes the greatest integer function, is discontinuous, is:",
+    "options": {
+      "a": "$8$",
+      "b": "$9$",
+      "c": "$10$",
+      "d": "$11$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Let $g(x) = x^2 - x - \\frac{1}{2}$. $g'(x) = 2x - 1 > 0$ for $x \\in [2, 4]$. Thus $g(x)$ is strictly increasing on $[2, 4]$.\nAt $x=2$, $g(2) = 4 - 2 - 0.5 = 1.5$.\nAt $x=4$, $g(4) = 16 - 4 - 0.5 = 11.5$.\nThe greatest integer function $[g(x)]$ will have a jump discontinuity wherever $g(x)$ equals an integer (since it's strictly increasing and continuous).\nThe integers in the range $(1.5, 11.5)$ are $2, 3, 4, 5, 6, 7, 8, 9, 10, 11$.\nThere are exactly $11 - 2 + 1 = 10$ integers, giving 10 points of discontinuity.",
+    "section_id": null
+  },
+  {
+    "question_number": 26,
+    "subject": "Physics",
+    "topic": "Units and Dimensions",
+    "question_text": "Dimensions of universal gravitational constant $(G)$ in terms of Planck's constant $(h)$, distance $(L)$, mass $(M)$ and time $(T)$ are _______.",
+    "options": {
+      "a": "$[h T L M^{-2}]$",
+      "b": "$[h T^{-1} L M^{-2}]$",
+      "c": "$[h T L^2 M^{-2}]$",
+      "d": "$[h^{-1} T^{-1} L M^{-2}]$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "The standard dimensional formula for the universal gravitational constant is $[G] = [M^{-1} L^3 T^{-2}]$.\nWe are asked to express it in terms of $h, L, M, T$. Let's test the dimensions of the given options.\nThe dimensions of Planck's constant $h$ are $[h] = [M L^2 T^{-1}]$.\nEvaluating option (b):\n$[h T^{-1} L M^{-2}] = [M L^2 T^{-1}][T^{-1}][L][M^{-2}] = [M^{1-2} L^{2+1} T^{-1-1}] = [M^{-1} L^3 T^{-2}]$.\nThis matches exactly with the dimensions of $G$.",
+    "section_id": null
+  },
+  {
+    "question_number": 27,
+    "subject": "Physics",
+    "topic": "Circular Motion",
+    "question_text": "A $0.5\\text{ kg}$ mass is in contact against the inner wall of a cylindrical drum of radius $4\\text{ m}$ rotating about its vertical axis. The minimum rotational speed of the drum to enable the mass to remain stuck to the wall (without falling) is $5\\text{ rad/s}$. The coefficient of friction between the drum's inner wall surface and mass is _______ . (Take $g = 10\\text{ m/s}^2$)",
+    "options": {
+      "a": "$0.1$",
+      "b": "$0.5$",
+      "c": "$0.7$",
+      "d": "$0.3$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "For the mass to remain stuck without falling, the upward static friction must balance the downward gravitational force: $f = mg$.\nThe normal force provided by the wall is the centripetal force: $N = m \\omega^2 r$.\nThe maximum static friction is $f_{max} = \\mu N = \\mu m \\omega^2 r$.\nSetting $mg = \\mu m \\omega^2 r$, the mass $m$ cancels out.\n$\\mu = \\frac{g}{\\omega^2 r} = \\frac{10}{5^2 \\times 4} = \\frac{10}{25 \\times 4} = \\frac{10}{100} = 0.1$.",
+    "section_id": null
+  },
+  {
+    "question_number": 28,
+    "subject": "Physics",
+    "topic": "Centre of Mass",
+    "question_text": "![Pulley system](https://cracku.in/media/uploads/image_VFI4e0y.png) (Two blocks are suspended from a pulley)\nTwo blocks of masses $2\\text{ kg}$ and $1\\text{ kg}$ respectively, are tied to the ends of a string which passes over a light frictionless pulley as shown in the figure below. The masses are held at rest at the same horizontal level and then released. The distance traversed by the centre of mass in $2\\text{ s}$ is _______ m. (Take $g = 10\\text{ m/s}^2$)",
+    "options": {
+      "a": "$3.33$",
+      "b": "$3.12$",
+      "c": "$2.22$",
+      "d": "$1.42$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Hard",
+    "explanation": "Let $m_1 = 2\\text{ kg}$ and $m_2 = 1\\text{ kg}$. The acceleration of the blocks is given by $a = \\frac{m_1 - m_2}{m_1 + m_2}g = \\frac{2 - 1}{2 + 1} \\times 10 = \\frac{10}{3}\\text{ m/s}^2$.\nThe $2\\text{ kg}$ block accelerates downwards (let's call this negative), and the $1\\text{ kg}$ block accelerates upwards.\nThe acceleration of the centre of mass is $a_{com} = \\frac{m_1(-a) + m_2(a)}{m_1 + m_2} = \\frac{2(-10/3) + 1(10/3)}{3} = \\frac{-10/3}{3} = -\\frac{10}{9}\\text{ m/s}^2$.\nThe magnitude of acceleration of the COM is $10/9\\text{ m/s}^2$.\nThe distance traversed by the COM from rest in $t = 2\\text{ s}$ is $S = \\frac{1}{2} |a_{com}| t^2 = \\frac{1}{2} \\left(\\frac{10}{9}\\right) (2)^2 = \\frac{20}{9} \\approx 2.22\\text{ m}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 29,
+    "subject": "Physics",
+    "topic": "Magnetic Effects of Current",
+    "question_text": "A particle having charge $10^{-9}\\text{ C}$ moving in $x$-$y$ plane in fields of $0.4\\hat{j}\\text{ N/C}$ and $4 \\times 10^{-3}\\hat{k}\\text{ T}$ experiences a force of $(4\\hat{i} + 2\\hat{j}) \\times 10^{-10}\\text{ N}$. The velocity of the particle at that instant is _______ m/s.",
+    "options": {
+      "a": "$50\\hat{i} + 100\\hat{j}$",
+      "b": "$100\\hat{i} + 50\\hat{j}$",
+      "c": "$-50\\hat{i} + 100\\hat{j}$",
+      "d": "$50\\hat{i} - 100\\hat{j}$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Hard",
+    "explanation": "Let velocity $\\vec{v} = v_x \\hat{i} + v_y \\hat{j}$. Lorentz force $\\vec{F} = q(\\vec{E} + \\vec{v} \\times \\vec{B})$.\n$\\vec{v} \\times \\vec{B} = (v_x \\hat{i} + v_y \\hat{j}) \\times (4 \\times 10^{-3} \\hat{k}) = 4 \\times 10^{-3} v_x (-\\hat{j}) + 4 \\times 10^{-3} v_y (\\hat{i})$.\nThe net force is $\\vec{F} = 10^{-9} \\left[ (4 \\times 10^{-3} v_y)\\hat{i} + (0.4 - 4 \\times 10^{-3} v_x)\\hat{j} \\right]$.\nGiven $\\vec{F} = 4 \\times 10^{-10} \\hat{i} + 2 \\times 10^{-10} \\hat{j}$. Comparing components:\nx-component: $10^{-9} (4 \\times 10^{-3} v_y) = 4 \\times 10^{-10} \\implies 4v_y = 400 \\implies v_y = 100\\text{ m/s}$.\ny-component: $10^{-9} (0.4 - 4 \\times 10^{-3} v_x) = 2 \\times 10^{-10} \\implies 0.4 - 4 \\times 10^{-3} v_x = 0.2 \\implies 4 \\times 10^{-3} v_x = 0.2 \\implies v_x = \\frac{0.2}{0.004} = 50\\text{ m/s}$.\nTherefore, $\\vec{v} = 50\\hat{i} + 100\\hat{j}\\text{ m/s}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 30,
+    "subject": "Physics",
+    "topic": "Semiconductors and Logic Gates",
+    "question_text": "![Logic Circuit Diagram](https://cracku.in/media/uploads/image_6Neclly.png)\nIf $X$ and $Y$ are the inputs to the circuit shown in the diagram (where inputs $X$ and $Y$ each pass through a NOT gate, and their outputs are then fed into an AND gate), the given circuit works as _______.",
+    "options": {
+      "a": "OR gate",
+      "b": "AND gate",
+      "c": "NAND gate",
+      "d": "NOR gate"
+    },
+    "correct_answer": "d",
+    "difficulty": "Easy",
+    "explanation": "From the boolean logic expression derived from the circuit configuration: the inputs $X$ and $Y$ are first inverted to $\\overline{X}$ and $\\overline{Y}$.\nThese signals are then passed through an AND gate. The output is $Z = \\overline{X} \\cdot \\overline{Y}$.\nBy De Morgan's laws, $\\overline{X} \\cdot \\overline{Y} = \\overline{X + Y}$.\nThis is exactly the logical expression for a NOR gate.",
+    "section_id": null
+  },
+  {
+    "question_number": 31,
+    "subject": "Physics",
+    "topic": "Gravitation",
+    "question_text": "If a body of mass $1\\text{ kg}$ falls on the earth from infinity, it attains velocity $(v)$ and kinetic energy $(k)$ on reaching the surface of earth. The values of $v$ and $k$ respectively are _______. (Take radius of earth to be $6400\\text{ km}$ and $g = 9.8\\text{ m/s}^2$)",
+    "options": {
+      "a": "$11.2\\text{ km/s}; 6.27 \\times 10^7\\text{ J}$",
+      "b": "$11.2\\text{ km/s}; 12.54 \\times 10^7\\text{ J}$",
+      "c": "$8.8\\text{ km/s}; 6.27 \\times 10^7\\text{ J}$",
+      "d": "$8.8\\text{ km/s}; 12.54 \\times 10^7\\text{ J}$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "By conservation of energy, the kinetic energy attained by falling from infinity is equal to the magnitude of potential energy at the surface of the Earth: $K = \\frac{GMm}{R} = mgR$.\nGiven $m = 1\\text{ kg}, g = 9.8\\text{ m/s}^2, R = 6400 \\times 10^3\\text{ m}$.\n$K = 1 \\times 9.8 \\times 6400 \\times 10^3 = 62.72 \\times 10^6\\text{ J} = 6.272 \\times 10^7\\text{ J}$.\nThe velocity attained is the escape velocity $v = \\sqrt{2gR} = \\sqrt{2 \\times 9.8 \\times 6.4 \\times 10^6} = \\sqrt{125.44 \\times 10^6} = 11.2 \\times 10^3\\text{ m/s} = 11.2\\text{ km/s}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 32,
+    "subject": "Physics",
+    "topic": "Units and Measurements",
+    "question_text": "In a screw gauge the zero of main scale reference line coincides with the fifth division of the circular scale when two studs are in contact. There are 100 divisions in circular scale and pitch of screw gauge is $0.1\\text{ mm}$. When diameter of a sphere is measured, the reading of main scale is $5\\text{ mm}$ and $50^{\\text{th}}$ division of circular scale coincides with the reference line of main scale. The diameter of sphere is _______ mm.",
+    "options": {
+      "a": "$5.045$",
+      "b": "$5.055$",
+      "c": "$5.450$",
+      "d": "$5.550$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "Least count (LC) = Pitch / No. of divisions = $0.1\\text{ mm} / 100 = 0.001\\text{ mm}$.\nWhen studs are in contact, 5th division coincides. So positive zero error = $+5 \\times 0.001 = +0.005\\text{ mm}$.\nMeasured value = Main Scale Reading + (Circular Scale Reading $\\times$ LC) = $5\\text{ mm} + 50 \\times 0.001\\text{ mm} = 5.050\\text{ mm}$.\nTrue diameter = Measured Value $-$ Zero Error = $5.050 - 0.005 = 5.045\\text{ mm}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 33,
+    "subject": "Physics",
+    "topic": "Fluid Mechanics",
+    "question_text": "The surface tension of a soap bubble is $0.03\\text{ N/m}$. The work done in increasing the diameter of bubble from $2\\text{ cm}$ to $6\\text{ cm}$ is $\\alpha \\pi \\times 10^{-4}\\text{ J}$. The value of $\\alpha$ is _______.",
+    "options": {
+      "a": "$0.86$",
+      "b": "$0.64$",
+      "c": "$1.92$",
+      "d": "$7.68$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "A soap bubble has two free surfaces. Thus, initial surface area $A_1 = 2 \\times 4\\pi r_1^2$ and final area $A_2 = 2 \\times 4\\pi r_2^2$.\nRadii are $r_1 = 1\\text{ cm} = 0.01\\text{ m}$ and $r_2 = 3\\text{ cm} = 0.03\\text{ m}$.\nChange in area $\\Delta A = 8\\pi(r_2^2 - r_1^2) = 8\\pi(0.0009 - 0.0001) = 8\\pi(0.0008) = 0.0064\\pi\\text{ m}^2$.\nWork done $W = T \\Delta A = 0.03 \\times 0.0064\\pi = 0.000192\\pi\\text{ J} = 1.92\\pi \\times 10^{-4}\\text{ J}$.\nComparing with $\\alpha \\pi \\times 10^{-4}$, we get $\\alpha = 1.92$.",
+    "section_id": null
+  },
+  {
+    "question_number": 34,
+    "subject": "Physics",
+    "topic": "Kinetic Theory of Gases",
+    "question_text": "A mixture of carbon dioxide and oxygen has volume $8310\\text{ cm}^3$, temperature $300\\text{ K}$, pressure $100\\text{ kPa}$ and mass $13.2\\text{ g}$. The number of moles of carbon dioxide and oxygen gases in the mixture respectively are _______. (Assume both carbon dioxide and oxygen gases behave like ideal gases) [$R = 8.31\\text{ J/mol.K}$]",
+    "options": {
+      "a": "$0.15$ and $0.18$",
+      "b": "$0.25$ and $0.08$",
+      "c": "$0.21$ and $0.12$",
+      "d": "$0.13$ and $0.20$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "From ideal gas equation, $PV = nRT$. Total moles $n = \\frac{PV}{RT}$.\n$P = 100 \\times 10^3\\text{ Pa}$, $V = 8310 \\times 10^{-6}\\text{ m}^3 = 8.31 \times 10^{-3}\\text{ m}^3$.\n$n = \\frac{10^5 \\times 8.31 \\times 10^{-3}}{8.31 \\times 300} = \\frac{831}{2493} = \\frac{1}{3} = 0.333$ moles.\nLet moles of $CO_2$ be $x$ and $O_2$ be $y$. Then $x + y = 1/3$. Total mass is $44x + 32y = 13.2$.\nSubstituting $y = 1/3 - x$:\n$44x + 32(1/3 - x) = 13.2 \\implies 12x + 10.667 = 13.2 \\implies 12x = 2.533 \\implies x \\approx 0.211$.\nThen $y = 0.333 - 0.211 = 0.122$.\nHence, the moles are approximately $0.21$ and $0.12$.",
+    "section_id": null
+  },
+  {
+    "question_number": 35,
+    "subject": "Physics",
+    "topic": "Fluid Mechanics",
+    "question_text": "If an air bubble of diameter $2\\text{ mm}$ rises steadily through a liquid of density $2000\\text{ kg/m}^3$ at a rate of $0.5\\text{ cm/s}$, then the coefficient of viscosity of liquid is _______ Poise. (Take $g = 10\\text{ m/s}^2$)",
+    "options": {
+      "a": "$0.88$",
+      "b": "$8.8$",
+      "c": "$88.8$",
+      "d": "$0.088$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "For an air bubble rising steadily, terminal velocity $v = \\frac{2r^2(\\rho_{liq} - \\rho_{air})g}{9\\eta}$. Since $\\rho_{air}$ is negligible, $v \\approx \\frac{2r^2 \\rho_{liq} g}{9\\eta}$.\nWe need $\\eta = \\frac{2r^2 \\rho_{liq} g}{9v}$.\nGiven $r = 1\\text{ mm} = 10^{-3}\\text{ m}$, $v = 0.5\\text{ cm/s} = 5 \\times 10^{-3}\\text{ m/s}$.\n$\\eta = \\frac{2 \\times (10^{-3})^2 \\times 2000 \\times 10}{9 \\times 5 \\times 10^{-3}} = \\frac{40 \\times 10^{-6}}{45 \\times 10^{-3}} = \\frac{40}{45} \\times 10^{-3}\\text{ Pa.s}$? Wait, calculation error. $\\eta = \\frac{2 \\times 10^{-6} \\times 20000}{45 \\times 10^{-3}} = \\frac{40}{45}\\text{ Pa.s} = 0.888\\text{ Pa.s}$.\nSince $1\\text{ Poise} = 0.1\\text{ Pa.s}$, $\\eta = 0.888 \\times 10 = 8.88\\text{ Poise} \\approx 8.8\\text{ Poise}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 36,
+    "subject": "Physics",
+    "topic": "Work, Energy and Power",
+    "question_text": "A spherical ball of mass $2\\text{ kg}$ falls from a height of $10\\text{ m}$ and is brought to rest after penetrating $10\\text{ cm}$ into sand. The average force exerted by sand on the ball is _______ N. (Take $g = 10\\text{ m/s}^2$)",
+    "options": {
+      "a": "$1980$",
+      "b": "$2020$",
+      "c": "$2000$",
+      "d": "$1000$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Easy",
+    "explanation": "Applying Work-Energy theorem between the starting point and stopping point:\nTotal work done = $\\Delta K.E = 0$.\nWork done by gravity + Work done by resistive force = 0.\n$W_{gravity} = mg(h + d)$ where $h = 10\\text{ m}$ and $d = 0.1\\text{ m}$.\n$W_{resistive} = -F d$.\n$mg(h + d) - F d = 0 \\implies F = \\frac{mg(h + d)}{d} = \\frac{2 \\times 10 \\times (10 + 0.1)}{0.1} = \\frac{20 \\times 10.1}{0.1} = 20 \\times 101 = 2020\\text{ N}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 37,
+    "subject": "Physics",
+    "topic": "Electromagnetic Waves",
+    "question_text": "An electromagnetic wave travels in free space along the $x$-direction. At a particular point in space and time, $\\vec{B} = 2 \\times 10^{-7}\\hat{j}\\text{ T}$ is associated with this wave. The value of corresponding electric field $\\vec{E}$ at this point is _______ V/m.",
+    "options": {
+      "a": "$60\\hat{k}$",
+      "b": "$-60\\hat{k}$",
+      "c": "$30\\hat{k}$",
+      "d": "$-600\\hat{k}$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Easy",
+    "explanation": "The direction of propagation of an electromagnetic wave is given by $\\vec{E} \\times \\vec{B}$.\nGiven wave propagates in $+\\hat{i}$ direction, and $\\vec{B} = B\\hat{j}$. Thus, $\\hat{E} \\times \\hat{j} = \\hat{i}$. Since $(-\\hat{k}) \\times \\hat{j} = \\hat{i}$, the direction of $\\vec{E}$ is $-\\hat{k}$.\nThe magnitude of electric field is $E = cB = 3 \\times 10^8 \\times 2 \\times 10^{-7} = 60\\text{ V/m}$.\nTherefore, $\\vec{E} = -60\\hat{k}\\text{ V/m}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 38,
+    "subject": "Physics",
+    "topic": "Current Electricity",
+    "question_text": "Two resistors of $200\\ \\Omega$ and $400\\ \\Omega$ are connected in series with a battery of $100\\text{ V}$. A bulb rated at $200\\text{ V}, 100\\text{ W}$ is connected across the $400\\ \\Omega$ resistance. The potential drop across the bulb is _______ V.",
+    "options": {
+      "a": "$25$",
+      "b": "$50$",
+      "c": "$66.6$",
+      "d": "$100$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Resistance of the bulb $R_b = \\frac{V_{\\text{rated}}^2}{P_{\\text{rated}}} = \\frac{(200)^2}{100} = 400\\ \\Omega$.\nThe bulb is connected in parallel with the $400\\ \\Omega$ resistor. The equivalent resistance of this parallel combination is $R_p = \\frac{400 \\times 400}{400 + 400} = 200\\ \\Omega$.\nThe total resistance of the circuit is $R_{eq} = 200\\ \\Omega\\text{ (series part)} + R_p = 200 + 200 = 400\\ \\Omega$.\nThe main current $I = \\frac{V}{R_{eq}} = \\frac{100}{400} = 0.25\\text{ A}$.\nThe potential drop across the parallel part (which includes the bulb) is $V_{bulb} = I \\times R_p = 0.25 \\times 200 = 50\\text{ V}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 39,
+    "subject": "Physics",
+    "topic": "Electrostatics",
+    "question_text": "Two metal plates (A, B) are kept horizontally with separation of $\\left(\\frac{12}{\\pi}\\right)\\text{ cm}$, with plate A on the top. An atomizer jet sprays oil (density $1.5\\text{ g/cm}^3$) droplets of radius $1\\text{ mm}$ horizontally. All oil droplets carry a charge $5\\text{ nC}$. The potentials $V_A$ and $V_B$ are required on plates A and B respectively in order to ensure the droplets do not descend. The values of $V_A$ and $V_B$ are _______.\n(Neglect the air resistance to the droplets and take $g = 10\\text{ m/s}^2$)",
+    "options": {
+      "a": "$100\\text{ V}$ and $580\\text{ V}$",
+      "b": "$580\\text{ V}$ and $100\\text{ V}$",
+      "c": "$60\\text{ V}$ and $400\\text{ V}$",
+      "d": "$0\\text{ V}$ and $-200\\text{ V}$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Hard",
+    "explanation": "For droplets to remain suspended, upward electric force must balance gravity: $qE = mg$.\nMass of a droplet $m = \\frac{4}{3}\\pi r^3 \\rho = \\frac{4}{3}\\pi (10^{-3})^3 \\times (1.5 \\times 10^3) = 2\\pi \\times 10^{-6}\\text{ kg}$.\nElectric field required $E = \\frac{mg}{q} = \\frac{2\\pi \\times 10^{-6} \\times 10}{5 \\times 10^{-9}} = 4\\pi \\times 10^3\\text{ V/m}$.\nPotential difference required $\\Delta V = E d = 4\\pi \\times 10^3 \\times \\left(\\frac{0.12}{\\pi}\\right) = 480\\text{ V}$.\nSince the charge $q$ is positive, electric field must point upwards to provide upward force. Thus, the lower plate B must be at a higher potential. $V_B - V_A = 480\\text{ V}$.\nOption (a) yields $V_B - V_A = 580 - 100 = 480\\text{ V}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 40,
+    "subject": "Physics",
+    "topic": "Electrostatics",
+    "question_text": "Two point charges $8\\ \\mu\\text{C}$ and $-2\\ \\mu\\text{C}$ are located at $x = 2\\text{ cm}$ and $x = 4\\text{ cm}$, respectively on the $x$-axis. The ratio of electric flux due to these charges through two spheres of radii $3\\text{ cm}$ and $5\\text{ cm}$ with their centers at the origin is _______.",
+    "options": {
+      "a": "$4 : 1$",
+      "b": "$3 : 4$",
+      "c": "$4 : 3$",
+      "d": "$4 : 5$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "According to Gauss's Law, the total electric flux through a closed surface is $q_{\\text{enc}}/\\varepsilon_0$.\nFor the sphere of radius $r_1 = 3\\text{ cm}$, only the charge at $x = 2\\text{ cm}$ is enclosed. $q_{1\\text{enc}} = 8\\ \\mu\\text{C}$. Thus $\\Phi_1 = 8/\\varepsilon_0$.\nFor the sphere of radius $r_2 = 5\\text{ cm}$, both charges are enclosed. $q_{2\\text{enc}} = 8 - 2 = 6\\ \\mu\\text{C}$. Thus $\\Phi_2 = 6/\\varepsilon_0$.\nThe ratio $\\Phi_1 : \\Phi_2 = 8 : 6 = 4 : 3$.",
+    "section_id": null
+  },
+  {
+    "question_number": 41,
+    "subject": "Physics",
+    "topic": "Ray Optics",
+    "question_text": "One side of an equilateral prism is painted by a transparent material of refractive index $n_2$. The refractive index of prism is $1.6$. The maximum (limit condition originally referred as minimum boundary requirement for total internal reflection in OCR) value of $n_2$ required for total internal reflection from painted face is _______.",
+    "options": {
+      "a": "$3\\sqrt{3}/1.6$",
+      "b": "$\\sqrt{3}$",
+      "c": "$3.2/\\sqrt{3}$",
+      "d": "$4\\sqrt{3}/5$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "A light ray normally incident on the first face of an equilateral prism ($A=60^\\circ$) will strike the second face at an angle of incidence $i = 60^\\circ$.\nFor total internal reflection at this face, the angle of incidence must be strictly greater than or equal to the critical angle $\\theta_c$.\n$\\sin(60^\\circ) \\geq \\sin \\theta_c = \\frac{n_2}{n_{prism}}$.\n$\\frac{\\sqrt{3}}{2} \\geq \\frac{n_2}{1.6} \\implies n_2 \\leq 1.6 \\times \\frac{\\sqrt{3}}{2} = 0.8\\sqrt{3} = \\frac{4}{5}\\sqrt{3} = \\frac{4\\sqrt{3}}{5}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 42,
+    "subject": "Physics",
+    "topic": "Alternating Current",
+    "question_text": "![LCR Circuit](https://cracku.in/media/uploads/image_B5VnJbN.png)\nThe figure given below shows an $LCR$ series circuit with two switches $S_1$ and $S_2$. When switch $S_1$ is closed keeping $S_2$ open, the phase difference $(\\phi)$ between the current and source voltage is $30^\\circ$ and phase difference is $60^\\circ$ when $S_2$ is closed keeping $S_1$ open. The value of $(3L_1 - L_2)$ is _______ H.",
+    "options": {
+      "a": "$9/2$",
+      "b": "$2/9$",
+      "c": "$1/3$",
+      "d": "$3$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Hard",
+    "explanation": "From the conditions given, closing $S_1$ isolates inductor $L_2$ giving $\\phi = 30^\\circ$, and $S_2$ isolates $L_1$ giving $\\phi = 60^\\circ$.\nUsing the standard relationship $\\tan \\phi = |\\omega L - 1/(\\omega C)| / R$, and given the solution yields $3L_2 - L_1$ consistently from equations: $X_{L1} - X_C = R \\tan 60^\\circ = R\\sqrt{3}$ and $X_{L2} - X_C = R \\tan 30^\\circ = R/\\sqrt{3}$.\nThis gives $X_{L1} - X_C = 3(X_{L2} - X_C) \\implies 3X_{L2} - X_{L1} = 2X_C$.\nGiven $\\omega = 300\\text{ rad/s}$ and $C = 100\\ \\mu\\text{F}$, $X_C = \\frac{1}{300 \\times 100\\times 10^{-6}} = \\frac{100}{3}\\ \\Omega$.\nSo, $\\omega (3L_2 - L_1) = 2 \\times \\frac{100}{3} \\implies 3L_2 - L_1 = \\frac{200}{900} = \\frac{2}{9}\\text{ H}$.\n(Note: The expression evaluated matches Option 2, even though the OCR literally requested $3L_1 - L_2$, meaning either $3L_2 - L_1$ was intended by NTA, or there was a diagrammatic swap. Option (b) is the evaluated magnitude).",
+    "section_id": null
+  },
+  {
+    "question_number": 43,
+    "subject": "Physics",
+    "topic": "Electromagnetic Induction",
+    "question_text": "A circular current loop of radius $R$ is placed inside square loop of side length $L$ $(L \\gg R)$ such that they are co-planar and their centers coincide. The permeability of free space is $\\mu_0$. The mutual inductance between circular loop and square loop is _______.",
+    "options": {
+      "a": "$2\\sqrt{2} \\frac{\\mu_0 L^2}{R}$",
+      "b": "$\\sqrt{2} \\frac{\\mu_0 L^2}{R}$",
+      "c": "$\\sqrt{2} \\frac{\\mu_0 R^2}{L}$",
+      "d": "$2\\sqrt{2} \\frac{\\mu_0 R^2}{L}$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "Assume a current $I$ flows in the outer square loop. The magnetic field at its center is the sum of fields from its 4 sides.\n$B = 4 \\times \\frac{\\mu_0 I}{4\\pi(L/2)} (\\sin 45^\\circ + \\sin 45^\\circ) = \\frac{2\\mu_0 I}{\\pi L} \\times \\frac{2}{\\sqrt{2}} = \\frac{2\\sqrt{2}\\mu_0 I}{\\pi L}$.\nSince $R \\gg L$, this magnetic field is essentially uniform over the area of the small circular loop, $A = \\pi R^2$.\nThe magnetic flux linking the circular loop is $\\Phi = B A = \\frac{2\\sqrt{2}\\mu_0 I}{\\pi L} \\pi R^2 = \\frac{2\\sqrt{2}\\mu_0 R^2 I}{L}$.\nMutual inductance $M = \\frac{\\Phi}{I} = 2\\sqrt{2} \\frac{\\mu_0 R^2}{L}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 44,
+    "subject": "Physics",
+    "topic": "Nuclear Physics",
+    "question_text": "The binding energy per nucleon of ${}^{209}_{83}\\text{Bi}$ is _______ MeV.\n[Take $m({}^{209}_{83}\\text{Bi}) = 208.980388\\text{ u}, m_p = 1.007825\\text{ u}, m_n = 1.008665\\text{ u}, 1\\text{ u} = 931\\text{ MeV/c}^2$]",
+    "options": {
+      "a": "$7.48$",
+      "b": "$7.84$",
+      "c": "$8.79$",
+      "d": "$6.94$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "For ${}^{209}_{83}\\text{Bi}$, the number of protons $Z = 83$ and neutrons $N = 209 - 83 = 126$.\nMass of constituent nucleons = $83(1.007825) + 126(1.008665) = 83.649475 + 127.091790 = 210.741265\\text{ u}$.\nMass defect $\\Delta m = 210.741265 - 208.980388 = 1.760877\\text{ u}$.\nTotal binding energy $BE = \\Delta m \\times 931 = 1.760877 \\times 931 = 1639.3765\\text{ MeV}$.\nBinding energy per nucleon $= 1639.3765 / 209 = 7.8439\\text{ MeV} \\approx 7.84\\text{ MeV}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 45,
+    "subject": "Physics",
+    "topic": "Oscillations",
+    "question_text": "The equation of motion of a particle is given by $x = a \\sin\\left(50t + \\frac{\\pi}{3}\\right)\\text{ cm}$. The particle will come to rest at time $t_1$ and it will have zero acceleration at time $t_2$. The $t_1$ and $t_2$ respectively are _______.",
+    "options": {
+      "a": "$\\frac{\\pi}{300}\\text{ s}, \\frac{\\pi}{75}\\text{ s}$",
+      "b": "$\\frac{\\pi}{75}\\text{ s}, \\frac{\\pi}{300}\\text{ s}$",
+      "c": "$\\frac{\\pi}{300}\\text{ s}, \\frac{\\pi}{25}\\text{ s}$",
+      "d": "$\\frac{\\pi}{50}\\text{ s}, \\frac{\\pi}{100}\\text{ s}$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "Velocity $v = \\frac{dx}{dt} = 50a \\cos\\left(50t + \\frac{\\pi}{3}\\right)$. For particle to come to rest, $v=0 \\implies 50t_1 + \\frac{\\pi}{3} = \\frac{\\pi}{2} \\implies 50t_1 = \\frac{\\pi}{6} \\implies t_1 = \\frac{\\pi}{300}\\text{ s}$.\nAcceleration $A = \\frac{dv}{dt} = -2500a \\sin\\left(50t + \\frac{\\pi}{3}\\right)$. For zero acceleration, $A=0 \\implies 50t_2 + \\frac{\\pi}{3} = \\pi \\implies 50t_2 = \\frac{2\\pi}{3} \\implies t_2 = \\frac{2\\pi}{150} = \\frac{\\pi}{75}\\text{ s}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 46,
+    "subject": "Physics",
+    "topic": "Wave Optics",
+    "question_text": "In a Young's double slit experiment, the intensity at some point on the screen is found to be $\\frac{3}{4}$ times of the maximum of the interference pattern. The path difference between the interfering waves at this point is $\\frac{\\lambda}{x}$ where $\\lambda$ is wavelength of the incident light. The value of $x$ is _______.",
+    "options": {
+      "a": "$4$",
+      "b": "$6$",
+      "c": "$8$",
+      "d": "$12$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "The intensity $I$ at a point is related to maximum intensity $I_0$ by $I = I_0 \\cos^2\\left(\\frac{\\phi}{2}\\right)$, where $\\phi$ is the phase difference.\nGiven $I = \\frac{3}{4} I_0 \\implies \\cos^2\\left(\\frac{\\phi}{2}\\right) = \\frac{3}{4} \\implies \\cos\\left(\\frac{\\phi}{2}\\right) = \\frac{\\sqrt{3}}{2} \\implies \\frac{\\phi}{2} = \\frac{\\pi}{6} \\implies \\phi = \\frac{\\pi}{3}$.\nThe relation between path difference $\\Delta x$ and phase difference $\\phi$ is $\\Delta x = \\frac{\\lambda}{2\\pi} \\phi = \\frac{\\lambda}{2\\pi} \\left(\\frac{\\pi}{3}\\right) = \\frac{\\lambda}{6}$.\nComparing with $\\frac{\\lambda}{x}$, we find $x = 6$.",
+    "section_id": null
+  },
+  {
+    "question_number": 47,
+    "subject": "Physics",
+    "topic": "Dual Nature of Matter and Radiation",
+    "question_text": "Using Bohr's model, calculate the ratio of the magnetic fields generated due to the motion of the electrons in the $2^{\\text{nd}}$ and $4^{\\text{th}}$ orbits of hydrogen atom _______.",
+    "options": {
+      "a": "$8$",
+      "b": "$16$",
+      "c": "$32$",
+      "d": "$64$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "The magnetic field produced by an electron at the center is $B = \\frac{\\mu_0 I}{2r}$. Current $I = e \\times f = e \\frac{v}{2\\pi r}$.\nThus, $B \\propto \\frac{v}{r^2}$.\nIn Bohr's model, velocity $v \\propto \\frac{1}{n}$ and radius $r \\propto n^2$.\nSubstituting these proportionalities gives $B \\propto \\frac{1/n}{(n^2)^2} = \\frac{1}{n^5}$.\nThe ratio $\\frac{B_2}{B_4} = \\left(\\frac{n_4}{n_2}\\right)^5 = \\left(\\frac{4}{2}\\right)^5 = 2^5 = 32$.",
+    "section_id": null
+  },
+  {
+    "question_number": 48,
+    "subject": "Physics",
+    "topic": "Thermodynamics",
+    "question_text": "$5$ moles of unknown gas is heated at constant volume from $10^\\circ\\text{C}$ to $20^\\circ\\text{C}$. The molar specific heat of this gas at constant pressure $c_p = 8\\text{ cal/mol.}^\\circ\\text{C}$ and $R = 8.36\\text{ J/mol.}^\\circ\\text{C}$. The change in the internal energy of the gas is _______ calorie.",
+    "options": {
+      "a": "$150$",
+      "b": "$200$",
+      "c": "$300$",
+      "d": "$400$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "Since $1\\text{ cal} \\approx 4.18\\text{ J}$, the universal gas constant in calories is $R = \\frac{8.36}{4.18} = 2\\text{ cal/mol.K}$.\nMolar specific heat at constant volume $c_v = c_p - R = 8 - 2 = 6\\text{ cal/mol.K}$.\nThe change in internal energy $\\Delta U$ for an ideal gas is $\\Delta U = n c_v \\Delta T$.\n$\\Delta U = 5 \\times 6 \\times (20 - 10) = 30 \\times 10 = 300\\text{ calorie}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 49,
+    "subject": "Physics",
+    "topic": "Ray Optics",
+    "question_text": "If sunlight is focused on a paper using a convex lens, it starts burning the paper in shortest time when the lens is kept at $30\\text{ cm}$ above the paper. If the radius of curvature of the lens is $60\\text{ cm}$ then the refractive index of the lens material is $\\frac{\\alpha}{10}$. The value of $\\alpha$ is _______.",
+    "options": {
+      "a": "$10$",
+      "b": "$15$",
+      "c": "$20$",
+      "d": "$25$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Sunlight acts as a parallel beam, so the point where it is focused in the shortest time is the focal point. Thus, focal length $f = 30\\text{ cm}$.\nFor a symmetric biconvex lens, the Lens Maker's formula is $\\frac{1}{f} = (\\mu - 1)\\left(\\frac{1}{R} - \\frac{1}{-R}\\right) = (\\mu - 1)\\frac{2}{R}$.\nGiven $R = 60\\text{ cm}$, $\\frac{1}{30} = (\\mu - 1)\\frac{2}{60} \\implies \\frac{1}{30} = (\\mu - 1)\\frac{1}{30}$.\nTherefore, $\\mu - 1 = 1 \\implies \\mu = 2$.\nWe are given $\\mu = \\frac{\\alpha}{10}$. So $\\frac{\\alpha}{10} = 2 \\implies \\alpha = 20$.",
+    "section_id": null
+  },
+  {
+    "question_number": 50,
+    "subject": "Physics",
+    "topic": "Rotational Motion",
+    "question_text": "![Rod and Sphere System](https://cracku.in/media/uploads/image_D5xvXB3.png)\nMoment of inertia about an axis $AB$ for a rod of mass $40\\text{ kg}$ and length $3\\text{ m}$ is same as that of a solid sphere of mass $10\\text{ kg}$ and radius $R$ about an axis parallel to $AB$ axis with separation of $3\\text{ m}$ as shown in figure. The value of $R$ is given as $\\sqrt{\\frac{\\alpha}{2}}$. The value of $\\alpha$ is _______.",
+    "options": {
+      "a": "$5$",
+      "b": "$10$",
+      "c": "$15$",
+      "d": "$20$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Hard",
+    "explanation": "Moment of inertia of a uniform rod about an axis through its end is $I_{\\text{rod}} = \\frac{1}{3} m L^2 = \\frac{1}{3} (40) (3)^2 = 120\\text{ kg m}^2$.\nBy the Parallel Axis Theorem, the moment of inertia of the solid sphere at a distance $d = 3\\text{ m}$ is $I_{\\text{sphere}} = I_{\\text{cm}} + m d^2 = \\frac{2}{5} m R^2 + m d^2$.\n$I_{\\text{sphere}} = \\frac{2}{5} (10) R^2 + 10 (3)^2 = 4R^2 + 90$.\nGiven that the moments of inertia are equal: $4R^2 + 90 = 120 \\implies 4R^2 = 30 \\implies R^2 = \\frac{30}{4} = \\frac{15}{2}$.\nThus, $R = \\sqrt{\\frac{15}{2}}$. Comparing with $\\sqrt{\\frac{\\alpha}{2}}$, we deduce $\\alpha = 15$.",
+    "section_id": null
+  },
+  {
+    "question_number": 51,
+    "subject": "Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "question_text": "The ratio of mass percentage (w/w) of C : H in a hydrocarbon is $12 : 1$. It has two carbon atoms. The weight (in g) of $\\text{CO}_2(g)$ formed when $3.38\\text{ g}$ of this hydrocarbon is completely burnt in oxygen is : (Given : Molar mass in $\\text{g mol}^{-1}$ C : 12, H : 1, O : 16)",
+    "options": {
+      "a": "$5.68$",
+      "b": "$11.44$",
+      "c": "$22.74$",
+      "d": "$17.05$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Ratio of mass of C to H is $12 : 1$. Moles of C = $12 / 12 = 1$. Moles of H = $1 / 1 = 1$. Thus, the empirical formula is $\\text{CH}$.\nSince it has two carbon atoms, the molecular formula is $\\text{C}_2\\text{H}_2$ (Ethyne).\nMolar mass of $\\text{C}_2\\text{H}_2 = 24 + 2 = 26\\text{ g/mol}$.\nMoles of $\\text{C}_2\\text{H}_2$ burned = $3.38 / 26 = 0.13\\text{ mol}$.\nCombustion reaction: $\\text{C}_2\\text{H}_2 + \\frac{5}{2} \\text{O}_2 \\rightarrow 2\\text{CO}_2 + \\text{H}_2\\text{O}$.\n1 mol of $\\text{C}_2\\text{H}_2$ produces 2 mol of $\\text{CO}_2$.\nSo, $0.13\\text{ mol}$ of $\\text{C}_2\\text{H}_2$ will produce $2 \\times 0.13 = 0.26\\text{ mol}$ of $\\text{CO}_2$.\nMass of $\\text{CO}_2 = 0.26 \\times 44 = 11.44\\text{ g}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 52,
+    "subject": "Chemistry",
+    "topic": "Ionic Equilibrium",
+    "question_text": "The first and second ionization constants of a weak dibasic acid $\\text{H}_2\\text{A}$ are $8.1 \\times 10^{-8}$ and $1.0 \\times 10^{-13}$ respectively. $0.1\\text{ mol}$ of $\\text{H}_2\\text{A}$ was dissolved in $1\\text{ L}$ of $0.1\\text{ M HCl}$ solution. The concentration of $\\text{HA}^-$ in the resultant solution is:",
+    "options": {
+      "a": "$0.1\\text{ M}$",
+      "b": "$9.53 \\times 10^{-6}\\text{ M}$",
+      "c": "$8.1 \\times 10^{-8}\\text{ M}$",
+      "d": "$1.0 \\times 10^{-13}\\text{ M}$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "For the first dissociation of $\\text{H}_2\\text{A}$:\n$\\text{H}_2\\text{A} \\rightleftharpoons \\text{H}^+ + \\text{HA}^-$, with $K_{a1} = 8.1 \\times 10^{-8}$.\nThe concentration of $\\text{H}_2\\text{A}$ initially is $0.1\\text{ M}$. Since $\\text{HCl}$ is a strong acid, it completely dissociates, providing $[\\text{H}^+] = 0.1\\text{ M}$. The dissociation of $\\text{H}_2\\text{A}$ is strongly suppressed due to the common ion effect, so we can approximate $[\\text{H}_2\\text{A}] \\approx 0.1\\text{ M}$ and $[\\text{H}^+] \\approx 0.1\\text{ M}$.\nUsing the equilibrium expression: $K_{a1} = \\frac{[\\text{H}^+][\\text{HA}^-]}{[\\text{H}_2\\text{A}]}$.\n$8.1 \\times 10^{-8} = \\frac{(0.1)[\\text{HA}^-]}{0.1}$.\nTherefore, $[\\text{HA}^-] = 8.1 \\times 10^{-8}\\text{ M}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 53,
+    "subject": "Chemistry",
+    "topic": "Chemical Bonding and Molecular Structure",
+    "question_text": "$\\text{SF}_4$ is isostructural with:\nA. $\\text{BrF}_4^-$\nB. $\\text{CH}_4$\nC. $\\text{IF}_4^+$\nD. $\\text{XeF}_4$\nE. $\\text{XeO}_2\\text{F}_2$\nChoose the correct answer from the options given below:",
+    "options": {
+      "a": "C Only",
+      "b": "C and E Only",
+      "c": "A and D Only",
+      "d": "B and E Only"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "To find isostructural species, we determine the hybridization and shape using VSEPR theory.\n$\\text{SF}_4$: Central S has 6 valence $e^-$, forming 4 bonds $\\rightarrow$ $1$ lone pair. It has 5 electron pairs ($sp^3d$), shape is see-saw.\nA. $\\text{BrF}_4^-$: Br has $7+1=8$ valence $e^-$, forming 4 bonds $\\rightarrow$ $2$ lone pairs. Shape is square planar.\nB. $\\text{CH}_4$: C has 4 valence $e^-$, forming 4 bonds $\\rightarrow$ $0$ lone pairs. Shape is tetrahedral.\nC. $\\text{IF}_4^+$: I has $7-1=6$ valence $e^-$, forming 4 bonds $\\rightarrow$ $1$ lone pair. Shape is see-saw.\nD. $\\text{XeF}_4$: Xe has 8 valence $e^-$, forming 4 bonds $\\rightarrow$ $2$ lone pairs. Shape is square planar.\nE. $\\text{XeO}_2\\text{F}_2$: Xe has 8 valence $e^-$, 4 $e^-$ used for 2 O (double bonds), 2 $e^-$ for 2 F (single bonds). Total $4$ bonding regions, leaving $1$ lone pair. Shape is see-saw.\nHence, $\\text{IF}_4^+$ and $\\text{XeO}_2\\text{F}_2$ are isostructural with $\\text{SF}_4$.",
+    "section_id": null
+  },
+  {
+    "question_number": 54,
+    "subject": "Chemistry",
+    "topic": "Thermodynamics",
+    "question_text": "Gas 'A' undergoes change from state 'X' to state 'Y'. In this process, the heat absorbed and work done by the gas is $10\\text{ J}$ and $18\\text{ J}$ respectively. Now gas is brought back to state 'X' by another process during which $6\\text{ J}$ of heat is evolved. In the reverse process of 'Y' to 'X',",
+    "options": {
+      "a": "$18\\text{ J}$ of the work is done by the gas 'A'.",
+      "b": "$2\\text{ J}$ of the work is done by the gas 'A'.",
+      "c": "$12\\text{ J}$ of the work is done on the gas 'A' by the surrounding.",
+      "d": "$14\\text{ J}$ of the work is done on the gas 'A' by the surrounding."
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "By the first law of thermodynamics: $\\Delta U = q + w$.\nProcess X to Y:\nHeat absorbed $q_1 = +10\\text{ J}$.\nWork done by the gas = $18\\text{ J}$, so work done on the gas $w_1 = -18\\text{ J}$ (standard chemistry convention).\nChange in internal energy $\\Delta U_{X \\rightarrow Y} = 10 - 18 = -8\\text{ J}$.\nProcess Y to X:\nSince internal energy is a state function, $\\Delta U_{Y \\rightarrow X} = -\\Delta U_{X \\rightarrow Y} = +8\\text{ J}$.\nHeat evolved $q_2 = -6\\text{ J}$.\nUsing $\\Delta U = q_2 + w_2$:\n$8 = -6 + w_2 \\implies w_2 = +14\\text{ J}$.\nSince $w_2$ is positive, $14\\text{ J}$ of work is done ON the gas by the surroundings.",
+    "section_id": null
+  },
+  {
+    "question_number": 55,
+    "subject": "Chemistry",
+    "topic": "Solutions",
+    "question_text": "Solution A is prepared by dissolving $1\\text{ g}$ of a protein (molar mass $= 50000\\text{ g mol}^{-1}$) in $0.5\\text{ L}$ of water at $300\\text{ K}$. Its osmotic pressure is $x\\text{ bar}$. Solution B is made by dissolving $2\\text{ g}$ of same protein in $1\\text{ L}$ of water at $300\\text{ K}$. Osmotic pressure of solution B is $y\\text{ bar}$. Entire solution of A is mixed with entire solution of B at same temperature. The osmotic pressure of resultant solution is $z\\text{ bar}$. $x, y$ and $z$ respectively are:\n($R = 0.083\\text{ L bar mol}^{-1}\\text{ K}^{-1}$)",
+    "options": {
+      "a": "$9.96 \\times 10^{-4}; 9.96 \\times 10^{-4}; 9.96 \\times 10^{-4}$",
+      "b": "$9.96 \\times 10^{-4}; 9.96 \\times 10^{-4}; 19.92 \\times 10^{-4}$",
+      "c": "$4.98 \\times 10^{-4}; 4.98 \\times 10^{-4}; 9.96 \\times 10^{-4}$",
+      "d": "$4.98 \\times 10^{-4}; 4.98 \\times 10^{-4}; 4.98 \\times 10^{-4}$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Easy",
+    "explanation": "Molarity of solution A ($M_A$) = $\\frac{\\text{Moles}}{\\text{Volume in L}} = \\frac{1 / 50000}{0.5} = 4 \\times 10^{-5}\\text{ M}$.\nOsmotic pressure $x = M_A R T = 4 \\times 10^{-5} \\times 0.083 \\times 300 = 9.96 \\times 10^{-4}\\text{ bar}$.\n\nMolarity of solution B ($M_B$) = $\\frac{2 / 50000}{1} = 4 \\times 10^{-5}\\text{ M}$.\nOsmotic pressure $y = M_B R T = 9.96 \\times 10^{-4}\\text{ bar}$.\n\nWhen the two solutions are mixed, since both have the same molarity, the resultant solution's molarity ($M_{mix}$) remains $4 \\times 10^{-5}\\text{ M}$.\nAlternatively, total moles = $\\frac{1}{50000} + \\frac{2}{50000} = \\frac{3}{50000}$, and total volume = $0.5 + 1 = 1.5\\text{ L}$.\n$M_{mix} = \\frac{3 / 50000}{1.5} = \\frac{2}{50000} = 4 \\times 10^{-5}\\text{ M}$.\nOsmotic pressure $z = 9.96 \\times 10^{-4}\\text{ bar}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 56,
+    "subject": "Chemistry",
+    "topic": "Equilibrium",
+    "question_text": "At $25^\\circ\\text{C}$, $20.0\\text{ mL}$ of $0.2\\text{ M}$ weak monoprotic acid HX is titrated against $0.2\\text{ M NaOH}$. The pH of the solution (a) at the start of the titration (when NaOH has not been added) and (b) when $10\\text{ mL}$ of NaOH is added respectively, are:\nGiven: $K_a = 5 \\times 10^{-4}, pK_a = 3.3, \\alpha \\ll 1$",
+    "options": {
+      "a": "$0.7$ and $2.0$",
+      "b": "$2.0$ and $3.3$",
+      "c": "$1.1$ and $2.2$",
+      "d": "$3.0$ and $2.2$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Case (a): Start of the titration, only weak acid HX is present. Concentration $C = 0.2\\text{ M}$.\n$[H^+] = \\sqrt{K_a \\times C} = \\sqrt{5 \\times 10^{-4} \\times 0.2} = \\sqrt{10^{-4}} = 10^{-2}\\text{ M}$.\nTherefore, $\\text{pH} = -\\log(10^{-2}) = 2.0$.\n\nCase (b): When $10\\text{ mL}$ of $0.2\\text{ M NaOH}$ is added to $20\\text{ mL}$ of $0.2\\text{ M HX}$.\nMoles of HX initially = $20 \\times 0.2 = 4\\text{ mmol}$.\nMoles of NaOH added = $10 \\times 0.2 = 2\\text{ mmol}$.\nNaOH neutralizes half of HX, forming $2\\text{ mmol}$ of $X^-$ and leaving $2\\text{ mmol}$ of HX. This is exactly the half-equivalence point where $[HX] = [X^-]$.\nAccording to the Henderson-Hasselbalch equation: $\\text{pH} = pK_a + \\log\\left(\\frac{[X^-]}{[HX]}\\right)$.\n$\\text{pH} = 3.3 + \\log(1) = 3.3$.",
+    "section_id": null
+  },
+  {
+    "question_number": 57,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question_text": "Consider the reaction $aX \\rightarrow bY$, for which the rate constant at $30^\\circ\\text{C}$ is $1 \\times 10^{-3}\\text{ mol}^{-1}\\text{ L s}^{-1}$. Which of the following statements are true?\nA. When concentration of 'X' is increased to four times, the rate of reaction becomes 16 times.\nB. The reaction is a second order reaction.\nC. The half-life period is independent of the concentration of X.\nD. Decomposition of $\\text{N}_2\\text{O}_5$ is an example of the above reaction.\nE. $\\ln \\frac{[R_o]}{[R]}$ vs time is valid for the above reaction.\nChoose the correct answer from the options given below:",
+    "options": {
+      "a": "A and B Only",
+      "b": "A, B and C Only",
+      "c": "A, B, D and E Only",
+      "d": "C and D Only"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "The unit of the rate constant $k$ is $\\text{L mol}^{-1}\\text{ s}^{-1}$ (or $\\text{M}^{-1}\\text{ s}^{-1}$), which indicates that it is a second-order reaction. Thus, statement B is true.\nFor a second-order reaction, Rate = $k[X]^2$. If $[X]$ is increased $4$ times, Rate becomes $(4)^2 = 16$ times. Thus, statement A is true.\nThe half-life of a second-order reaction is $t_{1/2} = \\frac{1}{k[X]_0}$, which depends on the initial concentration. Thus, statement C is false.\nThe decomposition of $\\text{N}_2\\text{O}_5$ is a well-known first-order reaction. Thus, statement D is false.\nThe equation $\\ln \\frac{[R_o]}{[R]} = kt$ is the integrated rate law for a first-order reaction. For second-order, it is $\\frac{1}{[R]} - \\frac{1}{[R_0]} = kt$. Thus, statement E is false.",
+    "section_id": null
+  },
+  {
+    "question_number": 58,
+    "subject": "Chemistry",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "question_text": "The correct set that contains all kinds (basic, acidic, amphoteric and neutral) of oxides is:",
+    "options": {
+      "a": "$\\text{Na}_2\\text{O}, \\text{K}_2\\text{O}, \\text{Al}_2\\text{O}_3$ and $\\text{As}_2\\text{O}_3$",
+      "b": "$\\text{Al}_2\\text{O}_3, \\text{As}_2\\text{O}_3, \\text{CO}$ and $\\text{NO}$",
+      "c": "$\\text{K}_2\\text{O}, \\text{Cl}_2\\text{O}_7, \\text{As}_2\\text{O}_3$ and $\\text{NO}$",
+      "d": "$\\text{Na}_2\\text{O}, \\text{N}_2\\text{O}, \\text{Al}_2\\text{O}_3$ and $\\text{CO}$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Let's analyze the properties of the oxides in the options:\n- $\\text{K}_2\\text{O}$ and $\\text{Na}_2\\text{O}$ are metallic oxides and are strictly Basic.\n- $\\text{Cl}_2\\text{O}_7$ is an oxide of a non-metal in a high oxidation state, so it is strictly Acidic.\n- $\\text{Al}_2\\text{O}_3$ and $\\text{As}_2\\text{O}_3$ react with both acids and bases, classifying them as Amphoteric.\n- $\\text{NO}$, $\\text{N}_2\\text{O}$, and $\\text{CO}$ are established Neutral oxides.\nOption (c) contains: Basic ($\\text{K}_2\\text{O}$), Acidic ($\\text{Cl}_2\\text{O}_7$), Amphoteric ($\\text{As}_2\\text{O}_3$), and Neutral ($\\text{NO}$). Hence, it covers all four categories.",
+    "section_id": null
+  },
+  {
+    "question_number": 59,
+    "subject": "Chemistry",
+    "topic": "Classification of Elements and Periodicity in Properties",
+    "question_text": "Given below are two statements:\nStatement I: The second ionization enthalpy of B, Al and Ga is in the order of $B > Al > Ga$.\nStatement II: The correct order in terms of first ionization enthalpy is $Si < Ge < Pb < Sn$.\nIn the light of the above statements, choose the correct answer from the options given below:",
+    "options": {
+      "a": "Both Statement I and Statement II are true",
+      "b": "Both Statement I and Statement II are false",
+      "c": "Statement I is true but Statement II is false",
+      "d": "Statement I is false but Statement II is true"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Statement I is False: The 2nd ionization enthalpy requires removing an electron from the completely filled s-orbital. The order of $IE_2$ for Group 13 elements is $B > Ga > Al$. Gallium has a higher $IE_2$ than Aluminum due to poor shielding by the 10 d-electrons in Ga's inner shell.\nStatement II is False: The first ionization enthalpy of Group 14 elements broadly decreases down the group but increases slightly from Sn to Pb due to the lanthanide contraction (poor shielding of 4f electrons). The correct order is $C > Si > Ge > Pb > Sn$. Thus, $Si < Ge < Pb < Sn$ is incorrect.",
+    "section_id": null
+  },
+  {
+    "question_number": 60,
+    "subject": "Chemistry",
+    "topic": "d and f Block Elements",
+    "question_text": "Given below are two statements:\nStatement I: Among Zn, Mn, Sc and Cu, the energy required to remove the third valence electron is highest for Zn and lowest for Sc.\nStatement II: The correct order of the following complexes in terms of CFSE is\n$[Co(H_2O)_6]^{2+} < [Co(H_2O)_6]^{3+} < [Co(en)_3]^{3+}$.\nIn the light of the above statements, choose the correct answer from the options given below:",
+    "options": {
+      "a": "Both Statement I and Statement II are true",
+      "b": "Both Statement I and Statement II are false",
+      "c": "Statement I is true but Statement II is false",
+      "d": "Statement I is false but Statement II is true"
+    },
+    "correct_answer": "a",
+    "difficulty": "Hard",
+    "explanation": "Statement I: For Zn (atomic number 30), the configuration is $[Ar] 3d^{10} 4s^2$. After removing 2 electrons, $\\text{Zn}^{2+}$ becomes $[Ar] 3d^{10}$, an extremely stable, fully-filled d-subshell. Removing the third electron ($IE_3$) requires very high energy. Sc (atomic number 21) is $[Ar] 3d^1 4s^2$. After losing 2 electrons, $\\text{Sc}^{2+}$ is $[Ar] 3d^1$. Removing the third electron achieves the stable noble gas configuration $[Ar]$, so it has the lowest $IE_3$. Thus, Statement I is true.\n\nStatement II: CFSE ($\\Delta_0$) is influenced by the oxidation state of the central metal and the field strength of the ligands. For identical ligands ($H_2O$), CFSE is higher for a higher oxidation state ($Co^{3+} > Co^{2+}$). Additionally, ethylenediamine (en) is a strong field ligand compared to the weak field ligand $H_2O$. Thus, $[Co(en)_3]^{3+}$ splits the d-orbitals more. Therefore, the order is $[Co(H_2O)_6]^{2+} < [Co(H_2O)_6]^{3+} < [Co(en)_3]^{3+}$. Statement II is true.",
+    "section_id": null
+  },
+  {
+    "question_number": 61,
+    "subject": "Chemistry",
+    "topic": "Coordination Compounds",
+    "question_text": "Which of the following complexes will show coordination isomerism?\nA. $[Ag(NH_3)_2][Ag(CN)_2]$\nB. $[Co(NH_3)_6][Cr(CN)_6]$\nC. $[Co(NH_3)_6][Co(CN)_6]$\nD. $[Fe(NH_3)_6][Co(CN)_6]$\nE. $[Co(NH_3)_6][Fe(CN)_6]$\nChoose the correct answer from the options given below:",
+    "options": {
+      "a": "B, C and D Only",
+      "b": "B, D and E Only",
+      "c": "A, C and D Only",
+      "d": "C, D and E Only"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Coordination isomerism arises when both the cation and anion are complex ions, and isomerism occurs due to the interchange of ligands between the two coordination spheres. Such interchange yields a distinctly new compound (salt) mostly when the central metal atoms in the complex cation and anion are different.\nFor B, D, and E, the central metal atoms in the cationic and anionic parts are different (Co/Cr, Fe/Co, Co/Fe). For instance, in B, exchanging ligands produces $[Cr(NH_3)_6][Co(CN)_6]$, which is a distinct salt isomer.\nFor A and C, the metals are identical. Fully swapping the ligands leads to a structural representation that simply writes the new anionic complex first, which yields the exact identical chemical substance (e.g., swapping all ligands in C gives $[Co(CN)_6][Co(NH_3)_6]$, which is the same salt). Thus B, D, and E clearly exhibit coordination isomerism.",
+    "section_id": null
+  },
+  {
+    "question_number": 62,
+    "subject": "Chemistry",
+    "topic": "Some Basic Concepts of Chemistry",
+    "question_text": "Complete combustion of $X\\text{ g}$ of an organic compound gave $0.25\\text{ g}$ of $\\text{CO}_2$ and $0.12\\text{ g}$ of $\\text{H}_2\\text{O}$. If the % of carbon is $25\\%$ and of hydrogen is $4.89\\%$, then X = {_____}$ \\times 10^{-3}\\text{ g}$. (Nearest integer)\n(Molar mass of C, H and O are $12, 1$ and $16\\text{ g mol}^{-1}$ respectively.)",
+    "options": {
+      "a": "$273$",
+      "b": "$27$",
+      "c": "$2730$",
+      "d": "$227$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "Percentage of carbon is given by: $\\% C = \\frac{12}{44} \\times \\frac{\\text{Mass of } CO_2}{X} \\times 100$.\nSubstitute the given values:\n$25 = \\frac{12}{44} \\times \\frac{0.25}{X} \\times 100 \\implies 25 = \\frac{3}{11} \\times \\frac{25}{X} \\implies X = \\frac{3}{11} = 0.2727\\text{ g}$.\nChecking the hydrogen formula gives a comparable answer:\n$\\% H = \\frac{2}{18} \\times \\frac{0.12}{X} \\times 100 = 4.89 \\implies X = \\frac{2}{18} \\times \\frac{12}{4.89} = \\frac{1.333}{4.89} = 0.2726\\text{ g}$.\nThus, $X = 0.273\\text{ g}$, which corresponds to $273 \\times 10^{-3}\\text{ g}$. So the missing integer value is $273$.",
+    "section_id": null
+  },
+  {
+    "question_number": 63,
+    "subject": "Chemistry",
+    "topic": "Organic Chemistry - Some Basic Principles and Techniques",
+    "question_text": "Given below are two statements:\nStatement I: In $O_2N-C_6H_4-CH^\\oplus-C_6H_4-OCH_3$, the carbocation is stabilised by $+R$ effect of $-OCH_3$ group.\nStatement II: In $O_2N-C_6H_4-CH^\\ominus-C_6H_4-OCH_3$, the carbanion is stabilised by $-R$ effect of $-NO_2$ group.\nIn the light of the above statements, choose the correct answer from the options given below:",
+    "options": {
+      "a": "Both Statement I and Statement II are true",
+      "b": "Both Statement I and Statement II are false",
+      "c": "Statement I is true but Statement II is false",
+      "d": "Statement I is false but Statement II is true"
+    },
+    "correct_answer": "a",
+    "difficulty": "Easy",
+    "explanation": "Statement I is true: The $-OCH_3$ group attached to a phenyl ring exerts an electron-donating resonance effect ($+R$ effect) via lone pairs on the oxygen atom, which significantly stabilizes a positive charge (carbocation).\nStatement II is true: The $-NO_2$ group exerts a strong electron-withdrawing resonance effect ($-R$ effect), which heavily stabilizes a negative charge (carbanion) effectively dispersing the extra electron density.",
+    "section_id": null
+  },
+  {
+    "question_number": 64,
+    "subject": "Chemistry",
+    "topic": "Hydrocarbons",
+    "question_text": "The compound (X) on\n(i) heating in the presence of anhydrous $AlCl_3$ and HCl gas gives 2,4-dimethyl pentane\n(ii) aromatization gives toluene and\n(iii) cyclisation gives methyl cyclohexane\nThe correct name of compound (X) is:",
+    "options": {
+      "a": "Hept-2-ene",
+      "b": "Hept-1,3,5-triene",
+      "c": "Heptane",
+      "d": "Hept-2,4,6-triene"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "Compound (X) must be an alkane since it undergoes isomerisation with anhydrous $AlCl_3$/HCl to give branched alkanes like 2,4-dimethylpentane. Aromatisation of $n$-heptane over oxides of transition metals at high temperature yields toluene, and its cyclisation gives methylcyclohexane. Hence, compound (X) is $n$-heptane.",
+    "section_id": null
+  },
+  {
+    "question_number": 65,
+    "subject": "Chemistry",
+    "topic": "Haloalkanes and Haloarenes",
+    "question_text": "Correct statements regarding alkyl halides $(R - X)$ among the following are:\nA. Alcohol being less polar solvent as compared to water, alcoholic KOH favours elimination reaction with $R - X$.\nB. Order of reactivity towards $S_N1$ mechanism is $C_6H_5 - CH_2 - Cl > C_6H_5 - CHCl - C_6H_5$.\nC. Non substituted aryl halides exhibit properties similar to alkyl halides.\nD. Vinyl chloride is an example of haloalkene and allyl chloride is an example of haloalkyne.\nE. $R - Cl$ can be prepared by reacting $R - OH$ with $SOCl_2$ but $Ar - Cl$ cannot be prepared by reacting $Ar - OH$ with $SOCl_2$.\nChoose the correct answer from the options given below:",
+    "options": {
+      "a": "A, B and C Only",
+      "b": "B and D Only",
+      "c": "A and E Only",
+      "d": "D and E Only"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "Statement A is correct: Alcoholic KOH provides the stronger base alkoxide ion, which favours elimination over substitution.\nStatement B is incorrect: The secondary benzylic carbocation formed from $C_6H_5-CHCl-C_6H_5$ is more stable than the primary benzylic carbocation from $C_6H_5-CH_2-Cl$. Thus, the order should be reversed.\nStatement C is incorrect: Aryl halides are much less reactive towards nucleophilic substitution than alkyl halides due to resonance stabilization of the C-X bond.\nStatement D is incorrect: Allyl chloride is a haloalkene (contains a C=C double bond), not a haloalkyne.\nStatement E is correct: Phenols ($Ar-OH$) do not react with $SOCl_2$ to form aryl chlorides because the C-O bond has partial double bond character and is difficult to break.",
+    "section_id": null
+  },
+  {
+    "question_number": 66,
+    "subject": "Chemistry",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "question_text": "An organic compound \"x\" where molar ratio of C, O and H are equal, on treatment with 50% KOH under reflux followed by acidification produced \"y\". The most likely structure of \"y\" is:\n[Molar mass of 'x' is $58\\text{ g mol}^{-1}$]",
+    "options": {
+      "a": "$CH_2=CH-C(=O)OH$",
+      "b": "$CH_3-CH=CH-CH=O$",
+      "c": "$O=C(OH)-CH_2-OH$",
+      "d": "$CH_3-C(=O)OH$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Hard",
+    "explanation": "Given the molar ratio of C:H:O is 1:1:1, the empirical formula of \"x\" is $CHO$ (mass = 29). Since the molar mass is $58\\text{ g/mol}$, the molecular formula is $(CHO)_2$ or $C_2H_2O_2$. This matches glyoxal, $O=CH-CH=O$.\nWhen glyoxal is treated with concentrated base (50% KOH), it undergoes an intramolecular Cannizzaro reaction. One aldehyde group is oxidized to a carboxylate salt and the other is reduced to an alcohol.\nUpon acidification, glycolic acid is produced: $HO-CH_2-COOH$, which matches structure (c).",
+    "section_id": null
+  },
+  {
+    "question_number": 67,
+    "subject": "Chemistry",
+    "topic": "Aldehydes, Ketones and Carboxylic Acids",
+    "question_text": "![Molecule X](https://cracku.in/media/uploads/image_hLkR5nw.png) (A substituted cyclic acetal that upon mild acidic hydrolysis yields propanal and acetone)\nA molecule (X) with following structure under mild acidic condition is hydrolysed to produce (Y) and (Z). Identify the correct statements about (Y) and (Z).\nA. Both (Y) and (Z) have same molar mass.\nB. (Y) and (Z) can be distinguished from each other by $NaHCO_3$.\nC. (Y) and (Z) react with HCN with same rates.\nD. (Y) and (Z) undergo addition reaction with 2,4-DNP.\nChoose the correct answer from the options given below:",
+    "options": {
+      "a": "A, B and C Only",
+      "b": "B and C Only",
+      "c": "C and D Only",
+      "d": "A and D Only"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "Based on the products, (Y) is propanal ($CH_3CH_2CHO$) and (Z) is acetone ($CH_3COCH_3$).\nA. True. Propanal and acetone are isomers with the formula $C_3H_6O$ and both have a molar mass of $58\\text{ g/mol}$.\nB. False. Neither propanal nor acetone reacts with $NaHCO_3$ (this test is for carboxylic acids).\nC. False. Aldehydes (propanal) are sterically less hindered and more electrophilic than ketones (acetone), so propanal reacts with HCN faster than acetone.\nD. True. Both are carbonyl compounds and will form a precipitate (hydrazone) with 2,4-DNP.\nTherefore, only statements A and D are correct.",
+    "section_id": null
+  },
+  {
+    "question_number": 68,
+    "subject": "Chemistry",
+    "topic": "Amines",
+    "question_text": "Identify compounds A and E in the following reaction sequence, starting with 1-ethyl-4-nitrobenzene:\n$\\text{1-ethyl-4-nitrobenzene} \\xrightarrow{Br_2 / AlBr_3} A \\xrightarrow{Sn/HCl} B \\xrightarrow{NaNO_2/HCl, 273-278\\text{ K}} C \\xrightarrow{C_2H_5OH} D \\xrightarrow{KMnO_4/KOH, H_3O^+} E$",
+    "options": {
+      "a": "A is 4-ethyl-2-nitrobromobenzene, E is 4-ethylbenzoic acid",
+      "b": "A is 2-bromo-1-ethyl-4-nitrobenzene, E is 2-bromobenzoic acid",
+      "c": "A is 1-(1-bromoethyl)-4-nitrobenzene, E is 4-nitrobenzoic acid",
+      "d": "A is 2-bromo-1-ethyl-4-nitrobenzene, E is 2-bromo-4-hydroxybenzoic acid"
+    },
+    "correct_answer": "b",
+    "difficulty": "Hard",
+    "explanation": "1. Starting with 1-ethyl-4-nitrobenzene, bromination ($Br_2/AlBr_3$) occurs electrophilically. The ethyl group is activating and ortho/para directing, while $NO_2$ is deactivating and meta directing. They reinforce substitution ortho to the ethyl group. Thus, A is 2-bromo-1-ethyl-4-nitrobenzene.\n2. $Sn/HCl$ reduces the $NO_2$ group to $NH_2$, giving compound B (4-amino-2-bromoethylbenzene).\n3. $NaNO_2/HCl$ at $273-278\\text{ K}$ converts the primary aromatic amine to a diazonium salt (C).\n4. $C_2H_5OH$ reduces the diazonium group, replacing it with a hydrogen atom. Thus, D is 1-bromo-2-ethylbenzene (or o-bromoethylbenzene).\n5. Finally, vigorous oxidation with $KMnO_4/KOH$ oxidizes the ethyl side chain to a carboxylic acid group. Thus, E is 2-bromobenzoic acid.",
+    "section_id": null
+  },
+  {
+    "question_number": 69,
+    "subject": "Chemistry",
+    "topic": "Biomolecules",
+    "question_text": "Identify the correct pair having amino acid (A) and the hormone (B) that is iodinated derivative of the amino acid (A).\n(T and Y represent one letter code for amino acids)",
+    "options": {
+      "a": "A: T, B: Insulin",
+      "b": "A: T, B: Thyroxine",
+      "c": "A: Y, B: Thyroxine",
+      "d": "A: Y, B: Insulin"
+    },
+    "correct_answer": "c",
+    "difficulty": "Easy",
+    "explanation": "The one-letter code for the amino acid Tyrosine is Y, and Threonine is T. Thyroxine is a thyroid hormone that is an iodinated derivative of the amino acid Tyrosine. Insulin is a peptide hormone not derived from a single iodinated amino acid. Thus, the correct pair is Y and Thyroxine.",
+    "section_id": null
+  },
+  {
+    "question_number": 70,
+    "subject": "Chemistry",
+    "topic": "The d- and f-Block Elements",
+    "question_text": "Among $Fe^{2+}$, $Fe^{3+}$, $Cr^{2+}$ and $Zn^{2+}$, the ion that shows positive borax bead test and with highest ionisation enthalpy is:",
+    "options": {
+      "a": "$Fe^{2+}$",
+      "b": "$Zn^{2+}$",
+      "c": "$Cr^{2+}$",
+      "d": "$Fe^{3+}$"
+    },
+    "correct_answer": "d",
+    "difficulty": "Medium",
+    "explanation": "Zn compounds are typically white or colourless and do not show a coloured borax bead test. Iron and chromium form coloured beads (positive test). Among $Fe^{2+}$, $Cr^{2+}$, and $Fe^{3+}$, the $Fe^{3+}$ ion has a half-filled, exceptionally stable $3d^5$ configuration. Its further ionization to $Fe^{4+}$ requires a significantly larger amount of energy (highest consecutive ionization enthalpy among the listed accessible oxidation states). Therefore, $Fe^{3+}$ is the correct answer.",
+    "section_id": null
+  },
+  {
+    "question_number": 71,
+    "subject": "Chemistry",
+    "topic": "Structure of Atom",
+    "question_text": "The surface of sodium metal is irradiated with radiation of wavelength $x\\text{ nm}$. The kinetic energy of ejected electrons is $2.8 \\times 10^{-20}\\text{ J}$. The work function of sodium is $2.3\\text{ eV}$. If the value of $x$ is $y \\times 10^2$, find the nearest integer value of $y$.\n(Given: $h = 6.6 \\times 10^{-34}\\text{ J s}; 1\\text{ eV} = 1.6 \\times 10^{-19}\\text{ J}; c = 3.0 \\times 10^8\\text{ m s}^{-1}$)",
+    "options": {
+      "a": "$3$",
+      "b": "$4$",
+      "c": "$5$",
+      "d": "$6$"
+    },
+    "correct_answer": "c",
+    "difficulty": "Medium",
+    "explanation": "By the photoelectric equation: Energy of incident photon ($E$) = Work function ($\\Phi$) + Kinetic Energy ($KE$).\nWork function $\\Phi = 2.3\\text{ eV} = 2.3 \\times 1.6 \\times 10^{-19}\\text{ J} = 3.68 \\times 10^{-19}\\text{ J}$.\n$KE = 2.8 \\times 10^{-20}\\text{ J} = 0.28 \\times 10^{-19}\\text{ J}$.\nTotal energy $E = (3.68 + 0.28) \\times 10^{-19}\\text{ J} = 3.96 \\times 10^{-19}\\text{ J}$.\nUsing $E = \\frac{hc}{\\lambda} \\implies \\lambda = \\frac{hc}{E} = \\frac{6.6 \\times 10^{-34} \\times 3.0 \\times 10^8}{3.96 \\times 10^{-19}} = \\frac{19.8 \\times 10^{-26}}{3.96 \\times 10^{-19}} = 5 \\times 10^{-7}\\text{ m} = 500\\text{ nm}$.\nSince $x = 500$, then $y \\times 10^2 = 500 \\implies y = 5$.",
+    "section_id": null
+  },
+  {
+    "question_number": 72,
+    "subject": "Chemistry",
+    "topic": "Chemical Kinetics",
+    "question_text": "Consider the following gas phase reaction being carried out in a closed vessel at $25^\\circ\\text{C}$.\n$2A(g) \\rightarrow 4B(g) + C(g)$\nAt time $30\\text{ min}$, the total pressure of the system is $300\\text{ mm Hg}$. At time $t = \\infty$, the total pressure is $600\\text{ mm Hg}$. The pressure of $C(g)$ at $30\\text{ minutes}$ time interval would be _______ mm Hg.",
+    "options": {
+      "a": "$10$",
+      "b": "$20$",
+      "c": "$30$",
+      "d": "$40$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Let initial pressure of A be $P_0$.\nAt $t = \\infty$, reactant A is completely consumed. 2 moles of A yield 5 moles of gaseous products (4B + 1C).\nSo, final pressure $P_\\infty = \\frac{5}{2} P_0 = 600 \\implies P_0 = 240\\text{ mm Hg}$.\nAt $t = 30\\text{ min}$, let $2p$ be the drop in pressure of A.\n$P_A = 240 - 2p$, $P_B = 4p$, $P_C = p$.\nTotal pressure $P_{total} = (240 - 2p) + 4p + p = 240 + 3p$.\nGiven $P_{total} = 300\\text{ mm Hg}$ at $30\\text{ min}$.\n$240 + 3p = 300 \\implies 3p = 60 \\implies p = 20\\text{ mm Hg}$.\nSince $P_C = p$, the pressure of C at $30\\text{ minutes}$ is $20\\text{ mm Hg}$.",
+    "section_id": null
+  },
+  {
+    "question_number": 73,
+    "subject": "Chemistry",
+    "topic": "Electrochemistry",
+    "question_text": "Consider the following two half-cell reactions along with the standard reduction potential given:\n$CO_2 + 6H^+ + 6e^- \\rightarrow CH_3OH + H_2O \\quad E^\\circ_{red} = 0.02\\text{ V}$\n$\\frac{1}{2}O_2 + 2H^+ + 2e^- \\rightarrow H_2O \\quad E^\\circ_{red} = 1.23\\text{ V}$\nA fuel cell was set up using the above two reactions such that the cell operates under the standard condition of 1 bar pressure and 298 K temperature. The fuel cell works with 80% efficiency. If the work derived from the cell using 1 mol of $CH_3OH$ is used to compress an ideal gas isothermally against a constant pressure of 1 kPa, then the change in the volume of the gas, $\\Delta V$ is _______ $\\text{m}^3$. (nearest integer)\nGiven: $F = 96500\\text{ C mol}^{-1}$",
+    "options": {
+      "a": "$-280$",
+      "b": "$-560$",
+      "c": "$+560$",
+      "d": "$-840$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Hard",
+    "explanation": "In the fuel cell, methanol is oxidized at the anode and oxygen is reduced at the cathode.\nAnode: $CH_3OH + H_2O \\rightarrow CO_2 + 6H^+ + 6e^- \\quad (E^\\circ_{ox} = -0.02\\text{ V})$\nCathode: $\\frac{3}{2}O_2 + 6H^+ + 6e^- \\rightarrow 3H_2O \\quad (E^\\circ_{red} = 1.23\\text{ V})$\nOverall cell potential $E^\\circ = 1.23 - 0.02 = 1.21\\text{ V}$.\nThe maximum electrical work available from 1 mole of methanol ($n=6$) is $-\\Delta G^\\circ = nFE^\\circ = 6 \\times 96500 \\times 1.21 = 700660\\text{ J}$.\nActual useful work derived with 80% efficiency = $0.8 \\times 700660 = 560528\\text{ J}$.\nThis work is done by the cell to compress a gas. By thermodynamics, work done ON the gas is $W = -P_{ext} \\Delta V$.\nThus, $560528 = - (1 \\times 10^3\\text{ Pa}) \\times \\Delta V$.\n$\\Delta V = -560.528\\text{ m}^3$. Rounded to nearest integer, $\\Delta V = -560$.",
+    "section_id": null
+  },
+  {
+    "question_number": 74,
+    "subject": "Chemistry",
+    "topic": "The d- and f-Block Elements",
+    "question_text": "Number of paramagnetic ions among the following d- and f-block metal ions is _______.\n$Mn^{2+}, Cu^{2+}, Zn^{2+}, Yb^{2+}, Sc^{3+}, La^{3+}, Gd^{3+}, Lu^{3+}, Ti^{4+}, Ce^{4+}$\n(Atomic numbers of Mn = 25, Cu = 29, Zn = 30, Yb = 70, Sc = 21, La = 57, Gd = 64, Lu = 71, Ti = 22, Ce = 58)",
+    "options": {
+      "a": "$2$",
+      "b": "$3$",
+      "c": "$4$",
+      "d": "$5$"
+    },
+    "correct_answer": "b",
+    "difficulty": "Medium",
+    "explanation": "Paramagnetic ions must possess unpaired electrons:\n- $Mn^{2+} (3d^5)$ : 5 unpaired electrons (Paramagnetic)\n- $Cu^{2+} (3d^9)$ : 1 unpaired electron (Paramagnetic)\n- $Zn^{2+} (3d^{10})$ : 0 unpaired electrons (Diamagnetic)\n- $Yb^{2+} (4f^{14})$ : 0 unpaired electrons (Diamagnetic)\n- $Sc^{3+} (3d^0)$ : 0 unpaired electrons (Diamagnetic)\n- $La^{3+} (4f^0)$ : 0 unpaired electrons (Diamagnetic)\n- $Gd^{3+} (4f^7)$ : 7 unpaired electrons (Paramagnetic)\n- $Lu^{3+} (4f^{14})$ : 0 unpaired electrons (Diamagnetic)\n- $Ti^{4+} (3d^0)$ : 0 unpaired electrons (Diamagnetic)\n- $Ce^{4+} (4f^0)$ : 0 unpaired electrons (Diamagnetic)\nTotal number of paramagnetic ions is 3.",
+    "section_id": null
+  },
+  {
+    "question_number": 75,
+    "subject": "Chemistry",
+    "topic": "Organic Compounds Containing Nitrogen",
+    "question_text": "Consider the following reactions sequence starting from p-nitrotoluene (1-methyl-4-nitrobenzene):\n(i) $Sn/HCl; OH^-$\n(ii) $(CH_3CO)_2O$\n(iii) $Br_2/AlBr_3$\n(iv) $H_3O^+$\nWhen the product (P) is subjected to Carius analysis using $AgNO_3$, 1.0 g of the product (P) will produce _______ g of the precipitate of AgBr. (Nearest Integer)\n(Given: molar mass in $\\text{g mol}^{-1}$ C : 12, H : 1, O : 16, N : 14, Br : 80, Ag : 108)",
+    "options": {
+      "a": "$1$",
+      "b": "$2$",
+      "c": "$3$",
+      "d": "$4$"
+    },
+    "correct_answer": "a",
+    "difficulty": "Medium",
+    "explanation": "1. p-nitrotoluene is reduced by $Sn/HCl$ to form p-toluidine (4-methylaniline).\n2. Acetylation with $(CH_3CO)_2O$ protects the amine group, forming N-(4-methylphenyl)acetamide.\n3. Bromination ($Br_2/AlBr_3$) occurs ortho to the highly activating (and sterically less hindered at ortho) $-NHCOCH_3$ group, forming 2-bromo-4-methylacetanilide.\n4. Hydrolysis ($H_3O^+$) removes the acetyl group to yield Product (P): 2-bromo-4-methylaniline.\nThe molecular formula of P is $C_7H_8BrN$ with a molar mass of $(12 \\times 7) + 8 + 80 + 14 = 186\\text{ g mol}^{-1}$.\nIn Carius estimation, 1 mole of P yields 1 mole of AgBr (molar mass = $108 + 80 = 188\\text{ g mol}^{-1}$).\nMass of AgBr produced from $1.0\\text{ g}$ of P = $\\frac{1.0}{186} \\times 188 \\approx 1.01\\text{ g}$.\nThe nearest integer is $1\\text{ g}$.",
+    "section_id": null
+  }
+]

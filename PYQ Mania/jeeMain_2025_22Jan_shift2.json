@@ -1,0 +1,1202 @@
+[
+  {
+    "question_number": 1,
+    "question_text": "Let $\\alpha, \\beta, \\gamma$ and $\\delta$ be the coefficients of $x^7, x^6, x^5$ and x respectively in the expansion of $(x+\\sqrt{x^3-1})^5 + (x-\\sqrt{x^3-1})^5$, x > 1. If u and v satisfy the equations $\\alpha u + \\beta v = 18$, $\\gamma u + \\delta v = 20$, then u + v equals :",
+    "options": {
+      "a": "5",
+      "b": "4",
+      "c": "3",
+      "d": "8"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Binomial Theorem",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 2,
+    "question_text": "In a group of 3 girls and 4 boys, there are two boys $B_1$ and $B_2$. The number of ways, in which these girls and boys can stand in a queue such that all the girls stand together, all the boys stand together, but $B_1$ and $B_2$ are not adjacent to each other, is :",
+    "options": {
+      "a": "144",
+      "b": "72",
+      "c": "96",
+      "d": "120"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Permutations and Combinations",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 3,
+    "question_text": "Let P($4,4\\sqrt{3}$) be a point on the parabola $y^2 = 4ax$ and PQ be a focal chord of the parabola. If M and N are the foot of perpendiculars drawn from P and Q respectively on the directrix of the parabola, then the area of the quadrilateral PQMN is equal to:",
+    "options": {
+      "a": "$\\frac{263\\sqrt{3}}{8}$",
+      "b": "$17\\sqrt{3}$",
+      "c": "$\\frac{343\\sqrt{3}}{8}$",
+      "d": "$\\frac{34\\sqrt{3}}{3}$"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Conic Sections",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 4,
+    "question_text": "For a 3 x 3 matrix M, let trace (M) denote the sum of all the diagonal elements of M. Let A be a 3 x 3 matrix such that $|A| = \\frac{1}{2}$ and trace (A) = 3. If B = adj(adj(2A)), then the value of |B| + trace (B) equals:",
+    "options": {
+      "a": "56",
+      "b": "132",
+      "c": "174",
+      "d": "280"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Matrices and Determinants",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 5,
+    "question_text": "Suppose that the number of terms in an A.P. is 2k, k∈N. If the sum of all odd terms of the A.P. is 40, the sum of all even terms is 55 and the last term of the A.P. exceeds the first term by 27, then k is equal to",
+    "options": {
+      "a": "5",
+      "b": "8",
+      "c": "6",
+      "d": "4"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Sequences and Series",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 6,
+    "question_text": "Let a line pass through two distinct points P(-2, -1, 3) and Q, and be parallel to the vector $3\\hat{i} + 2\\hat{j} + 2\\hat{k}$. If the distance of the point Q from the point R(1, 3, 3) is 5, then the square of the area of ΔPQR is equal to:",
+    "options": {
+      "a": "136",
+      "b": "140",
+      "c": "144",
+      "d": "148"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Vector and 3D Geometry",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 7,
+    "question_text": "If $$\\lim_{x \\to 0} \\left( \\left( \\frac{e}{1 - e} \\right) \\left( \\frac{1}{e} - \\frac{x}{1 + x} \\right) \\right)^x = \\alpha$$, then the value of $$\\frac{\\log_e \\alpha}{1 + \\log_e \\alpha}$$ equals:",
+    "options": {
+      "a": "$e$",
+      "b": "$e^{2}$",
+      "c": "$e^{3}$",
+      "d": "$e^{-1}$"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Limits and Continuity",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 8,
+    "question_text": "Let $f(x) = \\int_0^{x^2} \\frac{t^2-8t+15}{e^t} dt, x \\in \\mathbb{R}$. Then the numbers of local maximum and local minimum points of f, respectively, are :",
+    "options": {
+      "a": "2 and 3",
+      "b": "3 and 2",
+      "c": "1 and 3",
+      "d": "2 and 2"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Application of Derivatives",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 9,
+    "question_text": "The perpendicular distance, of the line $\\frac{x-1}{2} = \\frac{y+2}{-1} = \\frac{z+3}{2}$ from the point P(2, -10, 1), is:",
+    "options": {
+      "a": "6",
+      "b": "$5\\sqrt{2}$",
+      "c": "$3\\sqrt{5}$",
+      "d": "$4\\sqrt{3}$"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Vector and 3D Geometry",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 10,
+    "question_text": "If $x = f(y)$ is the solution of the differential equation $$ (1 + y^2) + \\left(x - 2e^{\\tan^{-1} y}\\right) \\frac{dy}{dx} = 0, \\quad y \\in \\left( -\\frac{\\pi}{2}, \\frac{\\pi}{2} \\right) $$ with $f(0) = 1$, then $f\\left( \\frac{1}{\\sqrt{3}} \\right)$ is equal to:",
+    "options": {
+      "a": "$e^{\\pi/4}$",
+      "b": "$e^{\\pi/12}$",
+      "c": "$e^{\\pi/3}$",
+      "d": "$e^{\\pi/6}$"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Differential Equations",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 11,
+    "question_text": "If $$ \\int e^x \\left( \\frac{x \\sin^{-1} x}{\\sqrt{1 - x^2}} + \\frac{\\sin^{-1} x}{(1 - x^2)^{3/2}} + \\frac{x}{1 - x^2} \\right) dx = g(x) + C, $$ where $C$ is the constant of integration, then $g\\left(\\frac{1}{2}\\right)$ equals:",
+    "options": {
+      "a": "$\\frac{\\pi}{6} \\sqrt{\\frac{e}{2}}$",
+      "b": "$\\frac{\\pi}{4} \\sqrt{\\frac{e}{2}}$",
+      "c": "$\\frac{\\pi}{6} \\sqrt{\\frac{e}{3}}$",
+      "d": "$\\frac{\\pi}{4} \\sqrt{\\frac{e}{3}}$"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Integration",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 12,
+    "question_text": "Let $\\alpha_\\theta$ and $\\beta_\\theta$ be the distinct roots of $2x^2 + (\\cos\\theta)x - 1 = 0, \\theta \\in (0, 2\\pi)$. If m and M are the minimum and the maximum values of $\\alpha_\\theta^6 + \\beta_\\theta^6$, then 16(M+m) equals :",
+    "options": {
+      "a": "24",
+      "b": "25",
+      "c": "27",
+      "d": "17"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Quadratic Equations",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 13,
+    "question_text": "Let A = {1, 2, 3, 4} and B = {1, 4, 9, 16}. Then the number of many-one functions f : $A -> B$ such that 1 $\\notin$ f(A) is equal to :",
+    "options": {
+      "a": "127",
+      "b": "151",
+      "c": "163",
+      "d": "139"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Functions and Sets",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 14,
+    "question_text": "If the system of linear equations : $x + y + 2z = 6$, $2x + 3y + az = a + 1$, $-x - 3y + bz = 2b$, where a, b $\\in$ R, has infinitely many solutions, then 7a + 3b is equal to :",
+    "options": {
+      "a": "9",
+      "b": "12",
+      "c": "16",
+      "d": "22"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "System of Linear Equations",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 15,
+    "question_text": "Let $\\vec{a}$ and $\\vec{b}$ be two unit vectors such that the angle between them is $\\pi/3$. If $\\lambda \\vec{a} + 2\\vec{b}$ and $3\\vec{a} - \\lambda \\vec{b}$ are perpendicular to each other, then the number of values of $\\lambda$ in [-1, 3] is :",
+    "options": {
+      "a": "3",
+      "b": "2",
+      "c": "1",
+      "d": "0"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Vector Algebra",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 16,
+    "question_text": "Let E : $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$, a > b and H : $\\frac{x^2}{A^2} - \\frac{y^2}{B^2} = 1$. Let the distance between the foci of E and the foci of H be $2\\sqrt{3}$. If a - A = 2, and the ratio of the eccentricities of E and H is 1/3, then the sum of the lengths of their latus rectums is equal to :",
+    "options": {
+      "a": "10",
+      "b": "7",
+      "c": "8",
+      "d": "9"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Conic Sections",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 17,
+    "question_text": "If A and B are two events such that P(A$\\cap$B) = 0.1, and P(A|B) and P(B|A) are the roots of the equation $12x^2 - 7x + 1 = 0$, then the value of $P(\\overline{A} \\cup \\overline{B}) / P(\\overline{A} \\cap \\overline{B})$ is:",
+    "options": {
+      "a": "5/3",
+      "b": "4/3",
+      "c": "9/4",
+      "d": "7/4"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Probability",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 18,
+    "question_text": "The sum of all values of $\\theta \\in [0, 2\\pi]$ satisfying $2\\sin^2\\theta = \\cos2\\theta$ and $2\\cos^2\\theta = 3\\sin\\theta$ is",
+    "options": {
+      "a": "$\\pi/2$",
+      "b": "$4\\pi$",
+      "c": "$5\\pi/6$",
+      "d": "$\\pi$"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Trigonometric Equations",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 19,
+    "question_text": "Let the curve $z(1 + i) + \\bar{z}(1-i) = 4, z \\in C$, divide the region $|z - 3| \\leq 1$ into two parts of areas $\\alpha$ and $\\beta$. Then $|\\alpha - \\beta|$ equals :",
+    "options": {
+      "a": "$1 + \\frac{\\pi}{2}$",
+      "b": "$1 + \\frac{\\pi}{3}$",
+      "c": "$1 + \\frac{\\pi}{4}$",
+      "d": "$1 + \\frac{\\pi}{6}$"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Complex Numbers",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 20,
+    "question_text": "The area of the region enclosed by the curves $y = x^2 - 4x + 4$ and $y^2 = 16 - 8x$ is :",
+    "options": {
+      "a": "8/3",
+      "b": "4/3",
+      "c": "5",
+      "d": "8"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Application of Integrals",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 21,
+    "question_text": "Let $y = f(x)$ be the solution of the differential equation $\\frac{dy}{dx} + \\frac{xy}{x^2-1} = \\frac{x^4+4x}{\\sqrt{1-x^2}}, -1 < x < 1$ such that f(0) = 0. If $6 \\int_{-1/2}^{1/2} f(x) dx = 2\\pi - \\alpha$, then $\\alpha^2$ is equal to",
+    "options": {
+      "a": "25",
+      "b": "27",
+      "c": "30",
+      "d": "36"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Differential Equations",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 22,
+    "question_text": "Let A(6, 8), B(10 cos$\\alpha$, -10 sin$\\alpha$) and C(-10 sin$\\alpha$, 10 cos$\\alpha$), be the vertices of a triangle. If L(a, 9) and G(h, k) be its orthocenter and centroid respectively, then (5a – 3h + 6k + 100 sin2$\\alpha$) is equal to",
+    "options": {
+      "a": "125",
+      "b": "135",
+      "c": "145",
+      "d": "155"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Coordinate Geometry",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 23,
+    "question_text": "Let the distance between two parallel lines be 5 units and a point P lie between the lines at a unit distance from one of them. An equilateral triangle PQR is formed such that Q lies on one of the parallel lines, while R lies on the other. Then $(QR)^2$ is equal to",
+    "options": {
+      "a": "25",
+      "b": "28",
+      "c": "30",
+      "d": "32"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Coordinate Geometry",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 24,
+    "question_text": "If $\\sum_{r=1}^{30} r(31-r) \\cdot {^{29}C_{r-1}} = \\alpha \\times 2^{28}$, then $\\alpha$ is equal to",
+    "options": {
+      "a": "450",
+      "b": "460",
+      "c": "465",
+      "d": "435"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Binomial Theorem",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 25,
+    "question_text": "Let A = {1, 2, 3}. The number of relations on A, containing (1, 2) and (2, 3), which are reflexive and transitive but not symmetric, is _____",
+    "options": {
+      "a": "2",
+      "b": "3",
+      "c": "4",
+      "d": "5"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Relations and Functions",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 26,
+    "question_text": "A symmetric thin biconvex lens is cut into four equal parts by two planes AB and CD as shown in figure. If the power of original lens is 4D then the power of a part of the divided lens is \n <svg width='300' height='400' viewBox='0 0 300 400' xmlns='http://www.w3.org/2000/svg'><path d='M 150 80 Q 120 200 150 320' fill='none' stroke='black' stroke-width='2'/><path d='M 150 80 Q 180 200 150 320' fill='none' stroke='black' stroke-width='2'/><line x1='30' y1='200' x2='270' y2='200' stroke='black' stroke-width='1'/><line x1='150' y1='30' x2='150' y2='370' stroke='black' stroke-width='1'/><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto'><polygon points='0 0, 10 3.5, 0 7' fill='black'/></marker></defs><text x='20' y='205' font-family='Arial, sans-serif' font-size='16' text-anchor='middle'>A</text><text x='280' y='205' font-family='Arial, sans-serif' font-size='16' text-anchor='middle'>B</text><text x='150' y='25' font-family='Arial, sans-serif' font-size='16' text-anchor='middle'>C</text><text x='150' y='390' font-family='Arial, sans-serif' font-size='16' text-anchor='middle'>D</text></svg>",
+    "options": {
+      "a": "8D",
+      "b": "4D",
+      "c": "1D",
+      "d": "2D"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Ray Optics",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 27,
+    "question_text": "A small rigid spherical ball of mass M is dropped in a long vertical tube containing glycerine. The velocity of the ball becomes constant after some time. If the density of glycerine is half of the density of the ball, then the viscous force acting on the ball will be (consider g as acceleration due to gravity)",
+    "options": {
+      "a": "$\\frac{3}{2}Mg$",
+      "b": "$\\frac{Mg}{2}$",
+      "c": "Mg",
+      "d": "2Mg"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Fluid Mechanics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 28,
+    "question_text": "The maximum percentage error in the measurement of density of a wire is [Given, mass of wire = (0.60 ± 0.003)g, radius of wire = (0.50 ± 0.01)cm, length of wire = (10.00 ± 0.05)cm]",
+    "options": {
+      "a": "4%",
+      "b": "5%",
+      "c": "8%",
+      "d": "7%"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Error Analysis",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 29,
+    "question_text": "A series LCR circuit is connected to an alternating source of emf E. The current amplitude at resonant frequency is $I_0$. If the value of resistance R becomes twice of its initial value then amplitude of current at resonance will be",
+    "options": {
+      "a": "$I_0$",
+      "b": "$I_0/2$",
+      "c": "$I_0/\\sqrt{2}$",
+      "d": "$2I_0$"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Alternating Current",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 30,
+    "question_text": "For a short dipole placed at origin O with dipole moment P along the x-axis, the electric potential and electric field at point A (distance r on x-axis) are $V_0$ and $E_0$. What is the electric potential and electric field at point B (distance 2r on y-axis)? \n <svg width='200' height='220' viewBox='-20 -10 220 230' xmlns='http://www.w3.org/2000/svg'><defs><marker id='arrowhead' markerWidth='8' markerHeight='6' refX='8' refY='3' orient='auto'><polygon points='0 0, 8 3, 0 6' fill='black'/></marker><marker id='arrowhead-reverse' markerWidth='8' markerHeight='6' refX='0' refY='3' orient='auto'><polygon points='8 0, 0 3, 8 6' fill='black'/></marker></defs><line x1='0' y1='200' x2='180' y2='200' stroke='black' stroke-width='1.5' marker-end='url(#arrowhead)'/><line x1='0' y1='200' x2='0' y2='20' stroke='black' stroke-width='1.5' marker-end='url(#arrowhead)'/><line x1='0' y1='200' x2='0' y2='60' stroke='black' stroke-dasharray='3 3' stroke-width='1'/><line x1='0' y1='200' x2='120' y2='200' stroke='black' stroke-dasharray='3 3' stroke-width='1'/><circle cx='-3' cy='200' r='3' fill='red'/><circle cx='3' cy='200' r='3' fill='blue'/><text x='-6' y='195' font-size='10' font-family='Arial, sans-serif' fill='white'>-</text><text x='1' y='195' font-size='10' font-family='Arial, sans-serif' fill='white'>+</text><line x1='15' y1='200' x2='45' y2='200' stroke='red' stroke-width='2' marker-end='url(#arrowhead)'/><text x='52' y='195' font-size='12' font-family='Arial, sans-serif' font-weight='bold' fill='red'>P</text><circle cx='0' cy='200' r='2' fill='black'/><circle cx='120' cy='200' r='2' fill='black'/><circle cx='0' cy='60' r='2' fill='black'/><text x='-8' y='215' font-size='12' font-family='Arial, sans-serif'>O</text><text x='116' y='215' font-size='12' font-family='Arial, sans-serif'>A</text><text x='-8' y='55' font-size='12' font-family='Arial, sans-serif'>B</text><text x='185' y='205' font-size='12' font-family='Arial, sans-serif'>x</text><text x='-12' y='15' font-size='12' font-family='Arial, sans-serif'>y</text><line x1='5' y1='185' x2='115' y2='185' stroke='black' stroke-width='1' marker-start='url(#arrowhead-reverse)' marker-end='url(#arrowhead)'/><text x='60' y='180' font-size='12' text-anchor='middle' font-family='Arial, sans-serif'>r</text><line x1='15' y1='195' x2='15' y2='65' stroke='black' stroke-width='1' marker-start='url(#arrowhead-reverse)' marker-end='url(#arrowhead)'/><text x='25' y='130' font-size='12' font-family='Arial, sans-serif'>2r</text></svg>",
+    "options": {
+      "a": "$V_0/2$ and $E_0/16$",
+      "b": "zero and $E_0/8$",
+      "c": "zero and $E_0/16$",
+      "d": "$V_0$ and $E_0/4$"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Electrostatics",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 31,
+    "question_text": "Which one of the following is the correct dimensional formula for the capacitance in F ? M, L, T and C stand for unit of mass, length, time and charge,",
+    "options": {
+      "a": "[$C^2 M^2 L^2 T^2$]",
+      "b": "[$C M^{-2} L^2 T^2$]",
+      "c": "[$C M^{-1} L^2 T^2$]",
+      "d": "[$C^2 M^{-1} L^{-2} T^2$]"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Units and Dimensions",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 32,
+    "question_text": "An electron projected perpendicular to a uniform magnetic field B moves in a circle. If Bohr's quantization is applicable, then the radius of the electronic orbit in the first excited state is :",
+    "options": {
+      "a": "$\\sqrt{\\frac{2h}{\\pi eB}}$",
+      "b": "$\\sqrt{\\frac{4h}{\\pi eB}}$",
+      "c": "$\\sqrt{\\frac{h}{2\\pi eB}}$",
+      "d": "$\\sqrt{\\frac{h}{\\pi eB}}$"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Modern Physics",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 33,
+    "question_text": "For a diatomic gas, if $\\gamma_1 = C_p/C_v$ for rigid molecules and $\\gamma_2 = C_p/C_v$ for another diatomic molecules, but also having vibrational modes. Then, which one of the following options is correct? (Cp and Cv are specific heats of the gas at constant pressure and volume)",
+    "options": {
+      "a": "$\\gamma_2 > \\gamma_1$",
+      "b": "$\\gamma_2 = \\gamma_1$",
+      "c": "$2\\gamma_2 = \\gamma_1$",
+      "d": "$\\gamma_2 < \\gamma_1$"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Kinetic Theory of Gases",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 34,
+    "question_text": "A rectangular metallic loop is moving out of a uniform magnetic field region to a field free region with a constant speed. When the loop is partially inside the magnet field, the plot of magnitude of induced emf ($\\epsilon$) with time (t) is given by",
+    "options": {
+      "a": "<svg width='200' height='150' viewBox='0 0 200 150' xmlns='http://www.w3.org/2000/svg'><defs><marker id='arrow1' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto'><polygon points='0 0, 10 3.5, 0 7' fill='black'/></marker></defs><line x1='20' y1='130' x2='180' y2='130' stroke='black' stroke-width='2' marker-end='url(#arrow1)'/><line x1='20' y1='130' x2='20' y2='10' stroke='black' stroke-width='2' marker-end='url(#arrow1)'/><path d='M20,130 C80,130 120,80 180,10' fill='none' stroke='black' stroke-width='2'/><text x='185' y='135' font-family='Arial' font-size='14'>t</text><text x='5' y='15' font-family='Arial' font-size='14'>ε</text><text x='5' y='145' font-family='Arial' font-size='12'>(1)</text></svg>",
+      "b": "<svg width='200' height='150' viewBox='0 0 200 150' xmlns='http://www.w3.org/2000/svg'><defs><marker id='arrow2' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto'><polygon points='0 0, 10 3.5, 0 7' fill='black'/></marker></defs><line x1='20' y1='130' x2='180' y2='130' stroke='black' stroke-width='2' marker-end='url(#arrow2)'/><line x1='20' y1='130' x2='20' y2='10' stroke='black' stroke-width='2' marker-end='url(#arrow2)'/><line x1='20' y1='130' x2='140' y2='30' stroke='black' stroke-width='2'/><text x='185' y='135' font-family='Arial' font-size='14'>t</text><text x='5' y='15' font-family='Arial' font-size='14'>ε</text><text x='5' y='145' font-family='Arial' font-size='12'>(2)</text></svg>",
+      "c": "<svg width='200' height='150' viewBox='0 0 200 150' xmlns='http://www.w3.org/2000/svg'><defs><marker id='arrow3' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto'><polygon points='0 0, 10 3.5, 0 7' fill='black'/></marker></defs><line x1='20' y1='130' x2='180' y2='130' stroke='black' stroke-width='2' marker-end='url(#arrow3)'/><line x1='20' y1='130' x2='20' y2='10' stroke='black' stroke-width='2' marker-end='url(#arrow3)'/><path d='M20,10 C80,10 120,60 180,130' fill='none' stroke='black' stroke-width='2'/><text x='185' y='135' font-family='Arial' font-size='14'>t</text><text x='5' y='15' font-family='Arial' font-size='14'>ε</text><text x='5' y='145' font-family='Arial' font-size='12'>(3)</text></svg>",
+      "d": "<svg width='200' height='150' viewBox='0 0 200 150' xmlns='http://www.w3.org/2000/svg'><defs><marker id='arrowhead4' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto'><polygon points='0 0, 10 3.5, 0 7' fill='black'/></marker></defs><line x1='20' y1='130' x2='180' y2='130' stroke='black' stroke-width='2' marker-end='url(#arrowhead4)'/><line x1='20' y1='130' x2='20' y2='10' stroke='black' stroke-width='2' marker-end='url(#arrowhead4)'/><line x1='20' y1='60' x2='160' y2='60' stroke='black' stroke-width='2'/><text x='185' y='135' font-family='Arial' font-size='14'>t</text><text x='10' y='15' font-family='Arial' font-size='14'>ε</text><text x='5' y='145' font-family='Arial' font-size='12'>(4)</text></svg>"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Electromagnetic Induction",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 35,
+    "question_text": "A light source of wavelength $\\lambda$ illuminates a metal surface and electrons are ejected with maximum kinetic energy of 2 eV. If the same surface is illuminated by a light source of wavelength $\\lambda/2$, then the maximum kinetic energy of ejected electrons will be (The work function of metal is 1 eV)",
+    "options": {
+      "a": "2 eV",
+      "b": "6 eV",
+      "c": "5 eV",
+      "d": "3 eV"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Modern Physics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 36,
+    "question_text": "Given below are two statements. One is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A): A simple pendulum is taken to a planet of mass and radius, 4 times and 2 times, respectively, than the Earth. The time period of the pendulum remains same on earth and the planet.\nReason (R) : The mass of the pendulum remains unchanged at Earth and the other planet.\nIn the light of the above statements, choose the correct answer from the options given below :",
+    "options": {
+      "a": "Both (A) and (R) are true but (R) is NOT the correct explanation of (A)",
+      "b": "(A) is true but (R) is false",
+      "c": "(A) is false but (R) is true",
+      "d": "Both (A) and (R) are true and (R) is the correct explanation of (A)"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Gravitation",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 37,
+    "question_text": "The torque due to the force $(2\\hat{i} + \\hat{j} + 2\\hat{k})$ about the origin, acting on a particle whose position vector is $(\\hat{i} + \\hat{j} + \\hat{k})$, would be",
+    "options": {
+      "a": "$\\hat{i} - \\hat{j} + \\hat{k}$",
+      "b": "$\\hat{i} + \\hat{k}$",
+      "c": "$\\hat{i} - \\hat{k}$",
+      "d": "$\\hat{j} - \\hat{k}$"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Rotational Motion",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 38,
+    "question_text": "To obtain the given truth table \n <svg width='600' height='350' viewBox='0 0 600 350' xmlns='http://www.w3.org/2000/svg'><circle cx='50' cy='80' r='4'/><circle cx='50' cy='120' r='4'/><text x='30' y='85'>A</text><text x='30' y='125'>B</text><line x1='50' y1='80' x2='120' y2='80' stroke='black' stroke-width='2'/><line x1='50' y1='120' x2='100' y2='120' stroke='black' stroke-width='2'/><line x1='120' y1='80' x2='120' y2='60' stroke='black' stroke-width='2'/><line x1='120' y1='60' x2='180' y2='60' stroke='black' stroke-width='2'/><line x1='120' y1='80' x2='120' y2='240' stroke='black' stroke-width='2'/><line x1='120' y1='240' x2='180' y2='240' stroke='black' stroke-width='2'/><line x1='100' y1='120' x2='100' y2='140' stroke='black' stroke-width='2'/><line x1='100' y1='140' x2='150' y2='140' stroke='black' stroke-width='2'/><line x1='100' y1='120' x2='100' y2='220' stroke='black' stroke-width='2'/><line x1='100' y1='220' x2='150' y2='220' stroke='black' stroke-width='2'/><polygon points='150,130 150,150 170,140' fill='white' stroke='black' stroke-width='2'/><circle cx='173' cy='140' r='3' fill='white' stroke='black' stroke-width='2'/><text x='160' y='125'>B̄</text><polygon points='150,210 150,230 170,220' fill='white' stroke='black' stroke-width='2'/><circle cx='173' cy='220' r='3' fill='white' stroke='black' stroke-width='2'/><text x='160' y='205'>B̄</text><line x1='176' y1='140' x2='180' y2='140' stroke='black' stroke-width='2'/><line x1='180' y1='140' x2='180' y2='80' stroke='black' stroke-width='2'/><line x1='176' y1='220' x2='180' y2='220' stroke='black' stroke-width='2'/><line x1='180' y1='220' x2='180' y2='260' stroke='black' stroke-width='2'/><path d='M180 50 L180 90 L210 90 A20 20 0 0 0 210 50 Z' fill='white' stroke='black' stroke-width='2'/><text x='250' y='75'>AB̄</text><path d='M180 230 L180 270 L210 270 A20 20 0 0 0 210 230 Z' fill='white' stroke='black' stroke-width='2'/><text x='250' y='255'>AB̄</text><line x1='180' y1='60' x2='180' y2='70' stroke='black' stroke-width='2'/><line x1='180' y1='140' x2='180' y2='70' stroke='black' stroke-width='2'/><line x1='180' y1='240' x2='180' y2='250' stroke='black' stroke-width='2'/><line x1='180' y1='220' x2='180' y2='250' stroke='black' stroke-width='2'/><line x1='210' y1='70' x2='280' y2='70' stroke='black' stroke-width='2'/><line x1='280' y1='70' x2='280' y2='140' stroke='black' stroke-width='2'/><line x1='280' y1='140' x2='330' y2='140' stroke='black' stroke-width='2'/><line x1='210' y1='250' x2='300' y2='250' stroke='black' stroke-width='2'/><line x1='300' y1='250' x2='300' y2='160' stroke='black' stroke-width='2'/><line x1='300' y1='160' x2='330' y2='160' stroke='black' stroke-width='2'/><circle cx='355' cy='150' r='15' fill='white' stroke='black' stroke-width='2'/><text x='350' y='155'>G</text><line x1='330' y1='140' x2='340' y2='140' stroke='black' stroke-width='2'/><line x1='330' y1='160' x2='340' y2='160' stroke='black' stroke-width='2'/><line x1='340' y1='140' x2='340' y2='160' stroke='black' stroke-width='2'/><line x1='340' y1='150' x2='355' y2='150' stroke='black' stroke-width='2'/><line x1='370' y1='150' x2='450' y2='150' stroke='black' stroke-width='2'/><circle cx='450' cy='150' r='4'/><text x='470' y='155'>Y</text></svg> <table border='1px'><tr><th>A</th><th>B</th><th>Y</th></tr><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></table>, which logic gate should be placed at G in the given circuit?",
+    "options": {
+      "a": "NOR Gate",
+      "b": "AND Gate",
+      "c": "NAND Gate",
+      "d": "OR Gate"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Digital Logic",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 39,
+    "question_text": "A force $\\vec{F} = 2\\hat{i} + b\\hat{j} + \\hat{k}$ is applied on a particle and it undergoes a displacement $\\hat{i} - 2\\hat{j} - \\hat{k}$. What will be the value of b, if work done on the particle is zero.",
+    "options": {
+      "a": "0",
+      "b": "1/2",
+      "c": "1/3",
+      "d": "2"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Work, Power, Energy",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 40,
+    "question_text": "Given below are two statements. One is labelled as Assertion (A) and the other is labelled as Reason (R).\nAssertion (A) : In Young's double slit experiment, the fringes produced by red light are closer as compared to those produced by blue light.\nReason (R) : The fringe width is directly proportional to the wavelength of light.\nIn the light of above statements, choose the correct answer from the options given below :",
+    "options": {
+      "a": "Both (A) and (R) are true and (R) is the correct explanation of (A)",
+      "b": "(A) is false but (R) is true.",
+      "c": "Both (A) and (R) are true but (R) is NOT the correct explanation of (A).",
+      "d": "(A) is true but (R) is false."
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Wave Optics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 41,
+    "question_text": "A ball of mass 100 g is projected with velocity 20 m/s at 60° with horizontal. The decrease in kinetic energy of the ball during the motion from point of projection to highest point is :",
+    "options": {
+      "a": "20 J",
+      "b": "15 J",
+      "c": "zero",
+      "d": "5 J"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Projectile Motion",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 42,
+    "question_text": "A transparent film of refractive index, 2.0 is coated on a glass slab of refractive index, 1.45. What is the minimum thickness of transparent film to be coated for the maximum transmission of Green light of wavelength 550 nm. [Assume that the light is incident nearly perpendicular to the glass surface.]",
+    "options": {
+      "a": "94.8 nm",
+      "b": "68.7 nm",
+      "c": "137.5 nm",
+      "d": "275 nm"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Wave Optics",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 43,
+    "question_text": "The tube of length L is shown in the figure. The radius of cross section at the point (1) is 2 cm and at the point (2) is 1 cm, respectively. If the velocity of water entering at point (1) is 2 m/s, then velocity of water leaving the point (2) will be : \n<svg viewBox='0 0 400 200' xmlns='http://www.w3.org/2000/svg'><ellipse cx='80' cy='100' rx='30' ry='50' fill='none' stroke='black' stroke-width='2'/><ellipse cx='320' cy='100' rx='20' ry='35' fill='none' stroke='black' stroke-width='2'/><line x1='80' y1='50' x2='320' y2='65' stroke='black' stroke-width='2'/><line x1='80' y1='150' x2='320' y2='135' stroke='black' stroke-width='2'/><circle cx='80' cy='40' r='15' fill='white' stroke='black' stroke-width='2'/><text x='80' y='47' text-anchor='middle' font-family='Arial' font-size='14'>1</text><circle cx='320' cy='40' r='15' fill='white' stroke='black' stroke-width='2'/><text x='320' y='47' text-anchor='middle' font-family='Arial' font-size='14'>2</text><g stroke='black' stroke-width='2' fill='none' marker-end='url(#arrowhead)'><line x1='30' y1='80' x2='50' y2='80'/><line x1='30' y1='100' x2='50' y2='100'/><line x1='30' y1='120' x2='50' y2='120'/><line x1='340' y1='80' x2='370' y2='80'/><line x1='340' y1='100' x2='370' y2='100'/><line x1='340' y1='120' x2='370' y2='120'/></g><defs><marker id='arrowhead' markerWidth='10' markerHeight='7' refX='9' refY='3.5' orient='auto'><polygon points='0 0, 10 3.5, 0 7' fill='black'/></marker></defs></svg> ",
+    "options": {
+      "a": "2 m/s",
+      "b": "4 m/s",
+      "c": "6 m/s",
+      "d": "8 m/s"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Fluid Dynamics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 44,
+    "question_text": "Given are statements for certain thermodynamic variables,\n(A) Internal energy, volume (V) and mass (M) are extensive variables.\n(B) Pressure (P), temperature (T) and density ($\\rho$) are intensive variables.\n(C) Volume (V), temperature (T) and density ($\\rho$) are intensive variables.\n(D) Mass (M), temperature (T) and internal energy are extensive variables.\nChoose the correct answer from the points given below :",
+    "options": {
+      "a": "(C) and (D) only",
+      "b": "(D) and (A) only",
+      "c": "(A) and (B) only",
+      "d": "(B) and (C) only"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Thermodynamics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 45,
+    "question_text": "A body of mass 100 g is moving in circular path of radius 2 m on vertical plane as shown in figure. The velocity of the body at point A is 10 m/s. The ratio of its kinetic energies at point B and C is :\n<svg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'><circle cx='150' cy='150' r='80' fill='none' stroke='black' stroke-width='2'/><line x1='150' y1='70' x2='150' y2='230' stroke='black' stroke-width='1' stroke-dasharray='5,5'/><circle cx='150' cy='70' r='3' fill='black'/><text x='155' y='67' font-family='Arial' font-size='14' font-weight='bold'>D</text><circle cx='150' cy='230' r='3' fill='black'/><text x='155' y='243' font-family='Arial' font-size='14' font-weight='bold'>A</text><circle cx='219.28' cy='110.00' r='3' fill='black'/><text x='225' y='105' font-family='Arial' font-size='14' font-weight='bold'>C</text><circle cx='190.00' cy='219.28' r='3' fill='black'/><text x='195' y='224' font-family='Arial' font-size='14' font-weight='bold'>B</text><circle cx='150' cy='150' r='2' fill='black'/><text x='135' y='165' font-family='Arial' font-size='14' font-weight='bold'>O</text><line x1='150' y1='150' x2='219.28' y2='110.00' stroke='black' stroke-width='1'/><line x1='150' y1='150' x2='190.00' y2='219.28' stroke='black' stroke-width='1'/><path d='M167.32,140.00 A20,20 0 0,1 160.00,167.32' fill='none' stroke='black' stroke-width='1'/><text x='172' y='150' font-family='Arial' font-size='12'>90°</text><path d='M160.00,167.32 A20,20 0 0,1 150,170' fill='none' stroke='black' stroke-width='1'/><text x='150' y='185' font-family='Arial' font-size='12'>30°</text></svg>",
+    "options": {
+      "a": "$\\frac{2+\\sqrt{3}}{3}$",
+      "b": "$\\frac{2+\\sqrt{2}}{3}$",
+      "c": "$\\frac{3+\\sqrt{3}}{2}$",
+      "d": "$\\frac{3-\\sqrt{2}}{2}$"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Circular Motion",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 46,
+    "question_text": "A proton is moving undeflected in a region of crossed electric and magnetic fields at a constant speed of $2 \\times 10^5$ ms⁻¹. When the electric field is switched off, the proton moves along a circular path of radius 2 cm. The magnitude of electric field is x × 10⁵ N/C. the value of x is _____. Take the mass of the proton = $1.6 \\times 10^{-27}$ kg.",
+    "options": {
+      "a": "1",
+      "b": "2",
+      "c": "4",
+      "d": "8"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Electromagnetism",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 47,
+    "question_text": "Two long parallel wires X and Y, separated by a distance of 6 cm, carry currents of 5A and 4A, respectively, in opposite directions as shown in the figure. Magnitude of the resultant magnetic field at point P at a distance of 4 cm from wire Y is x × 10⁻⁵T. The value of x is ____. Take permeability of free space as $\\mu_0 = 4\\pi \\times 10⁻⁷$ SI units.\n<svg viewBox='0 0 300 200' xmlns='http://www.w3.org/2000/svg'><line x1='50' y1='40' x2='50' y2='160' stroke='black' stroke-width='3'/><line x1='110' y1='40' x2='110' y2='160' stroke='black' stroke-width='3'/><text x='45' y='35' font-family='Arial' font-size='14' font-weight='bold'>X</text><text x='105' y='35' font-family='Arial' font-size='14' font-weight='bold'>Y</text><polygon points='45,60 55,60 50,45' fill='black'/><text x='25' y='65' font-family='Arial' font-size='12'>5 A</text><polygon points='105,130 115,130 110,145' fill='black'/><text x='85' y='125' font-family='Arial' font-size='12'>4A</text><circle cx='150' cy='100' r='3' fill='black'/><text x='155' y='105' font-family='Arial' font-size='14' font-weight='bold'>P</text><line x1='50' y1='180' x2='110' y2='180' stroke='black' stroke-width='1'/><polygon points='50,175 50,185 45,180' fill='black'/><polygon points='110,175 110,185 115,180' fill='black'/><text x='75' y='195' font-family='Arial' font-size='12'>6 cm</text><line x1='110' y1='100' x2='150' y2='100' stroke='black' stroke-width='1'/><polygon points='110,95 110,105 105,100' fill='black'/><polygon points='150,95 150,105 155,100' fill='black'/><text x='125' y='115' font-family='Arial' font-size='12'>4cm</text></svg>",
+    "options": {
+      "a": "1",
+      "b": "2",
+      "c": "3",
+      "d": "4"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Magnetic Field",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 48,
+    "question_text": "A parallel plate capacitor of area A = 16 cm² and separation between the plates 10 cm, is charged by a DC current. Consider a hypothetical plane surface of area A' = 3.2 cm² inside the capacitor and parallel to the plates. At an instant, the current through the circuit is 6A. At the same instant the displacement current through A' is _____ mA.",
+    "options": {
+      "a": "600",
+      "b": "1000",
+      "c": "1200",
+      "d": "1600"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Displacement Current",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 49,
+    "question_text": "A tube of length 1m is filled completely with an ideal liquid of mass 2M, and closed at both ends. The tube is rotated uniformly in horizontal plane about one of its ends. If the force exerted by the liquid at the other end is F then angular velocity of the tube is $\\sqrt{\\frac{F}{\\alpha M}}$ in SI unit. The value of $\\alpha$ is",
+    "options": {
+      "a": "1",
+      "b": "2",
+      "c": "3",
+      "d": "4"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Rotational Motion",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 50,
+    "question_text": "The net current flowing in the given circuit is ___ A.![Resistor Diagram Image](India/undergraduate/JEEMains/assets/jeeMain_2025_22Jan_shift2_q50.png)",
+    "options": {
+      "a": "0.5",
+      "b": "1",
+      "c": "1.5",
+      "d": "2"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "DC Circuits",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 51,
+    "question_text": "Arrange the following compounds in increasing order of their dipole moment : HBr, H₂S, NF₃ and CHCl₃",
+    "options": {
+      "a": "$NF_3 < HBr < H_2S < CHCl_3$",
+      "b": "$HBr < H_2S < NF_3 < CHCl_3$",
+      "c": "$H_2S < HBr < NF_3 < CHCl_3$",
+      "d": "$CHCl_3 < NF_3 < HBr < H_2S$"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Chemical Bonding",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 52,
+    "question_text": "Identify the number of structure/s from the following which can be correlated to D-glyceraldehyde. <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 150'><path d='M40 14l0 87' stroke='#000' stroke-width='2' fill='none'/><path d='M40 40h20M40 70h20M40 100h20M50' stroke='#000' stroke-width='2' fill='none'/><text x='50' y='10' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='middle'>CHO</text><text x='60' y='40' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text><text x='60' y='70' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text><text x='60' y='100' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text></svg><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 150'><path d='M40 14l0 116' stroke='#000' stroke-width='2' fill='none'/><path d='M40 40h20M40 70h-20M40 100h20M40 130h20' stroke='#000' stroke-width='2' fill='none'/><text x='50' y='10' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='middle'>CHO</text><text x='60' y='40' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text><text x='1' y='70' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text><text x='78' y='100' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text><text x='60' y='130' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text></svg><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 150'><path d='M50 10l0 121' stroke='#000' stroke-width='2' fill='none'/><path d='M50 40h20M50 70h-20M50 100h-20M50 130h20' stroke='#000' stroke-width='2' fill='none'/><text x='60' y='9' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='middle'>CHO</text><text x='90' y='40' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text><text x='25' y='70' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text><text x='25' y='100' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text><text x='75' y='130' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text></svg><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 150'><g transform='scale(1,-1) translate(0,-150)'><path d='M60 14l0 116' stroke='#000' stroke-width='2' fill='none'/><path d='M60 40h-20M60 70h20M60 100h-20M60 130h-20' stroke='#000' stroke-width='2' fill='none'/><text x='50' y='10' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='middle'>CHO</text><text x='40' y='40' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text><text x='99' y='70' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text><text x='22' y='100' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='start'>OH</text><text x='40' y='130' font-family='Arial' font-size='12' dominant-baseline='middle' text-anchor='end'>HO</text></g></svg>",
+    "options": {
+      "a": "tree",
+      "b": "two",
+      "c": "four",
+      "d": "one"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Biomolecules",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 53,
+    "question_text": "The maximum covalency of a non-metallic group 15 element 'E' with weakest E-E bond is :",
+    "options": {
+      "a": "5",
+      "b": "3",
+      "c": "6",
+      "d": "4"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "P-Block Elements",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 54,
+    "question_text": "Consider the given energy profile diagram and choose the correct option. ![Question 54 shift2](India/undergraduate/JEEMains/assets/jeeMain_2025_22Jan_shift2_q54.png)",
+    "options": {
+      "a": "Activation energy of backward reaction is E₁ and product is more stable than reactant.",
+      "b": "Activation energy of forward reaction is E₁ + E₂ and product is more stable than reactant.",
+      "c": "Activation energy of forward reaction is E₂ and product is less stable than reactant.",
+      "d": "Activation energy of both forward and backward reaction is E₁ + E₂ and reactant is more stable than product."
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Chemical Kinetics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 55,
+    "question_text": "When sec-butylcyclohexane reacts with bromine in the presence of sunlight, the major product is formed by bromination at the most substituted carbon atom. Which is the major product?",
+    "options": {
+      "a": "1-bromo-1-sec-butylcyclohexane",
+      "b": "1-bromo-2-sec-butylcyclohexane",
+      "c": "1-bromo-4-sec-butylcyclohexane",
+      "d": "1-(1-bromocyclohexyl)butane"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Hydrocarbons",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 56,
+    "question_text": "The species which does not undergo disproportionation reaction is :",
+    "options": {
+      "a": "$ClO_2^-$",
+      "b": "$ClO_4^-$",
+      "c": "$ClO^-$",
+      "d": "$ClO_3^-$"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Redox Reactions",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 57,
+    "question_text": "Match the Compounds (List-I) with the appropriate Catalyst/Reagents (List-II) for their reduction into corresponding amines. <table><tr><td>(A) Amide</td><td>(I) NaOH(aq)</td></tr><tr><td>(B) Nitro-compound</td><td>(II) H₂/Ni</td></tr><tr><td>(C) Nitrile</td><td>(III) LiAlH₄</td></tr><tr><td>(D) N-substituted phthalimide</td><td>(IV) Sn, HCl</td></tr></table>",
+    "options": {
+      "a": "(A)-(III), (B)-(IV), (C)-(II), (D)-(I)",
+      "b": "(A)-(II), (B)-(IV), (C)-(III), (D)-(I)",
+      "c": "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "d": "(A)-(III), (B)-(I), (C)-(II), (D)-(IV)"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Organic Chemistry Reactions",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 58,
+    "question_text": "The maximum number of structurally isomeric alkyl bromides (RBr) that produce 2-methylbutane upon reaction with Mg in dry ether followed by hydrolysis (H2O) is:",
+    "options": {
+      "a": "4",
+      "b": "5",
+      "c": "3",
+      "d": "1"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Hydrocarbons",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 59,
+    "question_text": "Match List-I (Partial Derivatives) with List-II(Thermodynamic Quantity). <table><tr><td>(A) $(\\frac{\\partial G}{\\partial T})_P$</td><td>(I) $C_P$</td></tr><tr><td>(B) $(\\frac{\\partial H}{\\partial T})_P$</td><td>(II) -S</td></tr><tr><td>(C) $(\\frac{\\partial G}{\\partial P})_T$</td><td>(III) $C_V$</td></tr><tr><td>(D) $(\\frac{\\partial U}{\\partial T})_V$</td><td>(IV) V</td></tr></table>",
+    "options": {
+      "a": "(A)-(II), (B)-(I), (C)-(III), (D)-(IV)",
+      "b": "(A)-(II), (B)-(I), (C)-(IV), (D)-(III)",
+      "c": "(A)-(I), (B)-(II), (C)-(IV), (D)-(III)",
+      "d": "(A)-(II), (B)-(III), (C)-(I), (D)-(IV)"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Thermodynamics",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 60,
+    "question_text": "The correct order of the following complexes in terms of their crystal field stabilization energies is : [Co(NH₃)₄]²⁺, [Co(NH₃)₆]²⁺, [Co(en)₃]³⁺, [Co(NH₃)₆]³⁺",
+    "options": {
+      "a": "$[Co(NH_3)_4]^{2+}<[Co(NH_3)_6]^{2+}<[Co(en)_3]^{3+}<[Co(NH_3)_6]^{3+}$",
+      "b": "$[Co(NH_3)_4]^{2+}<[Co(NH_3)_6]^{2+}<[Co(NH_3)_6]^{3+}<[Co(en)_3]^{3+}$",
+      "c": "$[Co(NH_3)_6]^{2+}<[Co(NH_3)_6]^{3+}<[Co(NH_3)_4]^{2+}<[Co(en)_3]^{3+}$",
+      "d": "$[Co(en)_3]^{3+}<[Co(NH_3)_6]^{3+}<[Co(NH_3)_6]^{2+}<[Co(NH_3)_4]^{2+}$"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Coordination Chemistry",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 61,
+    "question_text": "Density of 3 M NaCl solution is 1.25 g/mL. The molality of the solution is :",
+    "options": {
+      "a": "1.79 m",
+      "b": "2 m",
+      "c": "3 m",
+      "d": "2.79 m"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Solutions",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 62,
+    "question_text": "The molar solubility(s) of zirconium phosphate with molecular formula $(Zr^{4+})_3 (PO_4^{3-})_4$ is given by relation :",
+    "options": {
+      "a": "$(\\frac{K_{sp}}{6912})^{1/7}$",
+      "b": "$(\\frac{K_{sp}}{5348})^{1/7}$",
+      "c": "$(\\frac{K_{sp}}{8435})^{1/7}$",
+      "d": "$(\\frac{K_{sp}}{9612})^{1/7}$"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Chemical Equilibrium",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 63,
+    "question_text": "The most stable carbocation from the following is :",
+    "options": {
+      "a": "$p-MeO-C_6H_4-CH_2^+$",
+      "b": "$p-MeO-C_6H_4-CH_2^+$ where O is OMe",
+      "c": "$p-H_3C-C_6H_4-CH_2^+$",
+      "d": "$C_6H_5-CH_2^+$ with $OCH_3$ at meta position"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "General Organic Chemistry",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 64,
+    "question_text": "Given below are two statements :\nStatement (I) : An element in the extreme left of the periodic table forms acidic oxides.\nStatement (II) : Acid is formed during the reaction between water and oxide of a reactive element present in the extreme right of the periodic table.\nIn the light of the above statements, choose the correct answer from the options given below :",
+    "options": {
+      "a": "Statement-I is false but Statement-II is true.",
+      "b": "Both Statement-I and Statement-II are false.",
+      "c": "Statement-I is true but Statement-II is false.",
+      "d": "Both Statement-I and Statement-II are true."
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Periodic Properties",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 65,
+    "question_text": "Given below are two statements :\nStatement (I) : A spectral line will be observed for a $2p_x \\to 2p_y$ transition.\nStatement (II) : $2p_x$ and $2p_y$ are degenerate orbitals.\nIn the light of the above statements, choose the correct answer from the options given below :",
+    "options": {
+      "a": "Both Statement-I and Statement-II are true.",
+      "b": "Both Statement-I and Statement-II are false.",
+      "c": "Statement-I is true but Statement-II is false.",
+      "d": "Statement-I is false but Statement-II is true."
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Atomic Structure",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 66,
+    "question_text": "Given below are two statement :\nStatement (I) : Nitrogen, sulphur, halogen and phosphorus present in an organic compound are detected by Lassaigne's Test.\nStatement (II) : The elements present in the compound are converted from covalent form into ionic form by fusing the compound with Magnesium in Lassaigne's test.",
+    "options": {
+      "a": "Both Statement I and Statement II are true",
+      "b": "Both Statement I and Statement II are false",
+      "c": "Statement I is true but Statement II is false",
+      "d": "Statement I is false but Statement II is true"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Qualitative Analysis",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 67,
+    "question_text": "Identify the homoleptic complex(es) that is/are low spin.\n(A) [Fe(CN)₅NO]²⁻\n(B) [CoF₆]³⁻\n(C) [Fe(CN)₆]⁴⁺\n(D) [Co(NH₃)₆]³⁺\n(E) [Cr(H₂O)₆]²⁺",
+    "options": {
+      "a": "(B) and (E) only",
+      "b": "(A) and (C) only",
+      "c": "(C) and (D) only",
+      "d": "(C) only"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Coordination Chemistry",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 68,
+    "question_text": "The reaction of Toluene with CrO₂Cl₂ followed by hydrolysis (Etard reaction) gives compound B. What are the intermediate (A) and final product (B)?",
+    "options": {
+      "a": "A: Benzaldehyde, B: Benzoic acid",
+      "b": "A: Chromium complex $[C_6H_5CH(OCrOHCl_2)_2]$, B: Benzaldehyde",
+      "c": "A: Benzoic acid, B: Sodium benzoate",
+      "d": "A: Benzaldehyde-bisulfite adduct, B: Benzaldehyde"
+    },
+    "correct_answer": "d",
+    "explanation": "",
+    "topic": "Organic Chemistry Reactions",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 69,
+    "question_text": "Given below are two statements :\nStatement (I) : Corrosion is an electrochemical phenomenon in which pure metal acts as an anode and impure metal as a cathode.\nStatement (II) : The rate of corrosion is more in alkaline medium than in acidic medium.\nIn the light of the above statements, choose the correct answer from the options given below :",
+    "options": {
+      "a": "Both Statement I and Statement II are false",
+      "b": "Statement I is false but Statement II is true",
+      "c": "Both Statement I and Statement II are true",
+      "d": "Statement I is true but Statement II is false"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Electrochemistry",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 70,
+    "question_text": "The alkane from below having two secondary hydrogens is :",
+    "options": {
+      "a": "4-Ethyl-3,4-dimethyloctane",
+      "b": "2,2,4,4-Tetramethylhexane",
+      "c": "2,2,4,5-Tetramethylheptane",
+      "d": "2,2,3,3-Tetramethylpentane"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Hydrocarbons",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 71,
+    "question_text": "The compound with molecular formula C₆H₆, which gives only one monobromo derivative and takes up four moles of hydrogen per mole for complete hydrogenation has ______ $\\pi$ electrons.",
+    "options": {
+      "a": "4",
+      "b": "6",
+      "c": "8",
+      "d": "10"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Hydrocarbons",
+    "difficulty": "Hard",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 72,
+    "question_text": "Niobium (Nb) and ruthenium (Ru) have \"x\" and \"y\" number of electrons in their respective 4d orbitals. The value of x + y is",
+    "options": {
+      "a": "10",
+      "b": "11",
+      "c": "12",
+      "d": "9"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Electronic Configuration",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 73,
+    "question_text": "The complex of Ni²⁺ ion and dimethyl glyoxime contains ________ number of Hydrogen (H) atoms.",
+    "options": {
+      "a": "12",
+      "b": "14",
+      "c": "16",
+      "d": "18"
+    },
+    "correct_answer": "b",
+    "explanation": "",
+    "topic": "Coordination Chemistry",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 74,
+    "question_text": "Consider the following standard enthalpy of reactions ($\\Delta H^\\circ$ in kJ mol⁻¹)\n$C_2H_6(g) + \\frac{7}{2}O_2(g) \\to 2CO_2(g) + 3H_2O(l) \\quad \\Delta H^\\circ = -1550$\n$C(graphite) + O_2(g) \\to CO_2(g) \\quad \\Delta H^\\circ = -393.5$\n$H_2(g) + \\frac{1}{2}O_2(g) \\to H_2O(l) \\quad \\Delta H^\\circ = -286$\nThe magnitude of standard enthalpy of formation for $C_2H_6(g)$ ($\\Delta H_f^\\circ$) is _____ kJ mol⁻¹ (Nearest integer).",
+    "options": {
+      "a": "84",
+      "b": "95",
+      "c": "105",
+      "d": "120"
+    },
+    "correct_answer": "a",
+    "explanation": "",
+    "topic": "Thermochemistry",
+    "difficulty": "Medium",
+    "subject": null,
+    "section_id": null
+  },
+  {
+    "question_number": 75,
+    "question_text": "20 mL of 2 M NaOH solution is added to 400 mL of 0.5 M NaOH solution. The final concentration of the solution is _____ × 10⁻² M. (Nearest integer).",
+    "options": {
+      "a": "50",
+      "b": "53",
+      "c": "57",
+      "d": "60"
+    },
+    "correct_answer": "c",
+    "explanation": "",
+    "topic": "Solutions",
+    "difficulty": "Easy",
+    "subject": null,
+    "section_id": null
+  }
+]

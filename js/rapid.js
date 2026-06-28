@@ -12,7 +12,7 @@ import { navTo } from './router.js';
 // ── Rapid Fire state ──
 export let RF = {
   qs:[], cur:0, score:0, correct:0, total:0, streak:0, bestStreak:0,
-  timer:null, left:120, difficulty:'Foundation',
+  timer:null, left:120, difficulty:'JEE Main',
 };
 
 export function setRFDifficulty(difficulty) {
@@ -89,7 +89,7 @@ function renderRFQ() {
   const q = RF.qs[RF.cur];
   const ls = ['A','B','C','D'];
   const sc = q.subject === 'Physics' ? 'phy' : q.subject === 'Chemistry' ? 'chem' : 'math';
-  const dc = q.difficulty === 'Foundation' ? 'fnd' : q.difficulty === 'JEE Main' ? 'main' : 'adv';
+  const dc = q.difficulty === 'JEE Main' ? 'main' : q.difficulty === 'JEE Advanced' ? 'adv' : q.difficulty === 'Easy' ? 'easy' : q.difficulty === 'Medium' ? 'medium' : q.difficulty === 'Hard' ? 'hard' : 'main';
   const opts = q.options
     .map(
       (opt, i) =>

@@ -1,0 +1,1266 @@
+unique_id,Shift Name,Subject,Question Number,Question Text,Correct Option
+e0d7c5a9-1325-4f0a-997d-fe2f4c1315b6,JEE Main 2025 (22 Jan Shift 1),Mathematics,1,"Let $a_1, a_2, a_3, \ldots$ be a G.P. of increasing terms. If $a_1 a_5 = 28$ and $a_2 + a_4 = 29$, then $a_6$ is equal to:
+
+(1) 628  
+(2) 812  
+(3) 526  
+(4) 784",4
+08d4f2e5-79ce-4622-add6-d93266ac5637,JEE Main 2025 (22 Jan Shift 1),Mathematics,2,"Let $x = x(y)$ be the solution of the differential equation $y^2 \, dx + (x - \frac{1}{y}) \, dy = 0$. If $x(1) = 1$, then $x \left( \frac{1}{3} \right)$ is:
+
+(1) $\frac{1}{3} + e$  
+(2) $3 + e$  
+(3) $3 - e$  
+(4) $\frac{3}{2} + e$",3
+204278cb-f634-49b7-aab5-39caf9d1b0c0,JEE Main 2025 (22 Jan Shift 1),Mathematics,3,"Two balls are selected at random one by one without replacement from a bag containing 4 white and 6 black balls. If the probability that the first selected ball is black, given that the second selected ball is also black, is $\frac{m}{n}$, where $\gcd(m, n) = 1$, then $m + n$ is equal to:
+
+(1) 4  
+(2) 14  
+(3) 13  
+(4) 11",2
+e988b658-42ea-4ae7-bbdf-be615cbcb52c,JEE Main 2025 (22 Jan Shift 1),Mathematics,4,"The product of all solutions of the equation $e^{5 \log x^2 + 3} = x^8, x > 0$, is:
+
+(1) $e^{8/5}$  
+(2) $e^{6/5}$  
+(3) $e^{2}$  
+(4) $e$",1
+f0f1ad4e-2071-4dce-8938-4c1fadada37b,JEE Main 2025 (22 Jan Shift 1),Mathematics,5,"Let the triangle PQR be the image of the triangle with vertices $(1, 3), (3, 1)$ and $(2, 4)$ in the line $x + 2y = 2$. If the centroid of $\triangle PQR$ is the point $(\alpha, \beta)$, then $15(\alpha - \beta)$ is equal to:
+
+(1) 19  
+(2) 24  
+(3) 21  
+(4) 22",4
+664b04f0-da33-499a-a662-520d29573c7c,JEE Main 2025 (22 Jan Shift 1),Mathematics,6,"Let for $f(x) = 7 \tan^8 x + 7 \tan^6 x - 3 \tan^4 x - 3 \tan^2 x$, $I_1 = \int_{0}^{\pi/4} f(x) \, dx$ and $I_2 = \int_{0}^{\pi/4} x f(x) \, dx$. Then $7I_1 + 12I_2$ is equal to:
+
+(1) 2  
+(2) 1  
+(3) $2\pi$  
+(4) $\pi$",2
+89bc55ee-62e6-4c46-b1ff-ec9357df79a0,JEE Main 2025 (22 Jan Shift 1),Mathematics,7,"Let the parabola $y = x^2 + px - 3$, meet the coordinate axes at the points P, Q and R. If the circle C with centre at $(\alpha, \beta)$ passes through the points P, Q and R, then the area of $\triangle PQR$ is:
+
+(1) 7  
+(2) 4  
+(3) 3  
+(4) 5",3
+d747393b-66be-4c6a-a129-fad2f2e01985,JEE Main 2025 (22 Jan Shift 1),Mathematics,8,"Let $L_1 : \frac{x-1}{2} = \frac{y-2}{3} = \frac{z-3}{4}$ and $L_2 : \frac{x-3}{2} = \frac{y-4}{3} = \frac{z-5}{4}$ be two lines. Then which of the following points lies on the line of the shortest distance between $L_1$ and $L_2$?
+
+(1) $\left( \frac{14}{5}, -3, \frac{22}{3} \right)$  
+(2) $\left( -\frac{5}{3}, -7, 1 \right)$  
+(3) $\left( 2, 3, \frac{1}{2} \right)$  
+(4) $\left( \frac{5}{3}, -1, \frac{1}{2} \right)$",1
+c485593e-f8a4-4b04-9036-b4b0f7085acc,JEE Main 2025 (22 Jan Shift 1),Mathematics,9,"Let $f(x)$ be a real differentiable function such that $f(0) = 1$ and $f(x + y) = f(x)f(y) + f'(x)f(y)$ for all $x, y \in \mathbb{R}$. Then $\sum_{n=1}^{100} \log_2 f(n)$ is equal to:
+
+(1) 2525  
+(2) 5220  
+(3) 2384  
+(4) 2406",1
+1ef41510-bd7f-4907-ad8b-7d4fcc50395d,JEE Main 2025 (22 Jan Shift 1),Mathematics,10,"From all the English alphabets, five letters are chosen and are arranged in alphabetical order. The total number of ways, in which the middle letter is 'M', is:(1) 5148  
+(2) 6084  
+(3) 4356  
+(4) 14950  ",1
+aeb18745-57be-4719-b72d-ec3323bc24ed,JEE Main 2025 (22 Jan Shift 1),Mathematics,11,"Using the principal values of the inverse trigonometric functions, the sum of the maximum and the minimum values of \(16 \left( \sec^{-1} x \right)^2 + \left( \cosec^{-1} x \right)^2 \) is:
+
+(1) \(24\pi^2\)  
+(2) \(22\pi^2\)  
+(3) \(31\pi^2\)  
+(4) \(18\pi^2\)",2
+d0973693-11dc-4dc4-b641-a23af7fd1fe1,JEE Main 2025 (22 Jan Shift 1),Mathematics,12,"Let \(f : \mathbb{R} \rightarrow \mathbb{R}\) be a twice differentiable function such that \(f(x + y) = f(x)f(y)\) for all \(x, y \in \mathbb{R}\). If \(f'(0) = 4a\) and \(f\) satisfies \(f''(x) - 3af'(x) - f(x) = 0, a > 0\), then the area of the region \(R = \{(x, y) \mid 0 \leq y \leq f(ax), 0 \leq x \leq 2\}\) is:
+
+(1) \(e^2 - 1\)  
+(2) \(e^2 + 1\)  
+(3) \(e^4 + 1\)  
+(4) \(e^4 - 1\)",1
+f9fe4e71-6076-4ad0-88d5-6faae33fb0fe,JEE Main 2025 (22 Jan Shift 1),Mathematics,13,"The area of the region, inside the circle \((x - 2\sqrt{3})^2 + y^2 = 12\) and outside the parabola \(y^2 = 2\sqrt{3}x\) is:
+
+(1) \(3\pi + 8\)  
+(2) \(6\pi - 16\)  
+(3) \(3\pi - 8\)  
+(4) \(6\pi - 8\)",2
+4a6f25fe-1f9c-446b-a0a2-d20848ea8c84,JEE Main 2025 (22 Jan Shift 1),Mathematics,14,"Let the foci of a hyperbola be \((1, 14)\) and \((1, -12)\). If it passes through the point \((1, 6)\), then the length of its latus-rectum is:
+
+(1) \(\frac{24}{5}\)  
+(2) \(\frac{25}{9}\)  
+(3) \(\frac{144}{5}\)  
+(4) \(\frac{288}{5}\)",4
+3ccbdac9-3078-4d90-bf32-dd8d28c405cb,JEE Main 2025 (22 Jan Shift 1),Mathematics,15,"If \(\sum_{r=1}^{n} T_r = \frac{(2n-1)(2n+1)(2n+3)(2n+5)}{64}\), then \(\lim_{n \to \infty} \sum_{r=1}^{n} \left( \frac{1}{T_r} \right)\) is equal to:
+
+(1) \(0\)  
+(2) \(\frac{4}{3}\)  
+(3) \(1\)  
+(4) \(\frac{1}{2}\)",2
+0686a602-5a84-4d9b-ae94-09884e6a8e30,JEE Main 2025 (22 Jan Shift 1),Mathematics,16,"A coin is tossed three times. Let \(X\) denote the number of times a tail follows a head. If \(\mu\) and \(\sigma^2\) denote the mean and variance of \(X\), then the value of \(64(\mu + \sigma^2)\) is:
+
+(1) \(51\)  
+(2) \(64\)  
+(3) \(32\)  
+(4) \(48\)",4
+f3ef4b6f-0c2d-40db-9345-812517d65036,JEE Main 2025 (22 Jan Shift 1),Mathematics,17,"The number of non-empty equivalence relations on the set \(\{1, 2, 3\}\) is:
+
+(1) \(6\)  
+(2) \(5\)  
+(3) \(7\)  
+(4) \(4\)",2
+888ff468-a611-426c-8353-8c514f90010a,JEE Main 2025 (22 Jan Shift 1),Mathematics,18,"A circle \(C\) of radius 2 lies in the second quadrant and touches both the coordinate axes. Let \(r\) be the radius of a circle that has centre at the point \((2, 5)\) and intersects the circle \(C\) at exactly two points. If the set of all possible values of \(r\) is the interval \((\alpha, \beta)\), then \(3\beta - 2\alpha\) is equal to:
+
+(1) \(10\)  
+(2) \(15\)  
+(3) \(12\)  
+(4) \(14\)",2
+d3222c23-1187-43fd-8d44-339a5847e490,JEE Main 2025 (22 Jan Shift 1),Mathematics,19,"Let \(A = \{1, 2, 3, \ldots, 10\}\) and \(B = \left\{ \frac{m}{n} : m, n \in A, m < n \text{ and } \gcd(m, n) = 1 \right\}\). Then \(n(B)\) is equal to:
+
+(1) \(36\)  
+(2) \(31\)  
+(3) \(37\)  
+(4) \(29\)",2
+0f735c17-069f-47a0-b141-6d20b9dc2aa5,JEE Main 2025 (22 Jan Shift 1),Mathematics,20,"Let $z_1, z_2$ and $z_3$ be three complex numbers on the circle $|z| = 1$ with $\arg(z_1) = \frac{\pi}{4}, \arg(z_2) = 0$ and $\arg(z_3) = \frac{\pi}{4}$. If $|z_1 \bar{z}_2 + z_2 \bar{z}_3 + z_3 \bar{z}_1|^2 = \alpha + \beta \sqrt{3}, \alpha, \beta \in \mathbb{Z}$, then the value of $\alpha^2 + \beta^2$ is:
+
+(1) 24  (2) 29  (3) 41  (4) 31",2
+df79631f-6609-43dd-b1ac-013424516e62,JEE Main 2025 (22 Jan Shift 1),Mathematics,21,"Let $A$ be a square matrix of order 3 such that $\det(A) = -2$ and $\det(3 \text{adj}(-6 \text{adj}(3A))) = 2^{m+n} \cdot 3^n, m > n$. Then $4m + 2n$ is equal to ________.",34
+239963a0-82b3-415f-8c7c-66dea1cd6c9e,JEE Main 2025 (22 Jan Shift 1),Mathematics,22,"If $\sum_{r=0}^{5} \frac{1}{2r+1} = \frac{m}{n}, \gcd(m, n) = 1$, then $m - n$ is equal to ________.",2035
+719ddc1e-7de1-4df5-81b0-e414c42d9dde,JEE Main 2025 (22 Jan Shift 1),Mathematics,23,"Let $\vec{c}$ be the projection vector of $\vec{b} = \lambda \hat{i} + 4\hat{k}, \lambda > 0$, on the vector $\vec{a} = 2\hat{i} + 2\hat{j} + 2\hat{k}$. If $|\vec{a} + \vec{c}| = 7$, then the area of the parallelogram formed by the vectors $\vec{b}$ and $\vec{c}$ is ________.",16
+702b65df-7f7b-44c5-b0d9-c278927042f5,JEE Main 2025 (22 Jan Shift 1),Mathematics,24,"Let the function, $f(x) = \begin{cases} -3ax^2 - 2, & x < 1 \\ ax^2 + bx, & x \geq 1 \end{cases}$ be differentiable for all $x \in \mathbb{R}$, where $a > 1, b \in \mathbb{R}$. If the area of the region enclosed by $y = f(x)$ and the line $y = -20$ is $\alpha + \beta \sqrt{3}, \alpha, \beta \in \mathbb{Z}$, then the value of $\alpha + \beta$ is ________.",34
+a721a0ed-f380-415a-847b-92fb2201fc16,JEE Main 2025 (22 Jan Shift 1),Mathematics,25,"Let $L_1 : z = \frac{-1}{8} = \frac{z+1}{0}$ and $L_2 : z = \frac{-2}{3} = \frac{z+4}{1}, \alpha \in \mathbb{R}$, be two lines, which intersect at the point $B$. If $P$ is the foot of perpendicular from the point $A(1, 1, -1)$ on $L_2$, then the value of $26\alpha(\text{PB})^2$ is ________.",216
+ec9be866-f5d0-4250-8a11-f61a959bc365,JEE Main 2025 (29 Jan Shift 2),Mathematics,1,"Let \( f(x) = \int_0^1 (t^2 - 9t + 20)\,dt, \quad 1 \leq x \leq 5. \) If the range of \( f \) is \([\alpha, \beta]\), then \( 4(\alpha + \beta) \) equals:
+
+(1) 253  (2) 154  (3) 125  (4) 157",4
+35e5cab3-72da-45e2-8679-11c34e004f13,JEE Main 2025 (29 Jan Shift 2),Mathematics,2,"Let \( \vec{a} \) be a unit vector perpendicular to the vectors \( \vec{b} = \hat{i} - 2\hat{j} + 3\hat{k} \) and \( \vec{c} = 2\hat{i} + 3\hat{j} - \hat{k} \), and makes an angle of \( \cos^{-1}\left(-\frac{1}{2}\right) \) with the vector \( \hat{i} + \hat{j} + \hat{k} \). If \( \vec{a} \) makes an angle of \( \frac{\pi}{3} \) with the vector \( \hat{i} + \alpha\hat{j} + \hat{k} \), then the value of \( \alpha \) is:
+
+(1) \( \sqrt{6} \)  (2) \( -\sqrt{6} \)  (3) \( -\sqrt{3} \)  (4) \( \sqrt{3} \)",2
+368b2e82-01b2-485e-9cde-e017dcb43030,JEE Main 2025 (29 Jan Shift 2),Mathematics,3,"If for the solution curve \( y = f(x) \) of the differential equation \( \frac{dy}{dx} + (\tan x)y = \frac{2 + \sec x}{(1 + 2\sec x)^2} \), \( x \in \left(-\frac{\pi}{2}, \frac{\pi}{2}\right) \), then \( f\left(\frac{\pi}{4}\right) \) is equal to:
+
+(1) \( \frac{\sqrt{3} - 1}{10(4+\sqrt{3})} \)  (2) \( \frac{\sqrt{3} - 1}{2\sqrt{3} - 2} \)  (3) \( \frac{\sqrt{3} - 1}{10(4+\sqrt{3})} \)  (4) \( \frac{5 - \sqrt{3}}{14} \)",4
+034ed0dc-97f8-4959-a406-a0402b39512c,JEE Main 2025 (29 Jan Shift 2),Mathematics,4,"Let \( P \) be the foot of the perpendicular from the point \( (1, 2, 2) \) on the line \( L : \frac{x-1}{1} = \frac{y+1}{2} = \frac{z-2}{2} \). Let the line \( \vec{r} = (-\hat{i} + \hat{j} - 2\hat{k}) + \lambda(\hat{i} - \hat{j} + \hat{k}), \lambda \in \mathbb{R} \), intersect the line \( L \) at \( Q \). Then \( 2(PQ)^2 \) is equal to:
+
+(1) 25  (2) 19  (3) 29  (4) 27",4
+c6fa73d4-22f1-4c73-9a85-06f42c3d90b0,JEE Main 2025 (29 Jan Shift 2),Mathematics,5,"Let \( A = [a_{ij}] \) be a matrix of order \( 3 \times 3 \), with \( a_{ij} = (\sqrt{2})^{i+j} \). If the sum of all the elements in the third row of \( A^2 \) is \( \alpha + \beta\sqrt{2} \), \( \alpha, \beta \in \mathbb{Z} \), then \( \alpha + \beta \) is equal to:
+
+(1) 280  (2) 224  (3) 210  (4) 168",2
+906f9a68-1701-442f-b6d5-09686497c68e,JEE Main 2025 (29 Jan Shift 2),Mathematics,6,"Let the line \( x + y = 1 \) meet the axes of \( x \) and \( y \) at \( A \) and \( B \), respectively. A right angled triangle \( AMN \) is inscribed in the triangle \( OAB \), where \( O \) is the origin and the points \( M \) and \( N \) lie on the lines \( OB \) and \( AB \), respectively. If the area of the triangle \( AMN \) is \( \frac{4}{5} \) of the area of the triangle \( OAB \) and \( AN : NB = \lambda : 1 \), then the sum of all possible value(s) of \( \lambda \) is:
+
+(1) 2  (2) \( \frac{5}{2} \)  (3) \( \frac{1}{2} \)  (4) \( \frac{13}{6} \)",1
+b7a6bf6c-1bc0-4cc2-95f9-a5d50b065ec6,JEE Main 2025 (29 Jan Shift 2),Mathematics,7,"If all the words with or without meaning made using all the letters of the word ""KANPUR"" are arranged in a dictionary, then the word at 440th position in this arrangement, is:
+
+(1) PRNAUK  (2) PRKANU  (3) PRKAUN  (4) PRNAUK",3
+ef21afd8-084b-4d2b-bdaa-3802ac96f2b5,JEE Main 2025 (29 Jan Shift 2),Mathematics,8,"If the set of all \( a \in \mathbb{R} \), for which the equation \( 2x^2 + (a - 5)x + 15 = 3a \) has no real root, is the interval \((\alpha, \beta)\), and \( X = \{x \in \mathbb{Z} : \alpha < x < \beta\} \), then \( \sum_{x \in X} x^2 \) is equal to:
+
+(1) 2109  (2) 2129  (3) 2119  (4) 2139",4
+871bdfa7-de89-4ac4-a10f-ae86f6d7ca3e,JEE Main 2025 (29 Jan Shift 2),Mathematics,9,"Let \( A = [a_{ij}] \) be a \( 2 \times 2 \) matrix such that \( a_{ij} \in \{0, 1\} \) for all \( i \) and \( j \). Let the random variable \( X \) denote the possible values of the determinant of the matrix \( A \). Then, the variance of \( X \) is:(1) \( \frac{3}{8} \)  
+(2) \( \frac{5}{8} \)  
+(3) \( \frac{3}{8} \)  
+(4) \( \frac{1}{4} \)  ",3
+dd382693-5904-47f1-adae-2d25135a2a52,JEE Main 2025 (29 Jan Shift 2),Mathematics,10,"Let the function \( f(x) = (x^2 + 1) \left|x^2 - ax + 2 \right| + \cos |x| \) be not differentiable at the two points \( x = \alpha = 2 \) and \( x = \beta \). Then the distance of the point \((\alpha, \beta)\) from the line \(12x + 5y + 10 = 0\) is equal to:
+
+(1) 5  
+(2) 4  
+(3) 3  
+(4) 2",3
+5eb60c4b-a5ad-4f28-9aa2-d26655ee2b96,JEE Main 2025 (29 Jan Shift 2),Mathematics,11,"Let the area enclosed between the curves \( |y| = 1 - x^2 \) and \( x^2 + y^2 = 1 \) be \( \alpha \). If \( 9\alpha = \beta \pi + \gamma \), \( \beta, \gamma \) are integers, then the value of \(|\beta - \gamma|\) equals.
+
+(1) 27  
+(2) 33  
+(3) 15  
+(4) 18",2
+be10c500-adb2-4a82-b9a7-c768ae0f1c50,JEE Main 2025 (29 Jan Shift 2),Mathematics,12,"The remainder, when \( 7^{10^3} \) is divided by 23, is equal to:
+
+(1) 6  
+(2) 17  
+(3) 9  
+(4) 14",4
+b45bc7e2-fdf6-47e8-b2b9-962e11c3f8f4,JEE Main 2025 (29 Jan Shift 2),Mathematics,13,"If \( \alpha x + \beta y = 109 \) is the equation of the chord of the ellipse \( \frac{x^2}{\alpha} + \frac{y^2}{\beta} = 1 \), whose mid point is \( \left( \frac{1}{2}, \frac{1}{4} \right) \), then \( \alpha + \beta \) is equal to:
+
+(1) 58  
+(2) 46  
+(3) 37  
+(4) 72",1
+dcddf043-98de-4a82-8127-0f309a5b5588,JEE Main 2025 (29 Jan Shift 2),Mathematics,14,"If the domain of the function \( \log_5 (18x - x^2 - 77) \) is \( (\alpha, \beta) \) and the domain of the function \( \log(x-1) \left( \frac{2x^2 + 3x - 2}{x^2 - 3x - 4} \right) \) is \( (\gamma, \delta) \), then \( \alpha^2 + \beta^2 + \gamma^2 \) is equal to:
+
+(1) 195  
+(2) 179  
+(3) 186  
+(4) 174",3
+67f0e924-1075-4881-be6e-0567d5b1cb9c,JEE Main 2025 (29 Jan Shift 2),Mathematics,15,"Let a circle \( C \) pass through the points \( (4, 2) \) and \( (0, 2) \), and its centre lie on \( 3x + 2y + 2 = 0 \). Then the length of the chord, of the circle \( C \), whose mid-point is \( (1, 2) \), is:
+
+(1) \( \sqrt{3} \)  
+(2) \( 2\sqrt{2} \)  
+(3) \( 2\sqrt{3} \)  
+(4) \( 4\sqrt{2} \)",3
+a622af54-b6f8-49d7-a20d-cb4055c187a8,JEE Main 2025 (29 Jan Shift 2),Mathematics,16,"Let a straight line \( L \) pass through the point \( P(2, -1, 3) \) and be perpendicular to the lines \( \frac{x-1}{2} = \frac{y+1}{1} = \frac{z-3}{-2} \) and \( \frac{x-3}{1} = \frac{y-2}{-1} = \frac{z+2}{4} \). If the line \( L \) intersects the \( yz \)-plane at the point \( Q \), then the distance between the points \( P \) and \( Q \) is:
+
+(1) \( \sqrt{10} \)  
+(2) \( 2\sqrt{3} \)  
+(3) 2  
+(4) 3",4
+bf95aebc-42f7-48ac-8f31-59073d69fc4e,JEE Main 2025 (29 Jan Shift 2),Mathematics,17,"Bag 1 contains 4 white balls and 5 black balls, and Bag 2 contains \( n \) white balls and 3 black balls. One ball is drawn randomly from Bag 1 and transferred to Bag 2. A ball is then drawn randomly from Bag 2. If the probability, that the ball drawn is white, is \( \frac{29}{45} \), then \( n \) is equal to:
+
+(1) 6  
+(2) 3  
+(3) 5  
+(4) 4",1
+f2175a59-df34-4c91-9c7d-d9880d79d3a5,JEE Main 2025 (29 Jan Shift 2),Mathematics,18,"Let $\alpha, \beta (\alpha \neq \beta)$ be the values of $m$, for which the equations $x + y + z = 1, x + 2y + 4z = m$ and $x + 4y + 10z = m^2$ have infinitely many solutions. Then the value of $\sum_{n=1}^{10} (n^\alpha + n^\beta)$ is equal to:
+
+(1) 3080
+(2) 560
+(3) 3410
+(4) 440",4
+c74e8625-9c18-429e-9232-354a6a6c0d5e,JEE Main 2025 (29 Jan Shift 2),Mathematics,19,"Let $S = N \cup \{0\}$. Define a relation $R$ from $S$ to $R$ by $R = \{ (x, y) : \log_e y = x \log_e \left( \frac{2}{3} \right), x \in S, y \in R \}$
+
+Then, the sum of all the elements in the range of $R$ is equal to:
+
+(1) $\frac{10}{9}$
+(2) $\frac{5}{2}$
+(3) $\frac{\sqrt{3}}{2}$
+(4) $\frac{1}{3}$",4
+83fc3287-ea27-433e-9432-41a5ccc19e93,JEE Main 2025 (29 Jan Shift 2),Mathematics,20,"If $\sin x + \sin^2 x = 1, x \in \left(0, \frac{\pi}{2}\right)$, then
+
+$(\cos^{12} x + x \tan^{12} x) + 3 (\cos^{10} x + \tan^{10} x + \cos^8 x + \tan^8 x) + (\cos^6 x + \tan^6 x)$ is equal to:
+
+(1) 4
+(2) $\frac{4}{3}$
+(3) 3
+(4) 2",4
+0b94f03a-6e37-44d4-a32e-639768bcf41a,JEE Main 2025 (29 Jan Shift 2),Mathematics,21,"If $24 \int_0^\frac{\pi}{3} (\sin 4x - \frac{1}{12}) + (2 \sin x) \ dx = 2\pi + \alpha$, where $[\cdot]$ denotes the greatest integer function, then $\alpha$ is equal to ________.",12
+9d8c9921-7ad2-44e5-9db4-f0e957421b1c,JEE Main 2025 (29 Jan Shift 2),Mathematics,22,"Let $a_1, a_2, \ldots, a_{2024}$ be an Arithmetic Progression such that $a_1 + (a_5 + a_{10} + a_{15} + \ldots + a_{2020}) + a_{2024} = 2233$. Then $a_1 + a_2 + a_3 + \ldots + a_{2024}$ is equal to ________.",11132
+96f0e2bd-4dc5-475b-96c4-95e9dd872243,JEE Main 2025 (29 Jan Shift 2),Mathematics,23,"If $\lim_{x \to 0} \left( \int_0^1 (3x + 5)^4 \ dx \right)^{\frac{1}{5}} = \frac{a}{5^\alpha} \left( \frac{6}{5} \right)^\frac{\beta}{5}$, then $\alpha$ is equal to ________.",64
+d1f5c97d-292a-41fb-bcdc-9b2129e4281c,JEE Main 2025 (29 Jan Shift 2),Mathematics,24,"Let $y^2 = 12x$ be the parabola and $S$ be its focus. Let $PQ$ be a focal chord of the parabola such that $(\text{SP})(\text{SQ}) = 144$. Let $C$ be the circle described taking $PQ$ as a diameter. If the equation of a circle $C$ is $64x^2 + 64y^2 - 16x - 64\sqrt{3}y = \beta$, then $\beta - \alpha$ is equal to ________.",1328
+608cb694-9676-4e36-80d5-45ee0c8e75c6,JEE Main 2025 (29 Jan Shift 2),Mathematics,25,"Let integers $a, b \in [-3, 3]$ be such that $a + b \neq 0$. Then the number of all possible ordered pairs $(a, b)$, for which $|\frac{x - a}{x + b}| = 1$ and $\begin{vmatrix} z + 1 & \omega & \omega^2 \\ \omega & z + \omega^2 & 1 \\ \omega^2 & 1 & z + \omega \end{vmatrix} = 1, z \in \mathbb{C}$, where $\omega$ and $\omega^2$ are the roots of $x^2 + x + 1 = 0$, is equal to ________.",10
+d0af9cd1-adf9-44e6-b6d2-687330d7feaf,JEE Main 2025 (22 Jan Shift 2),Mathematics,1,"For a $3 \times 3$ matrix $M$, let trace ($M$) denote the sum of all the diagonal elements of $M$. Let $A$ be a $3 \times 3$ matrix such that $|A| = \frac{1}{2}$ and trace ($A$) = 3. If $B = \text{adj(adj}(2A))$, then the value of $|B| + \text{trace (B)}$ equals:
+
+1. 56
+2. 132
+3. 174
+4. 280",4
+543e2004-2c62-40f4-be96-639a9ead7604,JEE Main 2025 (22 Jan Shift 2),Mathematics,2,"In a group of 3 girls and 4 boys, there are two boys $B_1$ and $B_2$. The number of ways, in which these girls and boys can stand in a queue such that all the girls stand together, all the boys stand together, but $B_1$ and $B_2$ are not adjacent to each other, is:
+
+1. 96
+2. 144
+3. 120
+4. 72",2
+f2b30fa8-86b8-4027-91a1-dc1625cab997,JEE Main 2025 (22 Jan Shift 2),Mathematics,3,"Let $\alpha, \beta, \gamma$ and $\delta$ be the coefficients of $x^7, x^5, x^3$ and $x$ respectively in the expansion of $(x + \sqrt{x^3 - 1})^5 + (x - \sqrt{x^3 - 1})^5, x > 1$. If $u$ and $v$ satisfy the equations $\alpha u + \beta v = 18$ and $\gamma u + \delta v = 20$, then $u + v$ equals:
+
+1. 5
+2. 4
+3. 3
+4. 8",1
+64133d32-f5f1-47e1-97c0-7f990cae9160,JEE Main 2025 (22 Jan Shift 2),Mathematics,4,"Let a line pass through two distinct points $P(-2, -1, 3)$ and $Q$, and be parallel to the vector $3\hat{i} + 2\hat{j} + 2\hat{k}$. If the distance of the point $Q$ from the point $R(1, 3, 3)$ is 5, then the area of the triangle $\Delta PQR$ is equal to:
+
+1. 148
+2. 136
+3. 144
+4. 140",2
+1213b036-8cd7-477e-9318-558044637164,JEE Main 2025 (22 Jan Shift 2),Mathematics,5,"If $A$ and $B$ are two events such that $P(A \cap B) = 0.1$, and $P(A \mid B)$ and $P(B \mid A)$ are the roots of the equation $12x^2 - 7x + 1 = 0$, then the value of $\frac{P(A \cup B)}{P(A \cap B)}$ is:
+
+1. $\frac{4}{3}
+2. \frac{7}{4}
+3. \frac{5}{3}
+4. \frac{3}{4}$",4
+b346e320-6ede-4419-8068-12e151527048,JEE Main 2025 (22 Jan Shift 2),Mathematics,6,"If $\int e^x \left( \frac{x^2 - 1}{\sqrt{1-x^2}} + \frac{x^2 - 1}{\sqrt{1-x^2}} \right) dx = g(x) + C$, where $C$ is the constant of integration, then $g \left( \frac{1}{2} \right)$ equals:
+
+1. $\frac{\pi}{4} \sqrt{\frac{e}{3}}$
+2. $\frac{\pi}{6} \sqrt{\frac{e}{3}}$
+3. $\frac{\pi}{4} \sqrt{\frac{e}{3}}$
+4. $\frac{\pi}{6} \sqrt{\frac{e}{3}}$",2
+8b63e5f8-b075-4142-a8de-2419cd1f1a99,JEE Main 2025 (22 Jan Shift 2),Mathematics,7,"The area of the region enclosed by the curves $y = x^2 - 4x + 4$ and $y^2 = 16 - 8x$ is:
+
+1. $\frac{8}{3}$
+2. $\frac{4}{3}$
+3. 8
+4. $\frac{3}{2}$",1
+353189b4-26ef-42bc-8232-2c2905826d29,JEE Main 2025 (22 Jan Shift 2),Mathematics,8,"Let $f(x) = \int_0^x t^2 \frac{t^2 - 8 + 16}{t^2} dt, x \in \mathbb{R}$. Then the numbers of local maximum and local minimum points of $f$, respectively, are:
+
+1. 2 and 3
+2. 2 and 1
+3. 3 and 2
+4. 1 and 3",1
+6050b2c9-2f29-428b-b1a2-645018469c78,JEE Main 2025 (22 Jan Shift 2),Mathematics,9,"Let $P(4, 4\sqrt{3})$ be a point on the parabola $y^2 = 4ax$ and $PQ$ be a focal chord of the parabola. If $M$ and $N$ are the foot of perpendiculars drawn from $P$ and $Q$ respectively on the directrix of the parabola, then the area of the quadrilateral PQMN is equal to: (1) \( 17\sqrt{3} \)  
+(2) \( \frac{263\sqrt{3}}{8} \)  
+(3) \( \frac{34\sqrt{3}}{3} \)  
+(4) \( \frac{34\sqrt{3}}{8} \) ",4
+69f6b4c7-326e-4b13-8b97-e761e52bfd89,JEE Main 2025 (22 Jan Shift 2),Mathematics,10,"Let \( \mathbf{a} \) and \( \mathbf{b} \) be two unit vectors such that the angle between them is \( \frac{\pi}{3} \). If \( \lambda \mathbf{a} + 2\mathbf{b} \) and \( 3\mathbf{a} - \lambda \mathbf{b} \) are perpendicular to each other, then the number of values of \( \lambda \) in \([-1, 3]\) is:
+
+1. 2
+2. 1
+3. 0
+4. 3",3
+f663e627-ddd3-4c39-b7b9-111eee8e8269,JEE Main 2025 (22 Jan Shift 2),Mathematics,11,"If \( \lim_{x \to \infty} \left( \left( \frac{x}{1-x} \right) \left( \frac{1-x}{x+2} \right) \right)^x = \alpha \), then the value of \( \log_x \alpha \) equals:
+
+1. \( e^{-1} \)
+2. \( e^2 \)
+3. \( e^4 \)
+4. \( e^6 \)",4
+437d1d0a-9050-4f22-aae3-8dc8b2421add,JEE Main 2025 (22 Jan Shift 2),Mathematics,12,"Let \( A = \{1, 2, 3, 4\} \) and \( B = \{1, 4, 9, 16\} \). Then the number of many-one functions \( f : A \to B \) such that \( 1 \in f(A) \) is equal to:
+
+1. 151
+2. 139
+3. 163
+4. 127",1
+f4001f0f-9413-4ab1-a8f0-30257539b847,JEE Main 2025 (22 Jan Shift 2),Mathematics,13,"Suppose that the number of terms in an A.P. is \( 2k, k \in N \). If the sum of all odd terms of the A.P. is 40, the sum of all even terms is 55 and the last term of the A.P. exceeds the first term by 27, then \( k \) is equal to:
+
+1. 6
+2. 5
+3. 8
+4. 4",2
+271e1d93-bac3-4328-89f9-785cd030d496,JEE Main 2025 (22 Jan Shift 2),Mathematics,14,"The perpendicular distance, of the line \( \frac{x-1}{2} = \frac{y+2}{-1} = \frac{z+3}{2} \) from the point \( P(2, -10, 1) \), is:
+
+1. \( 4\sqrt{3} \)
+2. \( 5\sqrt{2} \)
+3. \( 4\sqrt{3} \)
+4. \( 3\sqrt{5} \)",4
+feab3b23-dde2-40ee-b7d3-26b1a5a545a3,JEE Main 2025 (22 Jan Shift 2),Mathematics,15,"The system of linear equations:
+
+\[
+\begin{align*}
+x + y + 2z &= 6 \\
+-2x + 3y + az &= a + 1 \\
+7a + 3b &= 0
+\end{align*}
+\]
+
+If the system of linear equations: \( 2x + 3y + az = a + 1 \) where \( a, b \in \mathbb{R} \), has infinitely many solutions, then \( 7a + 3b \) is equal to:
+
+1. 16
+2. 12
+3. 22
+4. 9",1
+08e5060e-dc0a-454f-b789-9af233997119,JEE Main 2025 (22 Jan Shift 2),Mathematics,16,"If \( x = f(y) \) is the solution of the differential equation \( (1 + y^2) + \left( x - 2e^{\tan^{-1} y} \right) \frac{dy}{dx} = 0 \), \( y \in \left( -\frac{\pi}{2}, \frac{\pi}{2} \right) \) with \( f(0) = 1 \), then \( f \left( \frac{1}{\sqrt{3}} \right) \) is equal to:
+
+1. \( e^{\pi/12} \)
+2. \( e^{\pi/4} \)
+3. \( e^{\pi/3} \)
+4. \( e^{\pi/6} \)",4
+0a58d51f-1bc6-488d-8536-9c62d69bbd89,JEE Main 2025 (22 Jan Shift 2),Mathematics,17,"Let \( \alpha_\theta \) and \( \beta_\theta \) be the distinct roots of \( 2x^2 + (\cos \theta)x - 1 = 0, \theta \in (0, 2\pi) \). If \( m \) and \( M \) are the minimum and the maximum values of \( \alpha^4_\theta + \beta^4_\theta \), then \( 16(M + m) \) equals:
+
+1. 24
+2. 25
+3. 17
+4. 27",2
+ba446548-3c5e-434a-a4f9-ff93210e0167,JEE Main 2025 (22 Jan Shift 2),Mathematics,18,"The sum of all values of \( \theta \in [0, 2\pi] \) satisfying \( 2\sin^2 \theta = \cos 2\theta \) and \( 2\cos^2 \theta = 3\sin \theta \) is (1) \( 4\pi \)  
+(2) \( \frac{5\pi}{6} \)  
+(3) \( \pi \)  
+(4) \( \frac{\pi}{2} \)  ",3
+7061bd67-c3b7-4aca-9919-70c9af344083,JEE Main 2025 (22 Jan Shift 2),Mathematics,19,"Let the curve \( z(1 + i) + \bar{z}(1 - i) = 4 \), \( z \in \mathbb{C} \), divide the region \( |z - 3| \leq 1 \) into two parts of areas \( \alpha \) and \( \beta \). Then \( |\alpha - \beta| \) equals:
+
+(1) \( 1 + \frac{\pi}{2} \)
+(2) \( 1 + \frac{\pi}{3} \)
+(3) \( 1 + \frac{\pi}{6} \)
+(4) \( 1 + \frac{\pi}{4} \)",1
+4108dd5f-fa57-4844-b135-30ab0af558d1,JEE Main 2025 (22 Jan Shift 2),Mathematics,20,"Let \( E: \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1, a > b \) and \( H: \frac{x^2}{A^2} - \frac{y^2}{B^2} = 1 \). Let the distance between the foci of \( E \) and the foci of \( H \) be \( 2\sqrt{3} \). If \( a - A = 2 \), and the ratio of the eccentricities of \( E \) and \( H \) is \( \frac{1}{3} \), then the sum of the lengths of their latus rectums is equal to:
+
+(1) 10
+(2) 9
+(3) 8
+(4) 7",3
+632756dd-ef72-4259-b346-9f43bb1fa419,JEE Main 2025 (22 Jan Shift 2),Mathematics,21,"If \( \sum_{r=1}^{30} \frac{r^3 (\cos \alpha)^2}{30C_r} = \alpha \times 2^{29} \), then \( \alpha \) is equal to _______.",465
+ccc20cc0-9a53-4c5b-8326-1b1a7627d330,JEE Main 2025 (22 Jan Shift 2),Mathematics,22,"Let \( A = \{1, 2, 3\} \). The number of relations on \( A \), containing (1, 2) and (2, 3), which are reflexive and transitive but not symmetric, is _______.",3
+488b8dc9-101e-496c-8d75-9e350b0b7330,JEE Main 2025 (22 Jan Shift 2),Mathematics,23,"Let \( A(6, 8), B(10 \cos \alpha, -10 \sin \alpha), C(-10 \sin \alpha, 10 \cos \alpha) \), be the vertices of a triangle. If \( L(a, 9) \) and \( G(h, k) \) be its orthocenter and centroid respectively, then \( 5a - 3h + 6k + 100 \sin 2\alpha \) is equal to _______.",145
+436d0a30-99f4-4a87-a9a3-3acecad4694f,JEE Main 2025 (22 Jan Shift 2),Mathematics,24,"Let \( y = f(x) \) be the solution of the differential equation \( \frac{dy}{dx} + \frac{xy}{x^2 - 1} = \frac{x^2 + 4x}{\sqrt{1-x^2}}, -1 < x < 1 \) such that \( f(0) = 0 \). If \( \int_{-1/2}^{1/2} f(x)dx = 2\pi - \alpha \) then \( \alpha^2 \) is equal to _______.",27
+bc79b31f-ddd7-4251-b859-b65f546db58f,JEE Main 2025 (22 Jan Shift 2),Mathematics,25,"Let the distance between two parallel lines be 5 units and a point \( P \) lie between the lines at a unit distance from one of them. An equilateral triangle \( PQR \) is formed such that \( Q \) lies on one of the parallel lines, while \( R \) lies on the other. Then \( (QR)^2 \) is equal to _______.",28
+33da9282-3bcc-4fd5-a591-c018b712af39,JEE Main 2025 (23 Jan Shift 1),Mathematics,1,"If the first term of an A.P. is 3 and the sum of its first four terms is equal to one-fifth of the sum of the next four terms, then the sum of the first 20 terms is equal to
+
+- (1) $-1080$
+- (2) $-1020$
+- (3) $-1200$
+- (4) $-120$",1
+4b9c830a-1db7-457c-851b-edd3a124ed9b,JEE Main 2025 (23 Jan Shift 1),Mathematics,2,"One die has two faces marked 1, two faces marked 2, one face marked 3 and one face marked 4. Another die has one face marked 1, two faces marked 2, two faces marked 3 and one face marked 4. The probability of getting the sum of numbers to be 4 or 5, when both the dice are thrown together, is
+
+- (1) $\frac{3}{16}$
+- (2) $\frac{1}{4}$
+- (3) $\frac{3}{8}$
+- (4) $\frac{5}{8}$",2
+d005ece7-0f50-42ba-ba3d-103b927db487,JEE Main 2025 (23 Jan Shift 1),Mathematics,3,"Let the position vectors of the vertices $A, B$ and $C$ of a tetrahedron $ABCD$ be $\mathbf{i} + 2\mathbf{j} + \mathbf{k}, \mathbf{i} + 3\mathbf{j} = 2\hat{k}$ and $2\mathbf{i} + \mathbf{j} - \mathbf{k}$ respectively. The altitude from the vertex $D$ to the opposite face $ABC$ meets the median line segment through $A$ of the triangle $ABC$ at the point $E$. If the length of $AD$ is $\frac{\sqrt{11}}{3}$ and the volume of the tetrahedron is $\frac{\sqrt{805}}{6}$, then the position vector of $E$ is
+
+- (1) $\frac{1}{3}(7\mathbf{i} + 4\mathbf{j} + 3\mathbf{k})$
+- (2) $\frac{1}{3}(i + 4\mathbf{j} + 7\mathbf{k})$
+- (3) $\frac{1}{3}(12\mathbf{i} + 12\mathbf{j} + \mathbf{k})$
+- (4) $\frac{1}{3}(7\mathbf{i} + 12\mathbf{j} + \mathbf{k})$",4
+a67dad96-e96b-4ce7-85be-94ffe8b32a82,JEE Main 2025 (23 Jan Shift 1),Mathematics,4,"If $A, B,$ and $(\text{adj} (A^{-1}) + \text{adj} (B^{-1}))$ are non-singular matrices of same order, then the inverse of $A (\text{adj} (A^{-1}) + \text{adj} (B^{-1}))^{-1} B$, is equal to
+
+- (1) $AB^{-1} + A^{-1}B$
+- (2) $\text{adj} (B^{-1}) + \text{adj} (A^{-1})$
+- (3) $\frac{AB^{-1}}{|A|} + \frac{BA^{-1}}{|B|}$
+- (4) $\frac{1}{|A|}(\text{adj}(B) + \text{adj}(A))$",4
+dfdcc2d4-1d85-4c3d-8742-880b5d5a0361,JEE Main 2025 (23 Jan Shift 1),Mathematics,5,"Marks obtained by all the students of class 12 are presented in a frequency distribution with classes of equal width. Let the median of this grouped data be 14 with median class interval 12-18 and median class frequency 12. If the number of students whose marks are less than 12 is 18, then the total number of students is
+
+- (1) 52
+- (2) 48
+- (3) 44
+- (4) 40",3
+b4c9d3a5-15e8-4d30-acb3-da063db14b28,JEE Main 2025 (23 Jan Shift 1),Mathematics,6,"Let a curve $y = f(x)$ pass through the points $(0, 5)$ and $(\log_e 2, k)$. If the curve satisfies the differential equation $2(3 + y)e^{2x} dx - (7 + e^{2x}) dy = 0$, then $k$ is equal to
+
+- (1) 4
+- (2) 32
+- (3) 8
+- (4) 16",3
+625f1ae5-596c-4639-b134-7a15eaf01b76,JEE Main 2025 (23 Jan Shift 1),Mathematics,7,"If the function $f(x) = \begin{cases} \frac{2}{x} \sin (k_1 x + k_2 - 1) x, & x < 0 \\ 4, & x = 0 \\ \frac{2}{x} \log_e (\frac{2 + k_2 x}{2 + k_2 x}), & x > 0 \end{cases}$ is continuous at $x = 0$, then $k_1^2 + k_2^2$ is equal to
+
+- (1) 20
+- (2) 5
+- (3) 8
+- (4) 10",4
+163a7d1a-cecf-4f07-b8b1-44147f0dbf64,JEE Main 2025 (23 Jan Shift 1),Mathematics,8,"If the line $3x - 2y + 12 = 0$ intersects the parabola $4y = 3x^2$ at the points $A$ and $B$, then at the vertex of the parabola, the line segment $AB$ subtends an angle equal to : (1) \( \tan^{-1} \left(\frac{4}{5}\right) \)  
+(2) \( \tan^{-1} \left(\frac{9}{7}\right) \)  
+(3) \( \tan^{-1} \left(\frac{11}{9}\right) \)  
+(4) \( \frac{\pi}{2} - \tan^{-1} \left(\frac{3}{7}\right) \)  ",2
+c4a0c746-1002-404f-acaf-9bae1604d83c,JEE Main 2025 (23 Jan Shift 1),Mathematics,9,"Let \( P \) be the foot of the perpendicular from the point \( Q(10, -3, -1) \) on the line \( \frac{x-3}{7} = \frac{y-2}{1} = \frac{z+1}{2} \). Then the area of the right angled triangle \( PQR \), where \( R \) is the point \((3, -2, 1)\), is
+
+\begin{align*}
+(1) \ 9\sqrt{15} & & \quad (2) \ \sqrt{30} \\
+(3) \ 8\sqrt{15} & & \quad (4) \ 3\sqrt{30}
+\end{align*}",4
+496fa60a-2674-400d-86ac-c5d00bc38dfb,JEE Main 2025 (23 Jan Shift 1),Mathematics,10,"Let the arc \( AC \) of a circle subtend a right angle at the centre \( O \). If the point \( B \) on the arc \( AC \), divides the arc \( AC \) such that \( \frac{\text{length of arc } AB}{\text{length of arc } BC} = \frac{1}{5} \), and \( \overrightarrow{OC} = \alpha\overrightarrow{OA} + \beta\overrightarrow{OB} \), then \( \alpha + \sqrt{2(\sqrt{3} - 1)}\beta \) is equal to
+
+\begin{align*}
+(1) \ 2\sqrt{3} & & \quad (2) \ 2 - \sqrt{3} \\
+(3) \ 5\sqrt{3} & & \quad (4) \ 2 + \sqrt{3}
+\end{align*}",2
+9ff44630-babd-4c87-9b8b-2e76dfc56d37,JEE Main 2025 (23 Jan Shift 1),Mathematics,11,"Let \( f(x) = \log_2 x \) and \( g(x) = \frac{x^4 - 2x^3 + 3x^2 - 2x + 2}{2x^2 - 2x + 1} \). Then the domain of \( f \circ g \) is
+
+\begin{align*}
+(1) \ [0, \infty) & & \quad (2) \ [1, \infty) \\
+(3) \ (0, \infty) & & \quad (4) \ \mathbb{R}
+\end{align*}",4
+6520cadb-f7b1-49f3-870d-ece5223a1e99,JEE Main 2025 (23 Jan Shift 1),Mathematics,12,"\((\lambda - 1)x + (\lambda - 4)y + \lambda z = 5 \)
+
+If the system of equations \( \lambda x + (\lambda - 1)y + (\lambda - 4)z = 7 \) has infinitely many solutions, then \( \lambda^2 + \lambda \) is equal to
+
+\begin{align*}
+(1) \ 6 & & \quad (2) \ 10 \\
+(3) \ 20 & & \quad (4) \ 12
+\end{align*}",4
+57278625-22b7-460b-9c6d-85e0cb9de522,JEE Main 2025 (23 Jan Shift 1),Mathematics,13,"The number of words, which can be formed using all the letters of the word ""DAUGHTER"", so that all the vowels never come together, is
+
+\begin{align*}
+(1) \ 36000 & & \quad (2) \ 37000 \\
+(3) \ 34000 & & \quad (4) \ 35000
+\end{align*}",1
+e0176c27-17ad-44e9-8200-ea8dc44a25ef,JEE Main 2025 (23 Jan Shift 1),Mathematics,14,"Let \( R = \{(1, 2), (2, 3), (3, 3)\} \) be a relation defined on the set \( \{1, 2, 3, 4\} \). Then the minimum number of elements, needed to be added in \( R \) so that \( R \) becomes an equivalence relation, is
+
+\begin{align*}
+(1) \ 10 & & \quad (2) \ 7 \\
+(3) \ 8 & & \quad (4) \ 9
+\end{align*}",2
+c6c9ea0d-2b4a-4d75-9b51-288c394b52ae,JEE Main 2025 (23 Jan Shift 1),Mathematics,15,"Let the area of a \( \triangle PQR \) with vertices \( P(5, 4), Q(-2, 4) \) and \( R(a, b) \) be 35 square units. If its orthocenter and centroid are \( O \left(2, \frac{12}{7}\right) \) and \( C(c, d) \) respectively, then \( c + 2d \) is equal to
+
+\begin{align*}
+(1) \ \frac{8}{3} & & \quad (2) \ \frac{7}{3} \\
+(3) \ 2 & & \quad (4) \ 3
+\end{align*}",4
+7dbc72dd-8dd6-4ee9-a67b-e3fef13d7cd7,JEE Main 2025 (23 Jan Shift 1),Mathematics,16,"The value of \( \int_{\mathbb{R}} \frac{1}{x} \left( e^{(\log_2 x)^2 + 1} - e^{(\log_2 x)^2 - 1} \right) dx \) is
+
+\begin{align*}
+(1) \ 2 & & \quad (2) \ \log_2 2 \\
+(3) \ 1 & & \quad (4) \ e^2
+\end{align*}",3
+9e7da6b5-4669-4472-8aaa-cd93a27cf3c1,JEE Main 2025 (23 Jan Shift 1),Mathematics,17,"Let \( \frac{x^2}{16} + \frac{y^2}{25} = 1 \), \( z \in C \), be the equation of a circle with center at \( C \). If the area of the triangle, whose vertices are at the points \( (0, 0) \), \( C \) and \( (\alpha, 0) \) is 11 square units, then \( \alpha^2 \) equals:
+
+- (1) 50
+- (2) 100
+- (3) \( \frac{81}{25} \)
+- (4) \( \frac{121}{25} \)",2
+4a20f27f-5446-4fec-9652-f29e5d09d339,JEE Main 2025 (23 Jan Shift 1),Mathematics,18,"The value of \((\sin 70^\circ)(\cot 10^\circ \cot 70^\circ - 1)\) is
+
+- (1) \( 2/3 \)
+- (2) 0
+- (3) \( 3/2 \)
+- (4) 1",2
+77f489df-a2bc-4579-95b9-5d61d9d617a7,JEE Main 2025 (23 Jan Shift 1),Mathematics,19,"Let \( I(x) = \int \frac{dx}{(x-11)(x+15)} \). If \( I(37) - I(24) = \frac{1}{4} \left( \frac{1}{\beta x} - \frac{1}{c x} \right) \), \( b, c \in \mathbb{N} \), then \( 3(b + c) \) is equal to
+
+- (1) 22
+- (2) 39
+- (3) 40
+- (4) 26",2
+68c466e8-b8e2-42b5-a836-3bc4dd2e49b5,JEE Main 2025 (23 Jan Shift 1),Mathematics,20,"If \( \frac{\pi}{6} \leq x \leq \frac{3\pi}{4} \), then \( \cos^{-1}\left(\frac{12}{13}\cos x + \frac{5}{13}\sin x\right) \) is equal to
+
+- (1) \( x - \tan^{-1}\frac{4}{3} \)
+- (2) \( x + \tan^{-1}\frac{4}{5} \)
+- (3) \( x - \tan^{-1}\frac{5}{12} \)
+- (4) \( x + \tan^{-1}\frac{5}{12} \)",3
+bfd1c5c4-ea06-4d15-8e85-2d54fa41bafb,JEE Main 2025 (23 Jan Shift 1),Mathematics,21,"Let the circle \( C \) touch the line \( x - y + 1 = 0 \), have the centre on the positive \( x \)-axis, and cut off a chord of length \( \frac{4}{\sqrt{13}} \) along the line \( -3x + 2y = 1 \). Let \( H \) be the hyperbola \( \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1 \), whose one of the foci is the centre of \( C \) and the length of the transverse axis is the diameter of \( C \). Then \( 2a^2 + 3b^2 \) is equal to",19
+0c471963-04dd-4a21-987b-535f3ec17da9,JEE Main 2025 (23 Jan Shift 1),Mathematics,22,"If the equation \( a(b - c)x^2 + b(c - a)x + c(a - b) = 0 \) has equal roots, where \( a + c = 15 \) and \( b = \frac{36}{5} \), then \( a^2 + c^2 \) is equal to",117
+a5f4fa94-d8e4-4c6e-84f1-c1cf21d2cabf,JEE Main 2025 (23 Jan Shift 1),Mathematics,23,"If the set of all values of \( a \), for which the equation \( 5x^3 - 15x - a = 0 \) has three distinct real roots, is the interval \((\alpha, \beta)\), then \( \beta - 2\alpha \) is equal to",30
+75387286-d2e3-4701-a450-6603de1e3ed9,JEE Main 2025 (23 Jan Shift 1),Mathematics,24,The sum of all rational terms in the expansion of \( \left(1 + 2^{1/2} + 3^{1/2}\right)^6 \) is equal to,612
+4f2b69e7-6590-4ebb-8eea-c25d743cdae4,JEE Main 2025 (23 Jan Shift 1),Mathematics,25,"If the area of the larger portion bounded between the curves \( x^2 + y^2 = 25 \) and \( y = |x - 1| \) is \( \frac{1}{3}(b\pi + c) \), \( b, c \in \mathbb{N} \), then \( b + c \) is equal to",77
+4bb09cfb-2ab1-444e-bea8-964f5d829710,JEE Main 2025 (23 Jan Shift 2),Mathematics,1,"The distance of the line \( \frac{x^2}{2} = \frac{y^6}{3} = \frac{z^3}{4} \) from the point \((1, 4, 0)\) along the line \( \frac{x}{4} = \frac{y^2}{2} = \frac{z^3}{3} \) is:
+
+(1) \( \sqrt{17} \)
+(2) \( \sqrt{15} \)
+(3) \( \sqrt{14} \)
+(4) \( \sqrt{13} \)",3
+e7f78510-f04f-4edc-ae36-a36fa1560105,JEE Main 2025 (23 Jan Shift 2),Mathematics,2,"Let \( A = \{(x, y) \in \mathbb{R} \times \mathbb{R} : |x + y| \geq 3\} \) and \( B = \{(x, y) \in \mathbb{R} \times \mathbb{R} : |x| + |y| \leq 3\} \). If \( C = \{(x, y) \in A \cap B : x = 0 \text{ or } y = 0\} \), then \( \sum_{(x, y) \in C} |x + y| \) is:
+
+(1) 15
+(2) 24
+(3) 18
+(4) 12",4
+99dc6eaa-8767-4188-ba6c-259aa4554208,JEE Main 2025 (23 Jan Shift 2),Mathematics,3,"Let \( X = \mathbb{R} \times \mathbb{R} \). Define a relation \( R \) on \( X \) as: \((a_1, b_1)R(a_2, b_2) \iff b_1 = b_2 \)  Statement I : \( R \) is an equivalence relation. Statement II : For some \((a, b) \in X\), the set \( S = \{(x, y) \in X : (x, y)R(a, b)\} \) represents a line parallel to \( y = x \). In the light of the above statements, choose the correct answer from the options given below:
+
+(1) Both Statement I and Statement II are false
+(2) Statement I is true but Statement II is false
+(3) Both Statement I and Statement II are true
+(4) Statement I is false but Statement II is true",2
+9d8b65c8-f334-4258-9396-87e8b05c040f,JEE Main 2025 (23 Jan Shift 2),Mathematics,4,"Let \( \int x^3 \sin x \, dx = g(x) + C \), where \( C \) is the constant of integration. If \( 8 \left( g\left(\frac{\pi}{2}\right) + g'\left(\frac{\pi}{2}\right)\right) = \alpha \pi^3 + \beta \pi^2 + \gamma, \alpha, \beta, \gamma \in \mathbb{Z} \), then \( \alpha + \beta - \gamma \) equals:
+
+(1) 48
+(2) 55
+(3) 62
+(4) 47",2
+fd4b9955-e499-42a7-b307-dc01f26961e7,JEE Main 2025 (23 Jan Shift 2),Mathematics,5,"A rod of length eight units moves such that its ends \( A \) and \( B \) always lie on the lines \( x - y + 2 = 0 \) and \( y + 2 = 0 \), respectively. If the locus of the point \( P \), that divides the rod \( AB \) internally in the ratio \( 2 : 1 \) is \( 9 \left( x^2 + \alpha y^2 + \beta xy + \gamma x + 28y\right) - 76 = 0 \), then \( \alpha - \beta - \gamma \) is equal to:
+
+(1) 22
+(2) 21
+(3) 23
+(4) 24",3
+c1114f31-44a0-417b-bb0d-4021c582e91c,JEE Main 2025 (23 Jan Shift 2),Mathematics,6,"If the square of the shortest distance between the lines \( \frac{x^2}{m} = \frac{y^6}{n} = \frac{z^3}{3} \) and \( \frac{x^3}{m} = \frac{y^3}{n} = \frac{z^3}{3} \) is \( \frac{m}{n} \), where \( m, n \) are coprime numbers, then \( m + n \) is equal to:
+
+(1) 21
+(2) 9
+(3) 14
+(4) 6",2
+baf77833-80a8-4e67-be37-d8b8e6ea1c76,JEE Main 2025 (23 Jan Shift 2),Mathematics,7,"\( \lim_{x \to \infty} \frac{(2x^2-3x+5)(3x-1)^{\frac{2}{3}}}{(3x^2+5x+4)\sqrt{(3x+2)^3}} \) is equal to:
+
+(1) \( \frac{2}{3} \sqrt{e} \)
+(2) \( \frac{3e}{5} \)
+(3) \( \frac{2e}{3} \)
+(4) \( \frac{3e}{5} \)",3
+0e467008-3d2e-4985-a888-c4c4c61ef89a,JEE Main 2025 (23 Jan Shift 2),Mathematics,8,"Let the point \( A \) divide the line segment joining the points \( P(-1,-1,2) \) and \( Q(5,5,10) \) internally in the ratio \( r : 1(r > 0) \). If \( O \) is the origin and \( \overrightarrow{OQ} \cdot \overrightarrow{OA} = \frac{1}{5} |\overrightarrow{OP} \times \overrightarrow{OA}|^2 \) = 10, then the value of \( r \) is:
+
+(1) \( \sqrt{7} \)
+(2) 14
+(3) 3
+(4) 7",4
+1e9fd5df-4e15-472f-8b30-eb508b1cd5d0,JEE Main 2025 (23 Jan Shift 2),Mathematics,9,"The length of the chord of the ellipse \( \frac{x^2}{4} + \frac{y^2}{3} = 1 \), whose mid-point is \((1, \frac{1}{2})\), is:
+(1) \( \frac{5}{3} \sqrt{15} \)
+(2) \( \frac{1}{3} \sqrt{15} \)
+(3) \( \frac{2}{3} \sqrt{15} \)
+(4) \( \sqrt{15} \)",3
+f72094ad-9378-463a-8afe-101e4c1feb7c,JEE Main 2025 (23 Jan Shift 2),Mathematics,10,"The system of equations \( x + 2y + 5z = 9 \), has no solution if:
+(x) \( x + 5y + \lambda z = \mu \),
+(1) \( \lambda = 15, \mu \neq 17 \)
+(2) \( \lambda \neq 17, \mu = 18 \)
+(3) \( \lambda = 17, \mu \neq 18 \)
+(4) \( \lambda = 17, \mu = 18 \)",3
+8767ea4d-8340-48c8-855d-b38999732170,JEE Main 2025 (23 Jan Shift 2),Mathematics,11,"Let the range of the function 
+\[ f(x) = 6 + 16 \cos x \cdot \cos \left( \frac{x}{3} - x \right) \cdot \cos \left( \frac{x}{3} + x \right) \cdot \sin 3x \cdot \cos 6x, x \in \mathbb{R} \]
+be \([\alpha, \beta] \). Then the distance of the point \((\alpha, \beta)\) from the line \(3x + 4y + 12 = 0\) is:
+(1) 11
+(2) 8
+(3) 10
+(4) 9",1
+1c0b8f27-c697-4c95-8608-edc4eac9c44f,JEE Main 2025 (23 Jan Shift 2),Mathematics,12,"Let \( x = x(y) \) be the solution of the differential equation 
+\[ y = \left( x - y \frac{dy}{dx} \right) \sin \left( \frac{x}{y} \right), y > 0 \text{ and } x(1) = \frac{\pi}{2} \]. Then
+\[ \cos(x(2)) \] is equal to:
+(1) \( 1 - 2(\log_2 2)^2 \)
+(2) \( 1 - 2(\log_2 2) \)
+(3) \( 2(\log_2 2)^2 - 1 \)
+(4) \( 2(\log_2 2)^2 - 1 \)",4
+b99eecd0-86cd-4151-9d7a-05d422815525,JEE Main 2025 (23 Jan Shift 2),Mathematics,13,"A spherical chocolate ball has a layer of ice-cream of uniform thickness around it. When the thickness of the ice-cream layer is 1 cm, the ice-cream melts at the rate of 81 cm³/min and the thickness of the ice-cream layer decreases at the rate of \( \frac{1}{4} \) cm/min. The surface area (in cm²) of the chocolate ball (without the ice-cream layer) is:
+(1) 196π
+(2) 256π
+(3) 225π
+(4) 128π",2
+fc5d4114-d3a7-440c-ab06-28e802c7e40f,JEE Main 2025 (23 Jan Shift 2),Mathematics,14,"The number of complex numbers \( z \), satisfying \(|z| = 1\) and \( |\frac{z}{2} + \frac{\bar{z}}{2}| = 1\), is:
+(1) 4
+(2) 8
+(3) 10
+(4) 6",2
+0c203c20-5dc4-4021-aaa0-252c32704f27,JEE Main 2025 (23 Jan Shift 2),Mathematics,15,"Let \( A = [a_{ij}] \) be a \( 3 \times 3 \) matrix such that
+\[ A \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix}, A \begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \text{ and } A \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \], then \( a_{23} \) equals:
+(1) -1
+(2) 2
+(3) 1
+(4) 0",1
+2760158c-5cbb-4b11-b37f-f567861c194e,JEE Main 2025 (23 Jan Shift 2),Mathematics,16,"If \( I = \int_{0}^{\pi} \frac{\sin \frac{x}{2}}{\sin \frac{x}{2} \cos \frac{x}{2}} \, dx \), then
+\[ I = \int_{0}^{21} \frac{x \sin x \cos x}{\sin^4 x + \cos^4 x} \, dx \] equals:
+(1) \( \frac{x^2}{12} \)
+(2) \( \frac{x^2}{4} \)
+(3) \( \frac{x^2}{16} \)
+(4) \( \frac{x^2}{8} \)",3
+c2ee8f45-0547-4c65-a11b-0105f122e588,JEE Main 2025 (23 Jan Shift 2),Mathematics,17,"A board has 16 squares as shown in the figure:
+
+Out of these 16 squares, two squares are chosen at random. The probability that they have no side in common is:
+
+(1) \(7/10\)  
+(2) \(4/5\)  
+(3) \(23/30\)  
+(4) \(3/5\)",2
+d128d6b6-a0f1-4ff4-b83f-13c828d9b444,JEE Main 2025 (23 Jan Shift 2),Mathematics,18,"Let the shortest distance from \((a, 0), a > 0\) to the parabola \(y^2 = 4x\) be 4. Then the equation of the circle passing through the point \((a, 0)\) and the focus of the parabola, and having its centre on the axis of the parabola is:
+
+(1) \(x^2 + y^2 - 10x + 9 = 0\)  
+(2) \(x^2 + y^2 - 6x + 5 = 0\)  
+(3) \(x^2 + y^2 - 4x + 3 = 0\)  
+(4) \(x^2 + y^2 - 8x + 7 = 0\)",2
+4a48d53e-0787-43ac-aa0c-e9efba9739d7,JEE Main 2025 (23 Jan Shift 2),Mathematics,19,"If in the expansion of \((1 + x)^p(1 - x)^q\), the coefficients of \(x\) and \(x^2\) are 1 and -2, respectively, then \(p^2 + q^2\) is equal to:
+
+(1) 18  
+(2) 13  
+(3) 8  
+(4) 20",2
+31fb90ca-bd84-4ca9-9b71-f32add59351d,JEE Main 2025 (23 Jan Shift 2),Mathematics,20,"If the area of the region \(\{(x, y) : -1 \leq x \leq 1, 0 \leq y \leq a + e^{x+1} - e^{-x}, a > 0\}\) is \(\frac{e^{x+1} e^{x+1}}{e}\), then the value of \(a\) is:
+
+(1) 8  
+(2) 7  
+(3) 5  
+(4) 6",3
+f3c8fe19-bd8c-4f37-9e11-2b5930e3c8c6,JEE Main 2025 (23 Jan Shift 2),Mathematics,21,"The variance of the numbers 8, 21, 34, 47, \ldots, 320 is",3
+0fb44c34-5e78-4474-a9c9-44ee4d1a0246,JEE Main 2025 (23 Jan Shift 2),Mathematics,22,"The roots of the quadratic equation \(3x^2 - px + q = 0\) are 10th and 11th terms of an arithmetic progression with common difference \(\frac{\alpha}{2}\). If the sum of the first 11 terms of this arithmetic progression is 88, then \(q - 2p\) is equal to",474
+c355123b-d38e-40f8-942f-38ad395686a8,JEE Main 2025 (23 Jan Shift 2),Mathematics,23,"The number of ways, 5 boys and 4 girls can sit in a row so that either all the boys sit together or no two boys sit together, is",17280
+9c014fa2-7f21-45b7-9d92-468f1b26fbdc,JEE Main 2025 (23 Jan Shift 2),Mathematics,24,"The focus of the parabola \(y^2 = 4x + 16\) is the centre of the circle \(C\) of radius 5. If the values of \(\lambda\), for which \(C\) passes through the point of intersection of the lines \(3x - y = 0\) and \(x + \lambda y = 4\), are \(\lambda_1\) and \(\lambda_2\), then \(12\lambda_1 + 29\lambda_2\) is equal to",15
+25c19494-d9a2-408c-ade3-38e0a55aa8f2,JEE Main 2025 (23 Jan Shift 2),Mathematics,25,"Let \(\alpha, \beta\) be the roots of the equation \(x^2 - ax - b = 0\) with \(\text{Im}(\alpha) < \text{Im}(\beta)\). Let \(P_n = \alpha^n - \beta^n\). If \(P_3 = -5\sqrt{7}i, P_4 = -3\sqrt{7}i, P_5 = 11\sqrt{7}i\) and \(P_6 = 45\sqrt{7}i\), then \(|\alpha^4 + \beta^4|\) is equal to",31
+716dfedd-e03b-472b-b096-06aa266e154c,JEE Main 2025 (24 Jan Shift 1),Mathematics,1,"Let circle $C$ be the image of $x^2 + y^2 - 2x + 4y - 4 = 0$ in the line $2x - 3y + 5 = 0$ and $A$ be the point on $C$ such that $OA$ is parallel to $x$-axis and $A$ lies on the right hand side of the centre $O$ of $C$. If $B(\alpha, \beta)$, with $\beta < 4$, lies on $C$ such that the length of the arc $AB$ is $(1/6)^{th}$ of the perimeter of $C$, then $\beta - \sqrt{3}\alpha$ is equal to
+
+(1) $3 + \sqrt{3}$  
+(2) $4$  
+(3) $4 - \sqrt{3}$  
+(4) $3$",2
+8ea3fe25-f9be-4a1f-bda3-27f56bb14b73,JEE Main 2025 (24 Jan Shift 1),Mathematics,2,"Let in a $\triangle ABC$, the length of the side $AC$ be $6$, the vertex $B$ be $(1, 2, 3)$ and the vertices $A, C$ lie on the line $\frac{x-3}{2} = \frac{y-7}{2} = \frac{z-7}{2}$. Then the area (in sq. units) of $\triangle ABC$ is:
+
+(1) $17$  
+(2) $21$  
+(3) $56$  
+(4) $42$",2
+2a299a1a-0c06-4a60-ac2f-6bdaa40b0fc8,JEE Main 2025 (24 Jan Shift 1),Mathematics,3,"Let the product of the focal distances of the point $\left(\sqrt{3}, \frac{1}{3}\right)$ on the ellipse $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$, $(a > b)$, be $\frac{7}{4}$. Then the absolute difference of the eccentricities of two such ellipses is
+
+(1) $\frac{1 - \sqrt{3}}{\sqrt{2}}$  
+(2) $\frac{3 - 2\sqrt{2}}{2\sqrt{3}}$  
+(3) $\frac{3 - 2\sqrt{2}}{3\sqrt{2}}$  
+(4) $\frac{1 - 2\sqrt{2}}{\sqrt{3}}$",2
+ba619dfa-a9be-4aef-8a40-71019abd7612,JEE Main 2025 (24 Jan Shift 1),Mathematics,4,"If the system of equations $5x + \lambda y + 3z = 12$ and $100x - 47y + \mu z = 212$ has infinitely many solutions, then $\mu - 2\lambda$ is equal to
+
+(1) $57$  
+(2) $59$  
+(3) $55$  
+(4) $56$",1
+d46a273c-4f2e-406e-8349-7ebd51134569,JEE Main 2025 (24 Jan Shift 1),Mathematics,5,"For some $n \neq 10$, let the coefficients of the $5$th, $6$th and $7$th terms in the binomial expansion of $(1 + x)^{n+4}$ be in A.P. Then the largest coefficient in the expansion of $(1 + x)^{n+4}$ is:
+
+(1) $20$  
+(2) $10$  
+(3) $35$  
+(4) $70$",3
+1df5bc52-fb7d-4f2b-85ce-28e0f668fd1e,JEE Main 2025 (24 Jan Shift 1),Mathematics,6,"The product of all the rational roots of the equation $\left(x^2 - 9x + 11\right)^2 - (x - 4)(x - 5) = 3$, is equal to
+
+(1) $14$  
+(2) $21$  
+(3) $28$  
+(4) $7$",1
+36122fa4-0d5f-4c76-bd83-d0725f7934a9,JEE Main 2025 (24 Jan Shift 1),Mathematics,7,"Let the line passing through the points $(-1, 2, 1)$ and parallel to the line $\frac{x+1}{2} = \frac{y+1}{3} = \frac{z-1}{3}$ intersect the line $\frac{x+2}{3} = \frac{y-3}{2} = \frac{z+4}{1}$ at the point $P$. Then the distance of $P$ from the point $Q(4, -5, 1)$ is
+
+(1) $5$  
+(2) $5\sqrt{5}$  
+(3) $5\sqrt{6}$  
+(4) $10$",2
+9fb4b7b3-0406-4aa9-b10b-3911e5b9f686,JEE Main 2025 (24 Jan Shift 1),Mathematics,8,"Let the lines $3x - 4y - \alpha = 0$, $8x - 11y - 33 = 0$, and $2x - 3y + \lambda = 0$ be concurrent. If the image of the point $(1, 2)$ in the line $2x - 3y + \lambda = 0$ is $\left(\frac{57}{13}, \frac{-40}{13}\right)$, then $|\alpha\lambda|$ is equal to
+
+(1) $84$  
+(2) $113$  
+(3) $91$  
+(4) $101$",3
+fe6d35b5-ea23-494d-b95f-7df08f41b8a3,JEE Main 2025 (24 Jan Shift 1),Mathematics,9,"If $\alpha$ and $\beta$ are the roots of the equation $2x^2 - 3x - 2i = 0$, where $i = \sqrt{-1}$, then $16 \cdot \text{Re} \left(\frac{\alpha^{19} + \beta^{19} + \alpha^{11} + \beta^{11}}{\alpha^{5} + \beta^{5}}\right) \cdot \text{Im} \left(\frac{\alpha^{19} + \beta^{19} + \alpha^{11} + \beta^{11}}{\alpha^{5} + \beta^{5}}\right)$ is equal to : (1) 441  
+(2) 398  
+(3) 312  
+(4) 409  ",1
+70403eb0-a5a1-4b96-aa65-89a15344632f,JEE Main 2025 (24 Jan Shift 1),Mathematics,10,"For a statistical data \(x_1, x_2, \ldots, x_{10}\) of 10 values, a student obtained the mean as 5.5 and \(\sum_{i=1}^{10} x_i^2 = 371\). He later found that he had noted two values in the data incorrectly as 4 and 5, instead of the correct values 6 and 8, respectively. The variance of the corrected data is
+
+(1) 9
+(2) 5
+(3) 7
+(4) 4",3
+c826c0a1-6d4c-48c3-8879-78bd54e24c1d,JEE Main 2025 (24 Jan Shift 1),Mathematics,11,"The area of the region \(\{(x, y) : x^2 + 4x + 2 \leq y \leq |x + 2|\}\) is equal to
+
+(1) 7
+(2) 5
+(3) 24/5
+(4) 20/3",4
+0b48edf8-5c2a-437c-9ccd-a97230a90e3d,JEE Main 2025 (24 Jan Shift 1),Mathematics,12,"Let \(S_n = \frac{1}{2} + \frac{1}{9} + \frac{1}{12} + \frac{1}{21} + \ldots \) upto \(n\) terms. If the sum of the first six terms of an A.P. with first term \(-p\) and common difference \(p\) is \(\sqrt{2025} S_{2025}\), then the absolute difference between 20th and 15th terms of the A.P. is
+
+(1) 20
+(2) 90
+(3) 45
+(4) 25",4
+0eb94d01-6c3e-47e4-84b4-ea1767364fb9,JEE Main 2025 (24 Jan Shift 1),Mathematics,13,"Let \(f : R \to \{0\} \to R\) be a function such that \(f(x) = 6f\left(\frac{1}{x}\right) = \frac{35}{3x} - \frac{5}{2}\). If the limit as \(x \to 0\) \(\left(x^{\frac{1}{x}} + f(x)\right) = \beta; \alpha, \beta \in R\), then \(\alpha + 2\beta\) is equal to
+
+(1) 5
+(2) 3
+(3) 4
+(4) 6",3
+1eced83e-3ea5-474f-9a8a-033ba116a923,JEE Main 2025 (24 Jan Shift 1),Mathematics,14,"If \(I(m, n) = \int_0^1 x^{m-1}(1-x)^{n-1} \, dx, m, n > 0\), then \(I(9, 14) + I(10, 13)\) is
+
+(1) \(I(19, 27)\)
+(2) \(I(9, 1)\)
+(3) \(I(1, 13)\)
+(4) \(I(9, 13)\)",4
+4a14b483-58b6-4bca-9bf7-426433b14c59,JEE Main 2025 (24 Jan Shift 1),Mathematics,15,"\(A\) and \(B\) alternately throw a pair of dice. \(A\) wins if he throws a sum of 5 before \(B\) throws a sum of 8, and \(B\) wins if he throws a sum of 8 before \(A\) throws a sum of 5. The probability, that \(A\) wins if \(A\) makes the first throw, is
+
+(1) \(\frac{9}{17}\)
+(2) \(\frac{9}{17}\)
+(3) \(\frac{9}{17}\)
+(4) \(\frac{8}{17}\)",2
+0c6f607d-54d7-466d-be1c-db64fc917a2e,JEE Main 2025 (24 Jan Shift 1),Mathematics,16,"Let \(f(x) = \frac{2x^2 + 16}{2x^3 + 2x^2 + 4 + 32}\). Then the value of \(8 \left(f\left(\frac{1}{15}\right) + f\left(\frac{2}{15}\right) + \ldots + f\left(\frac{59}{15}\right)\right)\) is equal to
+
+(1) 92
+(2) 118
+(3) 102
+(4) 108",2
+a857fdf6-b070-4f2d-a94c-7f592eeb3779,JEE Main 2025 (24 Jan Shift 1),Mathematics,17,"Let \(y = y(x)\) be the solution of the differential equation \((xy - 5x^2 \sqrt{1 + x^2}) \, dx + (1 + x^2) \, dy = 0, y(0) = 0\). Then \(y(\sqrt{3})\) is equal to
+
+(1) \(\sqrt{15} \div 2\)
+(2) \(\frac{1}{2} \sqrt{\frac{3}{2}}\)
+(3) \(2\sqrt{2}\)
+(4) \(\sqrt{\frac{14}{3}}\)",2
+74a5b313-5de1-4b42-afac-e4b11c1d75e0,JEE Main 2025 (24 Jan Shift 1),Mathematics,18,"\(\lim_{x \to 0} \csc x \left(\sqrt{2 \cos^2 x + 3 \cos x} - \sqrt{\cos^2 x + \sin x + 4}\right)\) is: (1) 0  
+(2) \( \frac{1}{\sqrt{15}} \)  
+(3) \( \frac{1}{2\sqrt{5}} \)  
+(4) \( -\frac{1}{2\sqrt{5}} \) ",4
+4eabea93-8e5f-433c-914f-3757e0201d82,JEE Main 2025 (24 Jan Shift 1),Mathematics,19,"Consider the region \( R = \{ (x, y) : x \leq y \leq 9 - \frac{1}{11}x^2, x \geq 0 \} \). The area, of the largest rectangle of sides parallel to the coordinate axes and inscribed in \( R \), is:
+
+(1) \( \frac{90}{11} \)  
+(2) \( \frac{85}{11} \)  
+(3) \( \frac{61}{12} \)  
+(4) \( \frac{567}{121} \)",4
+a093afec-18f3-4da4-ae18-f21d8f60edb8,JEE Main 2025 (24 Jan Shift 1),Mathematics,20,"Let \( \vec{a} = \hat{i} + 2\hat{j} + 3\hat{k}, \vec{b} = 3\hat{i} + \hat{j} - \hat{k} \) and \( \vec{c} \) be three vectors such that \( \vec{c} \) is coplanar with \( \vec{a} \) and \( \vec{b} \). If the vector \( \vec{C} \) is perpendicular to \( \vec{b} \) and \( \vec{a} \cdot \vec{c} = 5 \), then \( |\vec{c}| \) is equal to
+
+(1) \( \sqrt{\frac{11}{6}} \)  
+(2) \( \frac{1}{3\sqrt{2}} \)  
+(3) \( 16 \)  
+(4) \( 18 \)",1
+aa607395-f954-4395-99bd-bf683bb6e0f6,JEE Main 2025 (24 Jan Shift 1),Mathematics,21,"Let \( S = \{ p_1, p_2, \ldots, p_{10} \} \) be the set of first ten prime numbers. Let \( A = S \cup P \), where \( P \) is the set of all possible products of distinct elements of \( S \). Then the number of all ordered pairs \( (x, y), x \in S, y \in A \), such that \( x \) divides \( y \), is ______.",5120
+f5866438-d51e-4568-989c-3d999deac59e,JEE Main 2025 (24 Jan Shift 1),Mathematics,22,"If for some \( \alpha, \beta, \alpha \leq \beta, \alpha + \beta = 8 \) and \( \sec^{-2} (\tan^{-1} \alpha) + \cosec^{-2} (\cot^{-1} \beta) = 36 \), then \( \alpha^2 + \beta^2 \) is ______.",14
+d29e5e0c-48f5-4303-b50d-3a8ff8eb8710,JEE Main 2025 (24 Jan Shift 1),Mathematics,23,"Let \( A \) be a \( 3 \times 3 \) matrix such that \( X^TAX = O \) for all nonzero \( 3 \times 1 \) matrices \( X = \begin{bmatrix} x \\ y \\ z \end{bmatrix} \). If
+
+\[
+A = \begin{bmatrix} 1 & 4 \\ 1 & -5 \\ 4 & 1 \end{bmatrix}, \quad A = \begin{bmatrix} 0 \\ 4 \\ -8 \end{bmatrix}
+\]
+
+and \( \det(\text{adj}(2(A + 1))) = 2^\alpha 3^\beta 5^\gamma \), \( \alpha, \beta, \gamma \in N \), then \( \alpha^2 + \beta^2 + \gamma^2 \) is______.",44
+7fca30a7-2f14-4248-8bf0-1b687fba8e51,JEE Main 2025 (24 Jan Shift 1),Mathematics,24,"Let \( f \) be a differentiable function such that \( 2(x + 2)^2 f(x) - 3(x + 2)^2 = 10 \int_0^x (t + 2) f(t) dt, x \geq 0. \) Then \( f(2) \) is equal to ______.",19
+599bb4f3-4909-4595-9cd4-3822f2ceae1c,JEE Main 2025 (24 Jan Shift 1),Mathematics,25,"The number of 3-digit numbers, that are divisible by 2 and 3, but not divisible by 4 and 9, is______.",125
+ef0e84d8-2585-4467-b206-30704260a218,JEE Main 2025 (24 Jan Shift 2),Mathematics,1,"Group A consists of 7 boys and 3 girls, while group B consists of 6 boys and 5 girls. The number of ways, 4 boys and 4 girls can be invited for a picnic if 5 of them must be from group A and the remaining 3 from group B, is equal to:
+
+(1) 8750
+(2) 9100
+(3) 8925
+(4) 8575",3
+42221b8f-55a0-4bd7-a037-6e5173757fe9,JEE Main 2025 (24 Jan Shift 2),Mathematics,2,"If the system of equations $2x + \lambda y + 5z = 5$ has infinitely many solutions, then $\lambda + \mu$ is equal to:
+
+$14x + 3y + \mu z = 33$
+
+(1) 13
+(2) 10
+(3) 12
+(4) 11",3
+6d3d3618-c7da-4b3a-8383-66b5b182ab6b,JEE Main 2025 (24 Jan Shift 2),Mathematics,3,"Let $A = \left\{ x \in (0, \pi) - \left\{ \frac{\pi}{2} \right\} : \log_{2/\pi} |\sin x| + \log_{2/\pi} |\cos x| = 2 \right\}$ and $B = \{ x \geq 0 : \sqrt{\sqrt{x} - 4} - 3\sqrt{\sqrt{x} - 2} + 6 = 0 \}$. Then $n(A \cup B)$ is equal to:
+
+(1) 4
+(2) 8
+(3) 6
+(4) 2",2
+c8897713-8999-444b-84d6-3a54ba0b823d,JEE Main 2025 (24 Jan Shift 2),Mathematics,4,"The area of the region enclosed by the curves $y = e^x$, $y = |e^x - 1|$ and y-axis is:
+
+(1) $1 - \log_e 2$
+(2) $\log_e 2$
+(3) $1 + \log_e 2$
+(4) $2 \log_e 2 - 1$",1
+35b0bdd6-4e7e-4ed5-86e3-484752574845,JEE Main 2025 (24 Jan Shift 2),Mathematics,5,"The equation of the chord, of the ellipse $\frac{x^2}{25} + \frac{y^2}{16} = 1$, whose mid-point is $(3, 1)$, is:
+
+$25x + 101y = 176$
+
+(1) $48x + 25y = 169$
+(2) $5x + 16y = 31$
+(3) $4x + 122y = 134$
+(4) $4x + 122y = 134$",1
+f602ed0f-1b06-458b-8ca3-2bf6c12b4f42,JEE Main 2025 (24 Jan Shift 2),Mathematics,6,"Let the points $(\frac{11}{2}, \alpha)$ lie on or inside the triangle with sides $x + y = 11$, $x + 2y = 16$ and $2x + 3y = 29$. Then the product of the smallest and the largest values of $\alpha$ is equal to:
+
+(1) 44
+(2) 22
+(3) 33
+(4) 55",3
+9e392e8e-9769-4730-8c3c-be055a34abcb,JEE Main 2025 (24 Jan Shift 2),Mathematics,7,"Let $f : (0, \infty) \rightarrow \mathbb{R}$ be a function which is differentiable at all points of its domain and satisfies the condition $x^2 f'(x) = 2x f(x) + 3$, with $f(1) = 4$. Then $2f(2)$ is equal to:
+
+(1) 39
+(2) 19
+(3) 29
+(4) 23",1
+9ea00ba8-51c4-4d92-b9fa-4f615e9937b2,JEE Main 2025 (24 Jan Shift 2),Mathematics,8,"If $7 = 5 \times 1 + \frac{1}{7} (5 + \alpha) + \frac{1}{7^2} (5 + 2\alpha) + \frac{1}{7^3} (5 + 3\alpha) + \cdots \infty$, then the value of $\alpha$ is:
+
+(1) $\frac{6}{7}$
+(2) 6
+(3) $\frac{1}{7}$
+(4) 1",2
+9f7ee42f-a422-42c0-a0cd-ff4f14da835a,JEE Main 2025 (24 Jan Shift 2),Mathematics,9,"Let $[x]$ denote the greatest integer function, and let m and n respectively be the numbers of the points, where the function $f(x) = [x] + [x - 2]$, $-2 < x < 3$, is not continuous and not differentiable. Then $m + n$ is equal to:
+
+(1) 6
+(2) 8
+(3) 9
+(4) 7",2
+ff241288-2eaf-4e9a-8c75-5e9c5bbf48ec,JEE Main 2025 (24 Jan Shift 2),Mathematics,10,"Let $A = [a_{ij}]$ be a square matrix of order 2 with entries either 0 or 1. Let $E$ be the event that $A$ is an invertible matrix. Then the probability $P(E)$ is: (1) \( \frac{3}{16} \)  
+(2) \( \frac{5}{8} \)  
+(3) \( \frac{3}{8} \)  
+(4) \( \frac{1}{8} \)  ",3
+01a34c0e-d55e-41c9-881a-c5007a131d39,JEE Main 2025 (24 Jan Shift 2),Mathematics,11,"Let the position vectors of three vertices of a triangle be \(4\mathbf{p} + \mathbf{q} - 3\mathbf{r}, -5\mathbf{p} + \mathbf{q} + 2\mathbf{r}\) and \(2\mathbf{p} - \mathbf{q} + 2\mathbf{r}\). If the position vectors of the orthocenter and the circumcenter of the triangle are \(\frac{5\mathbf{p} + 2\mathbf{q} + 3\mathbf{r}}{14}\) and \(\alpha\mathbf{p} + \beta\mathbf{q} + \gamma\mathbf{r}\) respectively, then \(\alpha + 2\beta + 5\gamma\) is equal to:
+
+(1) 3
+(2) 4
+(3) 1
+(4) 6",1
+b8677182-5ae1-4aed-ba9a-f5b13c00f01a,JEE Main 2025 (24 Jan Shift 2),Mathematics,12,"Let \(\mathbf{a} = 3\mathbf{i} - \mathbf{j} + 2\mathbf{k}, \mathbf{b} = \mathbf{a} \times (\mathbf{i} - 2\mathbf{k})\) and \(\mathbf{c} = \mathbf{b} \times \mathbf{k}\). Then the projection of \(\mathbf{c} - 2\mathbf{j}\) on \(\mathbf{a}\) is:
+
+(1) \(2\sqrt{14}\)
+(2) \(\mathbf{v}\)
+(3) \(\sqrt{7}\)
+(4) \(2\sqrt{7}\)",1
+92212052-fd2a-4fdb-9567-d15d7e04b3e2,JEE Main 2025 (24 Jan Shift 2),Mathematics,13,"The number of real solution(s) of the equation \(x^2 + 3x + 2 = \min\{\vert x - 3\vert, \vert x + 2\vert\}\) is:
+
+(1) 1
+(2) 0
+(3) 2
+(4) 3",3
+66422792-577f-48e3-8577-6ce01f4feeb0,JEE Main 2025 (24 Jan Shift 2),Mathematics,14,"The function \(f : (-\infty, \infty) \rightarrow (-\infty, 1), \text{ defined by } f(x) = \frac{x^2 - 2x}{x^2 + 2}\) is:
+
+(1) Neither one-one nor onto
+(2) Onto but not one-one
+(3) Both one-one and onto
+(4) One-one but not onto",4
+8b3060d6-97c3-427e-802a-831bef7af864,JEE Main 2025 (24 Jan Shift 2),Mathematics,15,"In an arithmetic progression, if \(S_{10} = 1030\) and \(S_{12} = 57\), then \(S_{30} - S_{10}\) is equal to:
+
+(1) 525
+(2) 510
+(3) 515
+(4) 505",3
+37be8789-ed18-4591-910c-57c0774c29c8,JEE Main 2025 (24 Jan Shift 2),Mathematics,16,"Suppose \(A\) and \(B\) are the coefficients of 30th and 12th terms respectively in the binomial expansion of \((1 + x)^{2n-1}\). If \(2A = 5B\), then \(n\) is equal to:
+
+(1) 22
+(2) 20
+(3) 21
+(4) 19",3
+8999ad58-5192-4896-bbd5-131e2f36c4a7,JEE Main 2025 (24 Jan Shift 2),Mathematics,17,"Let \((2, 3)\) be the largest open interval in which the function \(f(x) = 2\log_e(x - 2) - x^2 + ax + 1\) is strictly increasing and \((b, c)\) be the largest open interval, in which the function \(g(x) = (x - 1)^3(x + 2 - a)^2\) is strictly decreasing. Then \(100(a + b - c)\) is equal to:
+
+(1) 420
+(2) 360
+(3) 160
+(4) 280",2
+5dc239df-f2e9-4f64-956d-7cf33138be50,JEE Main 2025 (24 Jan Shift 2),Mathematics,18,"For some \(a, b\), let \(f(x) = \frac{a + \sin x}{x} \begin{vmatrix} 1 & 1 & b \\ a & 1 + \sin x & b \\ a & 1 & b + \sin x \end{vmatrix}, x \neq 0, \lim_{x \to 0} f(x) = \lambda + \mu a + \nu b\). Then \((\lambda + \mu + \nu)^2\) is equal to:
+
+(1) 16
+(2) 25
+(3) 9
+(4) 36",1
+3df5204a-ffbf-4d19-980a-8e2fb65f7d87,JEE Main 2025 (24 Jan Shift 2),Mathematics,19,"If the equation of the parabola with vertex \(V\left(\frac{3}{2}, 3\right)\) and the directrix \(x + 2y = 0\) is \(\alpha x^2 + \beta y^2 - \gamma xy - 30x - 60y + 225 = 0\), then \(\alpha + \beta + \gamma\) is equal to: (1) 7  
+(2) 9  
+(3) 8  
+(4) 6  
+
+\(\alpha x^2 + \beta y^2 - \gamma xy - 30x - 60y + 225 = 0\)",2
+fb786c03-50bb-45a1-8a07-5ba97cb76d37,JEE Main 2025 (24 Jan Shift 2),Mathematics,20,"If $\alpha > \beta > \gamma > 0$, then the expression $\cot^{-1} \left\{ \beta + \frac{(1+\beta^2)}{(\alpha-\beta)} \right\} + \cot^{-1} \left\{ \gamma + \frac{(1+\gamma^2)}{(\beta-\gamma)} \right\} + \cot^{-1} \left\{ \alpha + \frac{(1+\alpha^2)}{(\gamma-\alpha)} \right\}$ is equal to:
+
+(1) $\pi$
+
+(2) 0
+
+(3) $\pi - (\alpha + \beta + \gamma)$
+
+(4) $3\pi$",1
+9b4a5341-8d99-48ab-9a32-ddf854a5b148,JEE Main 2025 (24 Jan Shift 2),Mathematics,21,"Let $P$ be the image of the point $Q(7, -2, 5)$ in the line $L : \frac{x-1}{2} = \frac{y+1}{3} = \frac{z}{4}$ and $R(5, p, q)$ be a point on $L$. Then the square of the area of $\triangle PQR$ is ________.",957
+d4ee3e0f-52dd-4c48-802d-7ebfc9b8846e,JEE Main 2025 (24 Jan Shift 2),Mathematics,22,"If $\int \frac{2x^2 + 5x + 9}{\sqrt{x^2 + x + 1}} \, dx = x\sqrt{x^2 + x + 1} + \alpha \sqrt{x^2 + x + 1} + \beta \log_e |x + \frac{1}{2} + \sqrt{x^2 + x + 1}| + C$, where $C$ is the constant of integration, then $\alpha + 2\beta$ is equal to ________.",16
+46d3b2e8-b00d-42e1-ac03-81431e08fd4a,JEE Main 2025 (24 Jan Shift 2),Mathematics,23,"Let $y = y(x)$ be the solution of the differential equation $2 \cos x \frac{dy}{dx} = \sin 2x - 4y \sin x$, $x \in (0, \frac{\pi}{2})$. If $y \left( \frac{\pi}{4} \right) = 0$, then $y' \left( \frac{\pi}{4} \right) + y \left( \frac{\pi}{4} \right)$ is equal to ________.",1
+e9b2988b-7ac7-4528-a0e5-fa70df795c0b,JEE Main 2025 (24 Jan Shift 2),Mathematics,24,"Number of functions $f : \{1, 2, \ldots, 100\} \rightarrow \{0, 1\}$, that assign 1 to exactly one of the positive integers less than or equal to 98, is equal to ________.",392
+984ecf93-7530-44c2-b9fc-40badc1010a5,JEE Main 2025 (24 Jan Shift 2),Mathematics,25,"Let $H_1 : \frac{x^2}{a^2} - \frac{y^2}{b^2} = 1$ and $H_2 : -\frac{x^2}{A^2} + \frac{y^2}{B^2} = 1$ be two hyperbolas having length of latus rectums $15\sqrt{2}$ and $12\sqrt{5}$ respectively. Let their eccentricities be $e_1 = \sqrt{\frac{5}{2}}$ and $e_2$ respectively. If the product of the lengths of their transverse axes is $100\sqrt{10}$, then $25e_2^2$ is equal to ________.",55
+f0c34e35-de11-40b6-b844-4aceda9c9c64,JEE Main 2025 (28 Jan Shift 1),Mathematics,1,"Let \( O \) be the origin, the point \( A \) be \( z_1 = \sqrt{3} + 2\sqrt{2}i \), the point \( B(z_2) \) be such that \( \sqrt{3} |z_2| = |z_1| \) and \( \arg(z_2) = \arg(z_1) + \frac{\pi}{6} \). Then
+
+(1) area of triangle ABO is \( \frac{11}{3} \) 
+(2) ABO is an obtuse angled isosceles triangle 
+(3) area of triangle ABO is \( \frac{11}{4} \) 
+(4) ABO is a scalene triangle",2
+386008a7-9f2d-417a-bc5e-9da6c7c9c48a,JEE Main 2025 (28 Jan Shift 1),Mathematics,2,"Let \( f : \mathbb{R} \to \mathbb{R} \) be a function defined by \( f(x) = (2 + 3a)x^2 + \left( \frac{2a+7}{2} \right)x + b, a \neq 1. \) If \( f(x + y) = f(x) + f(y) + 1 - \frac{1}{2}xy \), then the value of \( 28 \sum_{i=1}^{5} |f(i)| \) is
+
+(1) 545 
+(2) 715 
+(3) 735 
+(4) 675",4
+3abb0ea3-69b6-4fe5-bc92-c24c1341f8de,JEE Main 2025 (28 Jan Shift 1),Mathematics,3,"Let \( ABCD \) be a trapezium whose vertices lie on the parabola \( y^2 = 4x \). Let the sides \( AD \) and \( BC \) of the trapezium be parallel to \( y \)-axis. If the diagonal \( AC \) is of length \( \frac{25}{4} \) and it passes through the point \( (1, 0) \), then the area of \( ABCD \) is
+
+(1) \( \frac{73}{8} \) 
+(2) \( \frac{25}{9} \) 
+(3) \( \frac{16}{8} \) 
+(4) \( \frac{75}{8} \)",1
+ce69f97f-67ad-4564-96b5-d19b006f6e1b,JEE Main 2025 (28 Jan Shift 1),Mathematics,4,"The sum of all local minimum values of the function
+
+\[
+f(x) = \begin{cases} 
+1 - 2x, & x < -1 \\
+\frac{1}{3}(7 + 2|x|), & -1 \leq x \leq 2 \\
+\frac{1}{12}(x - 4)(x - 5), & x > 2 
+\end{cases}
+\]
+
+is
+
+(1) \( \frac{137}{72} \) 
+(2) \( \frac{131}{72} \) 
+(3) \( \frac{137}{72} \) 
+(4) \( \frac{167}{72} \)",1
+7a54308e-bc39-4255-b8dc-4b50afb12022,JEE Main 2025 (28 Jan Shift 1),Mathematics,5,"Let \( ^nC_{r-1} = 28, ^nC_r = 56 \) and \( ^nC_{r+1} = 70 \). Let \( A(4 \cos t, 4 \sin t), B(2 \sin t, -2 \cos t) \) and \( C(3r - n, r^2 - n - 1) \) be the vertices of a triangle \( ABC \), where \( t \) is a parameter. If \( (3x - 1)^2 + (3y)^2 = \alpha \), is the locus of the centroid of triangle \( ABC \), then \( \alpha \) equals
+
+(1) 6 
+(2) 18 
+(3) 8 
+(4) 20",4
+bf5f71d9-d0bb-4ce3-b1a3-bf2218c08673,JEE Main 2025 (28 Jan Shift 1),Mathematics,6,"Let the equation of the circle, which touches \( x \)-axis at the point \( (a, 0) \), \( a > 0 \) and cuts off an intercept of length \( b \) on \( y \)-axis be \( x^2 + y^2 - \alpha x + \beta y + \gamma = 0 \). If the circle lies below \( x \)-axis, then the ordered pair \((2a, b^2)\) is equal to
+
+(1) \( (\gamma, \beta^2 - 4\alpha) \) 
+(2) \( (\alpha, \beta^2 + 4\gamma) \) 
+(3) \( (\gamma, \beta^2 + 4\alpha) \) 
+(4) \( (\alpha, \beta^2 - 4\gamma) \)",4
+fcb2d563-8ac4-452f-be89-ce259c8146c1,JEE Main 2025 (28 Jan Shift 1),Mathematics,7,"If \( f(x) = \frac{x^2}{2x^2 + \sqrt{2}}, x \in \mathbb{R}, \) then \( \sum_{k=1}^{81} f \left( \frac{k}{82} \right) \) is equal to
+
+(1) \( 1.81\sqrt{2} \) 
+(2) \( 41 \) 
+(3) \( 82 \) 
+(4) \( \frac{81}{2} \)",4
+d323f007-a281-4f15-8c52-e3b78f1b9fb8,JEE Main 2025 (28 Jan Shift 1),Mathematics,8,"Two number \( k_1 \) and \( k_2 \) are randomly chosen from the set of natural numbers. Then, the probability that the value of \( i^{k_1} + j^{k_2}, (i = \sqrt{-1}) \) is non-zero, equals:(1) \( \frac{1}{2} \)  
+(2) \( \frac{3}{4} \)  
+(3) \( \frac{1}{7} \)  
+(4) \( \frac{2}{3} \) ",2
+2400477c-a743-4733-95d2-a4f76884f8f5,JEE Main 2025 (28 Jan Shift 1),Mathematics,9,"If the image of the point \((4, 4, 3)\) in the line \(\frac{x-1}{2} = \frac{y-2}{3} = \frac{z-1}{3}\) is \((\alpha, \beta, \gamma)\), then \(\alpha + \beta + \gamma\) is equal to
+\[(1)\ 9 \quad (2)\ 12 \quad (3)\ 7 \quad (4)\ 8.
+\]",1
+13d54bd0-0372-4112-a983-0f35933d161b,JEE Main 2025 (28 Jan Shift 1),Mathematics,10,"\(\cos \left( \sin^{-1} \frac{3}{5} + \sin^{-1} \frac{5}{13} + \sin^{-1} \frac{33}{65} \right)\) is equal to:
+\[(1)\ 1 \quad (2)\ 0 \quad (3)\ \frac{32}{65} \quad (4)\ \frac{33}{65}.
+\]",2
+669b1282-46df-4444-b097-abc0e94d1c6f,JEE Main 2025 (28 Jan Shift 1),Mathematics,11,"Let \(A(x, y, z)\) be a point in \(xy\)-plane, which is equidistant from three points \((0, 3, 2), (2, 0, 3)\) and \((0, 0, 1)\). Let \(B = (1, 4, -1)\) and \(C = (2, 0, -2)\). Then among the statements (S1) : \(\triangle ABC\) is an isosceles right angled triangle, and (S2) : the area of \(\triangle ABC\) is \(\frac{9\sqrt{2}}{2}\),
+\[(1)\ \text{both are true} \quad (2)\ \text{only (S2) is true} \quad (3)\ \text{only (S1) is true} \quad (4)\ \text{both are false}.
+\]",3
+e8e525f0-719e-4737-b196-ec4c9442a18e,JEE Main 2025 (28 Jan Shift 1),Mathematics,12,"The area (in sq. units) of the region \(\{ (x, y) : 0 \leq y \leq 2|x| + 1, 0 \leq y \leq x^2 + 1, |x| \leq 3 \}\) is
+\[(1)\ \frac{80}{3} \quad (2)\ \frac{44}{3} \quad (3)\ \frac{32}{3} \quad (4)\ \frac{17}{3}.
+\]",2
+3c8d4be8-c367-4856-bdc1-bfe37e60d677,JEE Main 2025 (28 Jan Shift 1),Mathematics,13,"The sum of the squares of all the roots of the equation \(x^2 + |2x - 3| - 4 = 0\), is
+\[(1)\ 3(3 - \sqrt{2}) \quad (2)\ 6(3 - \sqrt{2}) \quad (3)\ 6(2 - \sqrt{2}) \quad (4)\ 3(2 - \sqrt{2})
+\]",3
+577660f5-d79b-4d00-9af8-d50b7849743f,JEE Main 2025 (28 Jan Shift 1),Mathematics,14,"Let \(T_r\) be the \(r^{th}\) term of an A.P. If for some \(m, T_m = \frac{1}{25}, T_{25} = \frac{1}{25}\), and \(20 \sum_{r=1}^{25} T_r = 13\), then
+\(5m \sum_{r=m}^{m+2} T_r\) is equal to
+\[(1)\ 98 \quad (2)\ 126 \quad (3)\ 142 \quad (4)\ 112.
+\]",2
+d688540d-d072-44a1-b481-a459af38593f,JEE Main 2025 (28 Jan Shift 1),Mathematics,15,"Three defective oranges are accidently mixed with seven good ones and on looking at them, it is not possible to differentiate between them. Two oranges are drawn at random from the lot. If \(x\) denote the number of defective oranges, then the variance of \(x\) is
+\[(1)\ \frac{28}{75} \quad (2)\ \frac{18}{25} \quad (3)\ \frac{26}{75} \quad (4)\ \frac{14}{25}.
+\]",1
+403a27b0-6d1e-49c4-924d-8722f6a2915f,JEE Main 2025 (28 Jan Shift 1),Mathematics,16,"Let for some function \(y = f(x), \int_0^x tf(t) dt = x^2 f(x), x > 0\) and \(f(2) = 3\). Then \(f(6)\) is equal to
+\[(1)\ 1 \quad (2)\ 3 \quad (3)\ 6 \quad (4)\ 2.
+\]",1
+f15c71bb-d3e0-42f2-b7da-a93f795013ef,JEE Main 2025 (28 Jan Shift 1),Mathematics,17,"If \(\int \frac{9x^2 \cos \pi x}{(1 + x^2)^2} dx = \pi (\alpha x^2 + \beta), \alpha, \beta \in \mathbb{Z}\), then \((\alpha + \beta)^2\) equals
+\[(1)\ 64 \quad (2)\ 196 \quad (3)\ 144 \quad (4)\ 100.
+\]",4
+bec8e309-4e7f-4767-9f29-a2c36dac2786,JEE Main 2025 (28 Jan Shift 1),Mathematics,18,"Let \(\{a_n\}\) be a sequence such that \(a_0 = 0, a_1 = \frac{1}{2}\) and \(2a_{n+2} = 5a_{n+1} - 3a_n, n = 0, 1, 2, 3, \ldots\). Then \(\sum_{k=1}^{100} a_k\) is equal to : (1) \( 3a_{99} - 100 \)  
+(2) \( 3a_{100} + 100 \)  
+(3) \( 3a_{99} + 100 \)  
+(4) \( 3a_{100} - 100 \)  
+",2
+4dfa6e24-a0d7-4203-b672-58d09c63870b,JEE Main 2025 (28 Jan Shift 1),Mathematics,19,"The number of different 5 digit numbers greater than 50000 that can be formed using the digits 0, 1, 2, 3, 4, 5, 6, 7, such that the sum of their first and last digits should not be more than 8, is
+
+(1) 4608
+(2) 5720
+(3) 5719
+(4) 4607",4
+01291000-d3a5-41f5-aac9-1a90237dadf5,JEE Main 2025 (28 Jan Shift 1),Mathematics,20,"The relation \( R = \{ (x, y) : x, y \in \mathbb{Z} \text{ and } x + y \text{ is even} \} \) is:
+
+(1) reflexive and symmetric but not transitive
+(2) an equivalence relation
+(3) symmetric and transitive but not reflexive
+(4) reflexive and transitive but not symmetric",2
+5df8a224-1e66-4ab3-a733-446cb3d5df54,JEE Main 2025 (28 Jan Shift 1),Mathematics,21,"Let \( f(x) = \begin{cases} 3x, & x < 0 \\ \min\{1 + x + |x|, x + 2|x|\}, & 0 \leq x \leq 2 \text{ where } [.] \text{ denotes greatest integer function} \end{cases} \). If \( \alpha \) and \( \beta \) are the number of points, where \( f \) is not continuous and is not differentiable, respectively, then \( \alpha + \beta \) equals
+
+\( \frac{5}{2} \)",5
+70401e79-9f72-4a97-9c2d-6ff0463d1a59,JEE Main 2025 (28 Jan Shift 1),Mathematics,22,"Let \( M \) denote the set of all real matrices of order \( 3 \times 3 \) and let \( S = \{ -3, -2, -1, 1, 2 \} \). Let
+
+\[
+S_1 = \{ A = [a_{ij}] \in M : A = A^T \text{ and } a_{ij} \in S, \forall i, j \}, \\
+S_2 = \{ A = [a_{ij}] \in M : A = -A^T \text{ and } a_{ij} \in S, \forall i, j \}, \\
+S_3 = \{ A = [a_{ij}] \in M : a_{11} + a_{22} + a_{33} = 0 \text{ and } a_{ij} \in S, \forall i, j \}.
+\]
+
+If \( n(S_1 \cup S_2 \cup S_3) = 125\alpha \), then \( \alpha \) equals
+
+\( \frac{5}{2} \)",1613
+4141f89c-4f78-485e-a9bc-6f3ab89dc31c,JEE Main 2025 (28 Jan Shift 1),Mathematics,23,"If \( \alpha = 1 + \sum_{r=1}^{6} (-3)^{r-1} 12C_{2r-1} \), then the distance of the point \( (12, \sqrt{3}) \) from the line \( \alpha x - \sqrt{3}y + 1 = 0 \) is
+
+\( \frac{5}{2} \)",5
+70575064-0b51-4839-8155-1945b70779e0,JEE Main 2025 (28 Jan Shift 1),Mathematics,24,"Let \( E_1 : \frac{x^2}{3} + \frac{y^2}{4} = 1 \) be an ellipse. Ellipses \( E_i \)'s are constructed such that their centres and eccentricities are same as that of \( E_1 \), and the length of minor axis of \( E_i \) is the length of major axis of \( E_{i+1}(i \geq 1) \). If \( A_i \) is the area of the ellipse \( E_i \), then \( \frac{5}{\pi} \left( \sum_{i=1}^{\infty} A_i \right) \) is equal to
+
+\( \frac{5}{\pi} \)",54
+25f7b0a3-85b7-4842-bc13-f36f8a07d9a2,JEE Main 2025 (28 Jan Shift 1),Mathematics,25,"Let \( \vec{a} = \hat{i} + \hat{j} + \hat{k}, \vec{b} = 2\hat{i} + 2\hat{j} + \hat{k} \) and \( \vec{d} = \vec{a} \times \vec{b} \). If \( \vec{c} \) is a vector such that \( \vec{a} \cdot \vec{c} = |\vec{c}|, |\vec{c} - 2\vec{a}|^2 = 8 \) and the angle between \( \vec{d} \) and \( \vec{c} \) is \( \frac{\pi}{4} \), then \( |10 - 3\vec{b} \cdot \vec{c}| + |\vec{d} \times \vec{c}|^2 \) is equal to
+
+\( \frac{5}{2} \)",6
+6a784d07-5204-4c1c-878d-1b5058eb9c9c,JEE Main 2025 (28 Jan Shift 2),Mathematics,1,"Let \( A = \begin{bmatrix} \frac{1}{\sqrt{2}} & -2 \\ 0 & 1 \end{bmatrix} \) and \( P = \begin{bmatrix} \cos \theta & -\sin \theta \\ \sin \theta & \cos \theta \end{bmatrix}, \theta \geq 0. \) If \( B = PAP^T, C = P^TB^TP \) and the sum of the diagonal elements of \( C \) is \( \frac{m}{n} \), where \( \gcd(m, n) = 1 \), then \( m + n \) is:
+
+(1) 127 
+(2) 258 
+(3) 65 
+(4) 2049",3
+f165565c-7d21-4031-8cec-9f41449f2a39,JEE Main 2025 (28 Jan Shift 2),Mathematics,2,"If the components of \( \vec{a} = \alpha \hat{i} + \beta \hat{j} + \gamma \hat{k} \) along and perpendicular to \( \vec{b} = 3\hat{i} + \hat{j} - \hat{k} \) respectively, are \( \frac{16}{10}(3\hat{i} + \hat{j} - \hat{k}) \) and \( \frac{1}{10}(-4\hat{i} - 5\hat{j} - 17\hat{k}) \), then \( \alpha^2 + \beta^2 + \gamma^2 \) is equal to:
+
+(1) 26 
+(2) 18 
+(3) 23 
+(4) 16",1
+843fe6c2-b6ac-477f-b561-a71dd5df3469,JEE Main 2025 (28 Jan Shift 2),Mathematics,3,"Let \( A, B, C \) be three points in \( xy \)-plane, whose position vectors are given by \( \sqrt{3}\hat{i} + \hat{j} + \sqrt{3}\hat{j} \) and \( \hat{i} + (1 - a)\hat{j} \) respectively with respect to the origin \( O \). If the distance of the point \( C \) from the line bisecting the angle between the vectors \( \overrightarrow{OA} \) and \( \overrightarrow{OB} \) is \( \frac{a}{\sqrt{2}} \), then the sum of all the possible values of \( a \) is:
+
+(1) 2 
+(2) 9/2 
+(3) 1 
+(4) 0",3
+3f46fd12-9c19-49e9-aebd-3fc5ecc67139,JEE Main 2025 (28 Jan Shift 2),Mathematics,4,"Let the coefficients of three consecutive terms \( T_r, T_{r+1}, \) and \( T_{r+2} \) in the binomial expansion of \( (a + b)^{\frac{1}{2}} \) be in a G.P. and let \( p \) be the number of all possible values of \( r \). Let \( q \) be the sum of all rational terms in the binomial expansion of \( (\sqrt{3} + \sqrt{4})^{\frac{1}{2}} \). Then \( p + q \) is equal to:
+
+(1) 283 
+(2) 287 
+(3) 295 
+(4) 299",1
+56cce03c-cae5-4480-ae4e-2ca17508e9aa,JEE Main 2025 (28 Jan Shift 2),Mathematics,5,"Let \( [x] \) denote the greatest integer less than or equal to \( x \). Then the domain of \( f(x) = \sec^{-1}(2[x] + 1) \) is:
+
+(1) \( (-\infty, -1] \cup [0, \infty) \) 
+(2) \( (-\infty, -1] \cup [1, \infty) \) 
+(3) \( (-\infty, \infty) \) 
+(4) \( (-\infty, \infty) \) \( \setminus \{0\} \)",3
+2470b736-8780-4e71-8c6a-ca9e0fcd4a1f,JEE Main 2025 (28 Jan Shift 2),Mathematics,6,"Let \( S \) be the set of all the words that can be formed by arranging all the letters of the word GARDEN. From the set \( S \), one word is selected at random. The probability that the selected word will NOT have vowels in alphabetical order is:
+
+(1) \( \frac{1}{2} \) 
+(2) \( \frac{1}{4} \) 
+(3) \( \frac{3}{5} \) 
+(4) \( \frac{1}{5} \)",1
+2459077d-12c1-45e7-83ae-c1d6ea3ab06e,JEE Main 2025 (28 Jan Shift 2),Mathematics,7,"If \( \sum_{r=1}^{15} \frac{1}{\sin\left(\frac{r}{2} + \frac{1}{2}\right) \sin\left(\frac{r}{2} + \frac{3}{2}\right)} \) = \( a\sqrt{3} + b \), \( a, b \in \mathbb{Z} \), then \( a^2 + b^2 \) is equal to:
+
+(1) 10 
+(2) 4 
+(3) 2 
+(4) 8",4
+948355f4-6765-49f3-86c3-51028dee123e,JEE Main 2025 (28 Jan Shift 2),Mathematics,8,"Let \( f \) be a real valued continuous function defined on the positive real axis such that \( g(x) = \int_0^x t f(t) \, dt \). If \( g(x^2) = x^6 + x^7 \), then value of \( \sum_{r=1}^{15} f(x^3) \) is:
+
+(1) 270 
+(2) 340 
+(3) 320 
+(4) 310",4
+98f67cfb-1e05-4e92-bb4c-49fdebf46689,JEE Main 2025 (28 Jan Shift 2),Mathematics,9,"Let \( f : [0, 3] \rightarrow A \) be defined by \( f(x) = 2x^3 - 15x^2 + 36x + 7 \) and \( g : [0, \infty) \rightarrow B \) be defined by \( g(x) = \frac{x^{2025}}{x^{2025} + 1} \). If both the functions are onto and \( S = \{ x \in \mathbb{Z} : x \in A \text{ or } x \in B \} \), then \( n(S) \) is equal to:(1) 29  
+(2) 30  
+(3) 31  
+(4) 36  ",2
+7af307a7-d2ac-4ef8-b48f-a2e6059c95d4,JEE Main 2025 (28 Jan Shift 2),Mathematics,10,"Bag $B_1$ contains 6 white and 4 blue balls, Bag $B_2$ contains 4 white and 6 blue balls, and Bag $B_3$ contains 5 white and 5 blue balls. One of the bags is selected at random and a ball is drawn from it. If the ball is white, then the probability, that the ball is drawn from Bag $B_2$, is:
+
+(1) $\frac{4}{15}$
+(2) $\frac{1}{3}$
+(3) $\frac{2}{5}$
+(4) $\frac{4}{5}$",1
+8b5b6bb0-7a08-49a4-af8b-3fea283b05bd,JEE Main 2025 (28 Jan Shift 2),Mathematics,11,"Let $f : \mathbb{R} \to \mathbb{R}$ be a twice differentiable function such that $f(2) = 1$. If $F(x) = xf(x)$ for all $x \in \mathbb{R}$, $\int_{x}^{2} x F'(x)\,dx = 6$ and $\int_{x}^{2} x^2 F''(x)\,dx = 40$, then $F'(2) + \int_{x}^{2} F(x)\,dx$ is equal to:
+
+(1) 11
+(2) 13
+(3) 15
+(4) 9",1
+33f5a9c1-f95c-4b38-b86d-9636f14834e2,JEE Main 2025 (28 Jan Shift 2),Mathematics,12,"For positive integers $n$, if $4a_n = (n^2 + 5n + 6)$ and $S_n = \sum_{k=1}^{n} \left( \frac{1}{ak} \right)$, then the value of $507S_{2025}$ is:
+
+(1) 540
+(2) 675
+(3) 1350
+(4) 135",2
+6a8fac3c-20ca-4da7-be4b-00fdf3d812a1,JEE Main 2025 (28 Jan Shift 2),Mathematics,13,"Let $f : \mathbb{R} \setminus \{0\} \to (-\infty, 1)$ be a polynomial of degree 2, satisfying $f(x) f\left( \frac{1}{x} \right) = f(x) + f\left( \frac{1}{x} \right)$. If $f(K) = -2K$, then the sum of squares of all possible values of $K$ is:
+
+(1) 7
+(2) 6
+(3) 1
+(4) 9",2
+a1f3abd3-97f9-4a96-8965-6bddf9ac8b33,JEE Main 2025 (28 Jan Shift 2),Mathematics,14,"If $A$ and $B$ are the points of intersection of the circle $x^2 + y^2 - 8x = 0$ and the hyperbola $\frac{x^2}{y^2} - \frac{y^2}{x^2} = 1$ and a point $P$ moves on the line $2x - 3y + 4 = 0$, then the centroid of $\triangle PAB$ lies on the line:
+
+(1) $x + 9y = 36$
+(2) $4x - 9y = 12$
+(3) $6x - 9y = 20$
+(4) $9x - 9y = 32$",3
+b9a37e33-f873-4d50-b919-9864d6fcfec7,JEE Main 2025 (28 Jan Shift 2),Mathematics,15,"If $f(x) = \int_{\frac{1}{x}}^{x^{1/4}(1+x^{1/4})} \frac{1}{dx}$, $f(0) = -6$, then $f(1)$ is equal to:
+
+(1) $4 \log_e 2 - 2$
+(2) $2 - \log_e x$
+(3) $\log_e 2 + 2$
+(4) $4 \log_e 2 + 2$",1
+3b235e61-18ba-47aa-a627-bf5a37bdb464,JEE Main 2025 (28 Jan Shift 2),Mathematics,16,"The area of the region bounded by the curves $x \left( 1 + y^2 \right) = 1$ and $y^2 = 2x$ is:
+
+(1) $2 \left( \frac{\pi}{2} - \frac{1}{3} \right)$
+(2) $\frac{\pi}{2} - \frac{1}{3}$
+(3) $\frac{\pi}{2} - \frac{1}{3}$
+(4) $\frac{1}{3} \left( \frac{\pi}{2} - \frac{1}{3} \right)$",2
+a94bc062-64c8-4846-a7f8-6ceb620ae4ee,JEE Main 2025 (28 Jan Shift 2),Mathematics,17,"The square of the distance of the point $\left( \frac{15}{7}, \frac{22}{7}, 7 \right)$ from the line $\frac{x+1}{3} = \frac{y+3}{5} = \frac{z+5}{7}$ in the direction of the vector $\hat{i} + 4\hat{j} + 7\hat{k}$ is:
+
+(1) 54
+(2) 44
+(3) 41
+(4) 66",4
+47c8b9a2-16cc-4302-be4c-ae7c30ea8d6c,JEE Main 2025 (28 Jan Shift 2),Mathematics,18,"If the midpoint of a chord of the ellipse $\frac{x^2}{9} + \frac{y^2}{4} = 1$ is $(\sqrt{2}, 4/3)$, and the length of the chord is $\frac{2\sqrt{5}}{3}$, then $\alpha$ is:
+
+(1) 20
+(2) 22
+(3) 18
+(4) 26",2
+911e6993-1f84-423b-9702-25e971cbe392,JEE Main 2025 (28 Jan Shift 2),Mathematics,19,"If $\alpha + i\beta$ and $\gamma + i\delta$ are the roots of $x^2 - (3 - 2i)x - (2i - 2) = 0$, $i = \sqrt{-1}$, then $\alpha\gamma + \beta\delta$ is equal to:
+(1) $-2$  
+(2) $6$  
+(3) $-6$  
+(4) $2$",4
+1f39939e-71c6-4a74-8bea-f6c2d235d37d,JEE Main 2025 (28 Jan Shift 2),Mathematics,20,"Two equal sides of an isosceles triangle are along $-x + 2y = 4$ and $x + y = 4$. If $m$ is the slope of its third side, then the sum, of all possible distinct values of $m$, is:
+(1) $-2\sqrt{10}$  
+(2) $12$  
+(3) $6$  
+(4) $-6$",3
+9e5b117e-fb2e-45ad-8e64-5c166daba7ad,JEE Main 2025 (28 Jan Shift 2),Mathematics,21,"Let $A$ and $B$ be the two points of intersection of the line $y = 5 = 0$ and the mirror image of the parabola $y^2 = 4x$ with respect to the line $x + y + 4 = 0$. If $d$ denotes the distance between $A$ and $B$, and $a$ denotes the area of $\triangle SAB$, where $S$ is the focus of the parabola $y^2 = 4x$, then the value of $(a + d)$ is",14
+1957dd69-b21f-4609-ac4b-d610195a1745,JEE Main 2025 (28 Jan Shift 2),Mathematics,22,"The number of natural numbers, between 212 and 999, such that the sum of their digits is 15, is",64
+7e9ca87b-0353-425d-b767-83cf4cff50f1,JEE Main 2025 (28 Jan Shift 2),Mathematics,23,"If $y = y(x)$ is the solution of the differential equation, $\sqrt{4 - x^2} \frac{dy}{dx} = \left(\sin^{-1}\left(\frac{x}{2}\right)\right)^2 - y \sin^{-1}\left(\frac{x}{2}\right)$, $-2 \leq x \leq 2$, $y(2) = \frac{x^2 - 8}{4}$, then $y(0)$ is equal to",4
+e8d84166-bcf8-4796-855c-8b642125ce9b,JEE Main 2025 (28 Jan Shift 2),Mathematics,24,"The interior angles of a polygon with $n$ sides, are in an A.P. with common difference $6^\circ$. If the largest interior angle of the polygon is $219^\circ$, then $n$ is equal to",20
+45a8920f-53e0-4308-ba55-52e6797819cf,JEE Main 2025 (28 Jan Shift 2),Mathematics,25,Let $f(x) = \lim_{x \to \infty} \sum_{r=0}^{n} \left(\frac{\tan(x/2^{r+1}) + \tan^2(x/2^{r+1})}{1 - \tan^2(x/2^{r+1})}\right)$. Then $\lim_{x \to 0} \frac{x - e^{-f(x)}}{x - f(x)}$ is equal to,1
+87886fd7-10e5-4ed6-acb0-e2f288266f84,JEE Main 2025 (29 Jan Shift 1),Mathematics,1,"Let \( x_1, x_2, \ldots, x_{10} \) be ten observations such that \( \sum_{i=1}^{10} (x_i - 2) = 30, \) \( \sum_{i=1}^{10} (x_i - \beta)^2 = 98, \beta > 2, \) and their variance is \( \frac{4}{5}. \) If \( \mu \) and \( \sigma^2 \) are respectively the mean and the variance of \( 2(x_1 - 1) + 4\beta, \) \( 2(x_2 - 1) + 4\beta, \ldots, 2(x_{10} - 1) + 4\beta, \) then \( \frac{\partial \mu}{\partial \beta} \) is equal to:
+
+(1) 100  (2) 120  (3) 110  (4) 90",1
+4a3af956-2936-4814-a7c5-ad78d38791b4,JEE Main 2025 (29 Jan Shift 1),Mathematics,2,"Consider an A. P. of positive integers, whose sum of the first three terms is 54 and the sum of the first twenty terms lies between 1600 and 1800. Then its 11th term is:
+
+(1) 90  (2) 84  (3) 122  (4) 108",1
+842577b9-21fa-44e9-8071-82c1a6bb6254,JEE Main 2025 (29 Jan Shift 1),Mathematics,3,"The number of solutions of the equation \( \left( \frac{9}{\sqrt{x}} - \frac{9}{\sqrt{x}} + 2 \right) \left( \frac{2}{\sqrt{x}} - \frac{7}{\sqrt{x}} + 3 \right) = 0 \) is:
+
+(1) 2  (2) 3  (3) 1  (4) 4",4
+22a47813-1150-4bfb-8c1e-7779eb2311f2,JEE Main 2025 (29 Jan Shift 1),Mathematics,4,"Define a relation \( R \) on the interval \( [0, \frac{\pi}{4}] \) by \( xRy \) if and only if \( \sec^2 x - \tan^2 y = 1. \) Then \( R \) is:
+
+(1) both reflexive and transitive but not symmetric  (2) an equivalence relation
+(3) reflexive but neither symmetric nor transitive  (4) both reflexive and symmetric but not transitive",2
+9abb4939-e62b-4c95-b6ae-baa8b0f237b8,JEE Main 2025 (29 Jan Shift 1),Mathematics,5,"Two parabolas have the same focus \( (4, 3) \) and their directrices are the \( x \)-axis and the \( y \)-axis, respectively. If these parabolas intersect at the points \( A \) and \( B, \) then \( (AB)^2 \) is equal to:
+
+(1) 392  (2) 384  (3) 192  (4) 96",3
+d70df5b1-fbd0-4589-b004-9693965e1ff7,JEE Main 2025 (29 Jan Shift 1),Mathematics,6,"Let \( P \) be the set of seven digit numbers with sum of their digits equal to 11. If the numbers in \( P \) are formed by using the digits 1, 2 and 3 only, then the number of elements in the set \( P \) is:
+
+(1) 173  (2) 164  (3) 158  (4) 161",4
+421fc75d-2e8a-492d-804b-2cb033503d1a,JEE Main 2025 (29 Jan Shift 1),Mathematics,7,"Let \( \vec{a} = \hat{i} + 2\hat{j} + \hat{k} \) and \( \vec{b} = 2\hat{i} + 7\hat{j} + 3\hat{k}. \) Let \( L_1 : \vec{r} = (-\hat{i} + 2\hat{j} + \hat{k}) + \lambda \vec{a}, \lambda \in \mathbb{R} \) and \( L_2 : \vec{r} = (\hat{i} + \hat{k}) + \mu \vec{b}, \mu \in \mathbb{R} \) be two lines. If the line \( L_3 \) passes through the point of intersection of \( L_1 \) and \( L_2, \) and is parallel to \( \vec{a} + \vec{b}, \) then \( L_3 \) passes through the point:
+
+(1) (5, 17, 4)  (2) (2, 8, 5)
+(3) (8, 26, 12)  (4) (-1, -1, 1)",3
+b858d9a3-549d-424b-a0f5-3f33c1789778,JEE Main 2025 (29 Jan Shift 1),Mathematics,8,"Let \( \vec{a} = 2\hat{i} - \hat{j} + 3\hat{k}, \vec{b} = 3\hat{i} - 5\hat{j} + \hat{k} \) and \( \vec{c} \) be a vector such that \( \vec{a} \times \vec{c} = \vec{c} \times \vec{b} \) and \( (\vec{a} + \vec{c}) \cdot (\vec{b} + \vec{c}) = 168. \) Then the maximum value of \( |\vec{c}|^2 \) is:
+
+(1) 462  (2) 77  (3) 154  (4) 308",4
+a7ad8cd4-2aac-4155-9246-182dfb07b87d,JEE Main 2025 (29 Jan Shift 1),Mathematics,9,"The integral \( 80 \int_0^\pi \left( \frac{\sin \theta + \cos \theta}{9 + 16 \sin 2\theta} \right) d\theta \) is equal to:
+
+(1) 3 \log_e 4  (2) 4 \log_e 3
+(3) 6 \log_e 4  (4) 2 \log_e 3",2
+9f3f478f-3e56-42e5-9b3e-6ad35534d3e1,JEE Main 2025 (29 Jan Shift 1),Mathematics,10,"Let the ellipse \( E_1 : \frac{x^2}{a^2} + \frac{y^2}{b^2} = 1, a > b \) and \( E_2 : \frac{x^2}{A^2} + \frac{y^2}{B^2} = 1, A < B \) have same eccentricity \( \frac{1}{\sqrt{3}} \). Let the product of their lengths of latus rectums be \( \frac{32}{\sqrt{3}} \), and the distance between the foci of \( E_1 \) be 4. If \( E_1 \) and \( E_2 \) meet at \( A, B, C \) and \( D \), then the area of the quadrilateral \( ABCD \) equals:
+
+\[
+\begin{align*}
+(1) & \quad 4\sqrt{6} \\
+(2) & \quad 6\sqrt{6} \\
+(3) & \quad 18\sqrt{6}/5 \\
+(4) & \quad 24\sqrt{6}/5 \\
+\end{align*}
+\]",4
+b1f11888-ceb0-442f-810a-0a51a834e287,JEE Main 2025 (29 Jan Shift 1),Mathematics,11,"Let \( A = [a_{ij}] = \begin{bmatrix} \log_5 128 & \log_4 5 \\ \log_5 8 & \log_4 25 \end{bmatrix} \). If \( A_{ij} \) is the cofactor of \( a_{ij} \), \( C_{ij} = \sum_{k=1}^{2} a_{ik}A_{jk}, 1 \leq i, j \leq 2 \), and \( C = [C_{ij}] \), then \( 8|C| \) is equal to:
+
+\[
+\begin{align*}
+(1) & \quad 288 \\
+(2) & \quad 222 \\
+(3) & \quad 242 \\
+(4) & \quad 262 \\
+\end{align*}
+\]",3
+3dd9de4c-0aa8-46af-be7b-f79cd0ee13e2,JEE Main 2025 (29 Jan Shift 1),Mathematics,12,"Let \( |z_1 - 8 - 2i| \leq 1 \) and \( |z_2 - 2 + 6i| \leq 2, z_1, z_2 \in \mathbb{C} \). Then the minimum value of \( |z_1 - z_2| \) is:
+
+\[
+\begin{align*}
+(1) & \quad 13 \\
+(2) & \quad 10 \\
+(3) & \quad 3 \\
+(4) & \quad 7 \\
+\end{align*}
+\]",4
+87d55516-470a-4c57-9713-3f320ed53247,JEE Main 2025 (29 Jan Shift 1),Mathematics,13,"Let \( L_1 : \frac{x-1}{2} = \frac{y-1}{3} = \frac{z-1}{4} \) and \( L_2 : \frac{x+1}{2} = \frac{y-2}{3} = \frac{z}{1} \) be two lines. Let \( L_3 \) be a line passing through the point \((\alpha, \beta, \gamma)\) and be perpendicular to both \( L_1 \) and \( L_2 \). If \( L_3 \) intersects \( L_1 \), then \( |5\alpha - 11\beta - 8\gamma| \) equals:
+
+\[
+\begin{align*}
+(1) & \quad 20 \\
+(2) & \quad 18 \\
+(3) & \quad 25 \\
+(4) & \quad 16 \\
+\end{align*}
+\]",3
+f131eebf-78ee-4273-b473-b776fb3280b4,JEE Main 2025 (29 Jan Shift 1),Mathematics,14,"Let \( M \) and \( m \) respectively be the maximum and the minimum values of
+
+\[
+f(x) = \begin{bmatrix} 1 + \sin^2 x & \cos^2 x & 4\sin 4x \\ \sin^2 x & 1 + \cos^2 x & 4\sin 4x \\ \sin^2 x & \cos^2 x & 1 + 4\sin 4x \end{bmatrix}, x \in \mathbb{R}
+\]
+
+Then \( M^4 - m^4 \) is equal to:
+
+\[
+\begin{align*}
+(1) & \quad 1280 \\
+(2) & \quad 1295 \\
+(3) & \quad 1215 \\
+(4) & \quad 1040 \\
+\end{align*}
+\]",1
+cbc72177-b566-4494-87df-ab52acb84bfc,JEE Main 2025 (29 Jan Shift 1),Mathematics,15,"Let \( ABC \) be a triangle formed by the lines \( 7x - 6y + 3 = 0, x + 2y - 31 = 0 \) and \( 9x - 2y - 19 = 0 \). Let the point \((h, k)\) be the image of the centroid of \( \Delta ABC \) in the line \( 3x + 6y - 53 = 0 \). Then \( h^2 + k^2 + hk \) is equal to:
+
+\[
+\begin{align*}
+(1) & \quad 47 \\
+(2) & \quad 36 \\
+(3) & \quad 47 \\
+(4) & \quad 40 \\
+\end{align*}
+\]",2
+68edd102-6049-4277-a9d4-e831373e20f9,JEE Main 2025 (29 Jan Shift 1),Mathematics,16,"The value of \( \lim_{n \to \infty} \left( \sum_{k=1}^{n} \frac{k^4 + 4k^2 + 11k + 5}{(k+3)!} \right) \) is:
+
+\[
+\begin{align*}
+(1) & \quad 4/3 \\
+(2) & \quad 2 \\
+(3) & \quad 7/3 \\
+(4) & \quad 5/3 \\
+\end{align*}
+\]",4
+284e0696-65cb-4558-a145-131420581840,JEE Main 2025 (29 Jan Shift 1),Mathematics,17,"The least value of \( n \) for which the number of integral terms in the Binomial expansion of \( (\sqrt{7} + \sqrt{11})^n \) is 183, is:
+
+\[
+\begin{align*}
+(1) & \quad 2184 \\
+(2) & \quad 2196 \\
+(3) & \quad 2148 \\
+(4) & \quad 2172 \\
+\end{align*}
+\]",1
+7547e409-5d97-4179-9041-5f85e5a66c5e,JEE Main 2025 (29 Jan Shift 1),Mathematics,18,"Let \( y = y(x) \) be the solution of the differential equation
+\[
+\cos x \left( \log_e (\cos x) \right)^2 dy + (\sin x - 3y \sin x \log_e (\cos x)) dx = 0, \quad x \in \left( 0, \frac{\pi}{2} \right).\]
+If \( y \left( \frac{\pi}{6} \right) = \frac{-1}{\log_2 2} \), then \( y \left( \frac{\pi}{8} \right) \) is equal to:
+
+\[
+\begin{align*}
+(1) & \frac{1}{\log_2 (5) - \log_2 (4)} \\
+(2) & \frac{2}{\log_2 (3) - \log_2 (4)} \\
+(3) & \frac{1}{\log_2 (4) - \log_2 (3)} \\
+(4) & \frac{1}{\log_2 (4)}
+\end{align*}
+\]",1
+d87ae9e7-3636-4854-a874-65795666e575,JEE Main 2025 (29 Jan Shift 1),Mathematics,19,"Let the line \( x + y = 1 \) meet the circle \( x^2 + y^2 = 4 \) at the points A and B. If the line perpendicular to AB and passing through the mid point of the chord AB intersects the circle at C and D, then the area of the quadrilateral ADBC is equal to:
+
+\[
+\begin{align*}
+(1) & \sqrt{14} \\
+(2) & 3\sqrt{7} \\
+(3) & 2\sqrt{14} \\
+(4) & 5\sqrt{7}
+\end{align*}
+\]",3
+dd7bf750-08ca-4eee-8b1b-3aa7880e708f,JEE Main 2025 (29 Jan Shift 1),Mathematics,20,"Let the area of the region \( \{(x, y) : 2y \leq x^2 + 3, \quad y \geq |x|, \quad |y| \leq |x - 1|\} \) be A. Then \( 6A \) is equal to:
+
+\[
+\begin{align*}
+(1) & 16 \\
+(2) & 12 \\
+(3) & 14 \\
+(4) & 18
+\end{align*}
+\]",3
+1c2e865d-ac5b-42e3-bca5-9a6f1c08d311,JEE Main 2025 (29 Jan Shift 1),Mathematics,21,Let \( S = \{ x : \cos^{-1} x = \pi + \sin^{-1} x + \sin^{-1}(2x + 1) \} \). Then \( \sum_{x \in S} (2x - 1)^2 \) is equal to ______.,5
+162f99d2-c3c1-40b7-9898-27bf925f81b1,JEE Main 2025 (29 Jan Shift 1),Mathematics,22,"Let \( f : (0, \infty) \rightarrow \mathbb{R} \) be a twice differentiable function. If for some \( a \neq 0, \int_0^1 f(\lambda x) d\lambda = a f(x) \), \( f(1) = 1 \) and \( f(16) = \frac{1}{8} \), then \( 16 - f' \left( \frac{1}{16} \right) \) is equal to ______.",112
+0b67c9d8-fb39-44a3-b259-978ebd5b5085,JEE Main 2025 (29 Jan Shift 1),Mathematics,23,"The number of 6-letter words, with or without meaning, that can be formed using the letters of the word MATHS such that any letter that appears in the word must appear at least twice, is ______.",1405
+92a4b8da-f6bb-4de1-b0cb-e42c14b3dcd6,JEE Main 2025 (29 Jan Shift 1),Mathematics,24,"Let \( S = \{ m \in \mathbb{Z} : A^m + A^m = 3I - A^{-6} \} \), where \( A = \begin{bmatrix} 2 & -1 \\ 1 & 0 \end{bmatrix} \). Then \( n(S) \) is equal to ______.",2
+a9460d26-8af6-4c4c-9ce8-487a3c0312f2,JEE Main 2025 (29 Jan Shift 1),Mathematics,25,"Let \([t]\) be the greatest integer less than or equal to \( t \). Then the least value of \( p \in \mathbb{N} \) for which
+\[
+\lim_{x \to \infty} \left( x \left( \left\lfloor \frac{1}{x} \right\rfloor + \left\lfloor \frac{2}{x} \right\rfloor + \cdots + \left\lfloor \frac{p}{x} \right\rfloor \right) - x^2 \left( \left\lfloor \frac{1}{x^2} \right\rfloor + \left\lfloor \frac{2}{x^2} \right\rfloor + \cdots + \left\lfloor \frac{p}{x^2} \right\rfloor \right) \right) \geq 1
+\]
+is equal to ______.",24

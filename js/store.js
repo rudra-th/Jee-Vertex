@@ -88,6 +88,7 @@ function loadState() {
     spacedRepetition: JSON.parse(localStorage.getItem('vx2_spacedRepetition') || '{}'),
     theme: localStorage.getItem('vx2_theme') || 'dark',
     autoRemoveWrong: localStorage.getItem('vx2_autoRemoveWrong') !== 'false',
+    premiumDataset: localStorage.getItem('vx2_premiumDataset') === 'true',
     joinedAt: localStorage.getItem('vx2_joinedAt') || new Date().toISOString(),
   };
 
@@ -131,17 +132,35 @@ export const S = loadState();
 
 // ── Question bank ──
 export let allQ = [];
+let premiumQ = null;
 
-export async function loadQ() {
+export async function loadQ(preferPremium) {
+  const usePremium = preferPremium !== undefined ? preferPremium : S.premiumDataset;
+  const file = usePremium ? 'filtered_dataset.json' : 'questions.json';
   try {
-    const r = await fetch('questions.json');
+    const r = await fetch(file);
     if (!r.ok) throw 0;
-    allQ = await r.json();
-    if (!Array.isArray(allQ) || !allQ.length) throw 0;
+    const data = await r.json();
+    if (!Array.isArray(data) || !data.length) throw 0;
+    if (usePremium) {
+      premiumQ = data;
+      allQ = premiumQ;
+    } else {
+      allQ = data;
+      premiumQ = null;
+    }
   } catch {
-    allQ = [];
-    // toast is called by the orchestrator after checking loadQ result
+    if (!usePremium) {
+      allQ = [];
+    }
   }
+}
+
+export function togglePremiumDataset() {
+  S.premiumDataset = !S.premiumDataset;
+  localStorage.setItem('vx2_premiumDataset', S.premiumDataset);
+  save();
+  return S.premiumDataset;
 }
 
 // ── Filtering & shuffle ──
@@ -184,6 +203,7 @@ export function save() {
   localStorage.setItem('vx2_spacedRepetition', JSON.stringify(S.spacedRepetition || {}));
   localStorage.setItem('vx2_theme', S.theme || 'dark');
   localStorage.setItem('vx2_autoRemoveWrong', S.autoRemoveWrong ?? true);
+  localStorage.setItem('vx2_premiumDataset', S.premiumDataset ?? false);
   localStorage.setItem('vx2_joinedAt', S.joinedAt || new Date().toISOString());
   saveChecksum(S);
   syncCloud();

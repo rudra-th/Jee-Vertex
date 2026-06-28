@@ -39,6 +39,8 @@ export function updateProfilePage() {
 
   const finalAvatar = avatarUrl({ photoURL: user.photoURL, displayName });
   if (img) img.src = finalAvatar;
+  const navAv = document.getElementById('navAvatar');
+  if (navAv) { navAv.src = finalAvatar; navAv.style.display = 'block'; }
   if (name) name.textContent = displayName;
   if (nameInput) nameInput.value = displayName;
   if (email) email.textContent = user.email || '';
@@ -66,6 +68,10 @@ export function updateProfilePage() {
   if (themeLabel) {
     themeLabel.textContent = S.theme === 'light' ? 'Light' : 'Dark';
   }
+
+  // Premium dataset toggle sync (if already revealed)
+  const premiumToggle = document.getElementById('togglePremiumDataset');
+  if (premiumToggle) premiumToggle.classList.toggle('on', S.premiumDataset === true);
 
   updateStatsPage();
 }

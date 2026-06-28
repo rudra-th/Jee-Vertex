@@ -4,7 +4,7 @@
 // Entry point: imports all modules, initialises the app,
 // and sets up data-action event delegation.
 
-import { S, allQ, loadQ, initFirebase, onAuthReady, integrityFailed, loadCloudProfile, syncCloud } from './js/store.js';
+import { S, allQ, loadQ, initFirebase, onAuthReady, integrityFailed, loadCloudProfile, syncCloud, togglePremiumDataset } from './js/store.js';
 import {
   reMath, toast,
   updateNav, updateHome, updateStatsPage, renderHistory, clearHistory, resetAllProgress,
@@ -27,7 +27,7 @@ import { startRF, rfPick, setRFDifficulty } from './js/rapid.js';
 import { switchLbTab, toggleLbExpand } from './js/leaderboard.js';
 import { updateProfilePage, loginGoogle, logoutGoogle, saveLeaderboardName, deleteAccount, copyUID } from './js/profile.js';
 
-const diffCls = (d) => d === 'Foundation' ? 'df' : d === 'JEE Main' ? 'dm' : d === 'JEE Advanced' ? 'da' : 'dall';
+const diffCls = (d) => d === 'JEE Main' ? 'dm' : d === 'JEE Advanced' ? 'da' : 'dall';
 
 // Single window binding for inline onerror handlers on <img> elements
 // (error events don't bubble, so delegation doesn't work for them).
@@ -106,6 +106,37 @@ const actions = {
   deleteAccount:          () => deleteAccount(),
   copyUID:                () => copyUID(),
   toggleAutoRemoveWrong:  () => toggleAutoRemoveWrong(),
+  togglePremiumDataset:   async () => {
+    const on = togglePremiumDataset();
+    document.getElementById('togglePremiumDataset')?.classList.toggle('on', on);
+    await loadQ(on);
+    if (!allQ.length) {
+      toast('❌ Premium dataset not found. Toggling off.');
+      togglePremiumDataset();
+      document.getElementById('togglePremiumDataset')?.classList.remove('on');
+      await loadQ(false);
+    } else {
+      populateChapters();
+      toast(on ? '💎 Premium dataset activated' : '📚 Standard dataset activated');
+    }
+  },
+  easterEggClick: () => {
+    const el = document.getElementById('easterEgg');
+    if (!el) return;
+    const c = parseInt(el.dataset.clicks || '0') + 1;
+    el.dataset.clicks = c;
+    if (c >= 7) {
+      const wrap = document.getElementById('premiumToggleWrap');
+      if (wrap) {
+        wrap.style.display = 'block';
+        const toggle = document.getElementById('togglePremiumDataset');
+        if (toggle) toggle.classList.toggle('on', S.premiumDataset);
+      }
+      el.classList.add('active');
+      el.style.cursor = 'default';
+      el.title = 'Secret unlocked!';
+    }
+  },
 
   // Data
   clearHistory:       () => clearHistory(),
@@ -163,7 +194,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     toast('⚠️ Stats were tampered with and have been reset.');
   }
   if (!allQ.length) {
-    toast('❌ questions.json not found — place it in the same folder.');
+    toast('❌ Question bank not found. Ensure questions.json or filtered_dataset.json exists.');
   }
   updateNav();
   applyTheme();
